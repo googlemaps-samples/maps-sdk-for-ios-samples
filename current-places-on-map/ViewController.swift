@@ -58,6 +58,8 @@ class ViewController: UIViewController {
   // Add markers for the places nearby the device.
   func updateMarkers() {
     mapView.clear()
+
+    // Get nearby places and add markers to the map.
     placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
       if let error = error {
         print("Current Place error: \(error.localizedDescription)")
@@ -68,7 +70,6 @@ class ViewController: UIViewController {
         for likelihood in likelihoodList.likelihoods {
           let place = likelihood.place
 
-          // Add markers for nearby places.
           let marker = GMSMarker(position: place.coordinate)
           marker.title = place.name
           marker.snippet = place.formattedAddress
@@ -80,8 +81,9 @@ class ViewController: UIViewController {
 
 }
 
-// Handle events for the location manager.
+// Delegates to handle events for the location manager.
 extension ViewController: CLLocationManagerDelegate {
+
   // Handle incoming location events.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let location: CLLocation = locations.last!
