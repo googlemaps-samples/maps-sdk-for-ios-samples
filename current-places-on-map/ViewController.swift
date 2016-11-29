@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     mapView.settings.myLocationButton = true
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-    // Add the map to the view, but start it hidden until we've got a location update.
+    // Add the map to the view, hide it until we've got a location update.
     view.addSubview(mapView)
     mapView.isHidden = true
   }
