@@ -14,7 +14,6 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-*.xcworkspace/
 
 ## Other
 *.moved-aside
@@ -32,10 +31,3 @@ playground.xcworkspace
 
 # CocoaPods
 Pods/
-=======
-# CocoaPods
-Pods/
-Podfile.lock
-
-# Editor save state
-.vscode/
