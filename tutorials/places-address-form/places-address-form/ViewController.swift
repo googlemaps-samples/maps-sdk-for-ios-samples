@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     address_line_1.text = street_number + " " + route
     city.text = locality
     state.text = administrative_area_level_1
-    if (postal_code_suffix != "") {
+    if postal_code_suffix != "" {
       postal_code_field.text = postal_code + "-" + postal_code_suffix
     } else {
       postal_code_field.text = postal_code
@@ -71,7 +71,6 @@ class ViewController: UIViewController {
     country = ""
     postal_code = ""
     postal_code_suffix = ""
-
   }
 
 }
