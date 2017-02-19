@@ -47,3 +47,10 @@ $ open GooglePlacePickerDemos.xcworkspace
 You will need to add an API Key to `GooglePlacePickerDemos/SDKDemoAPIKey.swift`. Please see the
 [documentation](https://developers.google.com/places/ios-api/start#get-key)
 for details on how to get an API Key.
+
+## Tutorials
+
+The `tutorials` sub-directory contains sample code that accompanies tutorials in the developer
+documentation, such as 
+[Adding a Map with a Marker](https://developers.google.com/maps/documentation/ios-sdk/map-with-marker),
+and more. Follow the tutorials for a quick guide to use the SDK.
