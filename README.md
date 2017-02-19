@@ -53,4 +53,4 @@ for details on how to get an API Key.
 The `tutorials` sub-directory contains sample code that accompanies tutorials in the developer
 documentation, such as 
 [Adding a Map with a Marker](https://developers.google.com/maps/documentation/ios-sdk/map-with-marker),
-and more. Follow the tutorials for a quick guide to use the SDK.
+and more. Follow the tutorials for a quick guide to using the SDK.
