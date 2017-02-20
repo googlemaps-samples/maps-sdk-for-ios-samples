@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4GJ-Rz-O6X">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Current Place on a Map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="current_place_on_map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Current Place on a Map" id="GD1-2H-ihf">
+                        <barButtonItem key="rightBarButtonItem" title="Get Place" style="plain" id="PNt-wg-a1x">
+                            <connections>
+                                <segue destination="YkZ-iV-uZb" kind="show" identifier="segueToSelect" id="Ztj-fh-FqG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="36"/>
+        </scene>
+        <!--Places View Controller-->
+        <scene sceneID="nUY-5W-nGA">
+            <objects>
+                <viewController id="YkZ-iV-uZb" customClass="PlacesViewController" customModule="current_place_on_map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WTB-8U-45y"/>
+                        <viewControllerLayoutGuide type="bottom" id="IFw-Tw-juZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xnG-ar-1By">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLL-Yu-vEv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Choose a place" id="xtL-Jg-JnU">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="bAD-OB-5hV"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z6F-H5-Vhi">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KLL-Yu-vEv" firstAttribute="leading" secondItem="xnG-ar-1By" secondAttribute="leading" id="KOP-i4-kfr"/>
+                            <constraint firstItem="KLL-Yu-vEv" firstAttribute="trailing" secondItem="z6F-H5-Vhi" secondAttribute="trailing" id="NNa-Qi-azR"/>
+                            <constraint firstAttribute="trailing" secondItem="KLL-Yu-vEv" secondAttribute="trailing" id="RDY-Tu-4Y0"/>
+                            <constraint firstItem="z6F-H5-Vhi" firstAttribute="bottom" secondItem="IFw-Tw-juZ" secondAttribute="top" id="TbZ-DO-LHu"/>
+                            <constraint firstItem="z6F-H5-Vhi" firstAttribute="top" secondItem="KLL-Yu-vEv" secondAttribute="bottom" id="gjd-Wq-aEY"/>
+                            <constraint firstItem="KLL-Yu-vEv" firstAttribute="leading" secondItem="z6F-H5-Vhi" secondAttribute="leading" id="nmN-nL-xC9"/>
+                            <constraint firstItem="KLL-Yu-vEv" firstAttribute="top" secondItem="WTB-8U-45y" secondAttribute="bottom" id="rW0-DX-gIr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="z6F-H5-Vhi" id="zF6-q3-Oxh"/>
+                        <segue destination="bQu-6O-RgJ" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="70q-NH-jHR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dq-L3-WSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bQu-6O-RgJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1981.5999999999999" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hiN-Xu-rtI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4GJ-Rz-O6X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QXB-6c-7XX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vjW-CC-ssg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k08-bg-YG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="36"/>
+        </scene>
+    </scenes>
+</document>
