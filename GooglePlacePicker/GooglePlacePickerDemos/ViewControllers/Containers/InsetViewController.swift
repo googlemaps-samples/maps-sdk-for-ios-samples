@@ -15,7 +15,6 @@
 
 import UIKit
 
-@available(iOS 8.0, *)
 /// A container view controller which displays its child controller with an optional inset and
 /// background view controller. The inset and background controller are only shown if there is
 /// enough space for the child controller to fit after being inset.
@@ -24,7 +23,6 @@ class InsetViewController: BaseContainerViewController {
   private let backgroundViewController: UIViewController
   private let contentViewController: UIViewController
   private(set) var hasMargin = false
-  private var parallax: UIMotionEffectGroup!
 
   // MARK: - Init/Deinit
 
@@ -62,26 +60,6 @@ class InsetViewController: BaseContainerViewController {
     contentViewController.view.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin,
                                                    .flexibleRightMargin, .flexibleBottomMargin]
     contentViewController.didMove(toParentViewController: self)
-
-    initializeParallax()
-  }
-
-  private func initializeParallax() {
-    // Set vertical effect
-    let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y",
-                                                           type: .tiltAlongVerticalAxis)
-    verticalMotionEffect.minimumRelativeValue = -30
-    verticalMotionEffect.maximumRelativeValue = 30
-
-    // Set horizontal effect
-    let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x",
-                                                             type: .tiltAlongHorizontalAxis)
-    horizontalMotionEffect.minimumRelativeValue = -30
-    horizontalMotionEffect.maximumRelativeValue = 30
-
-    // Create group to combine both
-    parallax = UIMotionEffectGroup()
-    parallax.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -181,13 +159,6 @@ class InsetViewController: BaseContainerViewController {
         self.backgroundViewController.endAppearanceTransition()
       }
 
-      // Add/remove the parallax effect.
-      if backgroundWillBeHidden {
-        self.contentViewController.view.removeMotionEffect(self.parallax)
-      } else {
-        self.contentViewController.view.addMotionEffect(self.parallax)
-      }
-
       completion()
     }
 
@@ -239,10 +210,8 @@ class InsetViewController: BaseContainerViewController {
   }
 }
 
-@available(iOS 8.0, *)
 internal var InsetViewControllerAssociatedObjectHandle: UInt8 = 0
 
-@available(iOS 8.0, *)
 extension UIViewController {
   /// Retrieve the parent |InsetViewController| of |self| if one is present.
   var insetViewController: InsetViewController? {

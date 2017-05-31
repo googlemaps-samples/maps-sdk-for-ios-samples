@@ -19,7 +19,6 @@ import GooglePlacePicker
 /// A view controller which displays a UI for opening the Place Picker. Once a place is selected
 /// it navigates to the place details screen for the selected location.
 class PickAPlaceViewController: UIViewController {
-  private var placePicker: GMSPlacePicker?
   @IBOutlet private weak var pickAPlaceButton: UIButton!
   @IBOutlet weak var buildNumberLabel: UILabel!
   var mapViewController: BackgroundMapViewController?
@@ -47,37 +46,46 @@ class PickAPlaceViewController: UIViewController {
   }
 
   @IBAction func buttonTapped() {
-    // Create a place picker.
+    // Create a place picker. Attempt to display it as a popover if we are on a device which
+    // supports popovers.
     let config = GMSPlacePickerConfig(viewport: nil)
-    let placePicker = GMSPlacePicker(config: config)
+    let placePicker = GMSPlacePickerViewController(config: config)
+    placePicker.delegate = self
+    placePicker.modalPresentationStyle = .popover
+    placePicker.popoverPresentationController?.sourceView = pickAPlaceButton
+    placePicker.popoverPresentationController?.sourceRect = pickAPlaceButton.bounds
 
-    // Present it fullscreen.
-    placePicker.pickPlace { (place, error) in
-
-      // Handle the selection if it was successful.
-      if let place = place {
-        // Create the next view controller we are going to display and present it.
-        let nextScreen = PlaceDetailViewController(place: place)
-        self.splitPaneViewController?.push(viewController: nextScreen, animated: false)
-        self.mapViewController?.coordinate = place.coordinate
-      } else if error != nil {
-        // In your own app you should handle this better, but for the demo we are just going to log
-        // a message.
-        NSLog("An error occurred while picking a place: \(error)")
-      } else {
-        NSLog("Looks like the place picker was canceled by the user")
-      }
-
-      // Release the reference to the place picker, we don't need it anymore and it can be freed.
-      self.placePicker = nil
-    }
-
-    // Store a reference to the place picker until it's finished picking. As specified in the docs
-    // we have to hold onto it otherwise it will be deallocated before it can return us a result.
-    self.placePicker = placePicker
+    // Display the place picker. This will call the delegate methods defined below when the user
+    // has made a selection.
+    self.present(placePicker, animated: true, completion: nil)
   }
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
+  }
+}
+
+extension PickAPlaceViewController : GMSPlacePickerViewControllerDelegate {
+  func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+    // Create the next view controller we are going to display and present it.
+    let nextScreen = PlaceDetailViewController(place: place)
+    self.splitPaneViewController?.push(viewController: nextScreen, animated: false)
+    self.mapViewController?.coordinate = place.coordinate
+
+    // Dismiss the place picker.
+    viewController.dismiss(animated: true, completion: nil)
+  }
+
+  func placePicker(_ viewController: GMSPlacePickerViewController, didFailWithError error: Error) {
+    // In your own app you should handle this better, but for the demo we are just going to log
+    // a message.
+    NSLog("An error occurred while picking a place: \(error)")
+  }
+
+  func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+    NSLog("The place picker was canceled by the user")
+
+    // Dismiss the place picker.
+    viewController.dismiss(animated: true, completion: nil)
   }
 }

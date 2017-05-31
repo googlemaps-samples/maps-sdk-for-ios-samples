@@ -78,23 +78,12 @@ class SplitPaneViewController: BaseContainerViewController {
     transition(to: state, animated: false) {}
   }
 
-  @available(iOS 8.0, *)
   /// Listen to size changes and trigger the appropriate animations.
   override func viewWillTransition(to size: CGSize,
                                    with coordinator: UIViewControllerTransitionCoordinator) {
     transition(to: state, overrideSize: size, coordinator: coordinator) {}
 
     super.viewWillTransition(to: size, with: coordinator)
-  }
-
-  /// Only needed for iOS 7 support.
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-
-    guard #available(iOS 8.0, *) else {
-      transition(to: state, overrideSize: view.bounds.size) {}
-      return
-    }
   }
 
   /// Pass through to the child view controller for status bar appearance.
@@ -182,17 +171,12 @@ class SplitPaneViewController: BaseContainerViewController {
   /// Access the current state of the UI.
   private var state: State {
     get {
-      if #available(iOS 8.0, *) {
-        let hasMargin = insetViewController?.hasMargin ?? false
-        return SplitPaneViewController.state(for: actualTraitCollection,
-                                             hasMargin: hasMargin)
-      } else {
-        return .fullScreen
-      }
+      let hasMargin = insetViewController?.hasMargin ?? false
+      return SplitPaneViewController.state(for: actualTraitCollection,
+                                           hasMargin: hasMargin)
     }
   }
 
-  @available(iOS 8.0, *)
   /// Determine the expected UI state for the given parameters.
   ///
   /// - parameter traitCollection The trait collection the UI will be displayed for.
