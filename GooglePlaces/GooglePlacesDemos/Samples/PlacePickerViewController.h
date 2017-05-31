@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2017 Google Inc. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -13,10 +13,11 @@
  * permissions and limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+#import "GooglePlacesDemos/Support/BaseDemoViewController.h"
 
-@interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property(strong, nonatomic) UIWindow *window;
+/*
+ * SDK Demo showing different ways to use the place picker view controller.
+ */
+@interface PlacePickerViewController : BaseDemoViewController
 
 @end

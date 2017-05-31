@@ -24,8 +24,11 @@
 
 #import "GooglePlacesDemos/Samples/PagingPhotoView.h"
 
+@interface PhotosViewController () <GMSPlacePickerViewControllerDelegate>
+@end
+
 @implementation PhotosViewController {
-  GMSPlacePicker *_placePicker;
+  GMSPlacePickerViewController *_placePicker;
   GMSPlacesClient *_placesClient;
   PagingPhotoView *_photoView;
   UIActivityIndicatorView *_indicatorView;
@@ -40,9 +43,20 @@
 - (instancetype)init {
   if ((self = [super init])) {
     GMSPlacePickerConfig *config = [[GMSPlacePickerConfig alloc] initWithViewport:nil];
-    _placePicker = [[GMSPlacePicker alloc] initWithConfig:config];
+    _placePicker = [[GMSPlacePickerViewController alloc] initWithConfig:config];
+    _placePicker.delegate = self;
     _placesClient = [GMSPlacesClient sharedClient];
     _imagesByPhoto = [NSMapTable strongToStrongObjectsMapTable];
+
+    // Add a button in the navigation bar which opens the Place Picker.
+    NSString *selectPlaceTitle =
+        NSLocalizedString(@"Demo.Title.Photos.SelectPlace",
+                          @"Title of the 'select place' button within the photos demo");
+    self.navigationItem.rightBarButtonItem =
+        [[UIBarButtonItem alloc] initWithTitle:selectPlaceTitle
+                                         style:UIBarButtonItemStylePlain
+                                        target:self
+                                        action:@selector(showPlacePicker)];
   }
   return self;
 }
@@ -64,30 +78,60 @@
       UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin |
       UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
   _indicatorView.center = _photoView.center;
-  [_indicatorView startAnimating];
   [self.view addSubview:_indicatorView];
 
-  // Present the place picker.
-  [_placePicker pickPlaceWithCallback:^(GMSPlace *place, NSError *error) {
-    if (place) {
-      [_placesClient lookUpPhotosForPlaceID:place.placeID
-                                   callback:^(GMSPlacePhotoMetadataList *photos,
-                                              NSError *__nullable photoError) {
-                                     if (photos != nil) {
-                                       [self displayPhotoList:photos];
-                                     } else {
-                                       NSLog(@"Photo metadata lookup failed: %@", photoError);
-                                     }
-                                   }];
-    } else if (error) {
-      NSLog(@"Place picking failed with error: %@", error);
-    } else {
-      NSLog(@"Place picking cancelled.");
-    }
-  }];
+  [self startActivityIndicator];
+
+  // Show Place Picker as soon as the demo is opened.
+  [self showPlacePicker];
+}
+
+#pragma mark - GMSPlacePickerViewControllerDelegate
+
+- (void)placePicker:(GMSPlacePickerViewController *)viewController didPickPlace:(GMSPlace *)place {
+  [self dismissViewControllerAnimated:YES completion:nil];
+
+  [self startActivityIndicator];
+
+  // Start loading the photos for the selected place.
+  [_placesClient
+      lookUpPhotosForPlaceID:place.placeID
+                    callback:^(GMSPlacePhotoMetadataList *photos, NSError *__nullable photoError) {
+                      if (photos != nil) {
+                        [self displayPhotoList:photos];
+                      } else {
+                        NSLog(@"Photo metadata lookup failed: %@", photoError);
+                      }
+                    }];
+}
+
+- (void)placePickerDidCancel:(GMSPlacePickerViewController *)viewController {
+  [self dismissViewControllerAnimated:YES completion:nil];
+  NSLog(@"Place picking cancelled.");
+}
+
+- (void)placePicker:(GMSPlacePickerViewController *)viewController
+    didFailWithError:(NSError *)error {
+  NSLog(@"Place picking failed with error: %@", error);
 }
 
 #pragma mark - Private methods
+
+- (void)startActivityIndicator {
+  _photoView.photoList = @[];
+  [_indicatorView startAnimating];
+}
+
+- (void)stopActivityIndicator {
+  [_indicatorView stopAnimating];
+}
+
+- (void)showPlacePicker {
+  // Present the Place Picker view controller to select a place to load photos for.
+  _placePicker.modalPresentationStyle = UIModalPresentationPopover;
+  _placePicker.popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem;
+  [self presentViewController:_placePicker animated:YES completion:nil];
+}
 
 // Displays a list of photos.
 - (void)displayPhotoList:(GMSPlacePhotoMetadataList *)photos {
@@ -109,23 +153,22 @@
   }
 
   // The block will be called once all photo requests have completed.
-  dispatch_group_notify(photoRequestGroup,
-                        dispatch_get_main_queue(),
-                        ^{
-                          NSMutableArray *attributedPhotos = [NSMutableArray array];
-                          for (GMSPlacePhotoMetadata *photo in photos.results) {
-                            UIImage *image = [_imagesByPhoto objectForKey:photo];
-                            if (image == nil) {
-                              continue;
-                            }
-                            AttributedPhoto *attributedPhoto = [[AttributedPhoto alloc] init];
-                            attributedPhoto.image = image;
-                            attributedPhoto.attributions = photo.attributions;
-                            [attributedPhotos addObject:attributedPhoto];
-                          }
-                          _photoView.photoList = attributedPhotos;
-                          [_indicatorView stopAnimating];
-                        });
+  dispatch_group_notify(photoRequestGroup, dispatch_get_main_queue(), ^{
+    NSMutableArray *attributedPhotos = [NSMutableArray array];
+    for (GMSPlacePhotoMetadata *photo in photos.results) {
+      UIImage *image = [_imagesByPhoto objectForKey:photo];
+      if (image == nil) {
+        continue;
+      }
+      AttributedPhoto *attributedPhoto = [[AttributedPhoto alloc] init];
+      attributedPhoto.image = image;
+      attributedPhoto.attributions = photo.attributions;
+      [attributedPhotos addObject:attributedPhoto];
+    }
+    _photoView.photoList = attributedPhotos;
+
+    [self stopActivityIndicator];
+  });
 }
 
 @end

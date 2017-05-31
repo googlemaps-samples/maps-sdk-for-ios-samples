@@ -36,7 +36,7 @@
 @implementation AttributedPhoto
 @end
 
-@interface PagingPhotoView ()<UITextViewDelegate>
+@interface PagingPhotoView () <UITextViewDelegate>
 @end
 
 @implementation PagingPhotoView {

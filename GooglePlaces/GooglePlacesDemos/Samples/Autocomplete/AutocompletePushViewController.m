@@ -21,7 +21,7 @@
 
 #import <GooglePlaces/GooglePlaces.h>
 
-@interface AutocompletePushViewController ()<GMSAutocompleteViewControllerDelegate>
+@interface AutocompletePushViewController () <GMSAutocompleteViewControllerDelegate>
 @property(nonatomic, strong) GMSAutocompleteViewController *autocompleteViewController;
 @end
 

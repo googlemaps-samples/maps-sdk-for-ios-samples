@@ -58,15 +58,7 @@ static NSString *const kCellIdentifier = @"DemoCellIdentifier";
   UIViewController *viewController =
       [demo createViewControllerForSplitView:self.splitViewController];
 
-  // Check to see if we are on iOS 7.
-  if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
-    // We are on iOS 8+, just call the real -showDetailViewControllerMethod. UIKit will
-    // automatically either push onto the navigation stack on a small screen, or present it on the
-    // left side of the |UISplitViewController| if there is enough space.
-    [self showDetailViewController:viewController sender:self];
-  } else {
-    [self iOS7showDetailViewController:viewController sender:self];
-  }
+  [self showDetailViewController:viewController sender:self];
 }
 
 #pragma mark - UITableViewDataSource/Delegate
@@ -103,39 +95,6 @@ static NSString *const kCellIdentifier = @"DemoCellIdentifier";
   Demo *demo = _demoData.sections[indexPath.section].demos[indexPath.row];
 
   [self showDemo:demo];
-}
-
-#pragma mark - iOS 7 Support
-
-//
-// NOTE! All the following code is probably not required in your own app, it is just to enable iOS 7
-// support of this demo app.
-//
-
-- (void)iOS7showDetailViewController:(UIViewController *)vc sender:(id)sender {
-  // We are on iOS 7, so we are going to have to do some stuff to mimic the behavior that
-  // -showDetailViewControllerMethod has on iOS 8+.
-
-  // Check to see if we have a split view controller.
-  if (self.splitViewController) {
-    // If we do then update its .viewControllers property, -showDetailViewController:sender:
-    // didn't exist in iOS 7.
-    self.splitViewController.viewControllers = @[ self.splitViewController.viewControllers[0], vc ];
-  } else {
-    // If there is not a split view controller then we must be on an iPhone, which means we should
-    // just use the navigation stack. However, the view controller we are given might be a
-    // UINavigationController, in which case we should only push the thing(s) *in* the navigation
-    // controller, rather than the navigation controller itself as UIKit does not allow this.
-    NSMutableArray<UIViewController *> *viewControllers =
-        [self.navigationController.viewControllers mutableCopy];
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-      UINavigationController *navigationController = (UINavigationController *)vc;
-      [viewControllers addObjectsFromArray:navigationController.viewControllers];
-    } else {
-      [viewControllers addObject:vc];
-    }
-    [self.navigationController setViewControllers:viewControllers animated:YES];
-  }
 }
 
 @end

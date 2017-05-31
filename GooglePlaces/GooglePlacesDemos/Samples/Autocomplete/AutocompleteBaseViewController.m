@@ -45,21 +45,21 @@
   button.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:button];
   // Position the button from the top of the view.
-  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button
-                                                        attribute:NSLayoutAttributeTop
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.topLayoutGuide
-                                                        attribute:NSLayoutAttributeBottom
-                                                       multiplier:1
-                                                         constant:8]];
+  [NSLayoutConstraint constraintWithItem:button
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.topLayoutGuide
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8].active = YES;
   // Centre it horizontally.
-  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button
-                                                        attribute:NSLayoutAttributeCenterX
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.view
-                                                        attribute:NSLayoutAttributeCenterX
-                                                       multiplier:1
-                                                         constant:0]];
+  [NSLayoutConstraint constraintWithItem:button
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:0].active = YES;
 
   return button;
 }
