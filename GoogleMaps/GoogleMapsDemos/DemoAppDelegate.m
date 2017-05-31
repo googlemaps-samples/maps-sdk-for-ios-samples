@@ -33,7 +33,7 @@
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"Build version: %d", __apple_build_version__);
 
-  if ([kAPIKey length] == 0) {
+  if (kAPIKey.length == 0) {
     // Blow up if APIKey has not yet been set.
     NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
     NSString *format = @"Configure APIKey inside SDKDemoAPIKey.h for your "

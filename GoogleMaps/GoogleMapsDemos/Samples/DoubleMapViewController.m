@@ -62,8 +62,9 @@
   [self.view addSubview:_boundMapView];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-                                         duration:(NSTimeInterval)duration {
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
   CGRect frame = self.view.bounds;
   frame.size.height = frame.size.height / 2;
   _mapView.frame = frame;

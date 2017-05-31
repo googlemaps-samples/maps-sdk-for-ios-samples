@@ -66,7 +66,7 @@
 }
 
 - (void)didTapFitBounds {
-  if ([_markers count] == 0) return;
+  if (_markers.count == 0) return;
   CLLocationCoordinate2D firstPos = ((GMSMarker *)_markers.firstObject).position;
   GMSCoordinateBounds *bounds =
       [[GMSCoordinateBounds alloc] initWithCoordinate:firstPos coordinate:firstPos];

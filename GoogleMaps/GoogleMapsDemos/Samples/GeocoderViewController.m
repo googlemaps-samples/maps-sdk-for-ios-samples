@@ -51,7 +51,7 @@
       GMSMarker *marker = [GMSMarker markerWithPosition:address.coordinate];
 
       marker.title = [[address lines] firstObject];
-      if ([[address lines] count] > 1) {
+      if ([address lines].count > 1) {
         marker.snippet = [[address lines] objectAtIndex:1];
       }
 
