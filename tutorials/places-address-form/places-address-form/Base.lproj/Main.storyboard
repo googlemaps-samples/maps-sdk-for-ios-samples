@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<device id="retina4_7" orientation="portrait">
+<adaptation id="fullscreen"/>
+</device>
+<dependencies>
+<deployment identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+</dependencies>
+<scenes>
+<!--View Controller-->
+<scene sceneID="tne-QT-ifu">
+<objects>
+<viewController id="BYZ-38-t0r" customClass="ViewController" customModule="places_address_form" customModuleProvider="target" sceneMemberID="viewController">
+<layoutGuides>
+<viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+<viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+</layoutGuides>
+<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fvm-0y-JOL">
+<rect key="frame" x="16" y="124" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-c7-e7t">
+<rect key="frame" x="16" y="162" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0i-kD-WbZ">
+<rect key="frame" x="16" y="200" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUG-Qi-rmU">
+<rect key="frame" x="16" y="238" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="postal code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOi-eT-WUj">
+<rect key="frame" x="16" y="276" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDn-gw-AIm">
+<rect key="frame" x="16" y="314" width="343" height="30"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" type="system" pointSize="14"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nt5-lu-rK1">
+<rect key="frame" x="16" y="71" width="343" height="30"/>
+<color key="backgroundColor" red="0.89710129922470183" green="0.91641360057382049" blue="0.93997464005235598" alpha="1" colorSpace="calibratedRGB"/>
+<fontDescription key="fontDescription" type="system" pointSize="15"/>
+<state key="normal" title="Tap to search for an address...">
+<color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</state>
+<userDefinedRuntimeAttributes>
+<userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+<integer key="value" value="5"/>
+</userDefinedRuntimeAttribute>
+</userDefinedRuntimeAttributes>
+<connections>
+<action selector="autocompleteClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eK6-N3-mYA"/>
+</connections>
+</button>
+</subviews>
+<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstItem="xDn-gw-AIm" firstAttribute="top" secondItem="SOi-eT-WUj" secondAttribute="bottom" constant="8" id="31R-ZH-UCp"/>
+<constraint firstItem="nt5-lu-rK1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="4G8-By-jcz"/>
+<constraint firstItem="SOi-eT-WUj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="9bw-xb-hlA"/>
+<constraint firstAttribute="trailing" secondItem="xDn-gw-AIm" secondAttribute="trailing" constant="16" id="A8v-gy-og2"/>
+<constraint firstItem="xDn-gw-AIm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ANw-dd-qtB"/>
+<constraint firstItem="j0i-kD-WbZ" firstAttribute="top" secondItem="BE1-c7-e7t" secondAttribute="bottom" constant="8" id="BQS-qJ-KB4"/>
+<constraint firstItem="nt5-lu-rK1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="Dyd-cF-srG"/>
+<constraint firstItem="BE1-c7-e7t" firstAttribute="top" secondItem="Fvm-0y-JOL" secondAttribute="bottom" constant="8" id="G0U-rE-oMA"/>
+<constraint firstAttribute="trailing" secondItem="j0i-kD-WbZ" secondAttribute="trailing" constant="16" id="G1I-39-iah"/>
+<constraint firstAttribute="trailing" secondItem="nt5-lu-rK1" secondAttribute="trailing" constant="16" id="IwV-SR-d2z"/>
+<constraint firstAttribute="trailing" secondItem="SOi-eT-WUj" secondAttribute="trailing" constant="16" id="KKf-Mu-P0T"/>
+<constraint firstAttribute="trailing" secondItem="BE1-c7-e7t" secondAttribute="trailing" constant="16" id="KQT-zw-5Av"/>
+<constraint firstAttribute="trailing" secondItem="Fvm-0y-JOL" secondAttribute="trailing" constant="16" id="Kut-GB-h4D"/>
+<constraint firstItem="SOi-eT-WUj" firstAttribute="top" secondItem="oUG-Qi-rmU" secondAttribute="bottom" constant="8" id="NDe-jn-cqR"/>
+<constraint firstItem="Fvm-0y-JOL" firstAttribute="top" secondItem="nt5-lu-rK1" secondAttribute="bottom" constant="23" id="ZFw-8o-C4s"/>
+<constraint firstItem="oUG-Qi-rmU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ibQ-Wv-M5t"/>
+<constraint firstItem="oUG-Qi-rmU" firstAttribute="top" secondItem="j0i-kD-WbZ" secondAttribute="bottom" constant="8" id="jWB-7V-0Xe"/>
+<constraint firstItem="BE1-c7-e7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nEU-6B-efk"/>
+<constraint firstItem="Fvm-0y-JOL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="uXU-He-aJB"/>
+<constraint firstAttribute="trailing" secondItem="oUG-Qi-rmU" secondAttribute="trailing" constant="16" id="vwJ-l1-ItX"/>
+<constraint firstItem="j0i-kD-WbZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="yMd-0a-fY2"/>
+</constraints>
+</view>
+<connections>
+<outlet property="address_line_1" destination="Fvm-0y-JOL" id="lOg-g7-88L"/>
+<outlet property="address_line_2" destination="BE1-c7-e7t" id="g11-8R-GSo"/>
+<outlet property="button" destination="nt5-lu-rK1" id="4hs-Zc-pS1"/>
+<outlet property="city" destination="j0i-kD-WbZ" id="8Ru-xq-QyV"/>
+<outlet property="country_field" destination="xDn-gw-AIm" id="4Yo-c4-J0E"/>
+<outlet property="postal_code_field" destination="SOi-eT-WUj" id="IlV-aZ-Fhw"/>
+<outlet property="state" destination="oUG-Qi-rmU" id="9dd-9e-7Dq"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+</scene>
+</scenes>
+</document>
