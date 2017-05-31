@@ -62,15 +62,10 @@ class PlaceDetailViewController: BaseContainerViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    if #available(iOS 8.0, *) {
-      updateNavigationBarState(actualTraitCollection)
-      updateStatusBarState(actualTraitCollection)
-    } else {
-      tableDataSource.offsetNavigationTitle = true
-    }
+    updateNavigationBarState(actualTraitCollection)
+    updateStatusBarState(actualTraitCollection)
   }
 
-  @available(iOS 8.0, *)
   override func willTransition(to newCollection: UITraitCollection,
                                with coordinator: UIViewControllerTransitionCoordinator) {
 
@@ -80,7 +75,6 @@ class PlaceDetailViewController: BaseContainerViewController {
     updateStatusBarState(newCollection)
   }
 
-  @available(iOS 8.0, *)
   override func viewWillTransition(to size: CGSize,
                                    with coordinator: UIViewControllerTransitionCoordinator) {
 
@@ -101,7 +95,7 @@ class PlaceDetailViewController: BaseContainerViewController {
         } else {
           NSLog("No photos were found")
         }
-      } else if error != nil {
+      } else if let error = error {
         NSLog("An error occured while looking up the photos: \(error)")
       } else {
         fatalError("An unexpected error occured")
@@ -116,8 +110,8 @@ class PlaceDetailViewController: BaseContainerViewController {
                                   // Handle the result if it was successful.
                                   if let image = image {
                                     self.photoView.image = image
-                                    self.photoView.removeConstraint(self.photoWidthConstraint)
-                                  } else if error != nil {
+                                    self.photoWidthConstraint.isActive = false
+                                  } else if let error = error {
                                     NSLog("An error occured while loading the first photo: \(error)")
                                   } else {
                                     fatalError("An unexpected error occured")
@@ -141,15 +135,14 @@ class PlaceDetailViewController: BaseContainerViewController {
     statusBarShadow.shadowSize = 80
 
     // Add a constraint to the top of the navigation bar so that it respects the top layout guide.
-    view.addConstraint(NSLayoutConstraint(item: navigationBar, attribute: .top, relatedBy: .equal,
-                                          toItem: topLayoutGuide, attribute: .bottom, multiplier: 1,
-                                          constant: 0))
+    NSLayoutConstraint(item: navigationBar, attribute: .top, relatedBy: .equal,
+                       toItem: topLayoutGuide, attribute: .bottom, multiplier: 1,
+                       constant: 0).isActive = true
 
     // Set the color of the hight extension view.
     headerHeightExtension.backgroundColor = Colors.blue2
   }
 
-  @available(iOS 8.0, *)
   private func updateNavigationBarState(_ traitCollection: UITraitCollection) {
     // Hide the navigation bar if we have enough space to be split-screen.
     let isNavigationBarHidden = traitCollection.horizontalSizeClass == .regular
@@ -158,7 +151,6 @@ class PlaceDetailViewController: BaseContainerViewController {
     tableDataSource.updateNavigationTextOffset()
   }
 
-  @available(iOS 8.0, *)
   private func updateStatusBarState(_ traitCollection: UITraitCollection) {
     // Hide the shadow if we are not right against the status bar.
     let hasMargin = insetViewController?.hasMargin ?? false

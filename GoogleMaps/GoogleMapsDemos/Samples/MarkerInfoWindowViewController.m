@@ -104,7 +104,7 @@
                                                       message:message
                                                      delegate:nil
                                             cancelButtonTitle:nil
-                                            otherButtonTitles:nil, nil];
+                                            otherButtonTitles:nil];
   [alertView show];
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];

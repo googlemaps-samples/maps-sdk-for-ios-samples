@@ -24,8 +24,8 @@
 /* The default height of a UISearchBar. */
 static CGFloat kSearchBarHeight = 44.0f;
 
-@interface AutocompleteWithSearchDisplayController ()<GMSAutocompleteTableDataSourceDelegate,
-                                                      UISearchDisplayDelegate>
+@interface AutocompleteWithSearchDisplayController () <GMSAutocompleteTableDataSourceDelegate,
+                                                       UISearchDisplayDelegate>
 @end
 
 @implementation AutocompleteWithSearchDisplayController {

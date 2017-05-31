@@ -43,7 +43,7 @@
 
 - (CLLocationCoordinate2D)next {
   ++_target;
-  if (_target == [_path count]) {
+  if (_target == _path.count) {
     _target = 0;
   }
   return [_path coordinateAtIndex:_target];

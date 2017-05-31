@@ -27,6 +27,7 @@
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithSearchViewController.h"
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithTextFieldController.h"
 #import "GooglePlacesDemos/Samples/PhotosViewController.h"
+#import "GooglePlacesDemos/Samples/PlacePickerViewController.h"
 
 @implementation Demo {
   Class _viewControllerClass;
@@ -44,6 +45,7 @@
     (UISplitViewController *)splitViewController {
   // Construct the demo view controller.
   UIViewController *demoViewController = [[_viewControllerClass alloc] init];
+
   // Configure its left bar button item to display the displayModeButtonItem provided by the
   // splitViewController.
   demoViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
@@ -85,6 +87,7 @@
 
     NSArray<Demo *> *otherDemos = @[
       [[Demo alloc] initWithViewControllerClass:[PhotosViewController class]],
+      [[Demo alloc] initWithViewControllerClass:[PlacePickerViewController class]]
     ];
 
 

@@ -44,7 +44,7 @@
 
 - (NSArray *)gradientSpans {
   NSMutableArray *colorSpans = [NSMutableArray array];
-  NSUInteger count = [_trackData count];
+  NSUInteger count = _trackData.count;
   UIColor *prevColor;
   for (NSUInteger i = 0; i < count; i++) {
     NSDictionary *dict = [_trackData objectAtIndex:i];
@@ -74,7 +74,7 @@
   _trackData = [[NSMutableArray alloc] init];
   GMSMutablePath *path = [GMSMutablePath path];
 
-  for (NSUInteger i = 0; i < [json count]; i++) {
+  for (NSUInteger i = 0; i < json.count; i++) {
     NSDictionary *info = [json objectAtIndex:i];
     NSNumber *elevation = [info objectForKey:@"elevation"];
     CLLocationDegrees lat = [[info objectForKey:@"lat"] doubleValue];

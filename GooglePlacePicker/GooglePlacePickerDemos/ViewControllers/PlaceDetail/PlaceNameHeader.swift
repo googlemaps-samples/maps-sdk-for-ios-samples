@@ -58,10 +58,5 @@ class PlaceNameHeader: UITableViewHeaderFooterView {
 
     // Set it as the background.
     backgroundView = background
-
-    if #available(iOS 8.0, *) {
-    } else {
-      placeNameLabel.font = UIFont.systemFont(ofSize: 20)
-    }
   }
 }

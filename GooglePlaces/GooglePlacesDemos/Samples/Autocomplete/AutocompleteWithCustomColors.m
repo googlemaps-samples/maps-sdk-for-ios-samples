@@ -34,7 +34,7 @@ static const CGFloat kButtonHeight = 44.0f;
 @implementation GMSStyledAutocompleteViewController
 @end
 
-@interface AutocompleteWithCustomColors ()<GMSAutocompleteViewControllerDelegate>
+@interface AutocompleteWithCustomColors () <GMSAutocompleteViewControllerDelegate>
 @end
 
 @implementation AutocompleteWithCustomColors {

@@ -22,6 +22,6 @@
  * the list. After first launch if the device transitions from regular to compact it will instead
  * show the demo which is currently open.
  */
-@interface MainSplitViewControllerBehaviorManager : NSObject<UISplitViewControllerDelegate>
+@interface MainSplitViewControllerBehaviorManager : NSObject <UISplitViewControllerDelegate>
 
 @end

@@ -21,7 +21,7 @@
 
 #import <GooglePlaces/GooglePlaces.h>
 
-@interface AutocompleteWithSearchViewController ()<GMSAutocompleteResultsViewControllerDelegate>
+@interface AutocompleteWithSearchViewController () <GMSAutocompleteResultsViewControllerDelegate>
 @end
 
 @implementation AutocompleteWithSearchViewController {
@@ -67,20 +67,13 @@
     _searchController.modalPresentationStyle = UIModalPresentationFullScreen;
   }
 
-  if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_8_0) {
-    NSString *message = NSLocalizedString(
-        @"Demo.Content.iOSVersionNotSupported",
-        @"Error message to display when a demo is not available on the current version of iOS");
-    [super showCustomMessageInResultPane:message];
-  }
-
   [self addResultViewBelow:nil];
 }
 
 #pragma mark - GMSAutocompleteResultsViewControllerDelegate
 
 - (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
- didAutocompleteWithPlace:(GMSPlace *)place {
+    didAutocompleteWithPlace:(GMSPlace *)place {
   // Display the results and dismiss the search controller.
   [_searchController setActive:NO];
   [self autocompleteDidSelectPlace:place];

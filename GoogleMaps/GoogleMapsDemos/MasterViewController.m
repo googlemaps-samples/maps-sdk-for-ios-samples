@@ -81,7 +81,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   NSArray *demosInSection = [_demos objectAtIndex:section];
-  return [demosInSection count];
+  return demosInSection.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

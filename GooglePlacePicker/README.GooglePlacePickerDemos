@@ -2,7 +2,7 @@ GooglePlacePickerDemos contains a demo application showcasing the Place Picker
 from the Google Places API for iOS.
 
 Before starting, please note that this demo is directed towards a technical
-audience. You'll also need Xcode 8.0 or later, with the iOS SDK 7.0 or later.
+audience. You'll also need Xcode 8.0 or later, with the iOS SDK 10.0 or later.
 
 If you're new to the API, please read the Introduction section of the Google
 Places API for iOS documentation-

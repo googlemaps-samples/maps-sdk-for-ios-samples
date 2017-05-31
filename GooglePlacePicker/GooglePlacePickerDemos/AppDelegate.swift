@@ -14,8 +14,8 @@
  */
 
 import UIKit
-import GooglePlaces
 import GoogleMaps
+import GooglePlaces
 
 /// Application delegate for the PlacePicker demo app.
 @UIApplicationMain
@@ -51,17 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let rootViewController = PickAPlaceViewController()
     let splitPaneViewController = SplitPaneViewController(rootViewController: rootViewController)
 
-    // If we're on iOS 8 or above wrap the split pane controller in a inset controller to get the
-    // map displaying behind our content on iPad devices.
-    if #available(iOS 8.0, *) {
-      let mapController = BackgroundMapViewController()
-      rootViewController.mapViewController = mapController
-      let insetController = InsetViewController(backgroundViewController: mapController,
-                                                contentViewController: splitPaneViewController)
-      window.rootViewController = insetController
-    } else {
-      window.rootViewController = splitPaneViewController
-    }
+    // Wrap the split pane controller in a inset controller to get the map displaying behind our
+    // content on iPad devices.
+    let mapController = BackgroundMapViewController()
+    rootViewController.mapViewController = mapController
+    let insetController = InsetViewController(backgroundViewController: mapController,
+                                              contentViewController: splitPaneViewController)
+    window.rootViewController = insetController
 
     // Make the window visible and allow the app to continue initialization.
     window.makeKeyAndVisible()
