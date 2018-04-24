@@ -13,10 +13,6 @@
  * permissions and limitations under the License.
  */
 
-#if !defined(__has_feature) || !__has_feature(objc_arc)
-#error "This file requires ARC support."
-#endif
-
 #import "GoogleMapsDemos/Samples/StyledMapViewController.h"
 
 #import <GoogleMaps/GoogleMaps.h>
@@ -89,7 +85,7 @@ static NSString *const kNoPOIsType = @"No business points of interest, no transi
   _mapView.mapStyle = _retroStyle;
 
   UIBarButtonItem *styleButton = [[UIBarButtonItem alloc] initWithTitle:@"Style"
-                                                                  style:UIBarButtonItemStyleBordered
+                                                                  style:UIBarButtonItemStylePlain
                                                                  target:self
                                                                  action:@selector(changeMapStyle:)];
   self.navigationItem.rightBarButtonItem = styleButton;

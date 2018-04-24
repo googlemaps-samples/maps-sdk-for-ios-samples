@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2017 Google Inc. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -15,8 +15,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <GoogleMaps/GoogleMaps.h>
-
-@interface MyLocationViewController : UIViewController <GMSMapViewDelegate>
+@interface PaddingBehaviorViewController : UIViewController
 
 @end
