@@ -13,17 +13,10 @@
  * permissions and limitations under the License.
  */
 
-#if !defined(__has_feature) || !__has_feature(objc_arc)
-#error "This file requires ARC support."
-#endif
-
 #import "GooglePlacesDemos/Samples/PlacePickerViewController.h"
 
 #import <GooglePlacePicker/GooglePlacePicker.h>
 #import <GooglePlaces/GooglePlaces.h>
-
-/** Height of buttons in this controller's UI */
-static const CGFloat kButtonHeight = 44.0f;
 
 @interface PlacePickerViewController () <GMSPlacePickerViewControllerDelegate>
 @end
@@ -57,39 +50,77 @@ static const CGFloat kButtonHeight = 44.0f;
       NSLocalizedString(@"Demo.Content.PlacePicker.ViewController.Modal",
                         @"Button title for the 'Modal' view of the place picker.");
 
-  CGFloat nextControlY = 70.0f;
   UIButton *popoverButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [popoverButton setTitle:titlePopover forState:UIControlStateNormal];
-  popoverButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  popoverButton.autoresizingMask =
-      UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
   [popoverButton addTarget:self
                     action:@selector(showPlacePickerInPopover:)
           forControlEvents:UIControlEventTouchUpInside];
-  nextControlY += kButtonHeight;
+  popoverButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:popoverButton];
+  [NSLayoutConstraint constraintWithItem:popoverButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.topLayoutGuide
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:popoverButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:8]
+      .active = YES;
 
   UIButton *navigationButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [navigationButton setTitle:titleNavigation forState:UIControlStateNormal];
-  navigationButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  navigationButton.autoresizingMask =
-      UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
   [navigationButton addTarget:self
                        action:@selector(showPlacePickerOnNavigationStack)
              forControlEvents:UIControlEventTouchUpInside];
-  nextControlY += kButtonHeight;
+  navigationButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:navigationButton];
+  [NSLayoutConstraint constraintWithItem:navigationButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:popoverButton
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:navigationButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:8]
+      .active = YES;
 
   UIButton *modalButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [modalButton setTitle:titleModal forState:UIControlStateNormal];
-  modalButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  modalButton.autoresizingMask =
-      UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
   [modalButton addTarget:self
                   action:@selector(showPlacePickerModally)
         forControlEvents:UIControlEventTouchUpInside];
-
-  [self.view addSubview:popoverButton];
-  [self.view addSubview:navigationButton];
+  modalButton.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:modalButton];
+  [NSLayoutConstraint constraintWithItem:modalButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:navigationButton
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:modalButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:8]
+      .active = YES;
 }
 
 - (void)showPlacePickerInPopover:(UIButton *)button {

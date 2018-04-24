@@ -13,16 +13,9 @@
  * permissions and limitations under the License.
  */
 
-#if !defined(__has_feature) || !__has_feature(objc_arc)
-#error "This file requires ARC support."
-#endif
-
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithCustomColors.h"
 
 #import <GooglePlaces/GooglePlaces.h>
-
-/** Height of buttons in this controller's UI */
-static const CGFloat kButtonHeight = 44.0f;
 
 /**
  * Simple subclass of GMSAutocompleteViewController solely for the purpose of localising appearance
@@ -37,22 +30,7 @@ static const CGFloat kButtonHeight = 44.0f;
 @interface AutocompleteWithCustomColors () <GMSAutocompleteViewControllerDelegate>
 @end
 
-@implementation AutocompleteWithCustomColors {
-  UIButton *_brownThemeButton;
-  UIButton *_blackThemeButton;
-  UIButton *_blueThemeButton;
-  UIButton *_hotDogThemeButton;
-
-  UIColor *_backgroundColor;
-  UIColor *_darkBackgroundColor;
-  UIColor *_primaryTextColor;
-  UIColor *_highlightColor;
-  UIColor *_secondaryColor;
-  UIColor *_separatorColor;
-  UIColor *_tintColor;
-  UIColor *_searchBarTintColor;
-  UIColor *_selectedTableCellBackgroundColor;
-}
+@implementation AutocompleteWithCustomColors
 
 + (NSString *)demoTitle {
   return NSLocalizedString(
@@ -78,135 +56,231 @@ static const CGFloat kButtonHeight = 44.0f;
       NSLocalizedString(@"Demo.Content.Autocomplete.Styling.Colors.HotDogStand",
                         @"Button title for the 'Hot Dog Stand' styled autocomplete widget.");
 
-  CGFloat nextControlY = 70.0f;
-  _brownThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_brownThemeButton setTitle:titleYellowAndBrown forState:UIControlStateNormal];
-  _brownThemeButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  _brownThemeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [_brownThemeButton addTarget:self
-                        action:@selector(didTapButton:)
-              forControlEvents:UIControlEventTouchUpInside];
-  nextControlY += kButtonHeight;
-
-  _blackThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_blackThemeButton setTitle:titleWhiteOnBlack forState:UIControlStateNormal];
-  _blackThemeButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  _blackThemeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [_blackThemeButton addTarget:self
-                        action:@selector(didTapButton:)
-              forControlEvents:UIControlEventTouchUpInside];
-  nextControlY += kButtonHeight;
-
-  _blueThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_blueThemeButton setTitle:titleBlueColors forState:UIControlStateNormal];
-  _blueThemeButton.frame = CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  _blueThemeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [_blueThemeButton addTarget:self
-                       action:@selector(didTapButton:)
+  UIButton *brownThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [brownThemeButton setTitle:titleYellowAndBrown forState:UIControlStateNormal];
+  [brownThemeButton addTarget:self
+                       action:@selector(openBrownTheme:)
              forControlEvents:UIControlEventTouchUpInside];
-  nextControlY += kButtonHeight;
+  brownThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:brownThemeButton];
+  [NSLayoutConstraint constraintWithItem:brownThemeButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.topLayoutGuide
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:brownThemeButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:0]
+      .active = YES;
 
-  _hotDogThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_hotDogThemeButton setTitle:titleHotDogStand forState:UIControlStateNormal];
-  _hotDogThemeButton.frame =
-      CGRectMake(0, nextControlY, self.view.bounds.size.width, kButtonHeight);
-  _hotDogThemeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [_hotDogThemeButton addTarget:self
-                         action:@selector(didTapButton:)
-               forControlEvents:UIControlEventTouchUpInside];
+  UIButton *blackThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [blackThemeButton setTitle:titleWhiteOnBlack forState:UIControlStateNormal];
+  [blackThemeButton addTarget:self
+                       action:@selector(openBlackTheme:)
+             forControlEvents:UIControlEventTouchUpInside];
+  blackThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:blackThemeButton];
+  [NSLayoutConstraint constraintWithItem:blackThemeButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:brownThemeButton
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:blackThemeButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:0]
+      .active = YES;
 
-  [self.view addSubview:_brownThemeButton];
-  [self.view addSubview:_blackThemeButton];
-  [self.view addSubview:_blueThemeButton];
-  [self.view addSubview:_hotDogThemeButton];
+  UIButton *blueThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [blueThemeButton setTitle:titleBlueColors forState:UIControlStateNormal];
+  [blueThemeButton addTarget:self
+                      action:@selector(openBlueTheme:)
+            forControlEvents:UIControlEventTouchUpInside];
+  blueThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:blueThemeButton];
+  [NSLayoutConstraint constraintWithItem:blueThemeButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:blackThemeButton
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:blueThemeButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:0]
+      .active = YES;
 
-  [self addResultViewBelow:_hotDogThemeButton];
+  UIButton *hotDogThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [hotDogThemeButton setTitle:titleHotDogStand forState:UIControlStateNormal];
+  [hotDogThemeButton addTarget:self
+                        action:@selector(openHotDogTheme:)
+              forControlEvents:UIControlEventTouchUpInside];
+  hotDogThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.view addSubview:hotDogThemeButton];
+  [NSLayoutConstraint constraintWithItem:hotDogThemeButton
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:blueThemeButton
+                               attribute:NSLayoutAttributeBottom
+                              multiplier:1
+                                constant:8]
+      .active = YES;
+  [NSLayoutConstraint constraintWithItem:hotDogThemeButton
+                               attribute:NSLayoutAttributeCenterX
+                               relatedBy:NSLayoutRelationEqual
+                                  toItem:self.view
+                               attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                                constant:0]
+      .active = YES;
+
+  [self addResultViewBelow:hotDogThemeButton];
 
   self.definesPresentationContext = YES;
 }
 
-- (void)didTapButton:(UIButton *)button {
-  if (button == _brownThemeButton) {
-    _backgroundColor = [UIColor colorWithRed:215.0f / 255.0f
-                                       green:204.0f / 255.0f
-                                        blue:200.0f / 255.0f
-                                       alpha:1.0f];
-    _selectedTableCellBackgroundColor = [UIColor colorWithRed:236.0f / 255.0f
-                                                        green:225.0f / 255.0f
-                                                         blue:220.0f / 255.0f
-                                                        alpha:1.0f];
-    _darkBackgroundColor =
-        [UIColor colorWithRed:93.0f / 255.0f green:64.0f / 255.0f blue:55.0f / 255.0f alpha:1.0f];
-    _primaryTextColor = [UIColor colorWithWhite:0.33f alpha:1.0f];
+- (void)openBrownTheme:(UIButton *)button {
+  UIColor *backgroundColor =
+      [UIColor colorWithRed:215.0f / 255.0f green:204.0f / 255.0f blue:200.0f / 255.0f alpha:1.0f];
+  UIColor *selectedTableCellBackgroundColor =
+      [UIColor colorWithRed:236.0f / 255.0f green:225.0f / 255.0f blue:220.0f / 255.0f alpha:1.0f];
+  UIColor *darkBackgroundColor =
+      [UIColor colorWithRed:93.0f / 255.0f green:64.0f / 255.0f blue:55.0f / 255.0f alpha:1.0f];
+  UIColor *primaryTextColor = [UIColor colorWithWhite:0.33f alpha:1.0f];
 
-    _highlightColor =
-        [UIColor colorWithRed:255.0f / 255.0f green:235.0f / 255.0f blue:0.0f / 255.0f alpha:1.0f];
-    _secondaryColor = [UIColor colorWithWhite:114.0f / 255.0f alpha:1.0f];
-    _tintColor = [UIColor colorWithRed:219 / 255.0f green:207 / 255.0f blue:28 / 255.0f alpha:1.0f];
-    _searchBarTintColor = [UIColor yellowColor];
-    _separatorColor = [UIColor colorWithWhite:182.0f / 255.0f alpha:1.0f];
-  } else if (button == _blueThemeButton) {
-    _backgroundColor = [UIColor colorWithRed:225.0f / 255.0f
-                                       green:241.0f / 255.0f
-                                        blue:252.0f / 255.0f
-                                       alpha:1.0f];
-    _selectedTableCellBackgroundColor = [UIColor colorWithRed:213.0f / 255.0f
-                                                        green:219.0f / 255.0f
-                                                         blue:230.0f / 255.0f
-                                                        alpha:1.0f];
-    _darkBackgroundColor = [UIColor colorWithRed:187.0f / 255.0f
-                                           green:222.0f / 255.0f
-                                            blue:248.0f / 255.0f
-                                           alpha:1.0f];
-    _primaryTextColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
-    _highlightColor =
-        [UIColor colorWithRed:76.0f / 255.0f green:175.0f / 255.0f blue:248.0f / 255.0f alpha:1.0f];
-    _secondaryColor = [UIColor colorWithWhite:0.5f alpha:0.65f];
-    _tintColor =
-        [UIColor colorWithRed:0 / 255.0f green:142 / 255.0f blue:248.0f / 255.0f alpha:1.0f];
-    _searchBarTintColor = _tintColor;
-    _separatorColor = [UIColor colorWithWhite:0.5f alpha:0.65f];
-  } else if (button == _blackThemeButton) {
-    _backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f];
-    _selectedTableCellBackgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
-    _darkBackgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    _primaryTextColor = [UIColor whiteColor];
-    _highlightColor = [UIColor colorWithRed:0.75f green:1.0f blue:0.75f alpha:1.0f];
-    _secondaryColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
-    _tintColor = [UIColor whiteColor];
-    _searchBarTintColor = _tintColor;
-    _separatorColor = [UIColor colorWithRed:0.5f green:0.75f blue:0.5f alpha:0.30f];
-  } else if (button == _hotDogThemeButton) {
-    _backgroundColor = [UIColor yellowColor];
-    _selectedTableCellBackgroundColor = [UIColor whiteColor];
-    _darkBackgroundColor = [UIColor redColor];
-    _primaryTextColor = [UIColor blackColor];
-    _highlightColor = [UIColor redColor];
-    _secondaryColor = [UIColor colorWithWhite:0.0f alpha:0.6f];
-    _tintColor = [UIColor redColor];
-    _searchBarTintColor = [UIColor whiteColor];
-    _separatorColor = [UIColor redColor];
-  }
-  [self presentAutocompleteController];
+  UIColor *highlightColor =
+      [UIColor colorWithRed:255.0f / 255.0f green:235.0f / 255.0f blue:0.0f / 255.0f alpha:1.0f];
+  UIColor *secondaryColor = [UIColor colorWithWhite:114.0f / 255.0f alpha:1.0f];
+  UIColor *tintColor =
+      [UIColor colorWithRed:219 / 255.0f green:207 / 255.0f blue:28 / 255.0f alpha:1.0f];
+  UIColor *searchBarTintColor = [UIColor yellowColor];
+  UIColor *separatorColor = [UIColor colorWithWhite:182.0f / 255.0f alpha:1.0f];
+
+  [self presentAutocompleteControllerWithBackgroundColor:backgroundColor
+                        selectedTableCellBackgroundColor:selectedTableCellBackgroundColor
+                                     darkBackgroundColor:darkBackgroundColor
+                                        primaryTextColor:primaryTextColor
+                                          highlightColor:highlightColor
+                                          secondaryColor:secondaryColor
+                                               tintColor:tintColor
+                                      searchBarTintColor:searchBarTintColor
+                                          separatorColor:separatorColor];
 }
 
-- (void)presentAutocompleteController {
+- (void)openBlueTheme:(UIButton *)button {
+  UIColor *backgroundColor =
+      [UIColor colorWithRed:225.0f / 255.0f green:241.0f / 255.0f blue:252.0f / 255.0f alpha:1.0f];
+  UIColor *selectedTableCellBackgroundColor =
+      [UIColor colorWithRed:213.0f / 255.0f green:219.0f / 255.0f blue:230.0f / 255.0f alpha:1.0f];
+  UIColor *darkBackgroundColor =
+      [UIColor colorWithRed:187.0f / 255.0f green:222.0f / 255.0f blue:248.0f / 255.0f alpha:1.0f];
+  UIColor *primaryTextColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+  UIColor *highlightColor =
+      [UIColor colorWithRed:76.0f / 255.0f green:175.0f / 255.0f blue:248.0f / 255.0f alpha:1.0f];
+  UIColor *secondaryColor = [UIColor colorWithWhite:0.5f alpha:0.65f];
+  UIColor *tintColor =
+      [UIColor colorWithRed:0 / 255.0f green:142 / 255.0f blue:248.0f / 255.0f alpha:1.0f];
+  UIColor *searchBarTintColor = tintColor;
+  UIColor *separatorColor = [UIColor colorWithWhite:0.5f alpha:0.65f];
+
+  [self presentAutocompleteControllerWithBackgroundColor:backgroundColor
+                        selectedTableCellBackgroundColor:selectedTableCellBackgroundColor
+                                     darkBackgroundColor:darkBackgroundColor
+                                        primaryTextColor:primaryTextColor
+                                          highlightColor:highlightColor
+                                          secondaryColor:secondaryColor
+                                               tintColor:tintColor
+                                      searchBarTintColor:searchBarTintColor
+                                          separatorColor:separatorColor];
+}
+
+- (void)openBlackTheme:(UIButton *)button {
+  UIColor *backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f];
+  UIColor *selectedTableCellBackgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
+  UIColor *darkBackgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+  UIColor *primaryTextColor = [UIColor whiteColor];
+  UIColor *highlightColor = [UIColor colorWithRed:0.75f green:1.0f blue:0.75f alpha:1.0f];
+  UIColor *secondaryColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
+  UIColor *tintColor = [UIColor whiteColor];
+  UIColor *searchBarTintColor = tintColor;
+  UIColor *separatorColor = [UIColor colorWithRed:0.5f green:0.75f blue:0.5f alpha:0.30f];
+
+  [self presentAutocompleteControllerWithBackgroundColor:backgroundColor
+                        selectedTableCellBackgroundColor:selectedTableCellBackgroundColor
+                                     darkBackgroundColor:darkBackgroundColor
+                                        primaryTextColor:primaryTextColor
+                                          highlightColor:highlightColor
+                                          secondaryColor:secondaryColor
+                                               tintColor:tintColor
+                                      searchBarTintColor:searchBarTintColor
+                                          separatorColor:separatorColor];
+}
+
+- (void)openHotDogTheme:(UIButton *)button {
+  UIColor *backgroundColor = [UIColor yellowColor];
+  UIColor *selectedTableCellBackgroundColor = [UIColor whiteColor];
+  UIColor *darkBackgroundColor = [UIColor redColor];
+  UIColor *primaryTextColor = [UIColor blackColor];
+  UIColor *highlightColor = [UIColor redColor];
+  UIColor *secondaryColor = [UIColor colorWithWhite:0.0f alpha:0.6f];
+  UIColor *tintColor = [UIColor redColor];
+  UIColor *searchBarTintColor = [UIColor whiteColor];
+  UIColor *separatorColor = [UIColor redColor];
+
+  [self presentAutocompleteControllerWithBackgroundColor:backgroundColor
+                        selectedTableCellBackgroundColor:selectedTableCellBackgroundColor
+                                     darkBackgroundColor:darkBackgroundColor
+                                        primaryTextColor:primaryTextColor
+                                          highlightColor:highlightColor
+                                          secondaryColor:secondaryColor
+                                               tintColor:tintColor
+                                      searchBarTintColor:searchBarTintColor
+                                          separatorColor:separatorColor];
+}
+
+- (void)presentAutocompleteControllerWithBackgroundColor:(UIColor *)backgroundColor
+                        selectedTableCellBackgroundColor:(UIColor *)selectedTableCellBackgroundColor
+                                     darkBackgroundColor:(UIColor *)darkBackgroundColor
+                                        primaryTextColor:(UIColor *)primaryTextColor
+                                          highlightColor:(UIColor *)highlightColor
+                                          secondaryColor:(UIColor *)secondaryColor
+                                               tintColor:(UIColor *)tintColor
+                                      searchBarTintColor:(UIColor *)searchBarTintColor
+                                          separatorColor:(UIColor *)separatorColor {
   // Use UIAppearance proxies to change the appearance of UI controls in
   // GMSAutocompleteViewController. Here we use appearanceWhenContainedIn to localise changes to
   // just this part of the Demo app. This will generally not be necessary in a real application as
   // you will probably want the same theme to apply to all elements in your app.
   UIActivityIndicatorView *appearence = [UIActivityIndicatorView
       appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil];
-  [appearence setColor:_primaryTextColor];
+  [appearence setColor:primaryTextColor];
 
   [[UINavigationBar appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
-      setBarTintColor:_darkBackgroundColor];
+      setBarTintColor:darkBackgroundColor];
   [[UINavigationBar appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
-      setTintColor:_searchBarTintColor];
+      setTintColor:searchBarTintColor];
 
   // Color of typed text in search bar.
   NSDictionary *searchBarTextAttributes = @{
-    NSForegroundColorAttributeName : _searchBarTintColor,
+    NSForegroundColorAttributeName : searchBarTintColor,
     NSFontAttributeName : [UIFont systemFontOfSize:[UIFont systemFontSize]]
   };
   [[UITextField appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
@@ -214,8 +288,8 @@ static const CGFloat kButtonHeight = 44.0f;
 
   // Color of the "Search" placeholder text in search bar. For this example, we'll make it the same
   // as the bar tint color but with added transparency.
-  CGFloat increasedAlpha = CGColorGetAlpha(_searchBarTintColor.CGColor) * 0.75f;
-  UIColor *placeHolderColor = [_searchBarTintColor colorWithAlphaComponent:increasedAlpha];
+  CGFloat increasedAlpha = CGColorGetAlpha(searchBarTintColor.CGColor) * 0.75f;
+  UIColor *placeHolderColor = [searchBarTintColor colorWithAlphaComponent:increasedAlpha];
 
   NSDictionary *placeholderAttributes = @{
     NSForegroundColorAttributeName : placeHolderColor,
@@ -229,7 +303,7 @@ static const CGFloat kButtonHeight = 44.0f;
 
   // Change the background color of selected table cells.
   UIView *selectedBackgroundView = [[UIView alloc] init];
-  selectedBackgroundView.backgroundColor = _selectedTableCellBackgroundColor;
+  selectedBackgroundView.backgroundColor = selectedTableCellBackgroundColor;
   id tableCellAppearance =
       [UITableViewCell appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil];
   [tableCellAppearance setSelectedBackgroundView:selectedBackgroundView];
@@ -240,12 +314,12 @@ static const CGFloat kButtonHeight = 44.0f;
 
   GMSAutocompleteViewController *acController = [[GMSStyledAutocompleteViewController alloc] init];
   acController.delegate = self;
-  acController.tableCellBackgroundColor = _backgroundColor;
-  acController.tableCellSeparatorColor = _separatorColor;
-  acController.primaryTextColor = _primaryTextColor;
-  acController.primaryTextHighlightColor = _highlightColor;
-  acController.secondaryTextColor = _secondaryColor;
-  acController.tintColor = _tintColor;
+  acController.tableCellBackgroundColor = backgroundColor;
+  acController.tableCellSeparatorColor = separatorColor;
+  acController.primaryTextColor = primaryTextColor;
+  acController.primaryTextHighlightColor = highlightColor;
+  acController.secondaryTextColor = secondaryColor;
+  acController.tintColor = tintColor;
 
   [self presentViewController:acController animated:YES completion:nil];
 }
