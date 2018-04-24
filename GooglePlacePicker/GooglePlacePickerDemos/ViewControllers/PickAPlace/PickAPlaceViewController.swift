@@ -21,6 +21,7 @@ import GooglePlacePicker
 class PickAPlaceViewController: UIViewController {
   @IBOutlet private weak var pickAPlaceButton: UIButton!
   @IBOutlet weak var buildNumberLabel: UILabel!
+  @IBOutlet var containerView: UIView!
   var mapViewController: BackgroundMapViewController?
 
   init() {
@@ -39,10 +40,31 @@ class PickAPlaceViewController: UIViewController {
 
     // Configure our view.
     view.backgroundColor = Colors.blue1
+    containerView.backgroundColor = Colors.blue1
     view.clipsToBounds = true
 
     // Set the build number.
     buildNumberLabel.text = "Places API Build: \(GMSPlacesClient.sdkVersion())"
+
+    // Setup the constraint between the container and the layout guides to be consistant with
+    // LaunchScreen.storyboard. Because this view controller uses XIB rather than storyboard files
+    // this cannot be done in interface builder.
+    NSLayoutConstraint(item: containerView,
+                       attribute: .top,
+                       relatedBy: .equal,
+                       toItem: topLayoutGuide,
+                       attribute: .bottom,
+                       multiplier: 1,
+                       constant: 0)
+      .isActive = true
+    NSLayoutConstraint(item: bottomLayoutGuide,
+                       attribute: .top,
+                       relatedBy: .equal,
+                       toItem: containerView,
+                       attribute: .bottom,
+                       multiplier: 1,
+                       constant: 0)
+      .isActive = true
   }
 
   @IBAction func buttonTapped() {
