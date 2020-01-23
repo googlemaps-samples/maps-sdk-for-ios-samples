@@ -1,4 +1,5 @@
 # Xcode
+.DS_Store
 
 ## Build generated
 build/
