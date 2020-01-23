@@ -79,10 +79,10 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    // Print place info to the console.
-    print("Place name: \(place.name)")
-    print("Place address: \(place.formattedAddress)")
-    print("Place attributions: \(place.attributions)")
+    // Print place info to the console
+    print("Place name: \(place.name ?? "")")
+    print("Place address: \(place.formattedAddress ?? "")")
+    print("Place attributions: \(String(describing: place.attributions))")
 
     // Get the address components.
     if let addressLines = place.addressComponents {
