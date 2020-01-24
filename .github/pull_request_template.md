@@ -1,7 +1,11 @@
-**NOTE: We are not accepting external contributions at this time.**
+Thank you for opening a Pull Request!
 
-If you find a bug or have a feature request related to these samples, please [file an issue](https://github.com/googlemaps/maps-sdk-for-ios-samples/issues).
+---
 
-If you find a bug or have a feature request related to one of the SDKs, you can file an issue on either the
-[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker).or the
-[Places SDK for iOS Issue Tracker](https://issuetracker.google.com/savedsearches/5050150).
+Before submitting your PR, there are a few things you can do to make sure it goes smoothly:
+- [ ] Make sure to open a GitHub issue as a bug/feature request before writing your code!  That way we can discuss the change, evaluate designs, and agree on the general idea
+- [ ] Ensure the tests and linter pass
+- [ ] Code coverage does not decrease (if any source code was changed)
+- [ ] Appropriate docs were updated (if necessary)
+
+Fixes #<issue_number_goes_here> 🦕
