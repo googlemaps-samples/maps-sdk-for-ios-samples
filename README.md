@@ -40,10 +40,17 @@ documentation, such as
 [Adding a Map with a Marker](https://developers.google.com/maps/documentation/ios-sdk/map-with-marker),
 and more. Follow the tutorials for a quick guide to using the SDK.
 
-## Issues
+## Support
 
-If you have concerns with the code in this repository, please raise a issue using the 
-[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker) or 
+**NOTE**: _We are not accepting external contributions at this time._
+
+If you find a bug or have a feature request related to these samples, please [file an issue](https://github.com/googlemaps/maps-sdk-for-ios-samples/issues).
+
+If you find a bug or have a feature request related to one of the SDKs, you can file an issue on either the
+[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker).or the
 [Places SDK for iOS Issue Tracker](https://issuetracker.google.com/savedsearches/5050150).
+
+You can also discover additional support services for the Google Maps Platform, including developer communities,
+technical guidance, and expert support at the Google Maps Platform [support resources page](https://developers.google.com/maps/support/).
 
 Thanks!
