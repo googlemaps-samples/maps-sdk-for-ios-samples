@@ -13,12 +13,14 @@
  * permissions and limitations under the License.
  */
 
-import CoreGraphics
+#import <UIKit/UIKit.h>
 
-extension CGRect {
-  var center: CGPoint {
-    get {
-      return CGPoint(x: origin.x+size.width/2, y: origin.y+size.height/2)
-    }
-  }
-}
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIViewController (GMSToastMessages)
+
+- (void)gms_showToastWithMessage:(NSString*)message;
+
+@end
+
+NS_ASSUME_NONNULL_END

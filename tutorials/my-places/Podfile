@@ -1,7 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-  target 'my-places' do
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
-  pod 'Firebase/Database'
-end

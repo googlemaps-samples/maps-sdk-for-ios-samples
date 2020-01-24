@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All rights reserved.
+ * Copyright 2019 Google Inc. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -13,26 +13,13 @@
  * permissions and limitations under the License.
  */
 
-import UIKit
-import GoogleMaps
-import GooglePlaces
-import Firebase
+#import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+/**
+ * Demo that exposes the findPlaceLikelihoodsForLocation API.
+ */
+@interface FindPlaceLikelihoodListViewController
+    : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
-  var window: UIWindow?
-
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-    GMSPlacesClient.provideAPIKey("YOUR-API-KEY")
-    GMSServices.provideAPIKey("YOUR-API-KEY")
-
-    FirebaseApp.configure()
-
-    return true
-  }
-
-}
-
+@end

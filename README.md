@@ -33,21 +33,6 @@ You will need to add an API Key to `GooglePlacesDemos/SDKDemoAPIKey.h`. Please s
 [documentation](https://developers.google.com/places/ios-api/start#get-key)
 for details on how to get an API Key.
 
-## GooglePlacePicker
-
-The `GooglePlacePicker` sub-directory contains the sample code that is 
-downloaded when you run `pod try GooglePlacePicker`. To use this project:
-
-```
-$ cd GooglePlacePicker
-$ pod install
-$ open GooglePlacePickerDemos.xcworkspace
-```
-
-You will need to add an API Key to `GooglePlacePickerDemos/SDKDemoAPIKey.swift`. Please see the
-[documentation](https://developers.google.com/places/ios-api/start#get-key)
-for details on how to get an API Key.
-
 ## Tutorials
 
 The `tutorials` sub-directory contains sample code that accompanies tutorials in the developer
@@ -58,6 +43,7 @@ and more. Follow the tutorials for a quick guide to using the SDK.
 ## Issues
 
 If you have concerns with the code in this repository, please raise a issue using the 
-[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker).
+[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker) or 
+[Places SDK for iOS Issue Tracker](https://issuetracker.google.com/savedsearches/5050150).
 
 Thanks!
