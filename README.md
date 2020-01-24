@@ -43,6 +43,7 @@ and more. Follow the tutorials for a quick guide to using the SDK.
 ## Issues
 
 If you have concerns with the code in this repository, please raise a issue using the 
-[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker).
+[Google Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker) or 
+[Places SDK for iOS Issue Tracker](https://issuetracker.google.com/savedsearches/5050150).
 
 Thanks!
