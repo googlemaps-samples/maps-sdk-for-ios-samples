@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All rights reserved.
+ * Copyright 2017 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -95,19 +95,18 @@ static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
   CGPoint point = self.view.bounds.origin;
   [UIView animateWithDuration:2.0
                    animations:^{
-                     if (_hasShrunk) {
-                       _mapView.frame = self.view.bounds;
-                       _panoramaView.frame = _mapView.frame;
+                     if (self->_hasShrunk) {
+                       self->_mapView.frame = self.view.bounds;
+                       self->_panoramaView.frame = self->_mapView.frame;
                      } else {
-                       _mapView.frame =
+                       self->_mapView.frame =
                            CGRectMake(point.x, point.y, size.width / 2, size.height / 2);
-                       _panoramaView.frame = _mapView.frame;
+                       self->_panoramaView.frame = self->_mapView.frame;
                      }
-                     _hasShrunk = !_hasShrunk;
+                     self->_hasShrunk = !self->_hasShrunk;
                      [self.view setNeedsLayout];
                      [self.view layoutIfNeeded];
                    }];
-
 }
 
 - (void)toggleViewType {

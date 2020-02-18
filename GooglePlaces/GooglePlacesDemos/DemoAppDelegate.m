@@ -15,21 +15,16 @@
 
 #import "GooglePlacesDemos/DemoAppDelegate.h"
 
-#import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
-
 #import "GooglePlacesDemos/DemoData.h"
 #import "GooglePlacesDemos/DemoListViewController.h"
 #import "GooglePlacesDemos/SDKDemoAPIKey.h"
-#import "GooglePlacesDemos/Support/MainSplitViewControllerBehaviorManager.h"
 
-@implementation DemoAppDelegate {
-  MainSplitViewControllerBehaviorManager *_splitViewManager;
-}
+@implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  NSLog(@"Build version: %d", __apple_build_version__);
+  NSLog(@"Build version: %s", __VERSION__);
 
   // Do a quick check to see if you've provided an API key, in a real app you wouldn't need this but
   // for the demo it means we can provide a better error message.
@@ -43,17 +38,12 @@
                                  userInfo:nil];
   }
 
-  // Provide the Places API with your API key.
+  // Provide the Places SDK with your API key.
   [GMSPlacesClient provideAPIKey:kAPIKey];
-  // Provide the Maps API with your API key. You may not need this in your app, however we do need
-  // this for the demo app as it uses Maps.
-  [GMSServices provideAPIKey:kAPIKey];
 
   // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for
   // a demo.
-  NSLog(@"Google Maps open source licenses:\n%@", [GMSServices openSourceLicenseInfo]);
   NSLog(@"Google Places open source licenses:\n%@", [GMSPlacesClient openSourceLicenseInfo]);
-
 
   // Manually create a window. If you are using a storyboard in your own app you can ignore the rest
   // of this method.
@@ -65,16 +55,7 @@
       [[DemoListViewController alloc] initWithDemoData:demoData];
   UINavigationController *masterNavigationController =
       [[UINavigationController alloc] initWithRootViewController:masterViewController];
-
-  _splitViewManager = [[MainSplitViewControllerBehaviorManager alloc] init];
-
-  // Setup the split view controller.
-  UISplitViewController *splitViewController = [[UISplitViewController alloc] init];
-  UIViewController *detailViewController =
-      [demoData.firstDemo createViewControllerForSplitView:splitViewController];
-  splitViewController.delegate = _splitViewManager;
-  splitViewController.viewControllers = @[ masterNavigationController, detailViewController ];
-  self.window.rootViewController = splitViewController;
+  self.window.rootViewController = masterNavigationController;
 
   [self.window makeKeyAndVisible];
 

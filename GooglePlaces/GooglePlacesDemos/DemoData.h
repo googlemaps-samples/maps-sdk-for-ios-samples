@@ -15,6 +15,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import <GooglePlaces/GooglePlaces.h>
+
 /*
  * This file contains a set of data objects which represent the list of demos which are provided by
  * this sample app.
@@ -43,10 +45,12 @@
  * Construct and return a new UIViewController instance which contains the view to present when the
  * demo is selected from the list.
  *
- * @param splitViewController The |UISplitViewController| in which the demo will be presented. NOTE:
- * This may be nil.
+ * @param autocompleteFilter The |GMSAutocompleteFilter| that filters on types and countries.
+ * @param placeField The |GMSPlaceField| to request individual fields for the |GMSPlace| result.
  */
-- (UIViewController *)createViewControllerForSplitView:(UISplitViewController *)splitViewController;
+- (UIViewController *)createViewControllerWithAutocompleteFilter:
+                          (GMSAutocompleteFilter *)autocompleteFilter
+                                                     placeFields:(GMSPlaceField)placeField;
 
 @end
 

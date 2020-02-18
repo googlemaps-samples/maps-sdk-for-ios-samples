@@ -2,6 +2,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'GooglePlacesDemos' do
     platform :ios, '9.0'
-    pod 'GooglePlaces', '= 3.7.0'
-    pod 'GoogleMaps', '= 3.7.0'
+    pod 'GooglePlaces', '= 3.8.0'
+    pod 'GoogleMaps', '= 3.8.0'
 end

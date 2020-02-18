@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -27,6 +27,16 @@
   GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   mapView.delegate = self; // needed for didTapOverlay delegate method
 
+  self.view = mapView;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+
+  // Create renderer related objects after view appears, so a renderer will be available;
+  // otherwise, behavior is undefined (may result in null ptr derefs).
+  GMSMapView *mapView = (GMSMapView *)self.view;
+
   // Create the first polygon.
   GMSPolygon *polygon = [[GMSPolygon alloc] init];
   polygon.path = [self pathOfNewYorkState];
@@ -45,8 +55,6 @@
   polygon.path = [self pathOfNorthCarolina];
   polygon.fillColor = [UIColor colorWithRed:0 green:0.25 blue:0 alpha:0.5];
   polygon.map = mapView;
-
-  self.view = mapView;
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapOverlay:(GMSOverlay *)overlay {

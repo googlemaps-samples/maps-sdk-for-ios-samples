@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -63,8 +63,8 @@
     // Create a new GMSTileLayer with the new floor choice.
     GMSTileURLConstructor urls = ^(NSUInteger x, NSUInteger y, NSUInteger zoom) {
       NSString *url = [NSString
-          stringWithFormat:@"https://www.gstatic.com/io2010maps/tiles/9/L%zd_%tu_%tu_%tu.png",
-                           floor, zoom, x, y];
+          stringWithFormat:@"https://www.gstatic.com/io2010maps/tiles/9/L%ld_%lu_%lu_%lu.png",
+                           (long)floor, (unsigned long)zoom, (unsigned long)x, (unsigned long)y];
       return [NSURL URLWithString:url];
     };
     _tileLayer = [GMSURLTileLayer tileLayerWithURLConstructor:urls];
