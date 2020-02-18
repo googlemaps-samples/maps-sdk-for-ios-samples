@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -15,6 +15,7 @@
 
 #import "GoogleMapsDemos/Samples/MarkerInfoWindowViewController.h"
 
+#import "GoogleMapsDemos/UIViewController+GMSToastMessages.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface MarkerInfoWindowViewController ()<GMSMapViewDelegate>
@@ -84,27 +85,13 @@
 - (void)mapView:(GMSMapView *)mapView didCloseInfoWindowOfMarker:(GMSMarker *)marker {
   NSString *message =
       [NSString stringWithFormat:@"Info window for marker %@ closed.", marker.title];
-  [self showMessage:message];
+  [self gms_showToastWithMessage:message];
 }
 
 - (void)mapView:(GMSMapView *)mapView didLongPressInfoWindowOfMarker:(GMSMarker *)marker {
   NSString *message =
       [NSString stringWithFormat:@"Info window for marker %@ long pressed.", marker.title];
-  [self showMessage:message];
-}
-
-#pragma mark Private
-
-- (void)showMessage:(NSString *)message {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                      message:message
-                                                     delegate:nil
-                                            cancelButtonTitle:nil
-                                            otherButtonTitles:nil];
-  [alertView show];
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-    [alertView dismissWithClickedButtonIndex:0 animated:YES];
-  });
+  [self gms_showToastWithMessage:message];
 }
 
 @end

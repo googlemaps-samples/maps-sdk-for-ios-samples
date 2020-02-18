@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -21,5 +21,5 @@
  * https://developers.google.com/maps/documentation/ios/start#get-key
  */
 
-#error Register for API Key and insert here. Then delete this line.
-static NSString *const kAPIKey = @"";
+//#error Register for API Key and insert here. Then delete this line.
+static NSString *const kAPIKey = @";ajlksdf";

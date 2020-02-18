@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -73,10 +73,14 @@ static CGFloat randf() {
     double delayInSeconds = (i * 0.25);
     dispatch_time_t popTime =
         dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    __weak __typeof__(self) weakSelf = self;
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-      GMSVisibleRegion region = [_mapView.projection visibleRegion];
-      GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithRegion:region];
-      [self addMarkerInBounds:bounds];
+      __typeof__(self) strongSelf = weakSelf;
+      if (strongSelf) {
+        GMSVisibleRegion region = [strongSelf->_mapView.projection visibleRegion];
+        GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithRegion:region];
+        [strongSelf addMarkerInBounds:bounds];
+      }
     });
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -82,7 +82,7 @@
 - (void)updateStatus {
   _statusTextView.text =
       [NSString stringWithFormat:@"Preferred frame rate: %@",
-                                 [self.class nameForFrameRate:_mapView.preferredFrameRate]];
+                                 [[self class] nameForFrameRate:_mapView.preferredFrameRate]];
 }
 
 @end

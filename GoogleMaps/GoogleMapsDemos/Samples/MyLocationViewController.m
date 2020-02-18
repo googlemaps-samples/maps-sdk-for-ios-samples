@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -42,8 +42,9 @@
   self.view = _mapView;
 
   // Ask for My Location data after the map has already been added to the UI.
+  GMSMapView *mapView = _mapView;
   dispatch_async(dispatch_get_main_queue(), ^{
-    _mapView.myLocationEnabled = YES;
+    mapView.myLocationEnabled = YES;
   });
 }
 
