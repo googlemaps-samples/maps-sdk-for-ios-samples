@@ -30,7 +30,9 @@
 @interface AutocompleteWithCustomColors () <GMSAutocompleteViewControllerDelegate>
 @end
 
-@implementation AutocompleteWithCustomColors
+@implementation AutocompleteWithCustomColors {
+  NSMutableArray<UIButton *> *_themeButtons;
+}
 
 + (NSString *)demoTitle {
   return NSLocalizedString(
@@ -152,9 +154,14 @@
                                 constant:0]
       .active = YES;
 
-  [self addResultViewBelow:hotDogThemeButton];
-
   self.definesPresentationContext = YES;
+
+  // Store the theme buttons into array.
+  _themeButtons = [NSMutableArray array];
+  [_themeButtons addObject:brownThemeButton];
+  [_themeButtons addObject:blackThemeButton];
+  [_themeButtons addObject:blueThemeButton];
+  [_themeButtons addObject:hotDogThemeButton];
 }
 
 - (void)openBrownTheme:(UIButton *)button {
@@ -266,16 +273,18 @@
                                       searchBarTintColor:(UIColor *)searchBarTintColor
                                           separatorColor:(UIColor *)separatorColor {
   // Use UIAppearance proxies to change the appearance of UI controls in
-  // GMSAutocompleteViewController. Here we use appearanceWhenContainedIn to localise changes to
-  // just this part of the Demo app. This will generally not be necessary in a real application as
-  // you will probably want the same theme to apply to all elements in your app.
-  UIActivityIndicatorView *appearence = [UIActivityIndicatorView
-      appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil];
-  [appearence setColor:primaryTextColor];
+  // GMSAutocompleteViewController. Here we use appearanceWhenContainedInInstancesOfClasses to
+  // localise changes to just this part of the Demo app. This will generally not be necessary in a
+  // real application as you will probably want the same theme to apply to all elements in your app.
+  UIActivityIndicatorView *appearance = [UIActivityIndicatorView
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]];
+  [appearance setColor:primaryTextColor];
 
-  [[UINavigationBar appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
+  [[UINavigationBar
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]]
       setBarTintColor:darkBackgroundColor];
-  [[UINavigationBar appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
+  [[UINavigationBar
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]]
       setTintColor:searchBarTintColor];
 
   // Color of typed text in search bar.
@@ -283,7 +292,8 @@
     NSForegroundColorAttributeName : searchBarTintColor,
     NSFontAttributeName : [UIFont systemFontOfSize:[UIFont systemFontSize]]
   };
-  [[UITextField appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
+  [[UITextField
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]]
       setDefaultTextAttributes:searchBarTextAttributes];
 
   // Color of the "Search" placeholder text in search bar. For this example, we'll make it the same
@@ -298,14 +308,15 @@
   NSAttributedString *attributedPlaceholder =
       [[NSAttributedString alloc] initWithString:@"Search" attributes:placeholderAttributes];
 
-  [[UITextField appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil]
+  [[UITextField
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]]
       setAttributedPlaceholder:attributedPlaceholder];
 
   // Change the background color of selected table cells.
   UIView *selectedBackgroundView = [[UIView alloc] init];
   selectedBackgroundView.backgroundColor = selectedTableCellBackgroundColor;
-  id tableCellAppearance =
-      [UITableViewCell appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil];
+  id tableCellAppearance = [UITableViewCell
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]];
   [tableCellAppearance setSelectedBackgroundView:selectedBackgroundView];
 
   // Depending on the navigation bar background color, it might also be necessary to customise the
@@ -314,6 +325,8 @@
 
   GMSAutocompleteViewController *acController = [[GMSStyledAutocompleteViewController alloc] init];
   acController.delegate = self;
+  acController.autocompleteFilter = self.autocompleteFilter;
+  acController.placeFields = self.placeFields;
   acController.tableCellBackgroundColor = backgroundColor;
   acController.tableCellSeparatorColor = separatorColor;
   acController.primaryTextColor = primaryTextColor;
@@ -322,6 +335,10 @@
   acController.tintColor = tintColor;
 
   [self presentViewController:acController animated:YES completion:nil];
+  // Hide theme buttons.
+  for (UIButton *button in _themeButtons) {
+    [button setHidden:YES];
+  }
 }
 
 /*
@@ -329,8 +346,8 @@
  * custom icons in the case where the default gray icons don't match a custom background.
  */
 - (void)setupSearchBarCustomIcons {
-  id searchBarAppearanceProxy =
-      [UISearchBar appearanceWhenContainedIn:[GMSStyledAutocompleteViewController class], nil];
+  id searchBarAppearanceProxy = [UISearchBar
+      appearanceWhenContainedInInstancesOfClasses:@ [[GMSStyledAutocompleteViewController class]]];
   [searchBarAppearanceProxy setImage:[UIImage imageNamed:@"custom_clear_x_high"]
                     forSearchBarIcon:UISearchBarIconClear
                                state:UIControlStateHighlighted];

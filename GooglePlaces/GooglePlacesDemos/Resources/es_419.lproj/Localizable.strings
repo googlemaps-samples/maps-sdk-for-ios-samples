@@ -1,6 +1,6 @@
 // NOTE: This is the english localization and has been copied to all languages. The reason for doing
 // this is it signals to iOS that the app "supports" all of these languages. This is helpful for a
-// demo as it allows you to try out the localization features of the Places API. In a shipping app
+// demo as it allows you to try out the localization features of the Places SDK. In a shipping app
 // you should never do this, it is for demonstration purposes only.
 
 
@@ -29,6 +29,8 @@
 "Demo.Section.Title.Autocomplete"="Autocomplete";
 // Title of the 'Programmatic' demo section
 "Demo.Section.Title.Programmatic"="Programmatic APIs";
+// Title of the findPlacesLikelihood demo section
+"Demo.Section.Title.FindPlaceLikelihood"="Likelihoods";
 
 // Button title for 'show autocomplete widget'
 "Demo.Content.Autocomplete.ShowWidgetButton"="Show Autocomplete Widget";

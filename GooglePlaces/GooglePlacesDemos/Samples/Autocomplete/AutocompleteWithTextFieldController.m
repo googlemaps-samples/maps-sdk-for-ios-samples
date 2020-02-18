@@ -60,6 +60,9 @@
   // Setup the results view controller.
   _tableDataSource = [[GMSAutocompleteTableDataSource alloc] init];
   _tableDataSource.delegate = self;
+  _tableDataSource.autocompleteFilter = self.autocompleteFilter;
+  _tableDataSource.placeFields = self.placeFields;
+  _tableDataSource.tableCellBackgroundColor = [UIColor whiteColor];
   _resultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
   _resultsController.tableView.delegate = _tableDataSource;
   _resultsController.tableView.dataSource = _tableDataSource;
@@ -81,21 +84,21 @@
                               multiplier:1
                                 constant:8]
       .active = YES;
-
-  [self addResultViewBelow:_searchField];
 }
 
 #pragma mark - GMSAutocompleteTableDataSourceDelegate
 
 - (void)tableDataSource:(GMSAutocompleteTableDataSource *)tableDataSource
     didAutocompleteWithPlace:(GMSPlace *)place {
+  [self dismissResultsController];
   [_searchField resignFirstResponder];
+  [_searchField setHidden:YES];
   [self autocompleteDidSelectPlace:place];
-  _searchField.text = place.name;
 }
 
 - (void)tableDataSource:(GMSAutocompleteTableDataSource *)tableDataSource
     didFailAutocompleteWithError:(NSError *)error {
+  [self dismissResultsController];
   [_searchField resignFirstResponder];
   [self autocompleteDidFail:error];
   _searchField.text = @"";
@@ -156,27 +159,16 @@
       }];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-  // Dismiss the results.
-  [_resultsController willMoveToParentViewController:nil];
-  [UIView animateWithDuration:0.5
-      animations:^{
-        _resultsController.view.alpha = 0.0f;
-      }
-      completion:^(BOOL finished) {
-        [_resultsController.view removeFromSuperview];
-        [_resultsController removeFromParentViewController];
-      }];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   return NO;
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
+  [self dismissResultsController];
   [textField resignFirstResponder];
   textField.text = @"";
+  [_tableDataSource clearResults];
   return NO;
 }
 
@@ -184,6 +176,19 @@
 
 - (void)textFieldDidChange:(UITextField *)textField {
   [_tableDataSource sourceTextHasChanged:textField.text];
+}
+
+- (void)dismissResultsController {
+  // Dismiss the results.
+  [_resultsController willMoveToParentViewController:nil];
+  [UIView animateWithDuration:0.5
+                   animations:^{
+                     _resultsController.view.alpha = 0.0f;
+                   }
+                   completion:^(BOOL finished) {
+                     [_resultsController.view removeFromSuperview];
+                     [_resultsController removeFromParentViewController];
+                   }];
 }
 
 @end

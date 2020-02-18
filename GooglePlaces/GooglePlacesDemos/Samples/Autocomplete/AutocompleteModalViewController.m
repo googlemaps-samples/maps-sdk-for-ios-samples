@@ -20,7 +20,9 @@
 @interface AutocompleteModalViewController () <GMSAutocompleteViewControllerDelegate>
 @end
 
-@implementation AutocompleteModalViewController
+@implementation AutocompleteModalViewController {
+  UIButton *_showAutocompleteWidgetButton;
+}
 
 + (NSString *)demoTitle {
   return NSLocalizedString(
@@ -34,9 +36,8 @@
   [super viewDidLoad];
 
   // Configure the UI. Tell our superclass we want a button and a result view below that.
-  UIButton *button =
+  _showAutocompleteWidgetButton =
       [self createShowAutocompleteButton:@selector(showAutocompleteWidgetButtonTapped)];
-  [self addResultViewBelow:button];
 }
 
 #pragma mark - Actions
@@ -46,7 +47,10 @@
   GMSAutocompleteViewController *autocompleteViewController =
       [[GMSAutocompleteViewController alloc] init];
   autocompleteViewController.delegate = self;
+  autocompleteViewController.autocompleteFilter = self.autocompleteFilter;
+  autocompleteViewController.placeFields = self.placeFields;
   [self presentViewController:autocompleteViewController animated:YES completion:nil];
+  [_showAutocompleteWidgetButton setHidden:YES];
 }
 
 #pragma mark - GMSAutocompleteViewControllerDelegate
