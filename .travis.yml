@@ -8,9 +8,9 @@ before_install:
 
 jobs:
     include:
-        - before_install: pod install --project_directory=GoogleMaps/
+        - before_install: pod install --project-directory=GoogleMaps/
           xcode_scheme: GoogleMapsDemos
           xcode_workspace: GoogleMaps/GoogleMapsDemos.xcworkspace
-        - before_install: pod install --project_directory=GooglePlaces/
+        - before_install: pod install --project-directory=GooglePlaces/
           xcode_scheme: GooglePlacesDemos
           xcode_workspace: GooglePlaces/GooglePlacesDemos.xcworkspace
