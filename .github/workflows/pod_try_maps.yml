@@ -1,0 +1,24 @@
+name: pod try GoogleMaps
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+
+jobs:
+  check_pod_try:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
+    - name: Install CocoaPods 1.6.1
+      run: sudo gem install cocoapods -v 1.6.1
+
+    # Runs `pod try GoogleMaps` and sets the directory where it's pulled under $POD_TRY_DIR
+    - name: pod try
+      run: |
+        POD_TRY_DIR="$(pod try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
+        echo "Pod try dir is '$POD_TRY_DIR'"
