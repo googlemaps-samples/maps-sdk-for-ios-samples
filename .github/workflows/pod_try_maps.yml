@@ -27,4 +27,5 @@ jobs:
     # Diff pod try results and current copy
     - name: diff pod try and repo copy
       run: |
-        diff $POD_TRY_DIR $GITHUB_WORKSPACE/GoogleMaps/
+        echo "Running diff between '$POD_TRY_DIR' and '$GITHUB_WORKSPACE/GoogleMaps'"
+        diff $POD_TRY_DIR $GITHUB_WORKSPACE/GoogleMaps
