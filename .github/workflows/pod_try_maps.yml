@@ -19,7 +19,12 @@ jobs:
         sudo gem install cocoapods -v 1.6.1
 
     # Runs `pod try GoogleMaps` and sets the directory where it's pulled under $POD_TRY_DIR
-    - name: pod try
+    - name: pod try GoogleMaps
       run: |
         POD_TRY_DIR="$(pod _1.6.1_ try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
         echo "Pod try dir is '$POD_TRY_DIR'"
+        
+    # Diff pod try results and current copy
+    - name: diff pod try and repo copy
+      run: |
+        diff $POD_TRY_DIR $GITHUB_WORKSPACE/GoogleMaps/
