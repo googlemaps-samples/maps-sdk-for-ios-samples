@@ -17,10 +17,9 @@ jobs:
     - name: Install CocoaPods 1.6.1
       run: | 
         sudo gem install cocoapods -v 1.6.1
-        echo "CocoaPods version is $(pod --version)"
 
     # Runs `pod try GoogleMaps` and sets the directory where it's pulled under $POD_TRY_DIR
     - name: pod try
       run: |
-        POD_TRY_DIR="$(pod try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
+        POD_TRY_DIR="$(pod _1.6.1_ try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
         echo "Pod try dir is '$POD_TRY_DIR'"
