@@ -15,7 +15,9 @@ jobs:
 
     # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
     - name: Install CocoaPods 1.6.1
-      run: sudo gem install cocoapods -v 1.6.1
+      run: | 
+        sudo gem install cocoapods -v 1.6.1
+        echo "CocoaPods version is $(pod --version)"
 
     # Runs `pod try GoogleMaps` and sets the directory where it's pulled under $POD_TRY_DIR
     - name: pod try
