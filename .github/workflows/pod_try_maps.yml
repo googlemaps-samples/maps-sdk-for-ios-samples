@@ -3,6 +3,7 @@ name: pod try GoogleMaps
 on:
   schedule:
     - cron: '0 */12 * * *'
+  repository_dispatch:
 
 jobs:
   check_pod_try:
