@@ -2,7 +2,7 @@ name: pod try GoogleMaps
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */12 * * *'
 
 jobs:
   check_pod_try:
@@ -16,27 +16,28 @@ jobs:
 
     # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
     - name: Install CocoaPods 1.6.1
-      run: | 
+      run: |
         sudo gem install cocoapods -v 1.6.1
 
-    # Copy pod try results to current copy
+    # Copy pod try GoogleMaps to current copy
     - name: Copy pod try GoogleMaps changes into current copy
       run: |
-        POD_TRY_DIR="$(pod _1.6.1_ try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
-        echo "Copying contents of '$POD_TRY_DIR' into '$GITHUB_WORKSPACE/GoogleMaps'"
-        cp -R $POD_TRY_DIR/* $GITHUB_WORKSPACE/GoogleMaps/.
-        echo "Checking diff"
-        git diff $GITHUB_WORKSPACE
-      
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps
+
+    # Copy pod try GooglePlaces to current copy
+    - name: Copy pod try GooglePlaces changes into current copy
+      run: |
+        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces
+
     # Commit changes
     - name: PR Changes
       uses: peter-evans/create-pull-request@v2
-      with: 
+      with:
         token: ${{ secrets.ACTION_GITHUB_TOKEN }}
-        commit-message: 'chore: Update GoogleMaps samples from CocoaPods'
+        commit-message: 'chore: Update Maps and Places samples from CocoaPods'
         committer: googlemaps-bot <googlemaps-bot@google.com>
         author: googlemaps-bot <googlemaps-bot@google.com>
-        title: 'chore: Update GoogleMaps samples from CocoaPods'
+        title: 'chore: Update Maps and Places samples from CocoaPods'
         body: |
-          Pulling in changes from `pod try GoogleMaps` into this repo.
-        branch: googlemaps-bot/update_maps_samples
+          Pulling in changes from `pod try GoogleMaps` and `pod try GooglePlaces`.
+        branch: googlemaps-bot/update_samples
