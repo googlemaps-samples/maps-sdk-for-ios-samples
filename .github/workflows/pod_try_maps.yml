@@ -39,3 +39,4 @@ jobs:
         title: 'chore: Update GoogleMaps samples from CocoaPods'
         body: |
           Pulling in changes from `pod try GoogleMaps` into this repo.
+        branch: googlemaps-bot/update_maps_samples
