@@ -29,5 +29,13 @@ jobs:
         git diff $GITHUB_WORKSPACE
       
     # Commit changes
-#    - name: PR Changes
-#      uses: peter-evans/create-pull-request@v2
+    - name: PR Changes
+      uses: peter-evans/create-pull-request@v2
+      with: 
+        token: ${{ secrets.ACTION_GITHUB_TOKEN }}
+        commit-message: 'chore: Update GoogleMaps samples from CocoaPods'
+        committer: googlemaps-bot <googlemaps-bot@google.com>
+        author: googlemaps-bot <googlemaps-bot@google.com>
+        title: 'chore: Update GoogleMaps samples from CocoaPods'
+        body: |
+          Pulling in changes from `pod try GoogleMaps` into this repo.
