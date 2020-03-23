@@ -11,21 +11,23 @@ jobs:
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout maps-sdk-for-ios-samples
+      uses: actions/checkout@v2
 
     # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
     - name: Install CocoaPods 1.6.1
       run: | 
         sudo gem install cocoapods -v 1.6.1
 
-    # Runs `pod try GoogleMaps` and sets the directory where it's pulled under $POD_TRY_DIR
-    - name: pod try GoogleMaps
+    # Copy pod try results to current copy
+    - name: Copy pod try GoogleMaps changes into current copy
       run: |
         POD_TRY_DIR="$(pod _1.6.1_ try GoogleMaps | tail -1 | awk '{print $2}' | echo "/$(cut -d\/ -f2-11)")"
-        echo "Pod try dir is '$POD_TRY_DIR'"
-        
-    # Diff pod try results and current copy
-    - name: diff pod try and repo copy
-      run: |
-        echo "Running diff between '$POD_TRY_DIR' and '$GITHUB_WORKSPACE/GoogleMaps'"
-        diff $POD_TRY_DIR $GITHUB_WORKSPACE/GoogleMaps
+        echo "Copying contents of '$POD_TRY_DIR' into '$GITHUB_WORKSPACE/GoogleMaps'"
+        cp -R $POD_TRY_DIR/* $GITHUB_WORKSPACE/GoogleMaps/.
+        echo "Checking diff"
+        git diff $GITHUB_WORKSPACE
+      
+    # Commit changes
+#    - name: PR Changes
+#      uses: peter-evans/create-pull-request@v2
