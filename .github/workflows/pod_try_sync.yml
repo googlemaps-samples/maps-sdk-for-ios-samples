@@ -33,6 +33,7 @@ jobs:
     # Commit changes
     - name: PR Changes
       uses: peter-evans/create-pull-request@v2
+      if: ${{ cd $GITHUB_WORKSPACE && git status | grep "modified" | grep -v "pbxproj" | wc -l }}
       with:
         token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
         commit-message: 'chore: Update Maps and Places samples from CocoaPods'
