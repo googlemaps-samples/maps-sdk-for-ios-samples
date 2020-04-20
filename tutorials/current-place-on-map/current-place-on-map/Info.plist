@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Show your location on a map.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Show your location on a map.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Show your location on a map</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
