@@ -50,6 +50,7 @@ class PlacesViewController: UIViewController {
   }
 }
 
+// [START maps_ios_current_place_tableviewdelegate]
 // Respond when a user selects a place.
 extension PlacesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -57,7 +58,9 @@ extension PlacesViewController: UITableViewDelegate {
     performSegue(withIdentifier: "unwindToMain", sender: self)
   }
 }
+// [END maps_ios_current_place_tableviewdelegate]
 
+// [START maps_ios_current_place_tableviewdatasource]
 // Populate the table with the list of most likely places.
 extension PlacesViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,3 +90,4 @@ extension PlacesViewController: UITableViewDataSource {
     return 0
   }
 }
+// [END maps_ios_current_place_tableviewdatasource]
