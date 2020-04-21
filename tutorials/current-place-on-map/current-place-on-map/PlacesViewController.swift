@@ -16,8 +16,10 @@
 import UIKit
 import GooglePlaces
 
+// [START maps_ios_current_place_tableviewdelegate]
 class PlacesViewController: UIViewController {
 
+  // [START_EXCLUDE]
   @IBOutlet weak var tableView: UITableView!
 
   // An array to hold the list of possible locations.
@@ -39,6 +41,7 @@ class PlacesViewController: UIViewController {
 
     tableView.reloadData()
   }
+  // [END_EXCLUDE]
 
   // Pass the selected place to the new view controller.
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,7 +53,6 @@ class PlacesViewController: UIViewController {
   }
 }
 
-// [START maps_ios_current_place_tableviewdelegate]
 // Respond when a user selects a place.
 extension PlacesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
