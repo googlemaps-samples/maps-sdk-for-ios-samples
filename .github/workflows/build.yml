@@ -54,7 +54,7 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesDemo/SDKDemoAPIKey.h
+            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesDemos/SDKDemoAPIKey.h
     
             echo "Building"
             xcodebuild -workspace GooglePlaces/GooglePlacesDemos.xcworkspace \
