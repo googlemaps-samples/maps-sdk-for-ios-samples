@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC. All rights reserved.
+ * Copyright 2020 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -13,13 +13,7 @@
  * permissions and limitations under the License.
  */
 
-/**
- * To use GooglePlacesDemos, please register an API Key for your application and set it here. Your
- * API Key should be kept private.
- *
- * See documentation on getting an API Key for your API Project here:
- * https://developers.google.com/places/ios-sdk/start#get-key
- */
+#import <UIKit/UIKit.h>
 
-#error Register your API key and insert here, then delete this line.
-static NSString *const kAPIKey = @"";
+@interface CollidingMarkersViewController : UIViewController
+@end
