@@ -15,13 +15,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class DemoAppDelegate;
-
-@interface MasterViewController : UITableViewController <
-    UISplitViewControllerDelegate,
-    UITableViewDataSource,
-    UITableViewDelegate>
-
-@property(nonatomic, weak) DemoAppDelegate *appDelegate;
+@interface MasterViewController : UITableViewController <UISplitViewControllerDelegate>
 
 @end

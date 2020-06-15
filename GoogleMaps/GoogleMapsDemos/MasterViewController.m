@@ -16,50 +16,45 @@
 #import "GoogleMapsDemos/MasterViewController.h"
 
 #import "GoogleMapsDemos/DemoAppDelegate.h"
+#import "GoogleMapsDemos/BetaSamples/Samples+Beta.h"
 #import "GoogleMapsDemos/Samples/Samples.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 
+typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSamplesArray;
+
 @implementation MasterViewController {
   NSArray *_demos;
   NSArray *_demoSections;
-  BOOL _isPhone;
-  UIPopoverController *_popover;
-  UIBarButtonItem *_samplesButton;
-  __weak UIViewController *_controller;
   CLLocationManager *_locationManager;
+  BOOL _shouldCollapseDetailViewController;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  _isPhone = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
-
-  if (!_isPhone) {
-    self.clearsSelectionOnViewWillAppear = NO;
-  } else {
-    UIBarButtonItem *backButton =
-        [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Back")
-                                         style:UIBarButtonItemStylePlain
-                                        target:nil
-                                        action:nil];
-    [self.navigationItem setBackBarButtonItem:backButton];
-  }
-
+  _shouldCollapseDetailViewController = YES;
   self.title = NSLocalizedString(@"Maps SDK Demos", @"Maps SDK Demos");
   self.title = [NSString stringWithFormat:@"%@: %@", self.title, [GMSServices SDKLongVersion]];
 
   self.tableView.autoresizingMask =
       UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-  self.tableView.delegate = self;
-  self.tableView.dataSource = self;
 
   _demoSections = [Samples loadSections];
   _demos = [Samples loadDemos];
 
-  if (!_isPhone) {
-    [self loadDemo:0 atIndex:0];
-  }
+  [self addBetaDemos];
+}
+
+- (void)addBetaDemos {
+  NSUInteger index = 0;
+  NSMutableArray<NSString *> *sections = [NSMutableArray arrayWithArray:_demoSections];
+  [sections insertObject:@"Beta Demos" atIndex:index];
+  _demoSections = [sections copy];
+
+  DemoSamplesArray *demos = [NSMutableArray arrayWithArray:_demos];
+  [demos insertObject:[Samples betaDemos] atIndex:index];
+  _demos = [demos copy];
 }
 
 #pragma mark - UITableViewController
@@ -88,11 +83,11 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                   reuseIdentifier:cellIdentifier];
-
-    if (_isPhone) {
-      [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    }
   }
+
+  cell.accessoryType = self.splitViewController.collapsed
+                           ? UITableViewCellAccessoryDisclosureIndicator
+                           : UITableViewCellAccessoryNone;
 
   NSDictionary *demo = [[_demos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   cell.textLabel.text = [demo objectForKey:@"title"];
@@ -102,30 +97,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // The user has chosen a sample; load it and clear the selection!
+  _shouldCollapseDetailViewController = NO;
   [self loadDemo:indexPath.section atIndex:indexPath.row];
-  [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController
-     willHideViewController:(UIViewController *)viewController
-          withBarButtonItem:(UIBarButtonItem *)barButtonItem
-       forPopoverController:(UIPopoverController *)popoverController {
-  _popover = popoverController;
-  _samplesButton = barButtonItem;
-  _samplesButton.title = NSLocalizedString(@"Samples", @"Samples");
-  _samplesButton.style = UIBarButtonItemStyleDone;
-  [self updateSamplesButton];
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController
-       willShowViewController:(UIViewController *)viewController
-    invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-  _popover = nil;
-  _samplesButton = nil;
-  [self updateSamplesButton];
 }
 
 #pragma mark - Private methods
@@ -133,28 +106,38 @@
 - (void)loadDemo:(NSUInteger)section atIndex:(NSUInteger)index {
   NSDictionary *demo = [[_demos objectAtIndex:section] objectAtIndex:index];
   UIViewController *controller = [[[demo objectForKey:@"controller"] alloc] init];
-  _controller = controller;
 
   if (controller != nil) {
     controller.title = [demo objectForKey:@"title"];
 
-    if (_isPhone) {
-      [self.navigationController pushViewController:controller animated:YES];
-    } else {
-      [self.appDelegate setSample:controller];
-      [_popover dismissPopoverAnimated:YES];
-    }
+    UINavigationController *navController =
+        [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.navigationBar.translucent = NO;
+    [self showDetailViewController:navController sender:nil];
 
-    [self updateSamplesButton];
+    controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    controller.navigationItem.leftItemsSupplementBackButton = YES;
   }
 }
 
-// This method is invoked when the left 'back' button in the split view
-// controller on iPad should be updated (either made visible or hidden).
-// It assumes that the left bar button item may be safely modified to contain
-// the samples button.
-- (void)updateSamplesButton {
-  _controller.navigationItem.leftBarButtonItem = _samplesButton;
+#pragma mark - UISplitViewControllerDelegate methods
+
+- (UIViewController *)primaryViewControllerForCollapsingSplitViewController:
+    (UISplitViewController *)splitViewController {
+  [self.tableView reloadData];
+  return nil;
+}
+
+- (UIViewController *)primaryViewControllerForExpandingSplitViewController:
+    (UISplitViewController *)splitViewController {
+  [self.tableView reloadData];
+  return nil;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController
+    collapseSecondaryViewController:(UIViewController *)secondaryViewController
+          ontoPrimaryViewController:(UIViewController *)primaryViewController {
+  return _shouldCollapseDetailViewController;
 }
 
 @end

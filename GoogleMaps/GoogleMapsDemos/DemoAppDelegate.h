@@ -15,18 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoAppDelegate : UIResponder <
-    UIApplicationDelegate,
-    UISplitViewControllerDelegate>
+@interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(nonatomic) UIWindow *window;
-@property(nonatomic) UINavigationController *navigationController;
 @property(nonatomic) UISplitViewController *splitViewController;
-
-/**
- * If the device is an iPad, this property controls the sample displayed in the
- * right side of its split view controller.
- */
-@property(nonatomic) UIViewController *sample;
 
 @end
