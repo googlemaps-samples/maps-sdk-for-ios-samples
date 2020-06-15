@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 */1 * * *'
   repository_dispatch:
+    types: [ pod-sync ]
 
 jobs:
   check_pod_try:
