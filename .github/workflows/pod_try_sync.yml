@@ -21,16 +21,30 @@ jobs:
       run: |
         sudo gem install cocoapods -v 1.6.1
 
-    # Copy pod try GoogleMaps to current copy
-    - name: Copy pod try GoogleMaps changes into current copy
+    # Copy pod try GoogleMaps Objective-C to current copy
+    - name: Copy pod try GoogleMaps Objective-C changes into current copy
       run: |
-        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 1
 
-    # Copy pod try GooglePlaces to current copy
-    - name: Copy pod try GooglePlaces changes into current copy
+    # Copy pod try GoogleMaps Swift to current copy
+    - name: Copy pod try GoogleMaps Swift changes into current copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleMaps-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 2
+
+    # Copy pod try GooglePlaces Objective-C to current copy
+    - name: Copy pod try GooglePlaces Objective-C changes into current copy
       id: pod_try_copy
       run: |
-        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces
+        mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces 1
+
+    # Copy pod try GooglePlaces Swift to current copy
+    - name: Copy pod try GooglePlaces Swift changes into current copy
+      id: pod_try_copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
         echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
 
     # Commit changes
