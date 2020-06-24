@@ -34,7 +34,6 @@ jobs:
 
     # Copy pod try GooglePlaces Objective-C to current copy
     - name: Copy pod try GooglePlaces Objective-C changes into current copy
-      id: pod_try_copy
       run: |
         mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces 1
