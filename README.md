@@ -43,6 +43,10 @@ documentation, such as
 [Adding a Map with a Marker](https://developers.google.com/maps/documentation/ios-sdk/map-with-marker),
 and more. Follow the tutorials for a quick guide to using the SDK.
 
+## Snippets
+
+The `snippets` sub-directory contains code snippets that can be found in the developer documentation site.
+
 ## Support
 
 **NOTE: We are not accepting external contributions at this time.**
