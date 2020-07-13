@@ -6,6 +6,7 @@
 //  Copyright © 2020 Google. All rights reserved.
 //
 
+// [START maps_places_ios_get_started]
 import GooglePlaces
 import UIKit
 
@@ -48,3 +49,4 @@ class GetStartedViewController : UIViewController {
     }
   }
 }
+// [END maps_places_ios_get_started]

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Google. All rights reserved.
 //
 
+// [START maps_places_ios_get_started]
 #import "GetStartedViewController.h"
 @import GooglePlaces;
 
@@ -53,3 +54,4 @@
 }
 
 @end
+// [END maps_places_ios_get_started]
