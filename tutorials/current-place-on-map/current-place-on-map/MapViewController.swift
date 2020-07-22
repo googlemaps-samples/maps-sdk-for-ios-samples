@@ -95,21 +95,24 @@ class MapViewController: UIViewController {
     // Clean up from previous sessions.
     likelyPlaces.removeAll()
 
-    placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
-      if let error = error {
+    placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: .name) { (placeLikelihoods, error) in
+      guard error == nil else {
         // TODO: Handle the error.
-        print("Current Place error: \(error.localizedDescription)")
+        print("Current Place error: \(error!.localizedDescription)")
         return
       }
 
-      // Get likely places and add to the list.
-      if let likelihoodList = placeLikelihoods {
-        for likelihood in likelihoodList.likelihoods {
-          let place = likelihood.place
-          self.likelyPlaces.append(place)
-        }
+      guard let placeLikelihoods = placeLikelihoods else {
+        print("No places found.")
+        return
       }
-    })
+      
+      // Get likely places and add to the list.
+      for likelihood in placeLikelihoods {
+        let place = likelihood.place
+        self.likelyPlaces.append(place)
+      }
+    }
   }
   // [END maps_ios_current_place_list_likely_places]
 

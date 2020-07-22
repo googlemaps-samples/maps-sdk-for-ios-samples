@@ -122,7 +122,6 @@
 			children = (
 				1F3E967641180F8C86AE9861 /* Pods-GooglePlacesDemos.default.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -257,7 +256,6 @@
 		B0EA45FFFB815F6F5A3E1BDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 			};
 			buildConfigurationList = 63964CA36C9733EFF27C66CD /* Build configuration list for PBXProject "GooglePlacesDemos" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -307,6 +305,17 @@
 				"zh-Hans",
 				"zh-HK",
 				"zh-Hant",
+				en_AU,
+				en_GB,
+				en_IN,
+				es_419,
+				es_MX,
+				fr_CA,
+				pt_BR,
+				pt_PT,
+				zh_CN,
+				zh_HK,
+				zh_TW,
 			);
 			mainGroup = 7C4A8D45D6D1B907A8C0521E;
 			productRefGroup = 87ED31F365F5BCA83FBDE8E8 /* Products */;
