@@ -16,6 +16,6 @@
 /// API keys needed for this project
 public enum apikeys {
     //#error("Register for API keys and enter them below; then, delete this line")
-    static let mapsAPI = "AIzaSyC3a6xaPcOk9S1gFxf9iGrNSfLHOWxOxN8"
-    static let placesAPI = "AIzaSyCOKNyDTI9HNGP6XWHFTXvzTVG4Ur2dzec"
+    static let mapsAPI = ""
+    static let placesAPI = ""
 }
