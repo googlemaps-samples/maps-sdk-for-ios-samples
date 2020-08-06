@@ -152,7 +152,7 @@ class GoogleDemoApplicationsMainViewController:
     private let nearbyLocationIDs: NSMutableArray = []
     
     /// Material design elements for UI
-    private let actionSheet = MDCActionSheetController(title: "Options", message: "Pick a feature")
+    private let actionSheet = MDCActionSheetController(title: "", message: "")
     private let optionsButton = MDCFloatingButton()
     private let zoomInButton = MDCFloatingButton()
     private let zoomOutButton = MDCFloatingButton()
@@ -223,14 +223,13 @@ class GoogleDemoApplicationsMainViewController:
                 self.refreshScreen()
             }
         })
-        let likely = MDCActionSheetAction(title: "Place Likelihoods", image: nil, handler: { Void in
+        let likely = MDCActionSheetAction(title: "Show Place Likelihoods", image: nil, handler: { Void in
             if !self.lockedSnackbar() {
                 self.findLikelihoods()
-                self.refreshButtons()
                 self.refreshScreen()
             }
         })
-        let panorama = MDCActionSheetAction(title: "Panoramic View", image: nil, handler: { Void in
+        let panorama = MDCActionSheetAction(title: "Show Panoramic View", image: nil, handler: { Void in
             if !self.lockedSnackbar() {
                 self.openPanorama()
             }
@@ -382,6 +381,7 @@ class GoogleDemoApplicationsMainViewController:
         nearbyLocationIDs.removeAllObjects()
         overlayController.clear()
         clusterManager.clearItems()
+        refreshButtons()
     }
     
     /// Turns off all toggles and clears the heatmap dataset
@@ -396,6 +396,9 @@ class GoogleDemoApplicationsMainViewController:
         
     /// Displays icons and images for elements in the placeLikelihoodList
     private func findLikelihoods() {
+        nearbyLocationMarkers.forEach { $0.map = nil }
+        nearbyLocationMarkers.removeAll()
+        nearbyLocationIDs.removeAllObjects()
         placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
             guard error == nil else {
                 print("Current place error: \(error?.localizedDescription ?? "")")
@@ -461,6 +464,7 @@ class GoogleDemoApplicationsMainViewController:
                 )
                 self.zoom = 20
                 self.refreshMap(newLoc: true)
+                self.refreshButtons()
                 self.refreshScreen()
             })
         })
@@ -538,7 +542,7 @@ class GoogleDemoApplicationsMainViewController:
         
         // Sets other view elements to the right colors
         welcomeLabel.textColor = darkModeToggle ? .white : .black
-        self.view.backgroundColor = darkModeToggle ? .black : .white
+        view.backgroundColor = darkModeToggle ? .black : .white
         actionSheet.actionTextColor = darkModeToggle ? .white : .black
         actionSheet.actionTintColor = darkModeToggle ? .black : .white
         actionSheet.backgroundColor = darkModeToggle ? .black : .white
@@ -571,7 +575,11 @@ class GoogleDemoApplicationsMainViewController:
             width: clearWidth,
             height: clearHeight
         )
-        clearButton.setTitleColor(darkModeToggle ? .white : .blue, for: .normal)
+        if (nearbyLocationMarkers.count == 0) {
+            clearButton.setTitleColor(darkModeToggle ? .black : .white, for: .normal)
+        } else {
+            clearButton.setTitleColor(darkModeToggle ? .white : .blue, for: .normal)
+        }
         clearButton.setTitle("Clear All", for: .normal)
         clearButton.addTarget(self, action: #selector(clearAll), for: .touchUpInside)
         view.addSubview(clearButton)
@@ -626,6 +634,7 @@ class GoogleDemoApplicationsMainViewController:
             ycoord -= 0.16 * Double(self.view.frame.size.height)
             index += 1
         }
+        clearButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         darkModeButton.isHidden = false
     }
     

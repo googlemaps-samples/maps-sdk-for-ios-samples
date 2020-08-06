@@ -39,12 +39,13 @@ class PopUpViewController: UIViewController {
     /// Creates up the popup and sets up the information
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setting the dimensions and offset
-        let xOffset = view.frame.width / 10
-        let yOffset = view.frame.height / 5
-        let dim: CGFloat = view.frame.width * view.frame.height / 1100
-        
+
+        // Setting the dimensions and offset with margins as a sixth of the width and height of the
+        // phone
+        let xOffset = view.frame.width / 6
+        let yOffset = view.frame.height / 6
+        let dim: CGFloat = (6 - 2) * (view.frame.width) / 6
+
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         showAnimate()
         infoCard = MDCCard(frame: CGRect(x: xOffset, y: yOffset, width: dim, height: dim))
