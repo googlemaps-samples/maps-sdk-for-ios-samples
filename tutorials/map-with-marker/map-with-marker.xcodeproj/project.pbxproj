@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2202A80ACC0D500B10E94B16 /* libPods-map-with-marker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E24EBB3848B63F4E06C8069F /* libPods-map-with-marker.a */; };
+		AA720F7A242412630092478E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA720F79242412630092478E /* ViewController.m */; };
+		E5AA156C1E006EC3005DF256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AA156B1E006EC3005DF256 /* AppDelegate.swift */; };
+		E5AA156E1E006EC3005DF256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AA156D1E006EC3005DF256 /* ViewController.swift */; };
+		E5AA15711E006EC3005DF256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA156F1E006EC3005DF256 /* Main.storyboard */; };
+		E5AA15731E006EC3005DF256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AA15721E006EC3005DF256 /* Assets.xcassets */; };
+		E5AA15761E006EC3005DF256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA15741E006EC3005DF256 /* LaunchScreen.storyboard */; };
+		E5AA157E1E006ED2005DF256 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E5AA157D1E006ED2005DF256 /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FC092F94040030CF5A9BF75 /* Pods-map-with-marker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-map-with-marker.release.xcconfig"; path = "Pods/Target Support Files/Pods-map-with-marker/Pods-map-with-marker.release.xcconfig"; sourceTree = "<group>"; };
+		AA720F77242412620092478E /* map-with-marker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "map-with-marker-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA720F78242412630092478E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AA720F79242412630092478E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B9A664DE4EDFFFB17D6A8CE5 /* Pods-map-with-marker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-map-with-marker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-map-with-marker/Pods-map-with-marker.debug.xcconfig"; sourceTree = "<group>"; };
+		E24EBB3848B63F4E06C8069F /* libPods-map-with-marker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-map-with-marker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5AA15681E006EC3005DF256 /* map-with-marker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "map-with-marker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5AA156B1E006EC3005DF256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5AA156D1E006EC3005DF256 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5AA15701E006EC3005DF256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5AA15721E006EC3005DF256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5AA15751E006EC3005DF256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5AA15771E006EC3005DF256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5AA157D1E006ED2005DF256 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5AA15651E006EC3005DF256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2202A80ACC0D500B10E94B16 /* libPods-map-with-marker.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB63861411A69F6247606905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E24EBB3848B63F4E06C8069F /* libPods-map-with-marker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD2760F31D8308AC6F997EE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9A664DE4EDFFFB17D6A8CE5 /* Pods-map-with-marker.debug.xcconfig */,
+				0FC092F94040030CF5A9BF75 /* Pods-map-with-marker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5AA155F1E006EC3005DF256 = {
+			isa = PBXGroup;
+			children = (
+				E5AA157D1E006ED2005DF256 /* Podfile */,
+				E5AA156A1E006EC3005DF256 /* map-with-marker */,
+				E5AA15691E006EC3005DF256 /* Products */,
+				DD2760F31D8308AC6F997EE3 /* Pods */,
+				CB63861411A69F6247606905 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E5AA15691E006EC3005DF256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5AA15681E006EC3005DF256 /* map-with-marker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5AA156A1E006EC3005DF256 /* map-with-marker */ = {
+			isa = PBXGroup;
+			children = (
+				E5AA156B1E006EC3005DF256 /* AppDelegate.swift */,
+				E5AA156D1E006EC3005DF256 /* ViewController.swift */,
+				E5AA156F1E006EC3005DF256 /* Main.storyboard */,
+				E5AA15721E006EC3005DF256 /* Assets.xcassets */,
+				E5AA15741E006EC3005DF256 /* LaunchScreen.storyboard */,
+				E5AA15771E006EC3005DF256 /* Info.plist */,
+				AA720F78242412630092478E /* ViewController.h */,
+				AA720F79242412630092478E /* ViewController.m */,
+				AA720F77242412620092478E /* map-with-marker-Bridging-Header.h */,
+			);
+			path = "map-with-marker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5AA15671E006EC3005DF256 /* map-with-marker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5AA157A1E006EC3005DF256 /* Build configuration list for PBXNativeTarget "map-with-marker" */;
+			buildPhases = (
+				6885727117F60EABBA13DA15 /* [CP] Check Pods Manifest.lock */,
+				E5AA15641E006EC3005DF256 /* Sources */,
+				E5AA15651E006EC3005DF256 /* Frameworks */,
+				E5AA15661E006EC3005DF256 /* Resources */,
+				C99C53F5CBCA7B728CC9419E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "map-with-marker";
+			productName = "map-with-marker";
+			productReference = E5AA15681E006EC3005DF256 /* map-with-marker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5AA15601E006EC3005DF256 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Google Inc.";
+				TargetAttributes = {
+					E5AA15671E006EC3005DF256 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = EQHXZ8M8AV;
+						LastSwiftMigration = 1130;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E5AA15631E006EC3005DF256 /* Build configuration list for PBXProject "map-with-marker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = E5AA155F1E006EC3005DF256;
+			productRefGroup = E5AA15691E006EC3005DF256 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5AA15671E006EC3005DF256 /* map-with-marker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5AA15661E006EC3005DF256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5AA15761E006EC3005DF256 /* LaunchScreen.storyboard in Resources */,
+				E5AA15731E006EC3005DF256 /* Assets.xcassets in Resources */,
+				E5AA157E1E006ED2005DF256 /* Podfile in Resources */,
+				E5AA15711E006EC3005DF256 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6885727117F60EABBA13DA15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-map-with-marker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99C53F5CBCA7B728CC9419E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-map-with-marker/Pods-map-with-marker-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-map-with-marker/Pods-map-with-marker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5AA15641E006EC3005DF256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA720F7A242412630092478E /* ViewController.m in Sources */,
+				E5AA156E1E006EC3005DF256 /* ViewController.swift in Sources */,
+				E5AA156C1E006EC3005DF256 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5AA156F1E006EC3005DF256 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5AA15701E006EC3005DF256 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5AA15741E006EC3005DF256 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5AA15751E006EC3005DF256 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5AA15781E006EC3005DF256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5AA15791E006EC3005DF256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5AA157B1E006EC3005DF256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9A664DE4EDFFFB17D6A8CE5 /* Pods-map-with-marker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = "map-with-marker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.google.examples.map-with-marker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "map-with-marker/map-with-marker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E5AA157C1E006EC3005DF256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FC092F94040030CF5A9BF75 /* Pods-map-with-marker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = "map-with-marker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.google.examples.map-with-marker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "map-with-marker/map-with-marker-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5AA15631E006EC3005DF256 /* Build configuration list for PBXProject "map-with-marker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AA15781E006EC3005DF256 /* Debug */,
+				E5AA15791E006EC3005DF256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5AA157A1E006EC3005DF256 /* Build configuration list for PBXNativeTarget "map-with-marker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AA157B1E006EC3005DF256 /* Debug */,
+				E5AA157C1E006EC3005DF256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5AA15601E006EC3005DF256 /* Project object */;
+}

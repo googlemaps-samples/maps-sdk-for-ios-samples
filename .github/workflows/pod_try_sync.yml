@@ -1,0 +1,61 @@
+name: Update samples from CocoaPods
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  repository_dispatch:
+    types: [ pod-sync ]
+
+jobs:
+  check_pod_try:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout maps-sdk-for-ios-samples
+      uses: actions/checkout@v2
+
+    # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
+    - name: Install CocoaPods 1.6.1
+      run: |
+        sudo gem install cocoapods -v 1.6.1
+
+    # Copy pod try GoogleMaps Objective-C to current copy
+    - name: Copy pod try GoogleMaps Objective-C changes into current copy
+      run: |
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 1
+
+    # Copy pod try GoogleMaps Swift to current copy
+    - name: Copy pod try GoogleMaps Swift changes into current copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleMaps-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 2
+
+    # Copy pod try GooglePlaces Objective-C to current copy
+    - name: Copy pod try GooglePlaces Objective-C changes into current copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces 1
+
+    # Copy pod try GooglePlaces Swift to current copy
+    - name: Copy pod try GooglePlaces Swift changes into current copy
+      id: pod_try_copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
+        echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
+
+    # Commit changes
+    - name: PR Changes
+      uses: peter-evans/create-pull-request@v2
+      if: steps.pod_try_copy.outputs.filtered_lines_modified > 0
+      with:
+        token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
+        commit-message: 'chore: Update Maps and Places samples from CocoaPods'
+        committer: googlemaps-bot <googlemaps-bot@google.com>
+        author: googlemaps-bot <googlemaps-bot@google.com>
+        title: 'chore: Update Maps and Places samples from CocoaPods'
+        body: |
+          Pulling in changes from `pod try GoogleMaps` and `pod try GooglePlaces`.
+        branch: googlemaps-bot/update_samples
