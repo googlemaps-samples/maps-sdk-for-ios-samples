@@ -37,10 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAm-Ge-ivJ">
-                                <rect key="frame" x="0.0" y="73" width="414" height="823"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maps and Places Demo Application" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d20-dy-dkP">
                                 <rect key="frame" x="62" y="44" width="290" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -49,12 +45,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-UV-gpm" userLabel="searchView">
+                                <rect key="frame" x="0.0" y="66" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXe-kD-fZ6">
+                                <rect key="frame" x="-5" y="0.0" width="424" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svE-8o-4Af">
+                                        <rect key="frame" x="199" y="19" width="26" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIJ-tc-KsN" userLabel="Clear All Button">
+                                        <rect key="frame" x="202" y="23" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="trash.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAm-Ge-ivJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0vA-jq-q0u"/>
                     </view>
                     <connections>
+                        <outlet property="clearAllButton" destination="wIJ-tc-KsN" id="u9w-uQ-fPi"/>
+                        <outlet property="darkModeButton" destination="svE-8o-4Af" id="dvN-X0-DTC"/>
                         <outlet property="scene" destination="TAm-Ge-ivJ" id="dMy-0r-v6D"/>
+                        <outlet property="searchView" destination="Bez-UV-gpm" id="JeC-bI-b3P"/>
+                        <outlet property="topBar" destination="pXe-kD-fZ6" id="9hW-v8-0TR"/>
                         <outlet property="welcomeLabel" destination="d20-dy-dkP" id="PGS-VY-FV2"/>
                     </connections>
                 </viewController>
@@ -128,5 +154,6 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>
