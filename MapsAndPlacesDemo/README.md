@@ -11,7 +11,7 @@ __This project was made by Haiming Xu as an internship project from 05/2020 to 0
 - If you want a different data set, ensure that it follows the correct formatting (and is also a JSON file) like the one provided (the data set provided can be found in dataset.json)
 ## Licenses
 - This project uses a data set which can be found [here](https://simplemaps.com/data/world-cities)
-- The data set is licensed under the Creative Commons Attribution 4.0 which can be found [here](https://creativecommons.org/licenses/by/4.0/legalcode)
+- The data set is licensed under Creative Commons Attribution 4.0 which can be found [here](https://creativecommons.org/licenses/by/4.0/legalcode)
 ## Installation
 1. Make sure you are in the right folder (MapsAndPlacesDemo)
 2. Run `pod install`
