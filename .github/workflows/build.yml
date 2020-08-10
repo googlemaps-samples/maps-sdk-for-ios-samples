@@ -168,5 +168,5 @@ jobs:
           run: |
             echo "Building"
             xcodebuild -workspace MapsAndPlacesDemos/MapsAndPlacesDemos.xcworkspace \
-            -scheme places-address-form \
+            -scheme MapsAndPlacesDemo \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build
