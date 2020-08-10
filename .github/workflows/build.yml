@@ -166,7 +166,10 @@ jobs:
 
         - name: Build project
           run: |
+            echo "Replacing #error for API key"
+            sed -i .prev '/#error/'d MapsAndPlacesDemo/MapsAndPlacesDemo/ApiKeys.swift
+
             echo "Building"
-            xcodebuild -workspace MapsAndPlacesDemos/MapsAndPlacesDemos.xcworkspace \
+            xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
             -scheme MapsAndPlacesDemo \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build
