@@ -30,7 +30,7 @@ jobs:
     - name: Copy pod try GoogleMaps Swift changes into current copy
       run: |
         mkdir -p $GITHUB_WORKSPACE/GoogleMaps-Swift
-        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 2
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps-Swift 2
 
     # Copy pod try GooglePlaces Objective-C to current copy
     - name: Copy pod try GooglePlaces Objective-C changes into current copy
