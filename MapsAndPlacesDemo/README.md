@@ -9,6 +9,7 @@ __This project was made by Haiming Xu as an internship project from 05/2020 to 0
 - A [Google Cloud Platform API key](https://developers.google.com/maps/documentation/ios-sdk/start#get-key) with Maps SDK for iOS and Places SDK for iOS enabled
 - A light and dark themed map, which can be created [here](https://console.cloud.google.com/google/maps-apis/client-styles?project=verdant-medium-278819&folder=&organizationId=) (make sure you sign in first)
 - If you want a different data set, ensure that it follows the correct formatting (and is also a JSON file) like the one provided (the data set provided can be found in dataset.json)
+- The data set included was parsed via my own C++ program; the raw data, and additional data sets, can be found [here](https://simplemaps.com/data/world-cities)
 ## Installation
 1. Make sure you are in the right folder (MapsAndPlacesDemo)
 2. Run `pod install`
