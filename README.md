@@ -8,7 +8,7 @@ and Google Places API for iOS.
 
 ## GoogleMaps
 
-The `GoogleMaps` sub-directory contains the sample code that is downloaded
+The `GoogleMaps` and `GoogleMaps-Swift` sub-directory contains the sample code that is downloaded
 when you run `pod try GoogleMaps`. To use this project:
 
 ```
@@ -17,19 +17,35 @@ $ pod install
 $ open GoogleMapsDemos.xcworkspace
 ```
 
+For Swift samples:
+
+```
+$ cd GoogleMaps-Swift
+$ pod install
+$ open GoogleMapsSwiftDemos.xcworkspace
+```
+
 You will need to add an API Key to `GoogleMapsDemos/SDKDemoAPIKey.h`. Please see the
 [documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key)
 for details on how to get an API Key.
 
 ## GooglePlaces
 
-The `GooglePlaces` sub-directory contains the sample code that is downloaded
+The `GooglePlaces` and `GooglePlaces-Swift` sub-directory contains the sample code that is downloaded
 when you run `pod try GooglePlaces`. To use this project:
 
 ```
 $ cd GooglePlaces
 $ pod install
 $ open GooglePlacesDemos.xcworkspace
+```
+
+For Swift samples:
+
+```
+$ cd GooglePlaces-Swift
+$ pod install
+$ open GooglePlacesSwiftDemos.xcworkspace
 ```
 
 You will need to add an API Key to `GooglePlacesDemos/SDKDemoAPIKey.h`. Please see the
