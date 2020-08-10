@@ -29,7 +29,7 @@ class OverlayController {
     ///
     /// - Parameter completion: The completion handler.
     func fetchData(completion: @escaping ([String : Any]?, Error?) -> Void) {
-        let apiKey: String = ApiKeys.mapsAPI
+        var apiKey: String = ApiKeys.mapsAPI
         let url =  "https://maps.googleapis.com/maps/api/geocode/json?&latlng=\(lat),\(long)&key="
         let search = URL(string: url + apiKey)!
         let task = URLSession.shared.dataTask(with: search) { (data, response, error) in
@@ -76,6 +76,8 @@ class OverlayController {
             self.fetchData { (dict, error) in
                 let convert = String(describing: dict?["results"])
                 var counter: Int = 0
+                
+                // I want to find the key "place_id" somewhere in the JSON file
                 var characters = [Character]()
                 let search = "place_id"
                 for letter in search {
@@ -84,6 +86,9 @@ class OverlayController {
                 var startPlaceId: Bool = false
                 for ch in convert {
                     if !startPlaceId {
+                        
+                        // Counter resembles the index of the "place_id" we are currently looking
+                        // for; if the character matches, then counter is incremented
                         if ch == characters[counter] {
                             counter += 1
                         } else {
@@ -92,10 +97,15 @@ class OverlayController {
                                 counter = 1
                             }
                         }
+                        
+                        // If counter's length is equal to the length of "place_id," we've found it
                         if counter >= characters.count {
                             startPlaceId = true
                         }
                     } else {
+
+                        // Once we've found "place_id," we want to build the actual place_id, so we
+                        // need to ignore the punctuation
                         if ch == ":" {
                             continue
                         } else if ch == ";" {

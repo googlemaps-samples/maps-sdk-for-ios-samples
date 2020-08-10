@@ -69,6 +69,10 @@ class LocationImageGenerator {
                 }
                 return
             }
+            guard place.photos?.count ?? 0 > 0 else {
+                print("There is no place photo data: \(error?.localizedDescription ?? "")")
+                return
+            }
             guard let photoMetadata = place.photos?[0] else {
                 print("There is no photo data for location: \(error?.localizedDescription ?? "")")
                 return

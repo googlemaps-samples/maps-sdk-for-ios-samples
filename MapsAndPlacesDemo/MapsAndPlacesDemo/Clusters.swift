@@ -19,7 +19,6 @@ import UIKit
 
 class POIItem: NSObject, GMUClusterItem {
     internal var position: CLLocationCoordinate2D
-    private var name: String = ""
 
     // MARK: Initialization functions
 
@@ -27,9 +26,7 @@ class POIItem: NSObject, GMUClusterItem {
     ///
     /// - Parameters:
     ///   - position: The coordinates of the POIItem.
-    ///   - name: A random name; not too relevant for current usage.
-    init(position: CLLocationCoordinate2D, name: String) {
+    init(position: CLLocationCoordinate2D) {
         self.position = position
-        self.name = name
     }
 }

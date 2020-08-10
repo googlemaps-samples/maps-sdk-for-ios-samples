@@ -41,10 +41,11 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Setting the dimensions and offset with margins as a sixth of the width and height of the
-        // phone
+        // phone; the offsets are calculated so there is 1 / 6 margins on both sides of the card
+        // while the card itself takes 4 / 6 of the screen space
         let xOffset = view.frame.width / 6
         let yOffset = view.frame.height / 6
-        let dim: CGFloat = (6 - 2) * (view.frame.width) / 6
+        let dim: CGFloat = 4 * (view.frame.width) / 6
 
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         showAnimate()

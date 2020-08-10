@@ -326,8 +326,7 @@ class GoogleDemoApplicationsMainViewController:
         for m in nearbyLocationMarkers {
             clusterManager.add(
                 POIItem(
-                    position: CLLocationCoordinate2DMake(m.position.latitude, m.position.longitude),
-                    name: "New Item"
+                    position: CLLocationCoordinate2DMake(m.position.latitude, m.position.longitude)
                 )
             )
         }
@@ -461,8 +460,7 @@ class GoogleDemoApplicationsMainViewController:
                     position: CLLocationCoordinate2DMake(
                         locationMarker.position.latitude,
                         locationMarker.position.longitude
-                    ),
-                    name: "New Item"
+                    )
                     )
                 )
             }
