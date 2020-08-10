@@ -16,7 +16,6 @@
 #import "GoogleMapsDemos/MasterViewController.h"
 
 #import "GoogleMapsDemos/DemoAppDelegate.h"
-#import "GoogleMapsDemos/BetaSamples/Samples+Beta.h"
 #import "GoogleMapsDemos/Samples/Samples.h"
 #import <GoogleMaps/GoogleMaps.h>
 
@@ -43,19 +42,8 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
   _demoSections = [Samples loadSections];
   _demos = [Samples loadDemos];
 
-  [self addBetaDemos];
 }
 
-- (void)addBetaDemos {
-  NSUInteger index = 0;
-  NSMutableArray<NSString *> *sections = [NSMutableArray arrayWithArray:_demoSections];
-  [sections insertObject:@"Beta Demos" atIndex:index];
-  _demoSections = [sections copy];
-
-  DemoSamplesArray *demos = [NSMutableArray arrayWithArray:_demos];
-  [demos insertObject:[Samples betaDemos] atIndex:index];
-  _demos = [demos copy];
-}
 
 #pragma mark - UITableViewController
 
@@ -112,7 +100,6 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
 
     UINavigationController *navController =
         [[UINavigationController alloc] initWithRootViewController:controller];
-    navController.navigationBar.translucent = NO;
     [self showDetailViewController:navController sender:nil];
 
     controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
