@@ -149,7 +149,7 @@ jobs:
             -scheme places-address-form \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
-    build-places-address-form:
+    build-MapsPlacesDemo-form:
         runs-on: macos-latest
 
         steps:
