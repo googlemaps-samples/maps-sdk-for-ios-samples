@@ -92,7 +92,11 @@ class FindPlaceLikelihoodListViewController: UIViewController {
     }
     locationManager.startUpdatingLocation()
 
-    placeClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: .all) {
+    // Note: The OptionSet syntax below is enabled by the GMSPlaceField+SetAlgebra extension.
+    // See: GMSPlaceField+SetAlgebra.swift
+    let placeFields: GMSPlaceField = [.name, .placeID]
+    
+    placeClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) {
       [weak self] (list, error) -> Void in
       guard let strongSelf = self else { return }
       guard error == nil else {
