@@ -3,7 +3,7 @@
 This demo application looks to bridge some of the features found in the GooglePlaces and GoogleMaps demo applications as well as utilize some of the ways the two API's can work together.
 Click this [link](https://www.youtube.com/watch?v=u4Ih8EWqZio) to watch a video demonstration.
 
-__This project was made by Haiming Xu as an internship project from 05/2020 to 08/2020__
+__This project was made by Haiming (Eric) Xu as an internship project from 05/2020 to 08/2020__
 ## Requirements
 - If you are emulating this from you Mac, please make sure to set the emulated phone's location (otherwise, location features will not work)
 - A [Google Cloud Platform API key](https://developers.google.com/maps/documentation/ios-sdk/start#get-key) with Maps SDK for iOS and Places SDK for iOS enabled
