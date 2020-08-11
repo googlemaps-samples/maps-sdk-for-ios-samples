@@ -148,3 +148,28 @@ jobs:
             xcodebuild -workspace tutorials/places-address-form.xcworkspace \
             -scheme places-address-form \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+
+    build-MapsPlacesDemo-form:
+        runs-on: macos-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Install CocoaPods
+          run: |
+              sudo gem install cocoapods
+
+        - name: Run pod install
+          run: |
+              pod install --project-directory=MapsAndPlacesDemo/
+
+        - name: Build project
+          run: |
+            echo "Replacing #error for API key"
+            sed -i .prev '/#error/'d MapsAndPlacesDemo/MapsAndPlacesDemo/ApiKeys.swift
+
+            echo "Building"
+            xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
+            -scheme MapsAndPlacesDemo \
+            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build | xcpretty
