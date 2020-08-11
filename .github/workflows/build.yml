@@ -172,4 +172,4 @@ jobs:
             echo "Building"
             xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
             -scheme MapsAndPlacesDemo \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build
+            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build | xcpretty
