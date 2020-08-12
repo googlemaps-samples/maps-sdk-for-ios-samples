@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5136D7B61AE24EB0CC89EEB2 /* libPods-GooglePlacesSwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855FD784CB8414A4C8189817 /* libPods-GooglePlacesSwiftDemo.a */; };
+		AAA7D63C24E30F5400C202B2 /* GMSPlaceFIeld+SetAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7D63B24E30F5400C202B2 /* GMSPlaceFIeld+SetAlgebra.swift */; };
 		E1938165249A95A700C4A49A /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1938163249A95A700C4A49A /* SampleListViewController.swift */; };
 		E1938166249A95A700C4A49A /* SampleDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1938164249A95A700C4A49A /* SampleDatas.swift */; };
 		E1938171249A966900C4A49A /* PagingPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1938169249A966900C4A49A /* PagingPhotoView.swift */; };
@@ -28,6 +29,7 @@
 		855FD784CB8414A4C8189817 /* libPods-GooglePlacesSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GooglePlacesSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4B507A720A283D6EAFE884 /* Pods-GooglePlacesSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-GooglePlacesSwiftDemo/Pods-GooglePlacesSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A53C462A918EEDA78352B704 /* Pods-GooglePlacesSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-GooglePlacesSwiftDemo/Pods-GooglePlacesSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		AAA7D63B24E30F5400C202B2 /* GMSPlaceFIeld+SetAlgebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSPlaceFIeld+SetAlgebra.swift"; sourceTree = "<group>"; };
 		E1938163249A95A700C4A49A /* SampleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleListViewController.swift; sourceTree = "<group>"; };
 		E1938164249A95A700C4A49A /* SampleDatas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDatas.swift; sourceTree = "<group>"; };
 		E1938169249A966900C4A49A /* PagingPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingPhotoView.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 				8C4B507A720A283D6EAFE884 /* Pods-GooglePlacesSwiftDemo.debug.xcconfig */,
 				A53C462A918EEDA78352B704 /* Pods-GooglePlacesSwiftDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,14 +129,15 @@
 		E1FA42562463335A00E0C1B9 /* GooglePlacesSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E193817B249A96CC00C4A49A /* Resources */,
-				E1938167249A95F600C4A49A /* Samples */,
+				E1FA42652463335B00E0C1B9 /* Info.plist */,
 				E1FA42572463335A00E0C1B9 /* AppDelegate.swift */,
-				E1FA426B24633B2000E0C1B9 /* SDKDemoAPIKey.swift */,
+				AAA7D63B24E30F5400C202B2 /* GMSPlaceFIeld+SetAlgebra.swift */,
 				E1938164249A95A700C4A49A /* SampleDatas.swift */,
 				E1938163249A95A700C4A49A /* SampleListViewController.swift */,
+				E1FA426B24633B2000E0C1B9 /* SDKDemoAPIKey.swift */,
 				E1FA42602463335B00E0C1B9 /* Assets.xcassets */,
-				E1FA42652463335B00E0C1B9 /* Info.plist */,
+				E193817B249A96CC00C4A49A /* Resources */,
+				E1938167249A95F600C4A49A /* Samples */,
 			);
 			path = GooglePlacesSwiftDemo;
 			sourceTree = "<group>";
@@ -236,18 +238,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesSwiftDemo/Pods-GooglePlacesSwiftDemo-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesSwiftDemo/Pods-GooglePlacesSwiftDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesSwiftDemo/Pods-GooglePlacesSwiftDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -270,6 +265,7 @@
 				E1938175249A966900C4A49A /* AutocompleteWithCustomColors.swift in Sources */,
 				E1FA426C24633B2000E0C1B9 /* SDKDemoAPIKey.swift in Sources */,
 				E1938166249A95A700C4A49A /* SampleDatas.swift in Sources */,
+				AAA7D63C24E30F5400C202B2 /* GMSPlaceFIeld+SetAlgebra.swift in Sources */,
 				E1938174249A966900C4A49A /* AutocompleteWithTextFieldController.swift in Sources */,
 				E1938178249A966900C4A49A /* AutocompleteWithSearchViewController.swift in Sources */,
 				E193817A249A967B00C4A49A /* FindPlaceLikelihoodListViewController.swift in Sources */,
