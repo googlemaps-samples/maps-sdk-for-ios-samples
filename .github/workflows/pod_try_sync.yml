@@ -1,8 +1,6 @@
 name: Update samples from CocoaPods
 
 on:
-  schedule:
-    - cron: '0 */1 * * *'
   repository_dispatch:
     types: [ pod-sync ]
 
