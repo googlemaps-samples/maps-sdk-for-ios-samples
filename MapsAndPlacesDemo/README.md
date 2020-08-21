@@ -10,7 +10,7 @@ __This project was made by Haiming (Eric) Xu as an internship project from 05/20
 - A light and dark themed map, which can be created [here](https://console.cloud.google.com/google/maps-apis/client-styles?project=verdant-medium-278819&folder=&organizationId=) (make sure you sign in first)
 - If you want a different data set for displaying the heatmap feature, ensure that it follows the correct formatting (and is also a JSON file) like the one provided (the data set provided can be found in `dataset.json`)
 ## Acknowledgements
-- This project uses a data set which can be found [here](https://simplemaps.com/data/world-cities)
+- This project uses a public data set, which can be found [here](https://simplemaps.com/data/world-cities)
 - The data set is licensed under Creative Commons Attribution 4.0 which can be found [here](https://creativecommons.org/licenses/by/4.0/legalcode)
 ## Installation
 1. Make sure you are in the right folder (MapsAndPlacesDemo)
