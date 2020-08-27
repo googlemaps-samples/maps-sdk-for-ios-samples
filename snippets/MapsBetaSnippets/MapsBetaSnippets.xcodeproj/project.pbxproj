@@ -16,6 +16,8 @@
 		AA2D099724F8283100935519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2D099524F8283100935519 /* LaunchScreen.storyboard */; };
 		AA2D099F24F8298C00935519 /* CloudBasedMapStylingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D099E24F8298C00935519 /* CloudBasedMapStylingViewController.swift */; };
 		AA2D09A424F829ED00935519 /* CloudBasedMapStylingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A324F829ED00935519 /* CloudBasedMapStylingViewController.m */; };
+		AA2D09A724F82CF700935519 /* CustomPOIBehaviorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */; };
+		AA2D09A924F82DCC00935519 /* CustomPOIBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		AA2D09A124F829ED00935519 /* MapsBetaSnippets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapsBetaSnippets-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA2D09A224F829ED00935519 /* CloudBasedMapStylingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudBasedMapStylingViewController.h; sourceTree = "<group>"; };
 		AA2D09A324F829ED00935519 /* CloudBasedMapStylingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudBasedMapStylingViewController.m; sourceTree = "<group>"; };
+		AA2D09A524F82CF700935519 /* CustomPOIBehaviorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPOIBehaviorViewController.h; sourceTree = "<group>"; };
+		AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPOIBehaviorViewController.m; sourceTree = "<group>"; };
+		AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIBehaviorViewController.swift; sourceTree = "<group>"; };
 		B28C20F2B5344F741DC01030 /* Pods-MapsBetaSnippets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsBetaSnippets.release.xcconfig"; path = "Target Support Files/Pods-MapsBetaSnippets/Pods-MapsBetaSnippets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +75,10 @@
 			isa = PBXGroup;
 			children = (
 				AA2D09A224F829ED00935519 /* CloudBasedMapStylingViewController.h */,
+				AA2D09A524F82CF700935519 /* CustomPOIBehaviorViewController.h */,
+				AA2D09A124F829ED00935519 /* MapsBetaSnippets-Bridging-Header.h */,
 				AA2D09A324F829ED00935519 /* CloudBasedMapStylingViewController.m */,
+				AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */,
 				AA2D099824F8283100935519 /* Info.plist */,
 				AA2D098A24F8282F00935519 /* AppDelegate.swift */,
 				AA2D098C24F8282F00935519 /* SceneDelegate.swift */,
@@ -78,7 +86,6 @@
 				AA2D099324F8283100935519 /* Assets.xcassets */,
 				AA2D099524F8283100935519 /* LaunchScreen.storyboard */,
 				AA2D099024F8282F00935519 /* Main.storyboard */,
-				AA2D09A124F829ED00935519 /* MapsBetaSnippets-Bridging-Header.h */,
 				AA2D09A024F829C100935519 /* Swift */,
 			);
 			path = MapsBetaSnippets;
@@ -88,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2D099E24F8298C00935519 /* CloudBasedMapStylingViewController.swift */,
+				AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -225,9 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2D09A724F82CF700935519 /* CustomPOIBehaviorViewController.m in Sources */,
 				AA2D099F24F8298C00935519 /* CloudBasedMapStylingViewController.swift in Sources */,
 				AA2D098F24F8282F00935519 /* ViewController.swift in Sources */,
 				AA2D098B24F8282F00935519 /* AppDelegate.swift in Sources */,
+				AA2D09A924F82DCC00935519 /* CustomPOIBehaviorViewController.swift in Sources */,
 				AA2D09A424F829ED00935519 /* CloudBasedMapStylingViewController.m in Sources */,
 				AA2D098D24F8282F00935519 /* SceneDelegate.swift in Sources */,
 			);
