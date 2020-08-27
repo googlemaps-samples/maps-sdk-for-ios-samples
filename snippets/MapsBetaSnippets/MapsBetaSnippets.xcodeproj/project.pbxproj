@@ -18,6 +18,8 @@
 		AA2D09A424F829ED00935519 /* CloudBasedMapStylingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A324F829ED00935519 /* CloudBasedMapStylingViewController.m */; };
 		AA2D09A724F82CF700935519 /* CustomPOIBehaviorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */; };
 		AA2D09A924F82DCC00935519 /* CustomPOIBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */; };
+		AA2D09AC24F82E4A00935519 /* PolylineCustomizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09AB24F82E4A00935519 /* PolylineCustomizationViewController.m */; };
+		AA2D09AE24F82F0D00935519 /* PolylineCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D09AD24F82F0D00935519 /* PolylineCustomizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		AA2D09A524F82CF700935519 /* CustomPOIBehaviorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPOIBehaviorViewController.h; sourceTree = "<group>"; };
 		AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPOIBehaviorViewController.m; sourceTree = "<group>"; };
 		AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIBehaviorViewController.swift; sourceTree = "<group>"; };
+		AA2D09AA24F82E4A00935519 /* PolylineCustomizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PolylineCustomizationViewController.h; sourceTree = "<group>"; };
+		AA2D09AB24F82E4A00935519 /* PolylineCustomizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolylineCustomizationViewController.m; sourceTree = "<group>"; };
+		AA2D09AD24F82F0D00935519 /* PolylineCustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolylineCustomizationViewController.swift; sourceTree = "<group>"; };
 		B28C20F2B5344F741DC01030 /* Pods-MapsBetaSnippets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsBetaSnippets.release.xcconfig"; path = "Target Support Files/Pods-MapsBetaSnippets/Pods-MapsBetaSnippets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,8 +82,10 @@
 				AA2D09A224F829ED00935519 /* CloudBasedMapStylingViewController.h */,
 				AA2D09A524F82CF700935519 /* CustomPOIBehaviorViewController.h */,
 				AA2D09A124F829ED00935519 /* MapsBetaSnippets-Bridging-Header.h */,
+				AA2D09AA24F82E4A00935519 /* PolylineCustomizationViewController.h */,
 				AA2D09A324F829ED00935519 /* CloudBasedMapStylingViewController.m */,
 				AA2D09A624F82CF700935519 /* CustomPOIBehaviorViewController.m */,
+				AA2D09AB24F82E4A00935519 /* PolylineCustomizationViewController.m */,
 				AA2D099824F8283100935519 /* Info.plist */,
 				AA2D098A24F8282F00935519 /* AppDelegate.swift */,
 				AA2D098C24F8282F00935519 /* SceneDelegate.swift */,
@@ -96,6 +103,7 @@
 			children = (
 				AA2D099E24F8298C00935519 /* CloudBasedMapStylingViewController.swift */,
 				AA2D09A824F82DCC00935519 /* CustomPOIBehaviorViewController.swift */,
+				AA2D09AD24F82F0D00935519 /* PolylineCustomizationViewController.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -235,8 +243,10 @@
 			files = (
 				AA2D09A724F82CF700935519 /* CustomPOIBehaviorViewController.m in Sources */,
 				AA2D099F24F8298C00935519 /* CloudBasedMapStylingViewController.swift in Sources */,
+				AA2D09AE24F82F0D00935519 /* PolylineCustomizationViewController.swift in Sources */,
 				AA2D098F24F8282F00935519 /* ViewController.swift in Sources */,
 				AA2D098B24F8282F00935519 /* AppDelegate.swift in Sources */,
+				AA2D09AC24F82E4A00935519 /* PolylineCustomizationViewController.m in Sources */,
 				AA2D09A924F82DCC00935519 /* CustomPOIBehaviorViewController.swift in Sources */,
 				AA2D09A424F829ED00935519 /* CloudBasedMapStylingViewController.m in Sources */,
 				AA2D098D24F8282F00935519 /* SceneDelegate.swift in Sources */,
