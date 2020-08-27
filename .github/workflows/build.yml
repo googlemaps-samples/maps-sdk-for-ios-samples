@@ -8,7 +8,7 @@ on:
     repository_dispatch:
         types: [ build ]
     schedule:
-        - cron: '0 0 * * 1'
+        - cron: '0 22 * * *'
 
 jobs:
     build-PlacesSnippets:
