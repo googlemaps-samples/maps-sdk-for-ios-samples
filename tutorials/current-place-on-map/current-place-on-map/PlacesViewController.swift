@@ -59,6 +59,20 @@ extension PlacesViewController: UITableViewDelegate {
     selectedPlace = likelyPlaces[indexPath.row]
     performSegue(withIdentifier: "unwindToMain", sender: self)
   }
+
+  // Adjust cell height to only show the first five items in the table
+  // (scrolling is disabled in IB).
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return self.tableView.frame.size.height/5
+  }
+
+  // Make table rows display at proper height if there are less than 5 items.
+  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    if (section == tableView.numberOfSections - 1) {
+      return 1
+    }
+    return 0
+  }
 }
 // [END maps_ios_current_place_tableviewdelegate]
 
@@ -76,20 +90,6 @@ extension PlacesViewController: UITableViewDataSource {
     cell.textLabel?.text = collectionItem.name
 
     return cell
-  }
-
-  // Adjust cell height to only show the first five items in the table
-  // (scrolling is disabled in IB).
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return self.tableView.frame.size.height/5
-  }
-
-  // Make table rows display at proper height if there are less than 5 items.
-  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    if (section == tableView.numberOfSections - 1) {
-      return 1
-    }
-    return 0
   }
 }
 // [END maps_ios_current_place_tableviewdatasource]

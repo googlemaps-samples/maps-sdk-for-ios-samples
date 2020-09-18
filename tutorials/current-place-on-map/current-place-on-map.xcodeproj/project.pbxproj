@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43FA683C93D9814075669C9E /* libPods-current-place-on-map.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6DAE685C4139E3E267D5D /* libPods-current-place-on-map.a */; };
+		AA378473251523B00095DAC6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA378472251523B00095DAC6 /* MapViewController.m */; };
+		AAC76F61251553E900731EA9 /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC76F60251553E900731EA9 /* PlacesViewController.m */; };
 		E50C79BB1E4CFDE9008ECCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50C79BA1E4CFDE9008ECCEB /* AppDelegate.swift */; };
 		E50C79BD1E4CFDE9008ECCEB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50C79BC1E4CFDE9008ECCEB /* MapViewController.swift */; };
 		E50C79C01E4CFDE9008ECCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50C79BE1E4CFDE9008ECCEB /* Main.storyboard */; };
@@ -19,6 +21,11 @@
 /* Begin PBXFileReference section */
 		9F38BF454393A3D5F89DBC86 /* Pods-current-place-on-map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-current-place-on-map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-current-place-on-map/Pods-current-place-on-map.debug.xcconfig"; sourceTree = "<group>"; };
 		A5B6DAE685C4139E3E267D5D /* libPods-current-place-on-map.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-current-place-on-map.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA37846D251520780095DAC6 /* current-place-on-map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "current-place-on-map-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA378471251523B00095DAC6 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		AA378472251523B00095DAC6 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		AAC76F5F251553E900731EA9 /* PlacesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlacesViewController.h; sourceTree = "<group>"; };
+		AAC76F60251553E900731EA9 /* PlacesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
 		E50AE729DE90351174E95425 /* Pods-current-place-on-map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-current-place-on-map.release.xcconfig"; path = "Pods/Target Support Files/Pods-current-place-on-map/Pods-current-place-on-map.release.xcconfig"; sourceTree = "<group>"; };
 		E50C79B71E4CFDE9008ECCEB /* current-place-on-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "current-place-on-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50C79BA1E4CFDE9008ECCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +100,11 @@
 		E50C79CC1E4CFE32008ECCEB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AA37846D251520780095DAC6 /* current-place-on-map-Bridging-Header.h */,
+				AA378471251523B00095DAC6 /* MapViewController.h */,
+				AAC76F5F251553E900731EA9 /* PlacesViewController.h */,
+				AA378472251523B00095DAC6 /* MapViewController.m */,
+				AAC76F60251553E900731EA9 /* PlacesViewController.m */,
 				E50C79BC1E4CFDE9008ECCEB /* MapViewController.swift */,
 				E50C79CD1E4CFE5D008ECCEB /* PlacesViewController.swift */,
 			);
@@ -134,7 +146,7 @@
 					E50C79B61E4CFDE9008ECCEB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DWAWMA8UAE;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,6 +232,8 @@
 				E50C79CE1E4CFE5D008ECCEB /* PlacesViewController.swift in Sources */,
 				E50C79BD1E4CFDE9008ECCEB /* MapViewController.swift in Sources */,
 				E50C79BB1E4CFDE9008ECCEB /* AppDelegate.swift in Sources */,
+				AA378473251523B00095DAC6 /* MapViewController.m in Sources */,
+				AAC76F61251553E900731EA9 /* PlacesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,11 +357,15 @@
 			baseConfigurationReference = 9F38BF454393A3D5F89DBC86 /* Pods-current-place-on-map.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DWAWMA8UAE;
 				INFOPLIST_FILE = "current-place-on-map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.google.examples.current-place-on-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "current-place-on-map/current-place-on-map-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
@@ -358,11 +376,14 @@
 			baseConfigurationReference = E50AE729DE90351174E95425 /* Pods-current-place-on-map.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DWAWMA8UAE;
 				INFOPLIST_FILE = "current-place-on-map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.google.examples.current-place-on-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "current-place-on-map/current-place-on-map-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
