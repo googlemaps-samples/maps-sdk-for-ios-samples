@@ -24,7 +24,8 @@ class MapViewController: UIViewController {
   var currentLocation: CLLocation?
   var mapView: GMSMapView!
   var placesClient: GMSPlacesClient!
-  var zoomLevel: Float = 15.0
+  var preciseLocationZoomLevel: Float = 15.0
+  var approximateLocationZoomLevel: Float = 10.0
   // [END maps_ios_current_place_declare_params]
 
   // [START maps_ios_current_place_places_params]
@@ -35,9 +36,6 @@ class MapViewController: UIViewController {
   var selectedPlace: GMSPlace?
   // [END maps_ios_current_place_places_params]
 
-  // A default location to use when location permission is not granted.
-  let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
-
   // [START maps_ios_current_place_unwindtomain]
   // Update the map once the user has made their selection.
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {
@@ -45,8 +43,8 @@ class MapViewController: UIViewController {
     mapView.clear()
 
     // Add a marker to the map.
-    if selectedPlace != nil {
-      let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
+    if let place = selectedPlace {
+      let marker = GMSMarker(position: place.coordinate)
       marker.title = selectedPlace?.name
       marker.snippet = selectedPlace?.formattedAddress
       marker.map = mapView
@@ -63,7 +61,7 @@ class MapViewController: UIViewController {
     // Initialize the location manager.
     locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.requestAlwaysAuthorization()
+    locationManager.requestWhenInUseAuthorization()
     locationManager.distanceFilter = 50
     locationManager.startUpdatingLocation()
     locationManager.delegate = self
@@ -72,7 +70,11 @@ class MapViewController: UIViewController {
     // [END maps_ios_current_place_init_params]
 
     // [START maps_ios_current_place_create_a_map]
+    // A default location to use when location permission is not granted.
+    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    
     // Create a map.
+    let zoomLevel = locationManager.accuracyAuthorization == .fullAccuracy ? preciseLocationZoomLevel : approximateLocationZoomLevel
     let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                           longitude: defaultLocation.coordinate.longitude,
                                           zoom: zoomLevel)
@@ -95,7 +97,8 @@ class MapViewController: UIViewController {
     // Clean up from previous sessions.
     likelyPlaces.removeAll()
 
-    placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: .name) { (placeLikelihoods, error) in
+    let placeFields: GMSPlaceField = GMSPlaceField(rawValue: GMSPlaceField.name.rawValue | GMSPlaceField.coordinate.rawValue)!
+    placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { (placeLikelihoods, error) in
       guard error == nil else {
         // TODO: Handle the error.
         print("Current Place error: \(error!.localizedDescription)")
@@ -137,6 +140,7 @@ extension MapViewController: CLLocationManagerDelegate {
     let location: CLLocation = locations.last!
     print("Location: \(location)")
 
+    let zoomLevel = locationManager.accuracyAuthorization == .fullAccuracy ? preciseLocationZoomLevel : approximateLocationZoomLevel
     let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                           longitude: location.coordinate.longitude,
                                           zoom: zoomLevel)
@@ -153,6 +157,18 @@ extension MapViewController: CLLocationManagerDelegate {
 
   // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    // Check accuracy authorization
+    let accuracy = manager.accuracyAuthorization
+    switch accuracy {
+    case .fullAccuracy:
+        print("Location accuracy is precise.")
+    case .reducedAccuracy:
+        print("Location accuracy is not precise.")
+    @unknown default:
+      fatalError()
+    }
+    
+    // Handle authorization status
     switch status {
     case .restricted:
       print("Location access was restricted.")
