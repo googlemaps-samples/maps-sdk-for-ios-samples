@@ -35,9 +35,6 @@ class MapViewController: UIViewController {
   var selectedPlace: GMSPlace?
   // [END maps_ios_current_place_places_params]
 
-  // A default location to use when location permission is not granted.
-  let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
-
   // [START maps_ios_current_place_unwindtomain]
   // Update the map once the user has made their selection.
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {
@@ -72,6 +69,9 @@ class MapViewController: UIViewController {
     // [END maps_ios_current_place_init_params]
 
     // [START maps_ios_current_place_create_a_map]
+    // A default location to use when location permission is not granted.
+    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    
     // Create a map.
     let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                           longitude: defaultLocation.coordinate.longitude,
