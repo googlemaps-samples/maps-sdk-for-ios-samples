@@ -6,16 +6,16 @@
 //  Copyright © 2020 William French. All rights reserved.
 //
 
-#import "MapsViewController.h"
+#import "MapViewController.h"
 @import CoreLocation;
 @import GooglePlaces;
 @import GoogleMaps;
 
-@interface MapsViewController () <CLLocationManagerDelegate>
+@interface MapViewController () <CLLocationManagerDelegate>
 
 @end
 
-@implementation MapsViewController {
+@implementation MapViewController {
   // [START maps_ios_current_place_declare_params]
   CLLocationManager *locationManager;
   CLLocation * _Nullable currentLocation;
