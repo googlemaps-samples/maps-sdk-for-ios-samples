@@ -45,8 +45,8 @@ class MapViewController: UIViewController {
     mapView.clear()
 
     // Add a marker to the map.
-    if selectedPlace != nil {
-      let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
+    if let place = selectedPlace {
+      let marker = GMSMarker(position: place.coordinate)
       marker.title = selectedPlace?.name
       marker.snippet = selectedPlace?.formattedAddress
       marker.map = mapView
@@ -95,7 +95,8 @@ class MapViewController: UIViewController {
     // Clean up from previous sessions.
     likelyPlaces.removeAll()
 
-    placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: .name) { (placeLikelihoods, error) in
+    let placeFields: GMSPlaceField = GMSPlaceField(rawValue: GMSPlaceField.name.rawValue | GMSPlaceField.coordinate.rawValue)!
+    placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { (placeLikelihoods, error) in
       guard error == nil else {
         // TODO: Handle the error.
         print("Current Place error: \(error!.localizedDescription)")
