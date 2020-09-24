@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30C885184A3CB6FA7321F0C1 /* libPods-PlacesSnippets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D65E0A16535232B7DA5E0B9F /* libPods-PlacesSnippets.a */; };
+		AA378475251D42170095DAC6 /* PlaceAutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA378474251D42170095DAC6 /* PlaceAutocompleteViewController.swift */; };
 		AA7270E824BCD10C0023E9B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7270E724BCD10C0023E9B3 /* AppDelegate.m */; };
 		AA7270EB24BCD10C0023E9B3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7270EA24BCD10C0023E9B3 /* SceneDelegate.m */; };
 		AA7270EE24BCD10C0023E9B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7270ED24BCD10C0023E9B3 /* ViewController.m */; };
@@ -17,11 +18,13 @@
 		AA7270F924BCD10C0023E9B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7270F824BCD10C0023E9B3 /* main.m */; };
 		AA72710224BCDF770023E9B3 /* GetStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72710124BCDF770023E9B3 /* GetStartedViewController.m */; };
 		AA72710524BCE3790023E9B3 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72710424BCE3790023E9B3 /* GetStartedViewController.swift */; };
+		AAD8E233251D3C6900B34D00 /* PlaceAutocompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD8E232251D3C6900B34D00 /* PlaceAutocompleteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21B56E35D16E0C718DCF2937 /* Pods-PlacesSnippets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesSnippets.release.xcconfig"; path = "Target Support Files/Pods-PlacesSnippets/Pods-PlacesSnippets.release.xcconfig"; sourceTree = "<group>"; };
 		55ACB216C8D4D4A61391C0CA /* Pods-PlacesSnippets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesSnippets.debug.xcconfig"; path = "Target Support Files/Pods-PlacesSnippets/Pods-PlacesSnippets.debug.xcconfig"; sourceTree = "<group>"; };
+		AA378474251D42170095DAC6 /* PlaceAutocompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAutocompleteViewController.swift; sourceTree = "<group>"; };
 		AA7270E324BCD10C0023E9B3 /* PlacesSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7270E624BCD10C0023E9B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7270E724BCD10C0023E9B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +41,8 @@
 		AA72710124BCDF770023E9B3 /* GetStartedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetStartedViewController.m; sourceTree = "<group>"; };
 		AA72710324BCE3790023E9B3 /* PlacesSnippets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlacesSnippets-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA72710424BCE3790023E9B3 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		AAD8E231251D3C6900B34D00 /* PlaceAutocompleteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceAutocompleteViewController.h; sourceTree = "<group>"; };
+		AAD8E232251D3C6900B34D00 /* PlaceAutocompleteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceAutocompleteViewController.m; sourceTree = "<group>"; };
 		D65E0A16535232B7DA5E0B9F /* libPods-PlacesSnippets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlacesSnippets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +97,8 @@
 				AA7270F424BCD10C0023E9B3 /* LaunchScreen.storyboard */,
 				AA7270F824BCD10C0023E9B3 /* main.m */,
 				AA7270EF24BCD10C0023E9B3 /* Main.storyboard */,
+				AAD8E231251D3C6900B34D00 /* PlaceAutocompleteViewController.h */,
+				AAD8E232251D3C6900B34D00 /* PlaceAutocompleteViewController.m */,
 				AA7270E924BCD10C0023E9B3 /* SceneDelegate.h */,
 				AA7270EA24BCD10C0023E9B3 /* SceneDelegate.m */,
 				AA7270FF24BCD4E20023E9B3 /* Swift */,
@@ -106,6 +113,7 @@
 			children = (
 				AA72710324BCE3790023E9B3 /* PlacesSnippets-Bridging-Header.h */,
 				AA72710424BCE3790023E9B3 /* GetStartedViewController.swift */,
+				AA378474251D42170095DAC6 /* PlaceAutocompleteViewController.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -236,8 +244,10 @@
 				AA7270EE24BCD10C0023E9B3 /* ViewController.m in Sources */,
 				AA7270E824BCD10C0023E9B3 /* AppDelegate.m in Sources */,
 				AA7270F924BCD10C0023E9B3 /* main.m in Sources */,
+				AAD8E233251D3C6900B34D00 /* PlaceAutocompleteViewController.m in Sources */,
 				AA72710524BCE3790023E9B3 /* GetStartedViewController.swift in Sources */,
 				AA7270EB24BCD10C0023E9B3 /* SceneDelegate.m in Sources */,
+				AA378475251D42170095DAC6 /* PlaceAutocompleteViewController.swift in Sources */,
 				AA72710224BCDF770023E9B3 /* GetStartedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
