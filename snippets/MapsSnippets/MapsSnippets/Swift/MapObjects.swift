@@ -24,3 +24,35 @@ class MapObjects : UIViewController {
   }
 }
 // [END maps_ios_map_objects_add]
+
+extension MapObjects {
+  private func mapType() {
+    // [START maps_ios_map_objects_map_type]
+    let camera = GMSCameraPosition.camera(withLatitude: -33.8683, longitude: 151.2086, zoom: 6)
+    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    mapView.mapType = .satellite
+    // [END maps_ios_map_objects_map_type]
+
+    // [START maps_ios_map_objects_indoor]
+    mapView.isIndoorEnabled = false
+    // [END maps_ios_map_objects_indoor]
+
+    // [START maps_ios_map_objects_accessibility]
+    mapView.accessibilityElementsHidden = false
+    // [END maps_ios_map_objects_accessibility]
+
+    // [START maps_ios_map_objects_my_location_enabled]
+    mapView.isMyLocationEnabled = true
+    // [END maps_ios_map_objects_my_location_enabled]
+
+    // [START maps_ios_map_objects_my_location_log]
+    print("User's location: \(String(describing: mapView.myLocation))")
+    // [END maps_ios_map_objects_my_location_log]
+
+    // [START maps_ios_map_objects_insets]
+    // Insets are specified in this order: top, left, bottom, right
+    let mapInsets = UIEdgeInsets(top: 100.0, left: 0.0, bottom: 0.0, right: 300.0)
+    mapView.padding = mapInsets
+    // [END maps_ios_map_objects_insets]
+  }
+}

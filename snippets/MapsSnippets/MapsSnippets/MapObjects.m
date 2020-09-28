@@ -29,3 +29,43 @@
 
 @end
 // [END maps_ios_map_objects_add]
+
+@interface MapObjectsExt : NSObject
+
+@end
+
+@implementation MapObjectsExt
+
+- (void)mapType {
+  // [START maps_ios_map_objects_map_type]
+  GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.8683
+                                                          longitude:151.2086
+                                                               zoom:6];
+  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  mapView.mapType = kGMSTypeSatellite;
+  // [END maps_ios_map_objects_map_type]
+
+  // [START maps_ios_map_objects_indoor]
+  mapView.indoorEnabled = NO;
+  // [END maps_ios_map_objects_indoor]
+
+  // [START maps_ios_map_objects_accessibility]
+  mapView.accessibilityElementsHidden = NO;
+  // [END maps_ios_map_objects_accessibility]
+
+  // [START maps_ios_map_objects_my_location_enabled]
+  mapView.myLocationEnabled = YES;
+  // [END maps_ios_map_objects_my_location_enabled]
+
+  // [START maps_ios_map_objects_my_location_log]
+  NSLog(@"User's location: %@", mapView.myLocation);
+  // [END maps_ios_map_objects_my_location_log]
+
+  // [START maps_ios_map_objects_insets]
+  // Insets are specified in this order: top, left, bottom, right
+  UIEdgeInsets mapInsets = UIEdgeInsetsMake(100.0, 0.0, 0.0, 300.0);
+  mapView.padding = mapInsets;
+  // [END maps_ios_map_objects_insets]
+}
+
+@end
