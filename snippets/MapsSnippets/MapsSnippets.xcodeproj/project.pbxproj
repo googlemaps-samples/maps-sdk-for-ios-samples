@@ -21,6 +21,8 @@
 		AA9D464325229DA6006D2E03 /* MapObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D464225229DA6006D2E03 /* MapObjects.swift */; };
 		AA9D46472522CB69006D2E03 /* POI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D46462522CB69006D2E03 /* POI.m */; };
 		AABD8E8A2522CCC400B99133 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E892522CCC400B99133 /* POI.swift */; };
+		AABD8E8D252397FA00B99133 /* StreetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E8C252397FA00B99133 /* StreetView.m */; };
+		AABD8E8F2523995900B99133 /* StreetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E8E2523995900B99133 /* StreetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,9 @@
 		AA9D46452522CB69006D2E03 /* POI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POI.h; sourceTree = "<group>"; };
 		AA9D46462522CB69006D2E03 /* POI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POI.m; sourceTree = "<group>"; };
 		AABD8E892522CCC400B99133 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
+		AABD8E8B252397FA00B99133 /* StreetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreetView.h; sourceTree = "<group>"; };
+		AABD8E8C252397FA00B99133 /* StreetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreetView.m; sourceTree = "<group>"; };
+		AABD8E8E2523995900B99133 /* StreetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetView.swift; sourceTree = "<group>"; };
 		DB9F5610BBC27BE50B3E93B8 /* libPods-MapsSnippets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapsSnippets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +115,8 @@
 				AA220C6125104135002A1F39 /* Swift */,
 				AA220C4B25104062002A1F39 /* ViewController.h */,
 				AA220C4C25104062002A1F39 /* ViewController.m */,
+				AABD8E8B252397FA00B99133 /* StreetView.h */,
+				AABD8E8C252397FA00B99133 /* StreetView.m */,
 			);
 			path = MapsSnippets;
 			sourceTree = "<group>";
@@ -117,10 +124,11 @@
 		AA220C6125104135002A1F39 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AA9D464225229DA6006D2E03 /* MapObjects.swift */,
 				AA220C62251042EB002A1F39 /* MapsSnippets-Bridging-Header.h */,
+				AA9D464225229DA6006D2E03 /* MapObjects.swift */,
 				AA220C63251042EC002A1F39 /* MapWithMarkerViewController.swift */,
 				AABD8E892522CCC400B99133 /* POI.swift */,
+				AABD8E8E2523995900B99133 /* StreetView.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -252,11 +260,13 @@
 				AA220C4D25104062002A1F39 /* ViewController.m in Sources */,
 				AA220C64251042EC002A1F39 /* MapWithMarkerViewController.swift in Sources */,
 				AA220C4725104062002A1F39 /* AppDelegate.m in Sources */,
+				AABD8E8D252397FA00B99133 /* StreetView.m in Sources */,
 				AA9D46472522CB69006D2E03 /* POI.m in Sources */,
 				AA9D464325229DA6006D2E03 /* MapObjects.swift in Sources */,
 				AA9D464025229CA4006D2E03 /* MapObjects.m in Sources */,
 				AABD8E8A2522CCC400B99133 /* POI.swift in Sources */,
 				AA220C5825104064002A1F39 /* main.m in Sources */,
+				AABD8E8F2523995900B99133 /* StreetView.swift in Sources */,
 				AA220C4A25104062002A1F39 /* SceneDelegate.m in Sources */,
 				AA220C602510411D002A1F39 /* MapWithMarkerViewController.m in Sources */,
 			);
