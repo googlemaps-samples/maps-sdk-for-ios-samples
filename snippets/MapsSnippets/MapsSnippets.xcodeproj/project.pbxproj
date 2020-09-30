@@ -25,6 +25,8 @@
 		AABD8E8F2523995900B99133 /* StreetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E8E2523995900B99133 /* StreetView.swift */; };
 		AABD8E922523A09400B99133 /* MapStyling.m in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E912523A09400B99133 /* MapStyling.m */; };
 		AABD8E942523A15900B99133 /* MapStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E932523A15900B99133 /* MapStyling.swift */; };
+		AABD8E992524FB7800B99133 /* ControlsAndGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E982524FB7800B99133 /* ControlsAndGestures.m */; };
+		AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,9 @@
 		AABD8E902523A09400B99133 /* MapStyling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapStyling.h; sourceTree = "<group>"; };
 		AABD8E912523A09400B99133 /* MapStyling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapStyling.m; sourceTree = "<group>"; };
 		AABD8E932523A15900B99133 /* MapStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyling.swift; sourceTree = "<group>"; };
+		AABD8E972524FB7800B99133 /* ControlsAndGestures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlsAndGestures.h; sourceTree = "<group>"; };
+		AABD8E982524FB7800B99133 /* ControlsAndGestures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsAndGestures.m; sourceTree = "<group>"; };
+		AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndGestures.swift; sourceTree = "<group>"; };
 		DB9F5610BBC27BE50B3E93B8 /* libPods-MapsSnippets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapsSnippets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,12 +110,16 @@
 				AA220C4525104062002A1F39 /* AppDelegate.h */,
 				AA220C4625104062002A1F39 /* AppDelegate.m */,
 				AA220C5125104064002A1F39 /* Assets.xcassets */,
+				AABD8E972524FB7800B99133 /* ControlsAndGestures.h */,
+				AABD8E982524FB7800B99133 /* ControlsAndGestures.m */,
 				AA220C5625104064002A1F39 /* Info.plist */,
 				AA220C5325104064002A1F39 /* LaunchScreen.storyboard */,
 				AA220C5725104064002A1F39 /* main.m */,
 				AA220C4E25104062002A1F39 /* Main.storyboard */,
 				AA9D463E25229CA4006D2E03 /* MapObjects.h */,
 				AA9D463F25229CA4006D2E03 /* MapObjects.m */,
+				AABD8E902523A09400B99133 /* MapStyling.h */,
+				AABD8E912523A09400B99133 /* MapStyling.m */,
 				AA220C5E2510411D002A1F39 /* MapWithMarkerViewController.h */,
 				AA220C5F2510411D002A1F39 /* MapWithMarkerViewController.m */,
 				AA9D46452522CB69006D2E03 /* POI.h */,
@@ -122,8 +131,6 @@
 				AA220C6125104135002A1F39 /* Swift */,
 				AA220C4B25104062002A1F39 /* ViewController.h */,
 				AA220C4C25104062002A1F39 /* ViewController.m */,
-				AABD8E902523A09400B99133 /* MapStyling.h */,
-				AABD8E912523A09400B99133 /* MapStyling.m */,
 			);
 			path = MapsSnippets;
 			sourceTree = "<group>";
@@ -131,12 +138,13 @@
 		AA220C6125104135002A1F39 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */,
 				AA9D464225229DA6006D2E03 /* MapObjects.swift */,
 				AA220C62251042EB002A1F39 /* MapsSnippets-Bridging-Header.h */,
+				AABD8E932523A15900B99133 /* MapStyling.swift */,
 				AA220C63251042EC002A1F39 /* MapWithMarkerViewController.swift */,
 				AABD8E892522CCC400B99133 /* POI.swift */,
 				AABD8E8E2523995900B99133 /* StreetView.swift */,
-				AABD8E932523A15900B99133 /* MapStyling.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -275,8 +283,10 @@
 				AA9D464025229CA4006D2E03 /* MapObjects.m in Sources */,
 				AABD8E8A2522CCC400B99133 /* POI.swift in Sources */,
 				AA220C5825104064002A1F39 /* main.m in Sources */,
+				AABD8E992524FB7800B99133 /* ControlsAndGestures.m in Sources */,
 				AABD8E8F2523995900B99133 /* StreetView.swift in Sources */,
 				AA220C4A25104062002A1F39 /* SceneDelegate.m in Sources */,
+				AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */,
 				AABD8E922523A09400B99133 /* MapStyling.m in Sources */,
 				AA220C602510411D002A1F39 /* MapWithMarkerViewController.m in Sources */,
 			);
