@@ -56,4 +56,5 @@ jobs:
         title: 'chore: Update Maps and Places samples from CocoaPods'
         body: |
           Pulling in changes from `pod try GoogleMaps` and `pod try GooglePlaces`.
+          **Note:** Make sure to update CocoaPods (Podfile) and Carthage (Cartfile) dependencies
         branch: googlemaps-bot/update_samples
