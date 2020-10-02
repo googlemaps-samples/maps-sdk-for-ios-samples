@@ -29,6 +29,8 @@
 		AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */; };
 		AAE49EE52527A8E10081B9FB /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EE42527A8E10081B9FB /* Events.m */; };
 		AAE49EE82527A95B0081B9FB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EE72527A95B0081B9FB /* Events.swift */; };
+		AAE49EEC2527C1DC0081B9FB /* CameraAndView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EEB2527C1DC0081B9FB /* CameraAndView.m */; };
+		AAE49EEF2527C5DE0081B9FB /* CameraAndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EEE2527C5DE0081B9FB /* CameraAndView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,9 @@
 		AAE49EE32527A8E10081B9FB /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		AAE49EE42527A8E10081B9FB /* Events.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
 		AAE49EE72527A95B0081B9FB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		AAE49EEA2527C1DC0081B9FB /* CameraAndView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraAndView.h; sourceTree = "<group>"; };
+		AAE49EEB2527C1DC0081B9FB /* CameraAndView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraAndView.m; sourceTree = "<group>"; };
+		AAE49EEE2527C5DE0081B9FB /* CameraAndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndView.swift; sourceTree = "<group>"; };
 		DB9F5610BBC27BE50B3E93B8 /* libPods-MapsSnippets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapsSnippets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +143,8 @@
 				AA220C4C25104062002A1F39 /* ViewController.m */,
 				AAE49EE32527A8E10081B9FB /* Events.h */,
 				AAE49EE42527A8E10081B9FB /* Events.m */,
+				AAE49EEA2527C1DC0081B9FB /* CameraAndView.h */,
+				AAE49EEB2527C1DC0081B9FB /* CameraAndView.m */,
 			);
 			path = MapsSnippets;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 				AABD8E892522CCC400B99133 /* POI.swift */,
 				AABD8E8E2523995900B99133 /* StreetView.swift */,
 				AAE49EE72527A95B0081B9FB /* Events.swift */,
+				AAE49EEE2527C5DE0081B9FB /* CameraAndView.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -294,6 +302,8 @@
 				AABD8E8A2522CCC400B99133 /* POI.swift in Sources */,
 				AA220C5825104064002A1F39 /* main.m in Sources */,
 				AABD8E992524FB7800B99133 /* ControlsAndGestures.m in Sources */,
+				AAE49EEF2527C5DE0081B9FB /* CameraAndView.swift in Sources */,
+				AAE49EEC2527C1DC0081B9FB /* CameraAndView.m in Sources */,
 				AABD8E8F2523995900B99133 /* StreetView.swift in Sources */,
 				AA220C4A25104062002A1F39 /* SceneDelegate.m in Sources */,
 				AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */,
