@@ -27,6 +27,8 @@
 		AABD8E942523A15900B99133 /* MapStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E932523A15900B99133 /* MapStyling.swift */; };
 		AABD8E992524FB7800B99133 /* ControlsAndGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E982524FB7800B99133 /* ControlsAndGestures.m */; };
 		AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */; };
+		AAE49EE52527A8E10081B9FB /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EE42527A8E10081B9FB /* Events.m */; };
+		AAE49EE82527A95B0081B9FB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE49EE72527A95B0081B9FB /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,9 @@
 		AABD8E972524FB7800B99133 /* ControlsAndGestures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlsAndGestures.h; sourceTree = "<group>"; };
 		AABD8E982524FB7800B99133 /* ControlsAndGestures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsAndGestures.m; sourceTree = "<group>"; };
 		AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndGestures.swift; sourceTree = "<group>"; };
+		AAE49EE32527A8E10081B9FB /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
+		AAE49EE42527A8E10081B9FB /* Events.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
+		AAE49EE72527A95B0081B9FB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DB9F5610BBC27BE50B3E93B8 /* libPods-MapsSnippets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapsSnippets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +136,8 @@
 				AA220C6125104135002A1F39 /* Swift */,
 				AA220C4B25104062002A1F39 /* ViewController.h */,
 				AA220C4C25104062002A1F39 /* ViewController.m */,
+				AAE49EE32527A8E10081B9FB /* Events.h */,
+				AAE49EE42527A8E10081B9FB /* Events.m */,
 			);
 			path = MapsSnippets;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 				AA220C63251042EC002A1F39 /* MapWithMarkerViewController.swift */,
 				AABD8E892522CCC400B99133 /* POI.swift */,
 				AABD8E8E2523995900B99133 /* StreetView.swift */,
+				AAE49EE72527A95B0081B9FB /* Events.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -278,6 +286,8 @@
 				AA220C4725104062002A1F39 /* AppDelegate.m in Sources */,
 				AABD8E8D252397FA00B99133 /* StreetView.m in Sources */,
 				AA9D46472522CB69006D2E03 /* POI.m in Sources */,
+				AAE49EE52527A8E10081B9FB /* Events.m in Sources */,
+				AAE49EE82527A95B0081B9FB /* Events.swift in Sources */,
 				AABD8E942523A15900B99133 /* MapStyling.swift in Sources */,
 				AA9D464325229DA6006D2E03 /* MapObjects.swift in Sources */,
 				AA9D464025229CA4006D2E03 /* MapObjects.m in Sources */,
