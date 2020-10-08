@@ -21,6 +21,8 @@
 		AA29A43D252E3F9D00D69D87 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA29A43C252E3F9D00D69D87 /* Shapes.swift */; };
 		AA29AD75252FB1BE00D69D87 /* GroundOverlays.m in Sources */ = {isa = PBXBuildFile; fileRef = AA29AD74252FB1BE00D69D87 /* GroundOverlays.m */; };
 		AA29AD78252FB28A00D69D87 /* GroundOverlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA29AD77252FB28A00D69D87 /* GroundOverlays.swift */; };
+		AA29AD7C252FB3AF00D69D87 /* TileLayers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA29AD7B252FB3AF00D69D87 /* TileLayers.m */; };
+		AA29AD80252FB5A100D69D87 /* TileLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA29AD7F252FB5A100D69D87 /* TileLayers.swift */; };
 		AA9D464025229CA4006D2E03 /* MapObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D463F25229CA4006D2E03 /* MapObjects.m */; };
 		AA9D464325229DA6006D2E03 /* MapObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D464225229DA6006D2E03 /* MapObjects.swift */; };
 		AA9D46472522CB69006D2E03 /* POI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D46462522CB69006D2E03 /* POI.m */; };
@@ -64,6 +66,9 @@
 		AA29AD73252FB1BE00D69D87 /* GroundOverlays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroundOverlays.h; sourceTree = "<group>"; };
 		AA29AD74252FB1BE00D69D87 /* GroundOverlays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroundOverlays.m; sourceTree = "<group>"; };
 		AA29AD77252FB28A00D69D87 /* GroundOverlays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundOverlays.swift; sourceTree = "<group>"; };
+		AA29AD7A252FB3AF00D69D87 /* TileLayers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileLayers.h; sourceTree = "<group>"; };
+		AA29AD7B252FB3AF00D69D87 /* TileLayers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileLayers.m; sourceTree = "<group>"; };
+		AA29AD7F252FB5A100D69D87 /* TileLayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileLayers.swift; sourceTree = "<group>"; };
 		AA9D463E25229CA4006D2E03 /* MapObjects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapObjects.h; sourceTree = "<group>"; };
 		AA9D463F25229CA4006D2E03 /* MapObjects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapObjects.m; sourceTree = "<group>"; };
 		AA9D464225229DA6006D2E03 /* MapObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapObjects.swift; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 				AABD8E982524FB7800B99133 /* ControlsAndGestures.m */,
 				AAE49EE32527A8E10081B9FB /* Events.h */,
 				AAE49EE42527A8E10081B9FB /* Events.m */,
+				AA29AD73252FB1BE00D69D87 /* GroundOverlays.h */,
+				AA29AD74252FB1BE00D69D87 /* GroundOverlays.m */,
 				AA220C5625104064002A1F39 /* Info.plist */,
 				AA220C5325104064002A1F39 /* LaunchScreen.storyboard */,
 				AA220C5725104064002A1F39 /* main.m */,
@@ -157,15 +164,15 @@
 				AA9D46462522CB69006D2E03 /* POI.m */,
 				AA220C4825104062002A1F39 /* SceneDelegate.h */,
 				AA220C4925104062002A1F39 /* SceneDelegate.m */,
+				AA29A438252E34FC00D69D87 /* Shapes.h */,
+				AA29A439252E34FC00D69D87 /* Shapes.m */,
 				AABD8E8B252397FA00B99133 /* StreetView.h */,
 				AABD8E8C252397FA00B99133 /* StreetView.m */,
 				AA220C6125104135002A1F39 /* Swift */,
 				AA220C4B25104062002A1F39 /* ViewController.h */,
 				AA220C4C25104062002A1F39 /* ViewController.m */,
-				AA29A438252E34FC00D69D87 /* Shapes.h */,
-				AA29A439252E34FC00D69D87 /* Shapes.m */,
-				AA29AD73252FB1BE00D69D87 /* GroundOverlays.h */,
-				AA29AD74252FB1BE00D69D87 /* GroundOverlays.m */,
+				AA29AD7A252FB3AF00D69D87 /* TileLayers.h */,
+				AA29AD7B252FB3AF00D69D87 /* TileLayers.m */,
 			);
 			path = MapsSnippets;
 			sourceTree = "<group>";
@@ -176,15 +183,16 @@
 				AAE49EEE2527C5DE0081B9FB /* CameraAndView.swift */,
 				AABD8E9A2524FF0E00B99133 /* ControlsAndGestures.swift */,
 				AAE49EE72527A95B0081B9FB /* Events.swift */,
+				AA29AD77252FB28A00D69D87 /* GroundOverlays.swift */,
 				AA9D464225229DA6006D2E03 /* MapObjects.swift */,
 				AA220C62251042EB002A1F39 /* MapsSnippets-Bridging-Header.h */,
 				AABD8E932523A15900B99133 /* MapStyling.swift */,
 				AA220C63251042EC002A1F39 /* MapWithMarkerViewController.swift */,
 				AABB47FA252B9B11004E4EB8 /* Markers.swift */,
 				AABD8E892522CCC400B99133 /* POI.swift */,
-				AABD8E8E2523995900B99133 /* StreetView.swift */,
 				AA29A43C252E3F9D00D69D87 /* Shapes.swift */,
-				AA29AD77252FB28A00D69D87 /* GroundOverlays.swift */,
+				AABD8E8E2523995900B99133 /* StreetView.swift */,
+				AA29AD7F252FB5A100D69D87 /* TileLayers.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -334,9 +342,11 @@
 				AAE49EEF2527C5DE0081B9FB /* CameraAndView.swift in Sources */,
 				AAE49EEC2527C1DC0081B9FB /* CameraAndView.m in Sources */,
 				AABD8E8F2523995900B99133 /* StreetView.swift in Sources */,
+				AA29AD80252FB5A100D69D87 /* TileLayers.swift in Sources */,
 				AABB47FB252B9B11004E4EB8 /* Markers.swift in Sources */,
 				AA220C4A25104062002A1F39 /* SceneDelegate.m in Sources */,
 				AABD8E9B2524FF0E00B99133 /* ControlsAndGestures.swift in Sources */,
+				AA29AD7C252FB3AF00D69D87 /* TileLayers.m in Sources */,
 				AABD8E922523A09400B99133 /* MapStyling.m in Sources */,
 				AA220C602510411D002A1F39 /* MapWithMarkerViewController.m in Sources */,
 			);
