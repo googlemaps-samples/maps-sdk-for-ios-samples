@@ -27,6 +27,7 @@ class GroundOverlays {
     // Image from http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg
     let icon = UIImage(named: "newark_nj_1922")
 
+    // [START maps_ios_ground_overlays_modify]
     let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: icon)
     overlay.bearing = 0
     overlay.map = mapView
@@ -39,6 +40,7 @@ class GroundOverlays {
     // [END_EXCLUDE]
 
     overlay.isTappable = true
+    // [END maps_ios_ground_overlays_modify]
   }
 
 }

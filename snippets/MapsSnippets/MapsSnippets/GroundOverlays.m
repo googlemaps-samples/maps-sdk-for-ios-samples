@@ -29,6 +29,7 @@ GMSMapView *mapView;
 
   // Image from http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg
   UIImage *icon = [UIImage imageNamed:@"newark_nj_1922"];
+  // [START maps_ios_ground_overlays_modify]
   GMSGroundOverlay *overlay = [GMSGroundOverlay groundOverlayWithBounds:overlayBounds icon:icon];
   overlay.bearing = 0;
   overlay.map = mapView;
@@ -40,6 +41,7 @@ GMSMapView *mapView;
   // [END maps_ios_ground_overlays_remove]
   // [END_EXCLUDE]
   overlay.tappable = YES;
+  // [END maps_ios_ground_overlays_modify]
 }
 
 @end
