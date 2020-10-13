@@ -36,6 +36,7 @@ class SnapshotReadyViewController: UIViewController {
 
   override func loadView() {
     view = mapView
+    navigationController?.navigationBar.isTranslucent = false
 
     mapView.delegate = self
 

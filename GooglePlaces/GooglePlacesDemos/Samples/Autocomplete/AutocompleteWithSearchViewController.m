@@ -47,7 +47,6 @@ NSString *const kSearchBarAccessibilityIdentifier = @"searchBarAccessibilityIden
   _searchController =
       [[UISearchController alloc] initWithSearchResultsController:_acViewController];
   _searchController.hidesNavigationBarDuringPresentation = NO;
-  _searchController.dimsBackgroundDuringPresentation = YES;
 
   _searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
   _searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
@@ -64,7 +63,7 @@ NSString *const kSearchBarAccessibilityIdentifier = @"searchBarAccessibilityIden
   self.extendedLayoutIncludesOpaqueBars = YES;
 
   _searchController.searchResultsUpdater = _acViewController;
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+  if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
     _searchController.modalPresentationStyle = UIModalPresentationPopover;
   } else {
     _searchController.modalPresentationStyle = UIModalPresentationFullScreen;

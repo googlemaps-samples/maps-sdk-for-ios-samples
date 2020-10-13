@@ -100,6 +100,7 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
 
     UINavigationController *navController =
         [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.navigationBar.translucent = NO;
     [self showDetailViewController:navController sender:nil];
 
     controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
