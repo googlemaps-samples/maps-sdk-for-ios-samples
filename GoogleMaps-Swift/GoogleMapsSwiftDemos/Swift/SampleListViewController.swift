@@ -70,6 +70,7 @@ extension SampleListViewController: UITableViewDataSource {
 
 extension SampleListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
     if let sample = sample(at: indexPath) {
       let viewController = sample.viewControllerClass.init()
       viewController.title = sample.title

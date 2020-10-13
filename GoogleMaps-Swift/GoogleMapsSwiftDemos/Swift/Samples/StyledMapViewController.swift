@@ -45,6 +45,7 @@ class StyledMapViewController: UIViewController {
           self.updateUI(style: style)
         })
     }
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
     present(alert, animated: true)
   }
 }
