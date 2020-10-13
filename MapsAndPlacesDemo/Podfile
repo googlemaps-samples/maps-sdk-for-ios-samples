@@ -1,8 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target 'MapsAndPlacesDemo' do
   use_frameworks!
-  pod 'GoogleMaps', '~>3.10.0'
-  pod 'GooglePlaces', '~>3.10.0'
+  pod 'GoogleMaps', '~>4.0.0'
+  pod 'GooglePlaces', '~>4.0.0'
   pod 'Google-Maps-iOS-Utils', '~> 3.1.4'
   pod 'MaterialComponents/Buttons'
   pod 'MaterialComponents/AppBar'
