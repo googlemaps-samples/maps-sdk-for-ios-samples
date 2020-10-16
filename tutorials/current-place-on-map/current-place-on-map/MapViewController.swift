@@ -97,7 +97,7 @@ class MapViewController: UIViewController {
     // Clean up from previous sessions.
     likelyPlaces.removeAll()
 
-    let placeFields: GMSPlaceField = GMSPlaceField(rawValue: GMSPlaceField.name.rawValue | GMSPlaceField.coordinate.rawValue)!
+    let placeFields: GMSPlaceField = [.name, .coordinate]
     placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { (placeLikelihoods, error) in
       guard error == nil else {
         // TODO: Handle the error.
