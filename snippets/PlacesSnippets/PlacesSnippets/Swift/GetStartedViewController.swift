@@ -25,9 +25,7 @@ class GetStartedViewController : UIViewController {
   
   // Add a UIButton in Interface Builder, and connect the action to this function.
   @IBAction func getCurrentPlace(_ sender: UIButton) {
-    let placeFields = GMSPlaceField(rawValue:
-      GMSPlaceField.name.rawValue | GMSPlaceField.formattedAddress.rawValue
-    )!
+    let placeFields: GMSPlaceField = [.name, .formattedAddress]
     placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { [weak self] (placeLikelihoods, error) in
       guard let strongSelf = self else {
         return
