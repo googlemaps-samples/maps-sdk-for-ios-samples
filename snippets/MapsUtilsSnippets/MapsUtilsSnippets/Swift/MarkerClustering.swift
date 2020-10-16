@@ -64,7 +64,7 @@ class MarkerClustering: UIViewController, GMSMapViewDelegate {
     // [END_EXCLUDE]
   }
   // [START_EXCLUDE]
-  // [START maps_ios_marker_clustering_marker_events]
+  // [START maps_ios_marker_clustering_events]
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     // center the map on tapped marker
     mapView.animate(toLocation: marker.position)
@@ -79,7 +79,7 @@ class MarkerClustering: UIViewController, GMSMapViewDelegate {
     NSLog("Did tap a normal marker")
     return false
   }
-  // [END maps_ios_marker_clustering_marker_events]
+  // [END maps_ios_marker_clustering_events]
   // [END_EXCLUDE]
 }
 // [END  maps_ios_marker_clustering_creation]

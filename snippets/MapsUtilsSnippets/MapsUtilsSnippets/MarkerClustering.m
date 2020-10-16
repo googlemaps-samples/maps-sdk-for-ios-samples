@@ -75,7 +75,7 @@
   // [END_EXCLUDE]
 }
 // [START_EXCLUDE]
-// [START maps_ios_marker_clustering_marker_events]
+// [START maps_ios_marker_clustering_events]
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
   // center the map on tapped marker
     [_mapView animateToLocation:marker.position];
@@ -90,7 +90,7 @@
     NSLog(@"Did tap marker in cluster");
     return NO;
 }
-// [END maps_ios_marker_clustering_marker_events]
+// [END maps_ios_marker_clustering_events]
 // [END_EXCLUDE]
 @end
 // [END maps_ios_marker_clustering_creation]
