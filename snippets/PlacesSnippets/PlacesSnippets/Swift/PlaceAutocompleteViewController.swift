@@ -36,20 +36,6 @@ class PlaceAutocompleteViewController: UIViewController {
 
     view.addSubview(tableView)
   }
-
-  func didUpdateAutocompletePredictionsForTableDataSource(tableDataSource: GMSAutocompleteTableDataSource) {
-    // Turn the network activity indicator off.
-    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    // Reload table data.
-    tableView.reloadData()
-  }
-
-  func didRequestAutocompletePredictionsForTableDataSource(tableDataSource: GMSAutocompleteTableDataSource) {
-    // Turn the network activity indicator on.
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    // Reload table data.
-    tableView.reloadData()
-  }
 }
 
 extension PlaceAutocompleteViewController: UISearchBarDelegate {
@@ -60,6 +46,20 @@ extension PlaceAutocompleteViewController: UISearchBarDelegate {
 }
 
 extension PlaceAutocompleteViewController: GMSAutocompleteTableDataSourceDelegate {
+  func didUpdateAutocompletePredictions(for tableDataSource: GMSAutocompleteTableDataSource) {
+    // Turn the network activity indicator off.
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    // Reload table data.
+    tableView.reloadData()
+  }
+
+  func didRequestAutocompletePredictions(for tableDataSource: GMSAutocompleteTableDataSource) {
+    // Turn the network activity indicator on.
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    // Reload table data.
+    tableView.reloadData()
+  }
+
   func tableDataSource(_ tableDataSource: GMSAutocompleteTableDataSource, didAutocompleteWith place: GMSPlace) {
     // Do something with the selected place.
     print("Place name: \(place.name)")
