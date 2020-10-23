@@ -15,7 +15,7 @@
 import GooglePlaces
 import UIKit
 
-class PlaceAutocompleteViewControllers: UIViewController {
+class PlaceAutocompleteViewController: UIViewController {
 
   private var tableView: UITableView!
   private var tableDataSource: GMSAutocompleteTableDataSource!
@@ -52,14 +52,14 @@ class PlaceAutocompleteViewControllers: UIViewController {
   }
 }
 
-extension PlaceAutocompleteViewControllers: UISearchBarDelegate {
+extension PlaceAutocompleteViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     // Update the GMSAutocompleteTableDataSource with the search text.
     tableDataSource.sourceTextHasChanged(searchText)
   }
 }
 
-extension PlaceAutocompleteViewControllers: GMSAutocompleteTableDataSourceDelegate {
+extension PlaceAutocompleteViewController: GMSAutocompleteTableDataSourceDelegate {
   func tableDataSource(_ tableDataSource: GMSAutocompleteTableDataSource, didAutocompleteWith place: GMSPlace) {
     // Do something with the selected place.
     print("Place name: \(place.name)")
