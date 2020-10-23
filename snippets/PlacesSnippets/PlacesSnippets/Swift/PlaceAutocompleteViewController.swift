@@ -15,25 +15,25 @@
 import GooglePlaces
 import UIKit
 
-class PlaceAutocompleteViewController: UIViewController {
-  
-  private var searchBar: UISearchBar!
+class PlaceAutocompleteViewControllers: UIViewController {
+
   private var tableView: UITableView!
   private var tableDataSource: GMSAutocompleteTableDataSource!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 250.0, height: 44.0))
+    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44.0))
+    searchBar.delegate = self
+    view.addSubview(searchBar)
 
     tableDataSource = GMSAutocompleteTableDataSource()
     tableDataSource.delegate = self
 
-    tableView = UITableView(frame: CGRect(x: 0, y: 44, width: 250.0, height: 44.0))
+    tableView = UITableView(frame: CGRect(x: 0, y: 64, width: self.view.frame.size.width, height: self.view.frame.size.height - 44))
     tableView.delegate = tableDataSource
     tableView.dataSource = tableDataSource
 
-    view.addSubview(searchBar)
     view.addSubview(tableView)
   }
 
@@ -52,14 +52,14 @@ class PlaceAutocompleteViewController: UIViewController {
   }
 }
 
-extension PlaceAutocompleteViewController: UISearchBarDelegate {
+extension PlaceAutocompleteViewControllers: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     // Update the GMSAutocompleteTableDataSource with the search text.
     tableDataSource.sourceTextHasChanged(searchText)
   }
 }
 
-extension PlaceAutocompleteViewController: GMSAutocompleteTableDataSourceDelegate {
+extension PlaceAutocompleteViewControllers: GMSAutocompleteTableDataSourceDelegate {
   func tableDataSource(_ tableDataSource: GMSAutocompleteTableDataSource, didAutocompleteWith place: GMSPlace) {
     // Do something with the selected place.
     print("Place name: \(place.name)")
@@ -69,7 +69,7 @@ extension PlaceAutocompleteViewController: GMSAutocompleteTableDataSourceDelegat
 
   func tableDataSource(_ tableDataSource: GMSAutocompleteTableDataSource, didFailAutocompleteWithError error: Error) {
     // Handle the error.
-    print("Error: \(error.description)")
+    print("Error: \(error.localizedDescription)")
   }
 
   func tableDataSource(_ tableDataSource: GMSAutocompleteTableDataSource, didSelect prediction: GMSAutocompletePrediction) -> Bool {
