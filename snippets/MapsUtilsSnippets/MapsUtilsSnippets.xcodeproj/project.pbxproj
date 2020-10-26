@@ -22,6 +22,8 @@
 		AA5C415325476746000B4DAB /* KML.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C415225476746000B4DAB /* KML.swift */; };
 		AA5C415C2547682B000B4DAB /* GeoJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C415B2547682B000B4DAB /* GeoJSON.m */; };
 		AA5C415F2547687F000B4DAB /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C415E2547687F000B4DAB /* GeoJSON.swift */; };
+		AA5C416225476D61000B4DAB /* Heatmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C416125476D61000B4DAB /* Heatmap.swift */; };
+		AA5C41662547715C000B4DAB /* Heatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C41652547715C000B4DAB /* Heatmap.m */; };
 		AAE93353253A188A00B5CFCC /* MarkerClustering.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE93352253A188A00B5CFCC /* MarkerClustering.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,9 @@
 		AA5C415A2547682B000B4DAB /* GeoJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoJSON.h; sourceTree = "<group>"; };
 		AA5C415B2547682B000B4DAB /* GeoJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoJSON.m; sourceTree = "<group>"; };
 		AA5C415E2547687F000B4DAB /* GeoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
+		AA5C416125476D61000B4DAB /* Heatmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heatmap.swift; sourceTree = "<group>"; };
+		AA5C41642547715C000B4DAB /* Heatmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heatmap.h; sourceTree = "<group>"; };
+		AA5C41652547715C000B4DAB /* Heatmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Heatmap.m; sourceTree = "<group>"; };
 		AAE93351253A188A00B5CFCC /* MarkerClustering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkerClustering.h; sourceTree = "<group>"; };
 		AAE93352253A188A00B5CFCC /* MarkerClustering.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkerClustering.m; sourceTree = "<group>"; };
 		BD73AAA6F49EBB3530904E8E /* Pods_MapsUtilsSnippets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsUtilsSnippets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +122,8 @@
 				AA5C414F254766D8000B4DAB /* KML.m */,
 				AA5C415A2547682B000B4DAB /* GeoJSON.h */,
 				AA5C415B2547682B000B4DAB /* GeoJSON.m */,
+				AA5C41642547715C000B4DAB /* Heatmap.h */,
+				AA5C41652547715C000B4DAB /* Heatmap.m */,
 			);
 			path = MapsUtilsSnippets;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 				AA5C413B2547625E000B4DAB /* QuadTree.swift */,
 				AA5C415225476746000B4DAB /* KML.swift */,
 				AA5C415E2547687F000B4DAB /* GeoJSON.swift */,
+				AA5C416125476D61000B4DAB /* Heatmap.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -258,6 +266,8 @@
 			files = (
 				AA5C414025476371000B4DAB /* QuadTree.m in Sources */,
 				AAE93353253A188A00B5CFCC /* MarkerClustering.m in Sources */,
+				AA5C41662547715C000B4DAB /* Heatmap.m in Sources */,
+				AA5C416225476D61000B4DAB /* Heatmap.swift in Sources */,
 				AA5C415325476746000B4DAB /* KML.swift in Sources */,
 				AA5C415C2547682B000B4DAB /* GeoJSON.m in Sources */,
 				AA32CE17253A19A4004D636E /* MarkerClustering.swift in Sources */,
