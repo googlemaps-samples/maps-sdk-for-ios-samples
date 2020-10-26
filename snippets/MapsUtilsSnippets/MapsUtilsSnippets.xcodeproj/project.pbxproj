@@ -16,6 +16,8 @@
 		AA1ACE1A253A1779003E70E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1ACE18253A1779003E70E8 /* LaunchScreen.storyboard */; };
 		AA1ACE1D253A1779003E70E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1ACE1C253A1779003E70E8 /* main.m */; };
 		AA32CE17253A19A4004D636E /* MarkerClustering.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32CE16253A19A4004D636E /* MarkerClustering.swift */; };
+		AA5C413C2547625E000B4DAB /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C413B2547625E000B4DAB /* QuadTree.swift */; };
+		AA5C414025476371000B4DAB /* QuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C413F25476371000B4DAB /* QuadTree.m */; };
 		AAE93353253A188A00B5CFCC /* MarkerClustering.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE93352253A188A00B5CFCC /* MarkerClustering.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,9 @@
 		AA1ACE1C253A1779003E70E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA32CE15253A19A3004D636E /* MapsUtilsSnippets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapsUtilsSnippets-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA32CE16253A19A4004D636E /* MarkerClustering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerClustering.swift; sourceTree = "<group>"; };
+		AA5C413B2547625E000B4DAB /* QuadTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
+		AA5C413E25476371000B4DAB /* QuadTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuadTree.h; sourceTree = "<group>"; };
+		AA5C413F25476371000B4DAB /* QuadTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuadTree.m; sourceTree = "<group>"; };
 		AAE93351253A188A00B5CFCC /* MarkerClustering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkerClustering.h; sourceTree = "<group>"; };
 		AAE93352253A188A00B5CFCC /* MarkerClustering.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkerClustering.m; sourceTree = "<group>"; };
 		BD73AAA6F49EBB3530904E8E /* Pods_MapsUtilsSnippets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsUtilsSnippets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,8 @@
 				AA1ACE18253A1779003E70E8 /* LaunchScreen.storyboard */,
 				AA1ACE13253A1779003E70E8 /* Main.storyboard */,
 				AA32CE14253A1991004D636E /* Swift */,
+				AA5C413E25476371000B4DAB /* QuadTree.h */,
+				AA5C413F25476371000B4DAB /* QuadTree.m */,
 			);
 			path = MapsUtilsSnippets;
 			sourceTree = "<group>";
@@ -103,8 +110,9 @@
 		AA32CE14253A1991004D636E /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AA32CE16253A19A4004D636E /* MarkerClustering.swift */,
 				AA32CE15253A19A3004D636E /* MapsUtilsSnippets-Bridging-Header.h */,
+				AA32CE16253A19A4004D636E /* MarkerClustering.swift */,
+				AA5C413B2547625E000B4DAB /* QuadTree.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -232,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5C414025476371000B4DAB /* QuadTree.m in Sources */,
 				AAE93353253A188A00B5CFCC /* MarkerClustering.m in Sources */,
 				AA32CE17253A19A4004D636E /* MarkerClustering.swift in Sources */,
+				AA5C413C2547625E000B4DAB /* QuadTree.swift in Sources */,
 				AA1ACE12253A1779003E70E8 /* ViewController.m in Sources */,
 				AA1ACE0C253A1779003E70E8 /* AppDelegate.m in Sources */,
 				AA1ACE1D253A1779003E70E8 /* main.m in Sources */,
