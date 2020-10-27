@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+// [START maps_ios_geojson]
 import GoogleMapsUtils
 
 class GeoJSON {
@@ -32,3 +32,4 @@ class GeoJSON {
     renderer.render()
   }
 }
+// [END maps_ios_geojson]
