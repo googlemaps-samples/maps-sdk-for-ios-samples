@@ -12,13 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//
-//  main.m
-//  GoogleMapsBeta
-//
-//  Created by Chris Arriola on 11/4/20.
-//
-
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 

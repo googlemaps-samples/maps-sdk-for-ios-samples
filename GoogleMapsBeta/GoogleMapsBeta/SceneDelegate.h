@@ -14,13 +14,6 @@
  * limitations under the License.
  */
 
-//
-//  SceneDelegate.h
-//  Test
-//
-//  Created by Chris Arriola on 11/4/20.
-//
-
 #import <UIKit/UIKit.h>
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
