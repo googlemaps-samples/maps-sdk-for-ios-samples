@@ -16,6 +16,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController <UISplitViewControllerDelegate>
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+
+@property (strong, nonatomic) UIWindow * window;
+@property(nonatomic) UISplitViewController *splitViewController;
 
 @end
+

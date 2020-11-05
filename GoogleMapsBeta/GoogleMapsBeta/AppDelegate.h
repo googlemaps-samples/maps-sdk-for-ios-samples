@@ -16,6 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController <UISplitViewControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @end
+

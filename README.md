@@ -29,6 +29,27 @@ You will need to add an API Key to `GoogleMapsDemos/SDKDemoAPIKey.h`. Please see
 [documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key)
 for details on how to get an API Key.
 
+## GoogleMapsBeta
+
+The `GoogleMapsBeta` and `GoogleMapsBeta-Swift` sub-directories contain sample code for the
+[Maps SDK for iOS BETA](https://developers.google.com/maps/documentation/ios-sdk/v310-beta) version of the library. 
+
+To use the Objective-C project:
+
+```
+$ cd GoogleMapsBeta
+$ pod install
+$ open GoogleMapsBeta.xcworkspace
+```
+
+For the Swift project:
+
+```
+$ cd GoogleMapsBeta-Swift
+$ pod install
+$ open GoogleMapsBeta-Swift.xcworkspace
+```
+
 ## GooglePlaces
 
 The `GooglePlaces` and `GooglePlaces-Swift` sub-directory contains the sample code that is downloaded
