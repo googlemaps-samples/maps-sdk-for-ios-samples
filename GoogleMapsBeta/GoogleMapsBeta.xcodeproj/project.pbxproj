@@ -10,7 +10,7 @@
 		AA33867825536A3100CD9AC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33867725536A3100CD9AC4 /* AppDelegate.m */; };
 		AA33868325536A3200CD9AC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA33868225536A3200CD9AC4 /* Assets.xcassets */; };
 		AA33868925536A3200CD9AC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33868825536A3200CD9AC4 /* main.m */; };
-		AA3386A425536F2000CD9AC4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386A225536F2000CD9AC4 /* MasterViewController.m */; };
+		AA3386A425536F2000CD9AC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386A225536F2000CD9AC4 /* MainViewController.m */; };
 		AA3386BB2553713800CD9AC4 /* CollidingMarkersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386B42553713800CD9AC4 /* CollidingMarkersViewController.m */; };
 		AA3386BC2553713800CD9AC4 /* Samples.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386B52553713800CD9AC4 /* Samples.m */; };
 		AA3386BD2553713800CD9AC4 /* CloudBasedMapStylingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386B62553713800CD9AC4 /* CloudBasedMapStylingViewController.m */; };
@@ -31,8 +31,8 @@
 		AA33868725536A3200CD9AC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA33868825536A3200CD9AC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA33869B25536E6200CD9AC4 /* SDKDemoAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDKDemoAPIKey.h; path = ../../GoogleMaps/GoogleMapsDemos/SDKDemoAPIKey.h; sourceTree = "<group>"; };
-		AA3386A225536F2000CD9AC4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		AA3386A325536F2000CD9AC4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		AA3386A225536F2000CD9AC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AA3386A325536F2000CD9AC4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AA3386B32553713800CD9AC4 /* CollidingMarkersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollidingMarkersViewController.h; sourceTree = "<group>"; };
 		AA3386B42553713800CD9AC4 /* CollidingMarkersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollidingMarkersViewController.m; sourceTree = "<group>"; };
 		AA3386B52553713800CD9AC4 /* Samples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Samples.m; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 				AA3386F4255375FF00CD9AC4 /* SceneDelegate.h */,
 				AA3386F3255375FF00CD9AC4 /* SceneDelegate.m */,
 				AA3386B22553712600CD9AC4 /* Samples */,
-				AA3386A325536F2000CD9AC4 /* MasterViewController.h */,
-				AA3386A225536F2000CD9AC4 /* MasterViewController.m */,
+				AA3386A325536F2000CD9AC4 /* MainViewController.h */,
+				AA3386A225536F2000CD9AC4 /* MainViewController.m */,
 				AA33867625536A3100CD9AC4 /* AppDelegate.h */,
 				AA33867725536A3100CD9AC4 /* AppDelegate.m */,
 				AA33869B25536E6200CD9AC4 /* SDKDemoAPIKey.h */,
@@ -261,7 +261,7 @@
 				AA3386F5255375FF00CD9AC4 /* SceneDelegate.m in Sources */,
 				AA33867825536A3100CD9AC4 /* AppDelegate.m in Sources */,
 				AA3386BE2553713800CD9AC4 /* StampedPolylinesViewController.m in Sources */,
-				AA3386A425536F2000CD9AC4 /* MasterViewController.m in Sources */,
+				AA3386A425536F2000CD9AC4 /* MainViewController.m in Sources */,
 				AA33868925536A3200CD9AC4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

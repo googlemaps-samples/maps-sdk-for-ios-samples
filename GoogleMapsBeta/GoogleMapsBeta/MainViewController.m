@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-#import "MasterViewController.h"
+#import "MainViewController.h"
 #import "Samples.h"
 @import GoogleMaps;
 
 
 typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSamplesArray;
 
-@implementation MasterViewController {
+@implementation MainViewController {
   NSArray *_demos;
   NSArray *_demoSections;
   CLLocationManager *_locationManager;

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import "SceneDelegate.h"
-#import "MasterViewController.h"
+#import "MainViewController.h"
 @interface SceneDelegate ()
 
 @end
@@ -23,20 +23,20 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
   UIWindowScene *windowScene = (UIWindowScene *)scene;
   self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-  MasterViewController *master = [[MasterViewController alloc] init];
+  MainViewController *main = [[MainViewController alloc] init];
 
-  UINavigationController *masterNavigationController =
-      [[UINavigationController alloc] initWithRootViewController:master];
+  UINavigationController *mainNavigationController =
+      [[UINavigationController alloc] initWithRootViewController:main];
 
   UIViewController *empty = [[UIViewController alloc] init];
   UINavigationController *detailNavigationController =
       [[UINavigationController alloc] initWithRootViewController:empty];
 
   self.splitViewController = [[UISplitViewController alloc] init];
-  self.splitViewController.delegate = master;
+  self.splitViewController.delegate = main;
   self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
   self.splitViewController.viewControllers =
-      @[ masterNavigationController, detailNavigationController ];
+      @[ mainNavigationController, detailNavigationController ];
 
   empty.navigationItem.leftItemsSupplementBackButton = YES;
   empty.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
