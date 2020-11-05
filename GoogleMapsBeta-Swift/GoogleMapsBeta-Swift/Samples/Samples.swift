@@ -26,7 +26,8 @@ struct Section {
 enum Samples {
   static func allSamples() -> [Section] {
     let samples = [
-      Sample(viewControllerClass: CloudBasedMapStylingViewController.self, title:"Cloud-based Map Styling")
+      Sample(viewControllerClass: CloudBasedMapStylingViewController.self, title:"Cloud-based Map Styling"),
+      Sample(viewControllerClass: CollidingMarkersViewController.self, title: "Colliding Markers")
     ]
     return [
       Section(name: "Map", samples: samples),

@@ -15,6 +15,7 @@
 		AA33872025537D5700CD9AC4 /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33871F25537D5700CD9AC4 /* SampleListViewController.swift */; };
 		AA33872725537DDC00CD9AC4 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872625537DDC00CD9AC4 /* Samples.swift */; };
 		AA33872A25537E1500CD9AC4 /* CloudBasedMapStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */; };
+		AA33872D255389B700CD9AC4 /* CollidingMarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AA33871F25537D5700CD9AC4 /* SampleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleListViewController.swift; sourceTree = "<group>"; };
 		AA33872625537DDC00CD9AC4 /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
 		AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudBasedMapStyling.swift; sourceTree = "<group>"; };
+		AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollidingMarkersViewController.swift; sourceTree = "<group>"; };
 		EE0F0406CEBEC6A31938985E /* Pods-GoogleMapsBeta-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsBeta-Swift.release.xcconfig"; path = "Target Support Files/Pods-GoogleMapsBeta-Swift/Pods-GoogleMapsBeta-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			children = (
 				AA33872625537DDC00CD9AC4 /* Samples.swift */,
 				AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */,
+				AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				AA33870425537CB400CD9AC4 /* AppDelegate.swift in Sources */,
 				AA33870625537CB400CD9AC4 /* SceneDelegate.swift in Sources */,
+				AA33872D255389B700CD9AC4 /* CollidingMarkersViewController.swift in Sources */,
 				AA33872025537D5700CD9AC4 /* SampleListViewController.swift in Sources */,
 				AA33872A25537E1500CD9AC4 /* CloudBasedMapStyling.swift in Sources */,
 				AA33872725537DDC00CD9AC4 /* Samples.swift in Sources */,

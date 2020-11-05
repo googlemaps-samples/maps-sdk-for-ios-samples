@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 import GoogleMaps
 
+/// Demonstrate basic usage of the Cloud Styling feature.
 class CloudBasedMapStylingViewController: UIViewController {
 
   private static let mapIdRetro = "13564581852493597319"
@@ -28,12 +28,14 @@ class CloudBasedMapStylingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     mapView = GMSMapView(frame: .zero, camera: GMSCameraPosition(target: CLLocationCoordinate2D.newYork, zoom: 12))
+    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.view = mapView
 
     let styleButton = UIBarButtonItem(title: "Style Map", style: .plain, target: self, action: #selector(self.changeMapId))
     self.navigationItem.rightBarButtonItem = styleButton
   }
 
+  /// Bring up a selection list of existing Map IDs, and the option to add a new one.
   @objc func changeMapId(sender: UIBarButtonItem) {
     let alert = UIAlertController(title: "Select Map ID", message: "Change the look of the map with a map ID", preferredStyle: .actionSheet)
 
@@ -59,12 +61,14 @@ class CloudBasedMapStylingViewController: UIViewController {
     present(alert, animated: true)
   }
 
+  ///  Re-create the map view with the specified mapID.
   private func updateMap(withId id: String) {
     let mapId = GMSMapID(identifier: id)
     mapView = GMSMapView(frame: .zero, mapID: mapId, camera: mapView.camera)
     self.view = mapView
   }
 
+  /// Bring up a selection list of existing Map IDs, and the option to add a new one.
   private func showAddMapIdAlert() {
     let alert = UIAlertController(title: "Add a new map ID", message: nil, preferredStyle: .alert)
     alert.addTextField { textField in
