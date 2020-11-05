@@ -27,6 +27,7 @@ enum Samples {
   static func allSamples() -> [Section] {
     let samples = [
       Sample(viewControllerClass: CloudBasedMapStylingViewController.self, title:"Cloud-based Map Styling"),
+      Sample(viewControllerClass: StampedPolylinesViewController.self, title: "Stamped Polyline"),
       Sample(viewControllerClass: CollidingMarkersViewController.self, title: "Colliding Markers")
     ]
     return [

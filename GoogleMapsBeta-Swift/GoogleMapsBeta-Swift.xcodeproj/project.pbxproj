@@ -16,6 +16,10 @@
 		AA33872725537DDC00CD9AC4 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872625537DDC00CD9AC4 /* Samples.swift */; };
 		AA33872A25537E1500CD9AC4 /* CloudBasedMapStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */; };
 		AA33872D255389B700CD9AC4 /* CollidingMarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */; };
+		AA33873025538F7700CD9AC4 /* StampedPolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33872F25538F7700CD9AC4 /* StampedPolylinesViewController.swift */; };
+		AA33876525547DB500CD9AC4 /* voyager@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33876225547DB500CD9AC4 /* voyager@2x.png */; };
+		AA33876625547DB500CD9AC4 /* voyager.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33876325547DB500CD9AC4 /* voyager.png */; };
+		AA33876725547DB500CD9AC4 /* aeroplane.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33876425547DB500CD9AC4 /* aeroplane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		AA33872625537DDC00CD9AC4 /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
 		AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudBasedMapStyling.swift; sourceTree = "<group>"; };
 		AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollidingMarkersViewController.swift; sourceTree = "<group>"; };
+		AA33872F25538F7700CD9AC4 /* StampedPolylinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampedPolylinesViewController.swift; sourceTree = "<group>"; };
+		AA33876225547DB500CD9AC4 /* voyager@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voyager@2x.png"; sourceTree = "<group>"; };
+		AA33876325547DB500CD9AC4 /* voyager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voyager.png; sourceTree = "<group>"; };
+		AA33876425547DB500CD9AC4 /* aeroplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aeroplane.png; sourceTree = "<group>"; };
 		EE0F0406CEBEC6A31938985E /* Pods-GoogleMapsBeta-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsBeta-Swift.release.xcconfig"; path = "Target Support Files/Pods-GoogleMapsBeta-Swift/Pods-GoogleMapsBeta-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +92,7 @@
 		AA33870225537CB400CD9AC4 /* GoogleMapsBeta-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				AA33874925547B2A00CD9AC4 /* Resources */,
 				AA33872525537DA400CD9AC4 /* Samples */,
 				AA33871F25537D5700CD9AC4 /* SampleListViewController.swift */,
 				AA33871C25537D1100CD9AC4 /* SDKConstants.swift */,
@@ -101,8 +110,19 @@
 				AA33872625537DDC00CD9AC4 /* Samples.swift */,
 				AA33872925537E1500CD9AC4 /* CloudBasedMapStyling.swift */,
 				AA33872C255389B700CD9AC4 /* CollidingMarkersViewController.swift */,
+				AA33872F25538F7700CD9AC4 /* StampedPolylinesViewController.swift */,
 			);
 			path = Samples;
+			sourceTree = "<group>";
+		};
+		AA33874925547B2A00CD9AC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA33876425547DB500CD9AC4 /* aeroplane.png */,
+				AA33876325547DB500CD9AC4 /* voyager.png */,
+				AA33876225547DB500CD9AC4 /* voyager@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +184,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA33876625547DB500CD9AC4 /* voyager.png in Resources */,
+				AA33876525547DB500CD9AC4 /* voyager@2x.png in Resources */,
 				AA33870D25537CB600CD9AC4 /* Assets.xcassets in Resources */,
+				AA33876725547DB500CD9AC4 /* aeroplane.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +243,7 @@
 				AA33870425537CB400CD9AC4 /* AppDelegate.swift in Sources */,
 				AA33870625537CB400CD9AC4 /* SceneDelegate.swift in Sources */,
 				AA33872D255389B700CD9AC4 /* CollidingMarkersViewController.swift in Sources */,
+				AA33873025538F7700CD9AC4 /* StampedPolylinesViewController.swift in Sources */,
 				AA33872025537D5700CD9AC4 /* SampleListViewController.swift in Sources */,
 				AA33872A25537E1500CD9AC4 /* CloudBasedMapStyling.swift in Sources */,
 				AA33872725537DDC00CD9AC4 /* Samples.swift in Sources */,

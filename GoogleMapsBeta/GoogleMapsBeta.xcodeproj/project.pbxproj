@@ -16,6 +16,9 @@
 		AA3386BD2553713800CD9AC4 /* CloudBasedMapStylingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386B62553713800CD9AC4 /* CloudBasedMapStylingViewController.m */; };
 		AA3386BE2553713800CD9AC4 /* StampedPolylinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386B82553713800CD9AC4 /* StampedPolylinesViewController.m */; };
 		AA3386F5255375FF00CD9AC4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3386F3255375FF00CD9AC4 /* SceneDelegate.m */; };
+		AA33875E25547DA700CD9AC4 /* voyager@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33875B25547DA700CD9AC4 /* voyager@2x.png */; };
+		AA33875F25547DA700CD9AC4 /* aeroplane.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33875C25547DA700CD9AC4 /* aeroplane.png */; };
+		AA33876025547DA700CD9AC4 /* voyager.png in Resources */ = {isa = PBXBuildFile; fileRef = AA33875D25547DA700CD9AC4 /* voyager.png */; };
 		ED2BD870A75C643F2A64396F /* libPods-GoogleMapsBeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B402B1C1C4458FB7A985FD5 /* libPods-GoogleMapsBeta.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		AA3386BA2553713800CD9AC4 /* CloudBasedMapStylingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudBasedMapStylingViewController.h; sourceTree = "<group>"; };
 		AA3386F3255375FF00CD9AC4 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		AA3386F4255375FF00CD9AC4 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AA33875B25547DA700CD9AC4 /* voyager@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voyager@2x.png"; sourceTree = "<group>"; };
+		AA33875C25547DA700CD9AC4 /* aeroplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aeroplane.png; sourceTree = "<group>"; };
+		AA33875D25547DA700CD9AC4 /* voyager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voyager.png; sourceTree = "<group>"; };
 		DF449EA92CFD849E0E745047 /* Pods-GoogleMapsBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsBeta.release.xcconfig"; path = "Target Support Files/Pods-GoogleMapsBeta/Pods-GoogleMapsBeta.release.xcconfig"; sourceTree = "<group>"; };
 		F4B8CFCBBB84A95FCE3660CB /* Pods-GoogleMapsBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsBeta.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsBeta/Pods-GoogleMapsBeta.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +100,7 @@
 		AA33867525536A3100CD9AC4 /* GoogleMapsBeta */ = {
 			isa = PBXGroup;
 			children = (
+				AA33873225547AAA00CD9AC4 /* Resources */,
 				AA3386F4255375FF00CD9AC4 /* SceneDelegate.h */,
 				AA3386F3255375FF00CD9AC4 /* SceneDelegate.m */,
 				AA3386B22553712600CD9AC4 /* Samples */,
@@ -122,6 +129,16 @@
 				AA3386B82553713800CD9AC4 /* StampedPolylinesViewController.m */,
 			);
 			path = Samples;
+			sourceTree = "<group>";
+		};
+		AA33873225547AAA00CD9AC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA33875C25547DA700CD9AC4 /* aeroplane.png */,
+				AA33875D25547DA700CD9AC4 /* voyager.png */,
+				AA33875B25547DA700CD9AC4 /* voyager@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA33875E25547DA700CD9AC4 /* voyager@2x.png in Resources */,
+				AA33875F25547DA700CD9AC4 /* aeroplane.png in Resources */,
 				AA33868325536A3200CD9AC4 /* Assets.xcassets in Resources */,
+				AA33876025547DA700CD9AC4 /* voyager.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
