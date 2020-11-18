@@ -82,5 +82,5 @@ class MarkerClustering: UIViewController, GMSMapViewDelegate {
   // [END maps_ios_marker_clustering_events]
   // [END_EXCLUDE]
 }
-// [END  maps_ios_marker_clustering_creation]
+// [END maps_ios_marker_clustering_creation]
 
