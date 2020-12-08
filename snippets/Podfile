@@ -11,4 +11,4 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
   pod 'GooglePlaces', '4.1.0'
 end
-# [END maps_ios_get_started_install_podfile]
+# [END maps_ios_places_get_started_install_podfile]
