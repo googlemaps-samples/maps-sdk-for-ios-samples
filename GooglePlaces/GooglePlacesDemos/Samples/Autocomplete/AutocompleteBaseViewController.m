@@ -27,7 +27,15 @@
   [super viewDidLoad];
 
   // Configure a background color.
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+    self.view.backgroundColor = [UIColor whiteColor];
+  }
+#else
   self.view.backgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
   // Configure the UI. Tell our superclass we want a button and a result view below that.
   _photoButton =

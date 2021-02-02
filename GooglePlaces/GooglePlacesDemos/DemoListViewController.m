@@ -17,6 +17,7 @@
 
 #import <GooglePlaces/GooglePlaces.h>
 
+
 // The cell reuse identifier we are going to use.
 static NSString *const kCellIdentifier = @"DemoCellIdentifier";
 static const CGFloat kSelectionHeight = 40;
@@ -116,7 +117,15 @@ static const CGFloat kEdgeBuffer = 8;
 - (void)setUpEditSelectionsUI {
   // Initialize the place fields selection UI.
   UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    scrollView.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+    scrollView.backgroundColor = [UIColor whiteColor];
+  }
+#else
   scrollView.backgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
   // Add heading for the autocomplete type filters.
   _nextSelectionYPos = [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -152,6 +161,7 @@ static const CGFloat kEdgeBuffer = 8;
        placeField <<= 1) {
     [scrollView addSubview:[self selectionButtonForPlaceField:(GMSPlaceField)placeField]];
   }
+
 
   // Add the close button to dismiss the selection UI.
   UIButton *close =

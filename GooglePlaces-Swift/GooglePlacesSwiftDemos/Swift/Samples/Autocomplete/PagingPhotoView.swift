@@ -21,7 +21,7 @@ struct AttributedPhoto {
 
 /// Represents a place photo, along with the attributions which are required to be displayed along
 /// with it.
-fileprivate class ImageAndAttributionView: UIView {
+private class ImageAndAttributionView: UIView {
   let margin: CGFloat = 30
   lazy var imageView: UIImageView = {
     let imageView = UIImageView()
