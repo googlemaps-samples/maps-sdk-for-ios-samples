@@ -17,6 +17,7 @@ name: Update samples from CocoaPods
 on:
   repository_dispatch:
     types: [ pod-sync ]
+  workflow_dispatch:
 
 jobs:
   check_pod_try:
