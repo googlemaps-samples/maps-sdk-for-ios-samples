@@ -43,7 +43,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+    self.view.backgroundColor = [UIColor whiteColor];
+  }
+#else
   self.view.backgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
   NSString *titleYellowAndBrown =
       NSLocalizedString(@"Demo.Content.Autocomplete.Styling.Colors.YellowAndBrown",
