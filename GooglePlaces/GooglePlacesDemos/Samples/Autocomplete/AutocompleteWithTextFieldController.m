@@ -17,6 +17,7 @@
 
 #import <GooglePlaces/GooglePlaces.h>
 
+
 @interface AutocompleteWithTextFieldController () <UITextFieldDelegate,
                                                    GMSAutocompleteTableDataSourceDelegate>
 @end
@@ -48,6 +49,7 @@
 
   // Configure the text field to our linking.
   _searchField = [[UITextField alloc] initWithFrame:CGRectZero];
+
   _searchField.translatesAutoresizingMaskIntoConstraints = NO;
   _searchField.borderStyle = UITextBorderStyleNone;
 #if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
