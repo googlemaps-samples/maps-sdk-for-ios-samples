@@ -17,10 +17,10 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 
-static NSString const * kNormalType = @"Normal";
-static NSString const * kSatelliteType = @"Satellite";
-static NSString const * kHybridType = @"Hybrid";
-static NSString const * kTerrainType = @"Terrain";
+static NSString *const kNormalType = @"Normal";
+static NSString *const kSatelliteType = @"Satellite";
+static NSString *const kHybridType = @"Hybrid";
+static NSString *const kTerrainType = @"Terrain";
 
 @implementation MapTypesViewController {
   UISegmentedControl *_switcher;

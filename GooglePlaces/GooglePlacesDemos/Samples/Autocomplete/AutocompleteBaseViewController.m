@@ -17,6 +17,7 @@
 
 #import "GooglePlacesDemos/Samples/PagingPhotoView.h"
 
+
 @implementation AutocompleteBaseViewController {
   PagingPhotoView *_photoView;
   UIButton *_photoButton;
@@ -50,6 +51,7 @@
 
   // Configure the photo view where we are going to display the loaded photos.
   _photoView = [[PagingPhotoView alloc] initWithFrame:self.view.bounds];
+
   _photoView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   [self.view addSubview:_photoView];
 
@@ -166,27 +168,16 @@
   // Create a button to show the autocomplete widget.
   UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
   [button setTitle:title forState:UIControlStateNormal];
+  [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
   button.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:button];
   // Position the button from the top of the view.
-  [NSLayoutConstraint constraintWithItem:button
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.topLayoutGuide
-                               attribute:NSLayoutAttributeBottom
-                              multiplier:1
-                                constant:8]
-      .active = YES;
-  // Centre it horizontally.
-  [NSLayoutConstraint constraintWithItem:button
-                               attribute:NSLayoutAttributeCenterX
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.view
-                               attribute:NSLayoutAttributeCenterX
-                              multiplier:1
-                                constant:0]
-      .active = YES;
+  [button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+  [button.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:kButtonTopMargin].active =
+      YES;
+  [button.heightAnchor constraintEqualToConstant:kButtonHeight].active = YES;
+  [button.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   return button;
 }

@@ -16,6 +16,10 @@
 #import <GooglePlaces/GooglePlaces.h>
 #import "GooglePlacesDemos/Support/BaseDemoViewController.h"
 
+static CGFloat const kButtonHeight = 44.f;
+static CGFloat const kButtonWidth = 200.f;
+static CGFloat const kButtonTopMargin = 100.f;
+
 /**
  * All other autocomplete demo classes inherit from this class. This class optionally adds a button
  * to present the autocomplete widget, and displays the results when these are selected.

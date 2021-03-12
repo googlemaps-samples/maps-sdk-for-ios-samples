@@ -27,6 +27,8 @@
 @implementation GMSStyledAutocompleteViewController
 @end
 
+static CGFloat const kButtonPadding = 10.f;
+
 @interface AutocompleteWithCustomColors () <GMSAutocompleteViewControllerDelegate>
 @end
 
@@ -68,99 +70,62 @@
 
   UIButton *brownThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [brownThemeButton setTitle:titleYellowAndBrown forState:UIControlStateNormal];
+  [brownThemeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [brownThemeButton addTarget:self
                        action:@selector(openBrownTheme:)
              forControlEvents:UIControlEventTouchUpInside];
   brownThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:brownThemeButton];
-  [NSLayoutConstraint constraintWithItem:brownThemeButton
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.topLayoutGuide
-                               attribute:NSLayoutAttributeBottom
-                              multiplier:1
-                                constant:8]
+  [brownThemeButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+  [brownThemeButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:kButtonTopMargin]
       .active = YES;
-  [NSLayoutConstraint constraintWithItem:brownThemeButton
-                               attribute:NSLayoutAttributeCenterX
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.view
-                               attribute:NSLayoutAttributeCenterX
-                              multiplier:1
-                                constant:0]
-      .active = YES;
+  [brownThemeButton.heightAnchor constraintEqualToConstant:kButtonHeight].active = YES;
+  [brownThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *blackThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [blackThemeButton setTitle:titleWhiteOnBlack forState:UIControlStateNormal];
+  [blackThemeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [blackThemeButton addTarget:self
                        action:@selector(openBlackTheme:)
              forControlEvents:UIControlEventTouchUpInside];
   blackThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:blackThemeButton];
-  [NSLayoutConstraint constraintWithItem:blackThemeButton
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:brownThemeButton
-                               attribute:NSLayoutAttributeBottom
-                              multiplier:1
-                                constant:8]
+  [blackThemeButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+  [blackThemeButton.topAnchor constraintEqualToAnchor:brownThemeButton.bottomAnchor
+                                             constant:kButtonPadding]
       .active = YES;
-  [NSLayoutConstraint constraintWithItem:blackThemeButton
-                               attribute:NSLayoutAttributeCenterX
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.view
-                               attribute:NSLayoutAttributeCenterX
-                              multiplier:1
-                                constant:0]
-      .active = YES;
+  [blackThemeButton.heightAnchor constraintEqualToConstant:kButtonHeight].active = YES;
+  [blackThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *blueThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [blueThemeButton setTitle:titleBlueColors forState:UIControlStateNormal];
+  [blueThemeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [blueThemeButton addTarget:self
                       action:@selector(openBlueTheme:)
             forControlEvents:UIControlEventTouchUpInside];
   blueThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:blueThemeButton];
-  [NSLayoutConstraint constraintWithItem:blueThemeButton
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:blackThemeButton
-                               attribute:NSLayoutAttributeBottom
-                              multiplier:1
-                                constant:8]
+  [blueThemeButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+  [blueThemeButton.topAnchor constraintEqualToAnchor:blackThemeButton.bottomAnchor
+                                            constant:kButtonPadding]
       .active = YES;
-  [NSLayoutConstraint constraintWithItem:blueThemeButton
-                               attribute:NSLayoutAttributeCenterX
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.view
-                               attribute:NSLayoutAttributeCenterX
-                              multiplier:1
-                                constant:0]
-      .active = YES;
+  [blueThemeButton.heightAnchor constraintEqualToConstant:kButtonHeight].active = YES;
+  [blueThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *hotDogThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [hotDogThemeButton setTitle:titleHotDogStand forState:UIControlStateNormal];
+  [hotDogThemeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [hotDogThemeButton addTarget:self
                         action:@selector(openHotDogTheme:)
               forControlEvents:UIControlEventTouchUpInside];
   hotDogThemeButton.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:hotDogThemeButton];
-  [NSLayoutConstraint constraintWithItem:hotDogThemeButton
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:blueThemeButton
-                               attribute:NSLayoutAttributeBottom
-                              multiplier:1
-                                constant:8]
+  [hotDogThemeButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+  [hotDogThemeButton.topAnchor constraintEqualToAnchor:blueThemeButton.bottomAnchor
+                                              constant:kButtonPadding]
       .active = YES;
-  [NSLayoutConstraint constraintWithItem:hotDogThemeButton
-                               attribute:NSLayoutAttributeCenterX
-                               relatedBy:NSLayoutRelationEqual
-                                  toItem:self.view
-                               attribute:NSLayoutAttributeCenterX
-                              multiplier:1
-                                constant:0]
-      .active = YES;
+  [hotDogThemeButton.heightAnchor constraintEqualToConstant:kButtonHeight].active = YES;
+  [hotDogThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   self.definesPresentationContext = YES;
 
