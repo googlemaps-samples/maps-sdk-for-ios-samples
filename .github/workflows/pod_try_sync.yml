@@ -36,6 +36,11 @@ jobs:
       run: |
         sudo gem install cocoapods -v 1.6.1
 
+    # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
+    - name: Update CocoaPod Repo
+      run: |
+        pod _1.6.1_ repo update
+
     # Copy pod try GoogleMaps Objective-C to current copy
     - name: Copy pod try GoogleMaps Objective-C changes into current copy
       run: |
