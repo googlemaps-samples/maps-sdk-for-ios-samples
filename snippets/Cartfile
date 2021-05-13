@@ -1,8 +1,7 @@
 // [START maps_ios_get_started_install_carthage]
-binary "https://dl.google.com/geosdk/GoogleMaps.json" == 4.2.0
+binary "https://dl.google.com/geosdk/GoogleMaps.json" == 5.0.0
 // [END maps_ios_get_started_install_carthage]
 
 // [START maps_ios_places_get_started_install_carthage]
-binary "https://dl.google.com/geosdk/GoogleMaps.json" == 4.2.0
-binary "https://dl.google.com/geosdk/GooglePlaces.json" == 4.2.0
+binary "https://dl.google.com/geosdk/GooglePlaces.json" == 5.0.0
 // [END maps_ios_places_get_started_install_carthage]
