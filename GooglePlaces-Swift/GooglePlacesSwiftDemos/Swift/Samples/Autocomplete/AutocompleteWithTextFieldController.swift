@@ -45,6 +45,11 @@ class AutocompleteWithTextFieldController: AutocompleteBaseViewController {
   private lazy var tableDataSource: GMSAutocompleteTableDataSource = {
     let tableDataSource = GMSAutocompleteTableDataSource()
     tableDataSource.tableCellBackgroundColor = .white
+    tableDataSource.delegate = self
+    if let config = autocompleteConfiguration {
+      tableDataSource.autocompleteFilter = config.autocompleteFilter
+      tableDataSource.placeFields = config.placeFields
+    }
     return tableDataSource
   }()
 

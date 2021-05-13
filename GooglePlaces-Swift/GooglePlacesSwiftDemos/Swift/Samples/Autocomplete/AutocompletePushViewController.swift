@@ -23,6 +23,10 @@ class AutocompletePushViewController: AutocompleteBaseViewController {
     automaticallyAdjustsScrollViewInsets = true
     let autocompleteViewController = GMSAutocompleteViewController()
     autocompleteViewController.delegate = self
+    if let config = autocompleteConfiguration {
+      autocompleteViewController.autocompleteFilter = config.autocompleteFilter
+      autocompleteViewController.placeFields = config.placeFields
+    }
     navigationController?.pushViewController(autocompleteViewController, animated: true)
   }
 }
