@@ -167,19 +167,14 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
     [mainStackView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor],
     [mainStackView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor]
   ];
-#if defined(__IPHONE_11_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0)
-  if (@available(iOS 11.0, *)) {
-    stackViewConstraints = @[
-      [mainStackView.leadingAnchor
-          constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
-      [mainStackView.trailingAnchor
-          constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
-      [mainStackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-      [mainStackView.bottomAnchor
-          constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor]
-    ];
-  }
-#endif
+  stackViewConstraints = @[
+    [mainStackView.leadingAnchor
+        constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
+    [mainStackView.trailingAnchor
+        constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
+    [mainStackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+    [mainStackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor]
+  ];
   [NSLayoutConstraint activateConstraints:stackViewConstraints];
 
   [self onCurrentLocationTap];

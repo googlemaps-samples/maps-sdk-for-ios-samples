@@ -35,6 +35,8 @@ class AutocompleteBaseViewController: UIViewController {
     return photoView
   }()
 
+  var autocompleteConfiguration: AutocompleteConfiguration?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -43,34 +45,19 @@ class AutocompleteBaseViewController: UIViewController {
     textView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pagingPhotoView)
     pagingPhotoView.translatesAutoresizingMaskIntoConstraints = false
-    if #available(iOS 11, *) {
-      let guide = view.safeAreaLayoutGuide
-      NSLayoutConstraint.activate([
-        textView.topAnchor.constraint(equalTo: guide.topAnchor),
-        textView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-        textView.leftAnchor.constraint(equalTo: guide.leftAnchor),
-        textView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      ])
-      NSLayoutConstraint.activate([
-        pagingPhotoView.topAnchor.constraint(equalTo: guide.topAnchor),
-        pagingPhotoView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-        pagingPhotoView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-        pagingPhotoView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      ])
-    } else {
-      NSLayoutConstraint.activate([
-        textView.topAnchor.constraint(equalTo: view.topAnchor),
-        textView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      ])
-      NSLayoutConstraint.activate([
-        pagingPhotoView.topAnchor.constraint(equalTo: view.topAnchor),
-        pagingPhotoView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        pagingPhotoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        pagingPhotoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      ])
-    }
+    let guide = view.safeAreaLayoutGuide
+    NSLayoutConstraint.activate([
+      textView.topAnchor.constraint(equalTo: guide.topAnchor),
+      textView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+      textView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+      textView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+    ])
+    NSLayoutConstraint.activate([
+      pagingPhotoView.topAnchor.constraint(equalTo: guide.topAnchor),
+      pagingPhotoView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+      pagingPhotoView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+      pagingPhotoView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+    ])
   }
 
   @objc func showPhotos() {

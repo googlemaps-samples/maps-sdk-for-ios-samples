@@ -21,6 +21,10 @@ class AutocompleteModalViewController: AutocompleteBaseViewController {
     super.viewDidLoad()
     let autocompleteViewController = GMSAutocompleteViewController()
     autocompleteViewController.delegate = self
+    if let config = autocompleteConfiguration {
+      autocompleteViewController.autocompleteFilter = config.autocompleteFilter
+      autocompleteViewController.placeFields = config.placeFields
+    }
     navigationController?.present(autocompleteViewController, animated: true)
   }
 }

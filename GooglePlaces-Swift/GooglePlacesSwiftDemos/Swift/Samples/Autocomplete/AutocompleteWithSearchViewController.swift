@@ -18,9 +18,17 @@ import UIKit
 /// https://developers.google.com/places/ios-sdk/autocomplete
 class AutocompleteWithSearchViewController: AutocompleteBaseViewController {
   let searchBarAccessibilityIdentifier = "searchBarAccessibilityIdentifier"
+
   private lazy var autoCompleteController: GMSAutocompleteResultsViewController = {
-    return GMSAutocompleteResultsViewController()
+    let controller = GMSAutocompleteResultsViewController()
+    if let config = autocompleteConfiguration {
+      controller.autocompleteFilter = config.autocompleteFilter
+      controller.placeFields = config.placeFields
+    }
+    controller.delegate = self
+    return controller
   }()
+
   private lazy var searchController: UISearchController = {
     let controller =
       UISearchController(searchResultsController: autoCompleteController)

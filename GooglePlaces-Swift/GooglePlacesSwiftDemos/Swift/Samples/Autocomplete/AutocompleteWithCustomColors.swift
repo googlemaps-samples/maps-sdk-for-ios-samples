@@ -226,6 +226,10 @@ class AutocompleteWithCustomColors: AutocompleteBaseViewController {
     // setupSearchBarCustomIcons method contains example code to do this.
     let controller = GMSStyledAutocompleteViewController()
     controller.delegate = self
+    if let config = autocompleteConfiguration {
+      controller.autocompleteFilter = config.autocompleteFilter
+      controller.placeFields = config.placeFields
+    }
     controller.tableCellBackgroundColor = colorTheme.backgroundColor
     controller.tableCellSeparatorColor = colorTheme.separatorColor
     controller.primaryTextColor = colorTheme.primaryTextColor

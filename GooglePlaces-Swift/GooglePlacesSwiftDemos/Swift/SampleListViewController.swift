@@ -11,6 +11,7 @@
 // ANY KIND, either express or implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
+import GooglePlaces
 import UIKit
 
 /// The class which displays the list of demos.
@@ -20,6 +21,24 @@ class SampleListViewController: UITableViewController {
 
   let sampleSections = Samples.allSamples()
 
+  let configuration = AutocompleteConfiguration(
+    autocompleteFilter: GMSAutocompleteFilter(),
+    placeFields: GMSPlaceField(
+      rawValue: GMSPlaceField.name.rawValue | GMSPlaceField.placeID.rawValue
+        | GMSPlaceField.plusCode.rawValue | GMSPlaceField.coordinate.rawValue
+        | GMSPlaceField.openingHours.rawValue | GMSPlaceField.phoneNumber.rawValue
+        | GMSPlaceField.formattedAddress.rawValue | GMSPlaceField.rating.rawValue
+        | GMSPlaceField.userRatingsTotal.rawValue | GMSPlaceField.priceLevel.rawValue
+        | GMSPlaceField.types.rawValue | GMSPlaceField.website.rawValue
+        | GMSPlaceField.viewport.rawValue | GMSPlaceField.addressComponents.rawValue
+        | GMSPlaceField.photos.rawValue | GMSPlaceField.utcOffsetMinutes.rawValue
+        | GMSPlaceField.businessStatus.rawValue))
+
+  private lazy var editButton: UIBarButtonItem = {
+    UIBarButtonItem(
+      title: "Edit", style: .plain, target: self, action: #selector(showConfiguration))
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -28,6 +47,8 @@ class SampleListViewController: UITableViewController {
 
     tableView.dataSource = self
     tableView.delegate = self
+
+    navigationItem.rightBarButtonItem = editButton
   }
 
   func sample(at indexPath: IndexPath) -> Sample? {
@@ -35,6 +56,11 @@ class SampleListViewController: UITableViewController {
     let section = sampleSections[indexPath.section]
     guard indexPath.row >= 0 && indexPath.row < section.samples.count else { return nil }
     return section.samples[indexPath.row]
+  }
+
+  @objc private func showConfiguration(_sender: UIButton) {
+    navigationController?.present(
+      ConfigurationViewController(configuration: configuration), animated: true)
   }
 
   // MARK: - Override UITableView
@@ -72,6 +98,9 @@ class SampleListViewController: UITableViewController {
     tableView.deselectRow(at: indexPath, animated: true)
     if let sample = sample(at: indexPath) {
       let viewController = sample.viewControllerClass.init()
+      if let controller = viewController as? AutocompleteBaseViewController {
+        controller.autocompleteConfiguration = configuration
+      }
       navigationController?.pushViewController(viewController, animated: true)
     }
   }

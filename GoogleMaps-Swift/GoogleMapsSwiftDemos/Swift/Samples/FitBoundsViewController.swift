@@ -18,6 +18,9 @@ class FitBoundsViewController: UIViewController {
 
   private let markerImageName = "glow-marker"
 
+  private let anotherSydneyLocation = CLLocationCoordinate2D(
+    latitude: -33.8683, longitude: 149.2086)
+
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .victoria, zoom: 4)
     return GMSMapView(frame: .zero, camera: camera)
@@ -34,7 +37,7 @@ class FitBoundsViewController: UIViewController {
     let anotherSydneyMarker = GMSMarker()
     anotherSydneyMarker.title = "Sydney 2!"
     anotherSydneyMarker.icon = UIImage(named: markerImageName)
-    anotherSydneyMarker.position = .sydney
+    anotherSydneyMarker.position = anotherSydneyLocation
     anotherSydneyMarker.map = mapView
     return [sydneyMarker, anotherSydneyMarker]
   }()
