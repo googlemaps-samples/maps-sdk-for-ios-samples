@@ -15,6 +15,8 @@
 
 #import "GoogleMapsDemos/Samples/AnimatedCurrentLocationViewController.h"
 
+#import <GoogleMaps/GoogleMaps.h>
+
 @implementation AnimatedCurrentLocationViewController {
   CLLocationManager *_manager;
   GMSMapView        *_mapView;
