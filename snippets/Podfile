@@ -1,13 +1,13 @@
 # [START maps_ios_get_started_install_podfile]
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GoogleMaps', '5.0.0'
+  pod 'GoogleMaps', '5.1.0'
 end
 # [END maps_ios_get_started_install_podfile]
 
 # [START maps_ios_places_get_started_install_podfile]
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GooglePlaces', '5.0.0'
+  pod 'GooglePlaces', '5.1.0'
 end
 # [END maps_ios_places_get_started_install_podfile]
