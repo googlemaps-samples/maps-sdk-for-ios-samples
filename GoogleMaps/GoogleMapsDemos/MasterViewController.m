@@ -15,7 +15,6 @@
 
 #import "GoogleMapsDemos/MasterViewController.h"
 
-#import "GoogleMapsDemos/DemoAppDelegate.h"
 #import "GoogleMapsDemos/Samples/Samples.h"
 #import <GoogleMaps/GoogleMaps.h>
 
@@ -43,7 +42,6 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
   _demos = [Samples loadDemos];
 
 }
-
 
 #pragma mark - UITableViewController
 

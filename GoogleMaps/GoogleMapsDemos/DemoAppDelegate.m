@@ -19,9 +19,7 @@
 #import "GoogleMapsDemos/SDKDemoAPIKey.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@implementation DemoAppDelegate {
-  id _services;
-}
+@implementation DemoAppDelegate
 
 @synthesize window = _window;
 
@@ -39,7 +37,7 @@
                                  userInfo:nil];
   }
   [GMSServices provideAPIKey:kAPIKey];
-  _services = [GMSServices sharedServices];
+  self.servicesHandle = [GMSServices sharedServices];
 
   // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for
   // a demo.

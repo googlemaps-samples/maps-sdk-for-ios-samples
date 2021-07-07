@@ -174,10 +174,11 @@
   return @[mapDemos, panoramaDemos, overlayDemos, cameraDemos, servicesDemos];
 }
 
-+ (NSDictionary *)newDemo:(Class) class
++ (NSDictionary *)newDemo:(Class)viewControllerClass
                 withTitle:(NSString *)title
            andDescription:(NSString *)description {
-  return [[NSDictionary alloc] initWithObjectsAndKeys:class, @"controller",
-          title, @"title", description, @"description", nil];
+  return [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller", title,
+                                                      @"title", description, @"description", nil];
 }
+
 @end
