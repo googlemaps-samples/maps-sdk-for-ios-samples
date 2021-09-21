@@ -21,7 +21,7 @@ class CustomPOIBehaviorViewController : UIViewController {
     let position = CLLocationCoordinate2D(latitude: 47.0169, longitude: -122.336471)
     let marker = GMSMarker(position: position)
     marker.zIndex = 10
-    marker.collisionBehavior = GMSCollisionBehavior.optionalAndHidesLowerPriority
+    marker.collisionBehavior = .optionalAndHidesLowerPriority
     marker.map = mapView
     // [END maps_custom_poi_behavior_collision]
   }
