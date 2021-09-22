@@ -22,7 +22,9 @@ struct AttributedPhoto {
 /// Represents a place photo, along with the attributions which are required to be displayed along
 /// with it.
 private class ImageAndAttributionView: UIView {
-  let margin: CGFloat = 30
+  private let margin: CGFloat = 30
+  private let textViewHeight: CGFloat = 50
+
   lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
@@ -31,6 +33,7 @@ private class ImageAndAttributionView: UIView {
     imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView
   }()
+
   lazy var attributionView: UITextView = {
     let textView = UITextView()
     textView.delegate = self
@@ -46,7 +49,6 @@ private class ImageAndAttributionView: UIView {
       imageView.topAnchor.constraint(equalTo: topAnchor, constant: margin),
       imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
       imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margin),
-      imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8),
     ])
     addSubview(attributionView)
     NSLayoutConstraint.activate([
@@ -54,6 +56,7 @@ private class ImageAndAttributionView: UIView {
       attributionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin),
       attributionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
       attributionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margin),
+      attributionView.heightAnchor.constraint(equalToConstant: textViewHeight),
     ])
     imageView.image = attributedPhoto.image
     attributionView.attributedText = attributedPhoto.attributions
@@ -77,25 +80,28 @@ extension ImageAndAttributionView: UITextViewDelegate {
 class PagingPhotoView: UIScrollView {
   private var pageViews: [ImageAndAttributionView] = []
 
+  private var contentView = UIView()
+
+  public var shouldRedraw = false
+
   func updatePhotos(_ photoList: [AttributedPhoto]) {
+    // Reset state of pageViews and contentView
+    pageViews = []
+    contentView.removeFromSuperview()
+    contentView = UIView()
+
     isPagingEnabled = true
 
-    let contentView = UIView()
     addSubview(contentView)
 
     // Generate page views, then add them to the scroll view's content view.
     for (index, photo) in photoList.enumerated() {
       let pageView = ImageAndAttributionView(attributedPhoto: photo)
-      pageView.translatesAutoresizingMaskIntoConstraints = false
+      pageView.frame = CGRect(
+        x: CGFloat(index) * frame.size.width, y: 0, width: frame.size.width,
+        height: frame.size.height)
       pageViews.append(pageView)
       contentView.addSubview(pageView)
-      NSLayoutConstraint.activate([
-        pageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-        pageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
-        pageView.leadingAnchor.constraint(
-          equalTo: contentView.leadingAnchor, constant: CGFloat(index) * bounds.width),
-        pageView.widthAnchor.constraint(equalToConstant: bounds.width),
-      ])
     }
 
     contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -108,5 +114,30 @@ class PagingPhotoView: UIScrollView {
         equalToConstant: bounds.width * CGFloat(pageViews.count)),
       contentView.centerYAnchor.constraint(equalTo: centerYAnchor),
     ])
+  }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    guard shouldRedraw else { return }
+
+    shouldRedraw = false
+
+    // Update `ImageAndAttributionView` frame after rotation.
+    for (index, photoView) in pageViews.enumerated() {
+      photoView.frame = CGRect(
+        x: CGFloat(index) * frame.size.width, y: 0, width: frame.size.width,
+        height: frame.size.height)
+    }
+
+    // Update contentSize.
+    let originWidth = contentSize.width
+    contentSize = CGSize(
+      width: CGFloat(pageViews.count) * frame.size.width, height: frame.size.height)
+    // Re-adjust the content offset to ensure the photos are aligned properly horizontally.
+    if contentSize.width != 0 {
+      let scrollOffset = (CGFloat)(round((contentOffset.x / originWidth) * 10) / 10)
+      contentOffset = CGPoint(x: scrollOffset * contentSize.width, y: 0)
+    }
   }
 }

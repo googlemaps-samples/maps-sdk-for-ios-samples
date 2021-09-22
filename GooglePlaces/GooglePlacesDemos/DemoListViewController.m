@@ -50,7 +50,7 @@ static const CGFloat kEdgeBuffer = 8;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-  // Clear the title to make room for next view to share the header space in splitsreen view.
+  // Clear the title to make room for next view to share the header space in splitscreen view.
   self.title = nil;
   [super viewWillDisappear:animated];
 }
@@ -157,11 +157,10 @@ static const CGFloat kEdgeBuffer = 8;
 
   // Set up the individual place fields that we can request.
   _nextSelectionYPos += kSelectionHeight;
-  for (NSUInteger placeField = GMSPlaceFieldName; placeField <= GMSPlaceFieldBusinessStatus;
+  for (NSUInteger placeField = GMSPlaceFieldName; placeField <= GMSPlaceFieldIconBackgroundColor;
        placeField <<= 1) {
     [scrollView addSubview:[self selectionButtonForPlaceField:(GMSPlaceField)placeField]];
   }
-
 
   // Add the close button to dismiss the selection UI.
   UIButton *close =
@@ -248,6 +247,8 @@ static const CGFloat kEdgeBuffer = 8;
     @(GMSPlaceFieldPhotos) : @"Photos",
     @(GMSPlaceFieldUTCOffsetMinutes) : @"UTC Offset Minutes",
     @(GMSPlaceFieldBusinessStatus) : @"Business Status",
+    @(GMSPlaceFieldIconImageURL) : @"Icon Image URL",
+    @(GMSPlaceFieldIconBackgroundColor) : @"Icon Background Color",
   };
   UIButton *selectionButton = [self selectionButtonForTitle:fieldsMapping[@(placeField)]];
   UISwitch *selectionSwitch = [self switchFromButton:selectionButton];
