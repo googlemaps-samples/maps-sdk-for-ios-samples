@@ -17,10 +17,39 @@ import UIKit
 /// Demo showing a Autocomplete view controller pushed on the navigation stack. Please refer to
 /// https://developers.google.com/places/ios-sdk/autocomplete
 class AutocompletePushViewController: AutocompleteBaseViewController {
+  private let margin: CGFloat = 80
+  private let buttonHeight: CGFloat = 50
+
+  private lazy var showWidgetButton: UIButton = {
+    let button = UIButton()
+    button.setTitle(
+      NSLocalizedString(
+        "Demo.Content.Autocomplete.ShowWidgetButton",
+        comment: "Button title for 'show autocomplete widget'"), for: .normal)
+    button.setTitleColor(.darkGray, for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.addTarget(self, action: #selector(showAutocompleteWidget), for: .touchUpInside)
+
+    return button
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     automaticallyAdjustsScrollViewInsets = true
+
+    view.addSubview(showWidgetButton)
+    NSLayoutConstraint.activate([
+      showWidgetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      showWidgetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      showWidgetButton.topAnchor.constraint(equalTo: view.topAnchor, constant: margin),
+      showWidgetButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+    ])
+  }
+
+  @objc func showAutocompleteWidget() {
+    showWidgetButton.isHidden = true
+
     let autocompleteViewController = GMSAutocompleteViewController()
     autocompleteViewController.delegate = self
     if let config = autocompleteConfiguration {

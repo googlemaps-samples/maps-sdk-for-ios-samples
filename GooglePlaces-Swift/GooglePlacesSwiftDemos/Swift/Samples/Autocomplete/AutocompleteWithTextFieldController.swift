@@ -24,7 +24,12 @@ class AutocompleteWithTextFieldController: AutocompleteBaseViewController {
     let searchField = UITextField(frame: .zero)
     searchField.translatesAutoresizingMaskIntoConstraints = false
     searchField.borderStyle = .none
-    searchField.backgroundColor = .white
+    if #available(iOS 13.0, *) {
+      searchField.textColor = .label
+      searchField.backgroundColor = .systemBackground
+    } else {
+      searchField.backgroundColor = .white
+    }
     searchField.placeholder = NSLocalizedString(
       "Demo.Content.Autocomplete.EnterTextPrompt",
       comment: "Prompt to enter text for autocomplete demo")

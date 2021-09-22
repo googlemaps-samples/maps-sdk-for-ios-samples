@@ -40,7 +40,11 @@ class AutocompleteBaseViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
+    if #available(iOS 13.0, *) {
+      view.backgroundColor = .systemBackground
+    } else {
+      view.backgroundColor = .white
+    }
     view.addSubview(textView)
     textView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pagingPhotoView)
@@ -74,6 +78,10 @@ class AutocompleteBaseViewController: UIViewController {
       text.append(NSAttributedString(string: "\n\n"))
       text.append(attributions)
     }
+
+    if #available(iOS 13.0, *) {
+      text.addAttribute(.foregroundColor, value: UIColor.label, range: NSMakeRange(0, text.length))
+    }
     textView.attributedText = text
     textView.isHidden = false
     pagingPhotoView.isHidden = true
@@ -93,6 +101,13 @@ class AutocompleteBaseViewController: UIViewController {
     textView.text = NSLocalizedString(
       "Demo.Content.Autocomplete.WasCanceledMessage",
       comment: "String for 'autocomplete canceled message'")
+  }
+
+  override func viewWillTransition(
+    to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
+  ) {
+    super.viewWillTransition(to: size, with: coordinator)
+    pagingPhotoView.shouldRedraw = true
   }
 }
 
