@@ -37,10 +37,10 @@
 		2E3A841E83BC75E113066610 /* boat.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1DB9C65356269FB0E9805F /* boat.png */; };
 		32A5B9AE4D6B05579715DDD0 /* GradientPolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C6A03E42A9983A4FB4A7E3 /* GradientPolylinesViewController.swift */; };
 		362C49E4DB90848A82AA5F1B /* museum-exhibits.json in Resources */ = {isa = PBXBuildFile; fileRef = AFCF3BFD151B8E93B8704001 /* museum-exhibits.json */; };
-		381D371BE12E1DC59E751BED /* libPods-GoogleMapsSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C593867D36B17929900C223 /* libPods-GoogleMapsSwiftDemos.a */; };
 		3D3F2A8EA739004B1489A792 /* step8.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD1B4A1869A5ED24977724F /* step8.png */; };
 		41B7BD6313F16FFB24A404B2 /* step7.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3D93ABBF24BFEF78629B0D /* step7.png */; };
 		4206C1EEB8BE8EDAFE843D2B /* FixedPanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B1B4AD1EF5754F84355B /* FixedPanoramaViewController.swift */; };
+		45367BE851D69AB992B7C0DB /* libPods-GoogleMapsSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 622F4CA3A164F2B224780251 /* libPods-GoogleMapsSwiftDemos.a */; };
 		4773BB1B2EBD65AEC32F9E7C /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E67F17F84C0169D05D684B /* step3.png */; };
 		485D079B6D198FAB726B0505 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E451B3A594633E32B3131 /* CameraViewController.swift */; };
 		4902D3615AFEEE5B646A4262 /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABCFB71E0D9B75FA2091CF /* PanoramaViewController.swift */; };
@@ -142,16 +142,15 @@
 		5DE971B436125DBE256A5FA5 /* mapstyle-night.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mapstyle-night.json"; sourceTree = "<group>"; };
 		5ED4F2473A7C9EB8BA05986B /* MarkersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersViewController.swift; sourceTree = "<group>"; };
 		612E451B3A594633E32B3131 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		622F4CA3A164F2B224780251 /* libPods-GoogleMapsSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMapsSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E4201AB786148B34D7190E /* IndoorMuseumNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndoorMuseumNavigationViewController.swift; sourceTree = "<group>"; };
 		69B644212DDBA2509AD4CF5A /* VisibleRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleRegionViewController.swift; sourceTree = "<group>"; };
-		6C593867D36B17929900C223 /* libPods-GoogleMapsSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMapsSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8E2784C6B7A0900490D68D /* x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x29.png; sourceTree = "<group>"; };
 		713A9415F77D646F9547193B /* bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulgaria.png; sourceTree = "<group>"; };
 		71F546CBD85FE306F988C2F0 /* australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = australia.png; sourceTree = "<group>"; };
 		72C6A03E42A9983A4FB4A7E3 /* GradientPolylinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPolylinesViewController.swift; sourceTree = "<group>"; };
 		73E9911385541153DF35EE99 /* australia-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "australia-large.png"; sourceTree = "<group>"; };
 		784B90031ED0D2E68FA9EF93 /* PolylinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolylinesViewController.swift; sourceTree = "<group>"; };
-		7C36D817E980E40A80307C5B /* Pods-GoogleMapsSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleMapsSwiftDemos/Pods-GoogleMapsSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		822521FD132C2E44D03EE0E8 /* argentina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = argentina.png; sourceTree = "<group>"; };
 		83F342A6AF95FF580F924D74 /* SampleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListViewController.swift; sourceTree = "<group>"; };
 		87E37B0AEBC49DF8A0F89492 /* spitfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spitfire.png; sourceTree = "<group>"; };
@@ -180,6 +179,7 @@
 		C96B86B64A6F458F79250076 /* step7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step7@2x.png"; sourceTree = "<group>"; };
 		CB2B29C49F7B36D477192D04 /* MapTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypesViewController.swift; sourceTree = "<group>"; };
 		CBE707A4130CDA88BBCC2DD4 /* FitBoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitBoundsViewController.swift; sourceTree = "<group>"; };
+		CBF5804C13F10F88F88BA169 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleMapsSwiftDemos/Pods-GoogleMapsSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		CBFD03041A5EAA400168D31F /* DoubleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleMapViewController.swift; sourceTree = "<group>"; };
 		CD93738C4D90134DB506ECFE /* MarkerEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerEventsViewController.swift; sourceTree = "<group>"; };
 		D10973A4336C45EE56319A9B /* boat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boat@2x.png"; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA38ACBC98F34B1F0AF5BDD /* UIKit.framework in Frameworks */,
-				381D371BE12E1DC59E751BED /* libPods-GoogleMapsSwiftDemos.a in Frameworks */,
+				45367BE851D69AB992B7C0DB /* libPods-GoogleMapsSwiftDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,11 +346,20 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		98EBBCD9B48EDDD91E579E50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBF5804C13F10F88F88BA169 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC723F443153D968479E59F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				922338CA529F228A03DE6422 /* UIKit.framework */,
-				6C593867D36B17929900C223 /* libPods-GoogleMapsSwiftDemos.a */,
+				622F4CA3A164F2B224780251 /* libPods-GoogleMapsSwiftDemos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -369,7 +378,7 @@
 				D0ED9A279E12177F7FDFA2FF /* Source */,
 				AC723F443153D968479E59F3 /* Frameworks */,
 				DD0B6FB690051F4443F4132B /* Products */,
-				FEB2434D006CD309573AF32A /* Pods */,
+				98EBBCD9B48EDDD91E579E50 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,15 +390,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEB2434D006CD309573AF32A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7C36D817E980E40A80307C5B /* Pods-GoogleMapsSwiftDemos.default.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,11 +397,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65556A7591C40D0E8B77989F /* Build configuration list for PBXNativeTarget "GoogleMapsSwiftDemos" */;
 			buildPhases = (
-				0BB2A0437AF83B0F025D8D32 /* [CP] Check Pods Manifest.lock */,
+				79055AD9C2E471679A59F1DF /* [CP] Check Pods Manifest.lock */,
 				2ADDADBB329E244AF7ED1FB2 /* Resources */,
 				22EB17F407E92B9B4F3B601A /* Sources */,
 				B4530C282FE2BDE3D1071779 /* Frameworks */,
-				8A4A654B05BAF848EABD26C4 /* [CP] Copy Pods Resources */,
+				FF8D61581DFB5BCB7F8F3229 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,7 +499,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BB2A0437AF83B0F025D8D32 /* [CP] Check Pods Manifest.lock */ = {
+		79055AD9C2E471679A59F1DF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,7 +521,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8A4A654B05BAF848EABD26C4 /* [CP] Copy Pods Resources */ = {
+		FF8D61581DFB5BCB7F8F3229 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,7 +608,7 @@
 		};
 		6798450D013ACAFF39CF0187 /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C36D817E980E40A80307C5B /* Pods-GoogleMapsSwiftDemos.default.xcconfig */;
+			baseConfigurationReference = CBF5804C13F10F88F88BA169 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

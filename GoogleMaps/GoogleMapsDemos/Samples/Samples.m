@@ -44,6 +44,7 @@
 #import "GoogleMapsDemos/Samples/PolygonsViewController.h"
 #import "GoogleMapsDemos/Samples/PolylinesViewController.h"
 #import "GoogleMapsDemos/Samples/SnapshotReadyViewController.h"
+#import "GoogleMapsDemos/Samples/StampedPolylinesViewController.h"
 #import "GoogleMapsDemos/Samples/StructuredGeocoderViewController.h"
 #import "GoogleMapsDemos/Samples/StyledMapViewController.h"
 #import "GoogleMapsDemos/Samples/TileLayerViewController.h"
@@ -57,12 +58,15 @@
 }
 
 + (NSArray *)loadDemos {
-  NSArray *mapDemos =
+  NSArray<NSDictionary<NSString *, id> *> *mapDemos =
   @[[self newDemo:[BasicMapViewController class]
         withTitle:@"Basic Map"
    andDescription:nil],
     [self newDemo:[MapTypesViewController class]
         withTitle:@"Map Types"
+   andDescription:nil],
+    [self newDemo:[StampedPolylinesViewController class]
+        withTitle:@"Stamped Polylines"
    andDescription:nil],
     [self newDemo:[StyledMapViewController class]
         withTitle:@"Styled Map"
@@ -177,8 +181,8 @@
 + (NSDictionary *)newDemo:(Class)viewControllerClass
                 withTitle:(NSString *)title
            andDescription:(NSString *)description {
-  return [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller", title,
-                                                      @"title", description, @"description", nil];
+  return [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller",
+          title, @"title", description, @"description", nil];
 }
 
 @end
