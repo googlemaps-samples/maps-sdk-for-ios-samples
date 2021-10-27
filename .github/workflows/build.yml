@@ -48,6 +48,22 @@ jobs:
             -scheme MapsBetaSnippets \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
+    build-snippets-carthage:
+        runs-on: macos-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+    
+        - name: Install Carthage
+          run: |
+              brew install carthage
+    
+        - name: Run carthage update
+          run: |
+              cd snippets
+              carthage update --platform iOS
+
     build-MapsSnippets:
         runs-on: macos-latest
 
