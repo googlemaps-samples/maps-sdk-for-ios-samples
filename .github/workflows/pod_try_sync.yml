@@ -15,8 +15,6 @@
 name: Update samples from CocoaPods
 
 on:
-  schedule:
-    - cron: '0 */3 * * *'
   repository_dispatch:
     types: [ pod-sync ]
   workflow_dispatch:
