@@ -103,8 +103,6 @@ The `snippets` sub-directory contains code snippets that can be found in the dev
 
 ## Support
 
-**NOTE: We are not accepting external contributions at this time.**
-
 If you find a bug or have a feature request related to these samples, please [file an issue](https://github.com/googlemaps/maps-sdk-for-ios-samples/issues).
 
 If you find a bug or have a feature request related to one of the SDKs, you can file an issue on either the
