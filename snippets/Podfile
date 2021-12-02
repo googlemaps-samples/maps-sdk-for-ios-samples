@@ -1,7 +1,7 @@
 # [START maps_ios_get_started_install_podfile]
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GoogleMaps', '6.0.0'
+  pod 'GoogleMaps', '6.0.1'
 end
 # [END maps_ios_get_started_install_podfile]
 
