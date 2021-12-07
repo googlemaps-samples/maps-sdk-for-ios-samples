@@ -42,7 +42,6 @@ extension SampleListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return sampleSections[section].samples.count
   }
-
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
       withIdentifier: SampleListViewController.sampleCellIdentifier, for: indexPath)

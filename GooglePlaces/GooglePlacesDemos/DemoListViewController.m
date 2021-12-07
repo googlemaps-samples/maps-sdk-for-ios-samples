@@ -19,6 +19,7 @@
 
 
 // The cell reuse identifier we are going to use.
+static NSString *gOverrideVersion = nil;
 static NSString *const kCellIdentifier = @"DemoCellIdentifier";
 static const CGFloat kSelectionHeight = 40;
 static const CGFloat kSelectionSwitchWidth = 50;
@@ -405,11 +406,16 @@ static const CGFloat kEdgeBuffer = 8;
   [self showDemo:demo];
 }
 
++ (NSString *)overrideVersion {
+  return [[[NSProcessInfo processInfo] environment] objectForKey:@"PLACES_VERSION_NUMBER_OVERRIDE"];
+}
+
 + (NSString *)titleText {
   NSString *titleFormat = NSLocalizedString(
       @"App.NameAndVersion", @"The name of the app to display in a navigation bar along with a "
                              @"placeholder for the SDK version number");
-  return [NSString stringWithFormat:titleFormat, [GMSPlacesClient SDKLongVersion]];
+  return [NSString
+      stringWithFormat:titleFormat, [self overrideVersion] ?: [GMSPlacesClient SDKLongVersion]];
 }
 
 #pragma mark - Handle Orientation Changes

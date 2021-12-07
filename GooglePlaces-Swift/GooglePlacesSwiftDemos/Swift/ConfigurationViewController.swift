@@ -130,7 +130,7 @@ class ConfigurationViewController: UIViewController {
       name: "Website", tag: Int(GMSPlaceField.website.rawValue),
       action: placesFieldsSelector)
     let viewPort = ConfigData(
-      name: "ViewPort", tag: Int(GMSPlaceField.viewport.rawValue),
+      name: "Viewport", tag: Int(GMSPlaceField.viewport.rawValue),
       action: placesFieldsSelector)
     let addressComponents = ConfigData(
       name: "Address Components", tag: Int(GMSPlaceField.addressComponents.rawValue),
@@ -143,13 +143,19 @@ class ConfigurationViewController: UIViewController {
     let status = ConfigData(
       name: "Business Status", tag: Int(GMSPlaceField.businessStatus.rawValue),
       action: placesFieldsSelector)
+    let iconImageURL = ConfigData(
+      name: "Icon Image URL", tag: Int(GMSPlaceField.iconImageURL.rawValue),
+      action: placesFieldsSelector)
+    let iconBackgroundColor = ConfigData(
+      name: "Icon Background Color", tag: Int(GMSPlaceField.iconBackgroundColor.rawValue),
+      action: placesFieldsSelector)
     sections.append(
       ConfigSection(
         name: "Place Fields",
         samples: [
           name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
           ratingsTotal, priceLevel, types, website, viewPort, addressComponents, photos, minutes,
-          status,
+          status, iconImageURL, iconBackgroundColor,
         ]))
     return sections
   }()
@@ -160,6 +166,7 @@ class ConfigurationViewController: UIViewController {
     let tableView = UITableView()
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.translatesAutoresizingMaskIntoConstraints = false
     return tableView
   }()
@@ -333,5 +340,15 @@ extension ConfigurationViewController: UITableViewDataSource {
       return ""
     }
     return configurationSections[section].name
+  }
+}
+
+extension ConfigurationViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let sample = configurationSections[indexPath.section].samples[indexPath.row]
+    let cell = tableView.cellForRow(at: indexPath)
+    guard let switchView = cell?.accessoryView as? UISwitch else { return }
+    switchView.setOn(!switchView.isOn, animated: true)
+    perform(sample.action, with: switchView)
   }
 }

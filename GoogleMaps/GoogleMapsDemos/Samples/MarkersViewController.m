@@ -20,6 +20,7 @@
 @implementation MarkersViewController {
   GMSMarker *_sydneyMarker;
   GMSMarker *_melbourneMarker;
+  GMSMarker *_fadeInMarker;
 }
 
 - (void)viewDidLoad {
@@ -47,6 +48,12 @@
   australiaMarker.icon = [UIImage imageNamed:@"australia"];
   australiaMarker.map = mapView;
 
+  _fadeInMarker = [[GMSMarker alloc] init];
+  _fadeInMarker.title = @"Australia";
+  _fadeInMarker.position = CLLocationCoordinate2DMake(-29.9959, 145.0719);
+  _fadeInMarker.appearAnimation = kGMSMarkerAnimationFadeIn;
+  _fadeInMarker.icon = [UIImage imageNamed:@"australia"];
+
   // Set the marker in Sydney to be selected
   mapView.selectedMarker = _sydneyMarker;
 
@@ -68,6 +75,12 @@
   _melbourneMarker.snippet = @"Population: 4,169,103";
   _melbourneMarker.position = CLLocationCoordinate2DMake(-37.81969, 144.966085);
   _melbourneMarker.map = (GMSMapView *)self.view;
+
+  if (_fadeInMarker.map) {
+    _fadeInMarker.map = nil;
+  } else {
+    _fadeInMarker.map = (GMSMapView *)self.view;
+  }
 }
 
 
