@@ -37,6 +37,7 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
 
   self.tableView.autoresizingMask =
       UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+  self.tableView.accessibilityIdentifier = @"SamplesTableView";
 
   _demoSections = [Samples loadSections];
   _demos = [Samples loadDemos];

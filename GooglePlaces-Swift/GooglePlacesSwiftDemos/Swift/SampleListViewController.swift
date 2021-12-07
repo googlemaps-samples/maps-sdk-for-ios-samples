@@ -21,19 +21,16 @@ class SampleListViewController: UITableViewController {
 
   let sampleSections = Samples.allSamples()
 
-  let configuration = AutocompleteConfiguration(
-    autocompleteFilter: GMSAutocompleteFilter(),
-    placeFields: GMSPlaceField(
-      rawValue: GMSPlaceField.name.rawValue | GMSPlaceField.placeID.rawValue
-        | GMSPlaceField.plusCode.rawValue | GMSPlaceField.coordinate.rawValue
-        | GMSPlaceField.openingHours.rawValue | GMSPlaceField.phoneNumber.rawValue
-        | GMSPlaceField.formattedAddress.rawValue | GMSPlaceField.rating.rawValue
-        | GMSPlaceField.userRatingsTotal.rawValue | GMSPlaceField.priceLevel.rawValue
-        | GMSPlaceField.types.rawValue | GMSPlaceField.website.rawValue
-        | GMSPlaceField.viewport.rawValue | GMSPlaceField.addressComponents.rawValue
-        | GMSPlaceField.photos.rawValue | GMSPlaceField.utcOffsetMinutes.rawValue
-        | GMSPlaceField.businessStatus.rawValue))
-
+  let configuration: AutocompleteConfiguration = {
+    let fields: [GMSPlaceField] = [
+      .name, .placeID, .plusCode, .coordinate, .openingHours, .phoneNumber, .formattedAddress,
+      .rating, .userRatingsTotal, .priceLevel, .types, .website, .viewport, .addressComponents,
+      .photos, .utcOffsetMinutes, .businessStatus, .iconImageURL, .iconBackgroundColor,
+    ]
+    return AutocompleteConfiguration(
+      autocompleteFilter: GMSAutocompleteFilter(),
+      placeFields: GMSPlaceField(rawValue: fields.reduce(0) { $0 | $1.rawValue }))
+  }()
   private lazy var editButton: UIBarButtonItem = {
     UIBarButtonItem(
       title: "Edit", style: .plain, target: self, action: #selector(showConfiguration))

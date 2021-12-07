@@ -77,6 +77,7 @@ extension ImageAndAttributionView: UITextViewDelegate {
 }
 
 /// A horizontally-paging scroll view that displays a list of photo images and their attributions.
+@objc(PagingPhotoView)
 class PagingPhotoView: UIScrollView {
   private var pageViews: [ImageAndAttributionView] = []
 
