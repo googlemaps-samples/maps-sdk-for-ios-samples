@@ -132,8 +132,8 @@ class CmaeraAndView: UIViewController {
     let vancouverCam = GMSCameraUpdate.setTarget(vancouver)
     mapView.animate(with: vancouverCam)
 
-    // Move the camera 100 points down, and 200 points to the right.
-    let downwards = GMSCameraUpdate.scrollBy(x: 100, y: 200)
+  // Move the camera 200 points to the right, and 100 points downwards
+    let downwards = GMSCameraUpdate.scrollBy(x: 200, y: 100)
     mapView.animate(with: downwards)
     // [END maps_ios_camera_and_view_camera_cameraupdate]
   }

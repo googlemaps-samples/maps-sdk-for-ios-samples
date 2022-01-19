@@ -138,8 +138,8 @@ GMSMapView *mapView;
   GMSCameraUpdate *vancouverCam = [GMSCameraUpdate setTarget:vancouver];
   [mapView animateWithCameraUpdate:vancouverCam];
 
-  // Move the camera 100 points down, and 200 points to the right.
-  GMSCameraUpdate *downwards = [GMSCameraUpdate scrollByX:100.0 Y:200.0];
+  // Move the camera 200 points to the right, and 100 points downwards
+  GMSCameraUpdate *downwards = [GMSCameraUpdate scrollByX:200.0 Y:100.0];
   [mapView animateWithCameraUpdate:downwards];
   // [END maps_ios_camera_and_view_camera_cameraupdate]
 }
