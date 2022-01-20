@@ -82,6 +82,12 @@ GMSMapView *mapView;
   // [END maps_ios_camera_and_view_zoom]
 }
 
+- (void) buildings {
+  // [START maps_ios_camera_and_view_buildings]
+  [mapView setBuildingsEnabled:NO];
+  // [END maps_ios_camera_and_view_buildings]
+}
+
 - (void) minMaxZoom {
   // [START maps_ios_camera_and_view_min_max_zoom]
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:41.887

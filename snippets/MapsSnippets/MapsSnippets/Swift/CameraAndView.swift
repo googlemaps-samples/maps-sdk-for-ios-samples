@@ -74,6 +74,12 @@ class CmaeraAndView: UIViewController {
     // [END maps_ios_camera_and_view_zoom]
   }
 
+  func buildings() {
+    // [START maps_ios_camera_and_view_buildings]
+    mapView.isBuildingsEnabled = false
+    // [END maps_ios_camera_and_view_buildings]
+  }
+
   func minMaxZoom() {
     // [START maps_ios_camera_and_view_min_max_zoom]
     let camera = GMSCameraPosition.camera(
