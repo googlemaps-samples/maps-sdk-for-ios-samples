@@ -152,6 +152,16 @@ GMSMapView *mapView;
   london.icon = [UIImage imageNamed:@"house"];
   london.map = mapView;
   // [END maps_ios_markers_info_window_change_position]
+
+  // [START maps_ios_markers_info_window_show_hide]
+  london.title = @"London";
+  london.snippet = @"Population: 8,174,100";
+  london.map = mapView;
+  // Show marker
+  mapView.selectedMarker = london;
+  // Hide marker
+  mapView.selectedMarker = nil;
+  // [END maps_ios_markers_info_window_show_hide]
 }
 
 @end
