@@ -1,5 +1,5 @@
 # [START maps_ios_get_started_install_carthage]
-binary "https://dl.google.com/geosdk/GoogleMaps.json" == 6.0.1
+binary "https://dl.google.com/geosdk/GoogleMaps.json" == 6.1.0
 # [END maps_ios_get_started_install_carthage]
 
 # [START maps_ios_places_get_started_install_carthage]
