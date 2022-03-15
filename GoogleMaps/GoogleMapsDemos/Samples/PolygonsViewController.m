@@ -25,7 +25,7 @@
                                                           longitude:-77.508545
                                                                zoom:4];
   GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-  mapView.delegate = self; // needed for didTapOverlay delegate method
+  mapView.delegate = self;  // needed for didTapOverlay delegate method
 
   self.view = mapView;
 }
@@ -61,9 +61,8 @@
   // When a polygon is tapped, randomly change its fill color to a new hue.
   if ([overlay isKindOfClass:[GMSPolygon class]]) {
     GMSPolygon *polygon = (GMSPolygon *)overlay;
-    CGFloat hue = (((float)arc4random()/0x100000000)*1.0f);
-    polygon.fillColor =
-      [UIColor colorWithHue:hue saturation:1 brightness:1 alpha:0.5];
+    CGFloat hue = (((float)arc4random() / 0x100000000) * 1.0f);
+    polygon.fillColor = [UIColor colorWithHue:hue saturation:1 brightness:1 alpha:0.5];
   }
 }
 

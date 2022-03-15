@@ -40,7 +40,7 @@
 
   GMSMarker *australiaMarker = [[GMSMarker alloc] init];
   australiaMarker.title = @"Australia";
-  australiaMarker.position = CLLocationCoordinate2DMake(-27.994401,140.07019);
+  australiaMarker.position = CLLocationCoordinate2DMake(-27.994401, 140.07019);
   australiaMarker.appearAnimation = kGMSMarkerAnimationPop;
   australiaMarker.flat = YES;
   australiaMarker.draggable = YES;
@@ -58,13 +58,16 @@
   mapView.selectedMarker = _sydneyMarker;
 
   self.view = mapView;
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapAdd)];
+  self.navigationItem.rightBarButtonItem =
+      [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                    target:self
+                                                    action:@selector(didTapAdd)];
 }
 
 - (void)didTapAdd {
   if (_sydneyMarker.map == nil) {
     _sydneyMarker.map = (GMSMapView *)self.view;
-//    _sydneyMarker.rotation += 45.0;
+    //    _sydneyMarker.rotation += 45.0;
   } else {
     _sydneyMarker.map = nil;
   }
@@ -82,6 +85,5 @@
     _fadeInMarker.map = (GMSMapView *)self.view;
   }
 }
-
 
 @end

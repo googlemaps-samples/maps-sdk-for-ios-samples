@@ -29,8 +29,7 @@
                                                                zoom:3];
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-  _mapView.autoresizingMask =
-      UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  _mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
   self.view = [[UIView alloc] initWithFrame:CGRectZero];
   [self.view addSubview:_mapView];

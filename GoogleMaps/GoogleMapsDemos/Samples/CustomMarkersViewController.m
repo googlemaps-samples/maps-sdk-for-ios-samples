@@ -20,9 +20,7 @@
 static int kMarkerCount = 0;
 
 // Returns a random value from 0-1.0f.
-static CGFloat randf() {
-  return (((float)arc4random() / 0x100000000) * 1.0f);
-}
+static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
 
 @implementation CustomMarkersViewController {
   GMSMapView *_mapView;
@@ -30,8 +28,9 @@ static CGFloat randf() {
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  GMSCameraPosition *camera =
-      [GMSCameraPosition cameraWithLatitude:-37.81969 longitude:144.966085 zoom:4];
+  GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-37.81969
+                                                          longitude:144.966085
+                                                               zoom:4];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   [self addDefaultMarkers];
 

@@ -16,6 +16,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
-@interface AnimatedCurrentLocationViewController : UIViewController<CLLocationManagerDelegate>
+@interface AnimatedCurrentLocationViewController : UIViewController <CLLocationManagerDelegate>
 
 @end

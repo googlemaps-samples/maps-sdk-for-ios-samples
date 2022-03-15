@@ -52,7 +52,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  timer = [NSTimer scheduledTimerWithTimeInterval:1.f/30.f
+  timer = [NSTimer scheduledTimerWithTimeInterval:1.f / 30.f
                                            target:self
                                          selector:@selector(moveCamera)
                                          userInfo:nil
