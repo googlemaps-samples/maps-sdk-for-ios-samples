@@ -58,19 +58,17 @@
   [CATransaction begin];
   [CATransaction setAnimationDuration:3.f];  // 3 second animation
 
-  GMSCameraPosition *camera =
-      [[GMSCameraPosition alloc] initWithTarget:marker.position
-                                           zoom:8
-                                        bearing:50
-                                   viewingAngle:60];
+  GMSCameraPosition *camera = [[GMSCameraPosition alloc] initWithTarget:marker.position
+                                                                   zoom:8
+                                                                bearing:50
+                                                           viewingAngle:60];
   [mapView animateToCameraPosition:camera];
   [CATransaction commit];
 
   // Melbourne marker has a InfoWindow so return NO to allow markerInfoWindow to
   // fire. Also check that the marker isn't already selected so that the
   // InfoWindow doesn't close.
-  if (marker == _melbourneMarker &&
-      mapView.selectedMarker != _melbourneMarker) {
+  if (marker == _melbourneMarker && mapView.selectedMarker != _melbourneMarker) {
     return NO;
   }
 

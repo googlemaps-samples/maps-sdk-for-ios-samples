@@ -40,7 +40,6 @@
                                       target:self
                                       action:@selector(didTapMyLocation)];
   self.navigationItem.rightBarButtonItem = myLocationButton;
-
 }
 
 - (void)didTapMyLocation {
@@ -80,7 +79,7 @@
 
   // Fly out to the minimum zoom and then zoom back to the current zoom!
   CGFloat zoom = _mapView.camera.zoom;
-  NSArray *keyValues = @[@(zoom), @(kGMSMinZoomLevel), @(zoom)];
+  NSArray *keyValues = @[ @(zoom), @(kGMSMinZoomLevel), @(zoom) ];
   CAKeyframeAnimation *keyFrameAnimation =
       [CAKeyframeAnimation animationWithKeyPath:kGMSLayerCameraZoomLevelKey];
   keyFrameAnimation.duration = 2.0f;

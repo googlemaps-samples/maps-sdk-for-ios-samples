@@ -36,8 +36,9 @@ static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  GMSCameraPosition *camera =
-      [GMSCameraPosition cameraWithLatitude:-33.868 longitude:151.2086 zoom:6];
+  GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.868
+                                                          longitude:151.2086
+                                                               zoom:6];
   _mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
   _mapView.padding = UIEdgeInsetsMake(0, 20, 40, 60);
   _mapView.delegate = self;
@@ -119,7 +120,6 @@ static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
     [self.view addSubview:_mapView];
     [_mapView addSubview:_toggleFrameButton];
   }
-
 }
 
 - (void)nextBehavior {

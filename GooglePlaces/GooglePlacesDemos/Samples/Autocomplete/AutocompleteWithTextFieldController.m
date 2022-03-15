@@ -160,13 +160,12 @@
                                                         @"_searchField" : _searchField,
                                                         @"resultView" : _resultsController.view
                                                       }]];
-  [self.view addConstraints:[NSLayoutConstraint
-                                constraintsWithVisualFormat:@"H:|-(0)-[resultView]-(0)-|"
-                                                    options:0
-                                                    metrics:nil
-                                                      views:@{
-                                                        @"resultView" : _resultsController.view
-                                                      }]];
+  [self.view
+      addConstraints:[NSLayoutConstraint
+                         constraintsWithVisualFormat:@"H:|-(0)-[resultView]-(0)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:@{@"resultView" : _resultsController.view}]];
 
   // Force a layout pass otherwise the table will animate in weirdly.
   [self.view layoutIfNeeded];
@@ -207,13 +206,13 @@
   // Dismiss the results.
   [_resultsController willMoveToParentViewController:nil];
   [UIView animateWithDuration:0.5
-                   animations:^{
-                     _resultsController.view.alpha = 0.0f;
-                   }
-                   completion:^(BOOL finished) {
-                     [_resultsController.view removeFromSuperview];
-                     [_resultsController removeFromParentViewController];
-                   }];
+      animations:^{
+        _resultsController.view.alpha = 0.0f;
+      }
+      completion:^(BOOL finished) {
+        [_resultsController.view removeFromSuperview];
+        [_resultsController removeFromParentViewController];
+      }];
 }
 
 @end

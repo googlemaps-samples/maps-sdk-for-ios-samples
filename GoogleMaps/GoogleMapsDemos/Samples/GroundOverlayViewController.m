@@ -17,7 +17,7 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface GroundOverlayViewController ()<GMSMapViewDelegate>
+@interface GroundOverlayViewController () <GMSMapViewDelegate>
 @end
 
 @implementation GroundOverlayViewController
@@ -53,7 +53,7 @@
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapOverlay:(GMSOverlay *)overlay {
-  float opacity = (((float)arc4random()/0x100000000)*0.5f + 0.5f);
+  float opacity = (((float)arc4random() / 0x100000000) * 0.5f + 0.5f);
   ((GMSGroundOverlay *)overlay).opacity = opacity;
 }
 

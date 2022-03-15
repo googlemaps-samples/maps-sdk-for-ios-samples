@@ -64,9 +64,7 @@
 }
 
 - (void)dealloc {
-  [_mapView removeObserver:self
-                forKeyPath:@"myLocation"
-                   context:NULL];
+  [_mapView removeObserver:self forKeyPath:@"myLocation" context:NULL];
 }
 
 #pragma mark - KVO updates
@@ -80,8 +78,7 @@
     // location.
     _firstLocationUpdate = YES;
     CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
-    _mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
-                                                     zoom:14];
+    _mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate zoom:14];
   }
 }
 

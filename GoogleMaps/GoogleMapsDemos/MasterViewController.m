@@ -79,6 +79,7 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
   NSDictionary *demo = [[_demos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
   cell.textLabel.text = [demo objectForKey:@"title"];
   cell.detailTextLabel.text = [demo objectForKey:@"description"];
+  cell.accessibilityLabel = [demo objectForKey:@"title"];
 
   return cell;
 }

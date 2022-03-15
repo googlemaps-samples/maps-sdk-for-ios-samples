@@ -64,8 +64,8 @@
 - (void)didTapFitBounds {
   if (_markers.count == 0) return;
   CLLocationCoordinate2D firstPos = ((GMSMarker *)_markers.firstObject).position;
-  GMSCoordinateBounds *bounds =
-      [[GMSCoordinateBounds alloc] initWithCoordinate:firstPos coordinate:firstPos];
+  GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:firstPos
+                                                                     coordinate:firstPos];
   for (GMSMarker *marker in _markers) {
     bounds = [bounds includingCoordinate:marker.position];
   }
@@ -75,11 +75,10 @@
 
 #pragma mark - GMSMapViewDelegate
 
-- (void)mapView:(GMSMapView *)mapView
-    didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate {
+- (void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate {
   GMSMarker *marker = [[GMSMarker alloc] init];
-  marker.title = [NSString stringWithFormat:@"Marker at: %.2f,%.2f",
-                  coordinate.latitude, coordinate.longitude];
+  marker.title = [NSString
+      stringWithFormat:@"Marker at: %.2f,%.2f", coordinate.latitude, coordinate.longitude];
   marker.position = coordinate;
   marker.appearAnimation = kGMSMarkerAnimationPop;
   marker.map = _mapView;

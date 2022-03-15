@@ -17,10 +17,9 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface CustomIndoorViewController () <
-  GMSIndoorDisplayDelegate,
-  UIPickerViewDelegate,
-  UIPickerViewDataSource>
+@interface CustomIndoorViewController () <GMSIndoorDisplayDelegate,
+                                          UIPickerViewDelegate,
+                                          UIPickerViewDataSource>
 
 @end
 
@@ -41,9 +40,9 @@
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   _mapView.settings.myLocationButton = NO;
-  _mapView.settings.indoorPicker = NO; // We are implementing a custom level picker.
+  _mapView.settings.indoorPicker = NO;  // We are implementing a custom level picker.
 
-  _mapView.indoorEnabled = YES; // Defaults to YES. Set to NO to hide indoor maps.
+  _mapView.indoorEnabled = YES;  // Defaults to YES. Set to NO to hide indoor maps.
   _mapView.indoorDisplay.delegate = self;
   _mapView.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:_mapView];
@@ -57,25 +56,27 @@
   [self.view addSubview:_levelPickerView];
 
   // The height of the UIPickerView, used below in the vertical constraint
-  NSDictionary *metrics = @{@"height": @180.0};
+  NSDictionary *metrics = @{@"height" : @180.0};
   NSDictionary *views = NSDictionaryOfVariableBindings(_mapView, _levelPickerView);
 
   // Constraining the map to the full width of the display.
   // The |_levelPickerView| is constrained below with the NSLayoutFormatAlignAll*
-  // See http://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Articles/formatLanguage.html
-  [self.view addConstraints:[NSLayoutConstraint
-                             constraintsWithVisualFormat:@"|[_mapView]|"
-                             options:0
-                             metrics:metrics
-                             views:views]];
+  // See
+  // http://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Articles/formatLanguage.html
+  [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[_mapView]|"
+                                                                    options:0
+                                                                    metrics:metrics
+                                                                      views:views]];
 
   // Constraining the _mapView and the _levelPickerView as siblings taking
   // the full height of the display, with _levelPickerView at 200 points high
-  [self.view addConstraints:[NSLayoutConstraint
-                             constraintsWithVisualFormat:@"V:|[_mapView][_levelPickerView(height)]|"
-                             options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
-                             metrics:metrics
-                             views:views]];
+  [self.view
+      addConstraints:[NSLayoutConstraint
+                         constraintsWithVisualFormat:@"V:|[_mapView][_levelPickerView(height)]|"
+                                             options:NSLayoutFormatAlignAllLeft |
+                                                     NSLayoutFormatAlignAllRight
+                                             metrics:metrics
+                                               views:views]];
 }
 
 #pragma mark - GMSIndoorDisplayDelegate
