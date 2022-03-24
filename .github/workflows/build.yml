@@ -64,6 +64,11 @@ jobs:
               cd snippets
               carthage update --platform iOS
 
+        - name: Run carthage update (XCFramework)
+          run: |
+              cd snippets/MapsBetaSnippets
+              carthage update --platform iOS
+
     build-MapsSnippets:
         runs-on: macos-latest
 
