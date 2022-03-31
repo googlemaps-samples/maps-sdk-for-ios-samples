@@ -33,13 +33,14 @@ jobs:
 
     # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
     - name: Install CocoaPods 1.6.1
-      run: |
-        sudo gem install cocoapods -v 1.6.1
+      uses: maxim-lobanov/setup-cocoapods@v1
+      with:
+        version: 1.6.1
 
     # Install CocoaPods v 1.6.1. Need to use this version since there are issues with running `pod try` on later versions
     - name: Update CocoaPod Repo
       run: |
-        pod _1.6.1_ repo update
+        pod repo update
 
     # Copy pod try GoogleMaps Objective-C to current copy
     - name: Copy pod try GoogleMaps Objective-C changes into current copy
@@ -68,7 +69,7 @@ jobs:
 
     # Commit changes
     - name: PR Changes
-      uses: peter-evans/create-pull-request@v2
+      uses: peter-evans/create-pull-request@v4
       if: steps.pod_try_copy.outputs.filtered_lines_modified > 0
       with:
         token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
