@@ -59,9 +59,19 @@ static const CGFloat kEdgeBuffer = 8;
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.navigationController.navigationBar.translucent = NO;
+  UINavigationBar *navBar = self.navigationController.navigationBar;
+  if (@available(iOS 13, *)) {
+    UINavigationBarAppearance *navBarAppearance = [[UINavigationBarAppearance alloc] init];
+    [navBarAppearance configureWithOpaqueBackground];
+    navBarAppearance.backgroundColor = [UIColor systemBackgroundColor];
+    [navBarAppearance
+        setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor labelColor]}];
 
-  // Set up the edit selections UI.
+    navBar.standardAppearance = navBarAppearance;
+    navBar.scrollEdgeAppearance = navBarAppearance;
+  } else {
+    navBar.translucent = NO;
+  }
   [self setUpEditSelectionsUI];
 
   // Add button to the header to edit the place field selections.
