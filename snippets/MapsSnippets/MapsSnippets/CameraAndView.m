@@ -135,18 +135,24 @@ GMSMapView *mapView;
 
 - (void)cameraUpdate {
   // [START maps_ios_camera_and_view_camera_cameraupdate]
+  // [START maps_ios_camera_and_view_camera_cameraupdate_zoom]
   // Zoom in one zoom level
   GMSCameraUpdate *zoomCamera = [GMSCameraUpdate zoomIn];
   [mapView animateWithCameraUpdate:zoomCamera];
+  // [END maps_ios_camera_and_view_camera_cameraupdate_zoom]
 
+  // [START maps_ios_camera_and_view_camera_cameraupdate_center]
   // Center the camera on Vancouver, Canada
   CLLocationCoordinate2D vancouver = CLLocationCoordinate2DMake(49.26, -123.11);
   GMSCameraUpdate *vancouverCam = [GMSCameraUpdate setTarget:vancouver];
   [mapView animateWithCameraUpdate:vancouverCam];
+  // [END maps_ios_camera_and_view_camera_cameraupdate_center]
 
+  // [START maps_ios_camera_and_view_camera_cameraupdate_scroll]
   // Move the camera 200 points to the right, and 100 points downwards
   GMSCameraUpdate *downwards = [GMSCameraUpdate scrollByX:200.0 Y:100.0];
   [mapView animateWithCameraUpdate:downwards];
+  // [END maps_ios_camera_and_view_camera_cameraupdate_scroll]
   // [END maps_ios_camera_and_view_camera_cameraupdate]
 }
 @end
