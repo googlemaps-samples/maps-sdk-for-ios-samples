@@ -129,18 +129,24 @@ class CmaeraAndView: UIViewController {
 
   func cameraUpdate() {
     // [START maps_ios_camera_and_view_camera_cameraupdate]
+    // [START maps_ios_camera_and_view_camera_cameraupdate_zoom]
     // Zoom in one zoom level
     let zoomCamera = GMSCameraUpdate.zoomIn()
     mapView.animate(with: zoomCamera)
+    // [END maps_ios_camera_and_view_camera_cameraupdate_zoom]
 
+    // [START maps_ios_camera_and_view_camera_cameraupdate_center]
     // Center the camera on Vancouver, Canada
     let vancouver = CLLocationCoordinate2D(latitude: 49.26, longitude: -123.11)
     let vancouverCam = GMSCameraUpdate.setTarget(vancouver)
     mapView.animate(with: vancouverCam)
+    // [END maps_ios_camera_and_view_camera_cameraupdate_center]
 
-  // Move the camera 200 points to the right, and 100 points downwards
+    // [START maps_ios_camera_and_view_camera_cameraupdate_scroll]
+    // Move the camera 200 points to the right, and 100 points downwards
     let downwards = GMSCameraUpdate.scrollBy(x: 200, y: 100)
     mapView.animate(with: downwards)
+    // [END maps_ios_camera_and_view_camera_cameraupdate_scroll]
     // [END maps_ios_camera_and_view_camera_cameraupdate]
   }
 }
