@@ -131,6 +131,10 @@ GMSMapView *mapView;
   GMSCameraPosition *camera = [mapView cameraForBounds:bounds insets:UIEdgeInsetsZero];
   mapView.camera = camera;
   // [END maps_ios_camera_and_view_camera_position]
+
+  // [START maps_ios_camera_and_view_camera_position_bounds]
+  mapView.cameraTargetBounds = bounds;
+  // [END maps_ios_camera_and_view_camera_position_bounds]
 }
 
 - (void)cameraUpdate {

@@ -125,6 +125,11 @@ class CmaeraAndView: UIViewController {
     let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
     mapView.camera = camera
     // [END maps_ios_camera_and_view_camera_position]
+
+    // [START maps_ios_camera_and_view_camera_position_bounds]
+    mapView.cameraTargetBounds = bounds
+    // [END maps_ios_camera_and_view_camera_position_bounds]
+
   }
 
   func cameraUpdate() {
