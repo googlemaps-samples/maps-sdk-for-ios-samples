@@ -15,12 +15,12 @@ class CmaeraAndView: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // [START maps_ios_camera_and_view_position_1]
-    let camera = GMSCameraPosition.camera(
-      withLatitude: -33.8683,
+    let camera = GMSCameraPosition(
+      latitude: -33.8683,
       longitude: 151.2086,
       zoom: 16
     )
-    mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
+    mapView = GMSMapView(frame: self.view.bounds, camera: camera)
     // [END maps_ios_camera_and_view_position_1]
 
     // [START maps_ios_camera_and_view_position_2]
@@ -28,8 +28,8 @@ class CmaeraAndView: UIViewController {
     // [END maps_ios_camera_and_view_position_2]
 
     // [START maps_ios_camera_and_view_move_1]
-    let sydney = GMSCameraPosition.camera(
-      withLatitude: -33.8683,
+    let sydney = GMSCameraPosition(
+      latitude: -33.8683,
       longitude: 151.2086,
       zoom: 6
     )
@@ -37,8 +37,8 @@ class CmaeraAndView: UIViewController {
     // [END maps_ios_camera_and_view_move_1]
 
     // [START maps_ios_camera_and_view_move_2]
-    let fancy = GMSCameraPosition.camera(
-      withLatitude: -33,
+    let fancy = GMSCameraPosition(
+      latitude: -33,
       longitude: 151,
       zoom: 6,
       bearing: 270,
@@ -66,7 +66,7 @@ class CmaeraAndView: UIViewController {
 
     // [START maps_ios_camera_and_view_location_set_camera]
     let target = CLLocationCoordinate2D(latitude: -33.868, longitude: 151.208)
-    mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 6)
+    mapView.camera = GMSCameraPosition(target: target, zoom: 6)
     // [END maps_ios_camera_and_view_location_set_camera]
 
     // [START maps_ios_camera_and_view_zoom]
@@ -82,12 +82,12 @@ class CmaeraAndView: UIViewController {
 
   func minMaxZoom() {
     // [START maps_ios_camera_and_view_min_max_zoom]
-    let camera = GMSCameraPosition.camera(
-      withLatitude: 41.887,
+    let camera = GMSCameraPosition(
+      latitude: 41.887,
       longitude: -87.622,
       zoom: 12
     )
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let mapView = GMSMapView(frame: .zero, camera: camera)
     mapView.setMinZoom(10, maxZoom: 15)
     // [END maps_ios_camera_and_view_min_max_zoom]
 
@@ -97,12 +97,12 @@ class CmaeraAndView: UIViewController {
 
     // [START maps_ios_camera_and_view_min_max_zoom_3]
     // Sets the zoom level to 4.
-    let camera2 = GMSCameraPosition.camera(
-      withLatitude: 41.887,
+    let camera2 = GMSCameraPosition(
+      latitude: 41.887,
       longitude: -87.622,
       zoom: 4
     )
-    let mapView2 = GMSMapView.map(withFrame: .zero, camera: camera)
+    let mapView2 = GMSMapView(frame: .zero, camera: camera)
 
     // The current zoom, 4, is outside of the range. The zoom will change to 10.
     mapView.setMinZoom(10, maxZoom: 15)
