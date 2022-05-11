@@ -375,3 +375,24 @@ jobs:
             xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
             -scheme MapsAndPlacesDemo \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build | xcpretty
+
+    test: # used as required status check
+      runs-on: ubuntu-latest
+      needs:
+        - build-MapsBetaSnippets
+        - build-snippets-carthage
+        - build-MapsSnippets
+        - build-MapsUtilsSnippets
+        - build-PlacesSnippets
+        - build-GoogleMapsBeta
+        - build-GoogleMapsBeta-Swift
+        - build-GoogleMaps
+        - build-GoogleMaps-Swift
+        - build-GooglePlaces
+        - build-GooglePlaces-Swift
+        - build-current-place-on-map
+        - build-map-with-marker
+        - build-places-address-form
+        - build-MapsPlacesDemo-form
+      steps: 
+        - run: echo "Fail if all other steps are not successful"
