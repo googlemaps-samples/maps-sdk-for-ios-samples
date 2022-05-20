@@ -5,11 +5,3 @@ binary "https://dl.google.com/geosdk/GoogleMaps.json" == 6.2.1
 # [START maps_ios_places_get_started_install_carthage]
 binary "https://dl.google.com/geosdk/GooglePlaces.json" == 6.2.1
 # [END maps_ios_places_get_started_install_carthage]
-
-# [START maps_ios_xcframework_install_carthage]
-binary "https://dl.google.com/geosdk/GoogleMaps.json" == 6.2.1-beta
-# [END maps_ios_xcframework_install_carthage]
-
-# [START maps_ios_places_xcframework_install_carthage]
-binary "https://dl.google.com/geosdk/GooglePlaces.json" == 6.2.1-beta
-# [END maps_ios_places_xcframework_install_carthage]
