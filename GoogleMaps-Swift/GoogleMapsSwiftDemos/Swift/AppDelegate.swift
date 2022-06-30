@@ -26,6 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     GMSServices.provideAPIKey(SDKConstants.apiKey)
 
+    // On iOS 15, continue to use opaque navigation bars like earlier iOS versions.
+    if #available(iOS 15.0, *) {
+      let navBarAppearance = UINavigationBarAppearance()
+      navBarAppearance.configureWithOpaqueBackground()
+      UINavigationBar.appearance().standardAppearance = navBarAppearance
+      UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    }
+
     let sampleListViewController = SampleListViewController()
     let frame = UIScreen.main.bounds
     let window = UIWindow(frame: frame)

@@ -73,7 +73,6 @@
     [self newDemo:[IndoorMuseumNavigationViewController class]
              withTitle:@"Indoor Museum Navigator"
         andDescription:nil],
-    [self newDemo:[StyledMapViewController class] withTitle:@"Styled Map" andDescription:nil],
     [self newDemo:[GestureControlViewController class]
              withTitle:@"Gesture Control"
         andDescription:nil],
@@ -89,6 +88,7 @@
     [self newDemo:[PaddingBehaviorViewController class]
              withTitle:@"Padding Behavior"
         andDescription:nil],
+    [self newDemo:[StyledMapViewController class] withTitle:@"Styled Map" andDescription:nil],
   ];
 
   NSArray *panoramaDemos = @[
