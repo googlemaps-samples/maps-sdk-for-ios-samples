@@ -47,6 +47,9 @@ static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
   self.navigationItem.rightBarButtonItems = @[ addButton, clearButton ];
 
   self.view = _mapView;
+
+  // Reset count on view load
+  kMarkerCount = 0;
 }
 
 - (void)addDefaultMarkers {
@@ -114,6 +117,9 @@ static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
 - (void)didTapClear {
   [_mapView clear];
   [self addDefaultMarkers];
+
+  // Reset count on clear
+  kMarkerCount = 0;
 }
 
 @end
