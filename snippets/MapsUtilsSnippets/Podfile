@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'MapsUtilsSnippets' do
-    platform :ios, '12.0'
-    pod 'GoogleMaps', '6.2.1'
+    platform :ios, '13.0'
+    pod 'GoogleMaps', '7.0.0'
     pod 'Google-Maps-iOS-Utils', '4.1.0'
 end
