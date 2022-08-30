@@ -38,13 +38,8 @@
   }
   [GMSServices provideAPIKey:kAPIKey];
 
-  NSDictionary<NSString *, NSString *> *environment = [[NSProcessInfo processInfo] environment];
-  NSString *enableMetalOverride = [environment objectForKey:@"GMS_USE_METAL_RENDERER"];
-  NSLog(@"METAL OVERRIDE: %@", enableMetalOverride);
-  BOOL enableMetal = enableMetalOverride
-                         ? enableMetalOverride.boolValue
-                         : [[NSUserDefaults standardUserDefaults] boolForKey:@"metal_preference"];
-  [GMSServices setMetalRendererEnabled:enableMetal];
+  // Metal is the preferred renderer.
+  [GMSServices setMetalRendererEnabled:YES];
   self.servicesHandle = [GMSServices sharedServices];
 
   // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for

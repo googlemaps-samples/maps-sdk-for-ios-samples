@@ -30,6 +30,7 @@
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   _mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  _mapView.accessibilityIdentifier = @"gestureControlDemoMapView";
 
   self.view = [[UIView alloc] initWithFrame:CGRectZero];
   [self.view addSubview:_mapView];
