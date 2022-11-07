@@ -24,7 +24,7 @@ on:
 jobs:
   check_pod_try:
     # The type of runner that the job will run on
-    runs-on: macos-latest
+    runs-on: macos-11
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
