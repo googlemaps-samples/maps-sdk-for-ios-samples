@@ -24,7 +24,7 @@ on:
 jobs:
   check_pod_try:
     # The type of runner that the job will run on
-    runs-on: macos-11
+    runs-on: macos-latest
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -44,6 +44,8 @@ jobs:
 
     # Copy pod try GoogleMaps Objective-C to current copy
     - name: Copy pod try GoogleMaps Objective-C changes into current copy
+      with:
+        ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
         $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 1
 
