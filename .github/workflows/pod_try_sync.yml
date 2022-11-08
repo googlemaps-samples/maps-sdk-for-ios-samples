@@ -44,6 +44,8 @@ jobs:
 
     # Copy pod try GoogleMaps Objective-C to current copy
     - name: Copy pod try GoogleMaps Objective-C changes into current copy
+      with:
+        ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
         $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps 1
 
