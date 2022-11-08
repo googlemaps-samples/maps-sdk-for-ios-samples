@@ -44,7 +44,7 @@ jobs:
 
     # Copy pod try GoogleMaps Objective-C to current copy
     - name: Copy pod try GoogleMaps Objective-C changes into current copy
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
