@@ -52,12 +52,18 @@ jobs:
 
     # Copy pod try GoogleMaps Swift to current copy
     - name: Copy pod try GoogleMaps Swift changes into current copy
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
         mkdir -p $GITHUB_WORKSPACE/GoogleMaps-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GoogleMaps $GITHUB_WORKSPACE/GoogleMaps-Swift 2
 
     # Copy pod try GooglePlaces Objective-C to current copy
     - name: Copy pod try GooglePlaces Objective-C changes into current copy
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
         mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces 1
@@ -65,6 +71,9 @@ jobs:
     # Copy pod try GooglePlaces Swift to current copy
     - name: Copy pod try GooglePlaces Swift changes into current copy
       id: pod_try_copy
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.7.6' # pod try breaks with Ruby 3.0
       run: |
         mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
