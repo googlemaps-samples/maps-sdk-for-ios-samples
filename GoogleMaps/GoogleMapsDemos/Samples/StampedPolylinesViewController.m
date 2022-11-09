@@ -23,7 +23,6 @@ static const double kSeattleLatitudeDegrees = 47.6089945;
 static const double kSeattleLongitudeDegrees = -122.3410462;
 static const double kZoom = 14;
 static const double kStrokeWidth = 20;
-static NSString *const kMapIDDemo = @"11153850776783499500";
 
 @implementation StampedPolylinesViewController
 
