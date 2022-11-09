@@ -276,12 +276,24 @@ static CGFloat const kButtonPadding = 10.f;
       appearanceWhenContainedInInstancesOfClasses:@[ [GMSStyledAutocompleteViewController class] ]];
   [appearance setColor:primaryTextColor];
 
-  [[UINavigationBar
-      appearanceWhenContainedInInstancesOfClasses:@[ [GMSStyledAutocompleteViewController class] ]]
-      setBarTintColor:darkBackgroundColor];
-  [[UINavigationBar
-      appearanceWhenContainedInInstancesOfClasses:@[ [GMSStyledAutocompleteViewController class] ]]
-      setTintColor:searchBarTintColor];
+  // Customize the navigation bar appearance.
+  UINavigationBar *navBar = [UINavigationBar
+      appearanceWhenContainedInInstancesOfClasses:@[ [GMSStyledAutocompleteViewController class] ]];
+  [navBar setBarTintColor:darkBackgroundColor];
+  [navBar setTintColor:searchBarTintColor];
+
+  // On iOS 15 onwards, we need to update the navigation bar appearance to ensure customized colors
+  // are consistently applied on all states of the navigation bar.
+#if defined(__IPHONE_15_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_15_0)
+  if (@available(iOS 15.0, *)) {
+    UINavigationBarAppearance *consistentAppearance = [[UINavigationBarAppearance alloc] init];
+    consistentAppearance.backgroundColor = darkBackgroundColor;
+    navBar.standardAppearance = consistentAppearance;
+    navBar.scrollEdgeAppearance = consistentAppearance;
+    navBar.compactAppearance = consistentAppearance;
+    navBar.compactScrollEdgeAppearance = consistentAppearance;
+  }
+#endif  // defined(__IPHONE_15_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_15_0
 
   // Color of typed text in search bar.
   NSDictionary *searchBarTextAttributes = @{

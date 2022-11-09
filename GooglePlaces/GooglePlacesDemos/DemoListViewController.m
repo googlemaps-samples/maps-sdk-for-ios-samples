@@ -27,7 +27,7 @@ static const CGFloat kEdgeBuffer = 8;
 
 @implementation DemoListViewController {
   UIViewController *_editSelectionsViewController;
-  NSMutableDictionary<NSNumber *, UISwitch *> *_autocompleteFiltersSelectionMap;
+  NSMutableDictionary<NSString *, UISwitch *> *_autocompleteFiltersSelectionMap;
   NSMutableDictionary<NSNumber *, UISwitch *> *_placeFieldsSelectionMap;
   NSMutableDictionary<NSString *, UISwitch *> *_restrictionBoundsMap;
   CGFloat _nextSelectionYPos;
@@ -147,12 +147,17 @@ static const CGFloat kEdgeBuffer = 8;
   // Set up the individual autocomplete type filters we can limit the results to.
   // Add a heading for the place fields that we can request.
   _nextSelectionYPos += kSelectionHeight;
-  for (NSInteger autocompleteFilterType = kGMSPlacesAutocompleteTypeFilterGeocode;
-       autocompleteFilterType <= kGMSPlacesAutocompleteTypeFilterCity; ++autocompleteFilterType) {
-    [scrollView
-        addSubview:[self selectionButtonForAutocompleteFilterType:(GMSPlacesAutocompleteTypeFilter)
-                                                                      autocompleteFilterType]];
-  }
+  [scrollView addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeRestaurant]];
+  [scrollView addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeAirport]];
+  [scrollView addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeGeocode]];
+  [scrollView
+      addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeEstablishment]];
+  [scrollView
+      addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeCollectionAddress]];
+  [scrollView
+      addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeCollectionRegion]];
+  [scrollView
+      addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeCollectionCity]];
 
   // Add heading for the autocomplete restriction bounds.
   [scrollView addSubview:[self headerLabelForTitle:@"Autocomplete Restriction Bounds"]];
@@ -174,6 +179,7 @@ static const CGFloat kEdgeBuffer = 8;
        placeField <<= 1) {
     [scrollView addSubview:[self selectionButtonForPlaceField:(GMSPlaceField)placeField]];
   }
+
 
   // Add the close button to dismiss the selection UI.
   UIButton *close =
@@ -271,22 +277,14 @@ static const CGFloat kEdgeBuffer = 8;
   return selectionButton;
 }
 
-- (UIButton *)selectionButtonForAutocompleteFilterType:
-    (GMSPlacesAutocompleteTypeFilter)autocompleteFilter {
-  NSDictionary<NSNumber *, NSString *> *fieldsMapping = @{
-    @(kGMSPlacesAutocompleteTypeFilterGeocode) : @"Geocode",
-    @(kGMSPlacesAutocompleteTypeFilterAddress) : @"Address",
-    @(kGMSPlacesAutocompleteTypeFilterEstablishment) : @"Establishment",
-    @(kGMSPlacesAutocompleteTypeFilterRegion) : @"Region",
-    @(kGMSPlacesAutocompleteTypeFilterCity) : @"City",
-  };
-  UIButton *selectionButton = [self selectionButtonForTitle:fieldsMapping[@(autocompleteFilter)]];
+- (UIButton *)selectionButtonForAutocompleteFilterType:(NSString *)autocompleteFilter {
+  UIButton *selectionButton = [self selectionButtonForTitle:autocompleteFilter];
   [selectionButton addTarget:self
                       action:@selector(disableOtherAutocompleteFilterExceptForTapped:)
             forControlEvents:UIControlEventTouchUpInside];
   UISwitch *selectionSwitch = [self switchFromButton:selectionButton];
   [selectionSwitch setOn:NO];
-  _autocompleteFiltersSelectionMap[@(autocompleteFilter)] = selectionSwitch;
+  _autocompleteFiltersSelectionMap[autocompleteFilter] = selectionSwitch;
   _nextSelectionYPos += selectionButton.frame.size.height;
   return selectionButton;
 }
@@ -317,8 +315,8 @@ static const CGFloat kEdgeBuffer = 8;
 
 - (void)disableOtherAutocompleteFilterExceptForTapped:(UIButton *)sender {
   UISwitch *tappedSwitch = [self switchFromButton:sender];
-  for (NSNumber *number in _autocompleteFiltersSelectionMap) {
-    UISwitch *selectionSwitch = _autocompleteFiltersSelectionMap[number];
+  for (NSString *filterType in _autocompleteFiltersSelectionMap) {
+    UISwitch *selectionSwitch = _autocompleteFiltersSelectionMap[filterType];
     if (selectionSwitch != tappedSwitch) {
       [selectionSwitch setOn:NO animated:YES];
     }
@@ -345,6 +343,11 @@ static const CGFloat kEdgeBuffer = 8;
   UIScrollView *scrollView = (UIScrollView *)_editSelectionsViewController.view;
   [scrollView setContentOffset:CGPointZero animated:NO];
 
+  // Default modalPresentationStyle reduces width of view on iPad, view needs to be full width
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    _editSelectionsViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+  }
+
   // Present the selection UI to edit which place fields to request.
   [self.navigationController presentViewController:_editSelectionsViewController
                                           animated:YES
@@ -357,10 +360,10 @@ static const CGFloat kEdgeBuffer = 8;
 
 - (GMSAutocompleteFilter *)autocompleteFilter {
   GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
-  for (NSNumber *number in _autocompleteFiltersSelectionMap) {
-    UISwitch *selectionSwitch = _autocompleteFiltersSelectionMap[number];
+  for (NSString *filterType in _autocompleteFiltersSelectionMap) {
+    UISwitch *selectionSwitch = _autocompleteFiltersSelectionMap[filterType];
     if ([selectionSwitch isOn]) {
-      filter.type = (GMSPlacesAutocompleteTypeFilter)[number integerValue];
+      filter.types = @[ filterType ];
       break;
     }
   }
