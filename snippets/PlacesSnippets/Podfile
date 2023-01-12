@@ -1,0 +1,7 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'PlacesSnippets' do
+    platform :ios, '13.0'
+    pod 'GooglePlaces', '7.2.0'
+    pod 'GoogleMaps', '7.2.0'
+end
