@@ -149,6 +149,7 @@
         .active = YES;
     [self.view.readableContentGuide.trailingAnchor constraintEqualToAnchor:_textView.trailingAnchor]
         .active = YES;
+
     // Set the textContainerInset to 0 because the readableContentGuide is already handling the
     // inset.
     _textView.textContainerInset = UIEdgeInsetsZero;
@@ -176,8 +177,8 @@
   UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
   [button setTitle:title forState:UIControlStateNormal];
 
-  // Set the text color to adapt to light and dark mode on iOS 13+ devices
-  // Otherwise, set the text color to black
+  // Set the text color to adapt to light and dark mode on iOS 13+ devices. Otherwise, set the text
+  // color to black
 #if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
   if (@available(iOS 13.0, *)) {
     [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
@@ -190,6 +191,7 @@
   [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
   button.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:button];
+
   // Position the button from the top of the view.
   [button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
   [button.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:kButtonTopMargin].active =
@@ -208,7 +210,7 @@
   [_photoView setHidden:NO];
 }
 
-// Preload the photos to be displayed.
+/** Preload the photos to be displayed. */
 - (void)preloadPhotoList:(NSArray<GMSPlacePhotoMetadata *> *)photos {
   __block NSMutableArray *attributedPhotos = [NSMutableArray array];
   __block NSInteger photoRequestsInFlight = photos.count;

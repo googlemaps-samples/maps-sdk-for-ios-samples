@@ -95,8 +95,7 @@ NSString *const kSearchBarAccessibilityIdentifier = @"searchBarAccessibilityIden
   [self autocompleteDidFail:error];
 }
 
-// Show and hide the network activity indicator when we start/stop loading results.
-
+/** Show and hide the network activity indicator when we start/stop loading results. */
 - (void)didRequestAutocompletePredictionsForResultsController:
     (GMSAutocompleteResultsViewController *)resultsController {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

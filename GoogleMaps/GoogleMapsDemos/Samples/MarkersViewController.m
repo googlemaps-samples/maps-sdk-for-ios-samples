@@ -67,7 +67,6 @@
 - (void)didTapAdd {
   if (_sydneyMarker.map == nil) {
     _sydneyMarker.map = (GMSMapView *)self.view;
-    //    _sydneyMarker.rotation += 45.0;
   } else {
     _sydneyMarker.map = nil;
   }

@@ -20,6 +20,7 @@
 static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
 
 @interface PaddingBehaviorViewController () <GMSMapViewDelegate>
+
 @end
 
 @implementation PaddingBehaviorViewController {

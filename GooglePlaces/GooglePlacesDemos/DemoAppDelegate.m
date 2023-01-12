@@ -41,8 +41,8 @@
   // Provide the Places SDK with your API key.
   [GMSPlacesClient provideAPIKey:kAPIKey];
 
-  // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for
-  // a demo.
+  // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for a
+  // demo.
   NSLog(@"Google Places open source licenses:\n%@", [GMSPlacesClient openSourceLicenseInfo]);
 
   // Manually create a window. If you are using a storyboard in your own app you can ignore the rest

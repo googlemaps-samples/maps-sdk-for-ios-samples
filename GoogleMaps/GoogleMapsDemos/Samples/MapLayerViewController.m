@@ -52,9 +52,8 @@
   _mapView.layer.cameraLongitude = location.coordinate.longitude;
   _mapView.layer.cameraBearing = 0.0;
 
-  // Access the GMSMapLayer directly to modify the following properties with a
-  // specified timing function and duration.
-
+  // Access the GMSMapLayer directly to modify the following properties with a specified timing
+  // function and duration.
   CAMediaTimingFunction *curve =
       [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
   CABasicAnimation *animation;

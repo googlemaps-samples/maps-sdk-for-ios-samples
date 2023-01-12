@@ -22,9 +22,11 @@
  * proxy changes to this part of the demo app.
  */
 @interface GMSStyledAutocompleteViewController : GMSAutocompleteViewController
+
 @end
 
 @implementation GMSStyledAutocompleteViewController
+
 @end
 
 static CGFloat const kButtonPadding = 10.f;
@@ -349,7 +351,7 @@ static CGFloat const kButtonPadding = 10.f;
   }
 }
 
-/*
+/**
  * This method shows how to replace the "search" and "clear text" icons in the search bar with
  * custom icons in the case where the default gray icons don't match a custom background.
  */

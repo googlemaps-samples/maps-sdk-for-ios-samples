@@ -118,9 +118,6 @@ class ConfigurationViewController: UIViewController {
       action: placesFieldsSelector)
     let rating = ConfigData(
       name: "Rating", tag: Int(GMSPlaceField.rating.rawValue), action: placesFieldsSelector)
-    let ratingsTotal = ConfigData(
-      name: "User Ratings Total", tag: Int(GMSPlaceField.userRatingsTotal.rawValue),
-      action: placesFieldsSelector)
     let priceLevel = ConfigData(
       name: "Price Level", tag: Int(GMSPlaceField.priceLevel.rawValue),
       action: placesFieldsSelector)
@@ -137,6 +134,9 @@ class ConfigurationViewController: UIViewController {
       action: placesFieldsSelector)
     let photos = ConfigData(
       name: "Photos", tag: Int(GMSPlaceField.photos.rawValue), action: placesFieldsSelector)
+    let ratingsTotal = ConfigData(
+      name: "User Ratings Total", tag: Int(GMSPlaceField.userRatingsTotal.rawValue),
+      action: placesFieldsSelector)
     let minutes = ConfigData(
       name: "UTC Offset Minutes", tag: Int(GMSPlaceField.utcOffsetMinutes.rawValue),
       action: placesFieldsSelector)
@@ -149,14 +149,27 @@ class ConfigurationViewController: UIViewController {
     let iconBackgroundColor = ConfigData(
       name: "Icon Background Color", tag: Int(GMSPlaceField.iconBackgroundColor.rawValue),
       action: placesFieldsSelector)
-    sections.append(
-      ConfigSection(
-        name: "Place Fields",
-        samples: [
-          name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
-          ratingsTotal, priceLevel, types, website, viewPort, addressComponents, photos, minutes,
-          status, iconImageURL, iconBackgroundColor,
-        ]))
+    let takeout = ConfigData(
+      name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
+      action: placesFieldsSelector)
+    let delivery = ConfigData(
+      name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
+      action: placesFieldsSelector)
+    let dineIn = ConfigData(
+      name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
+      action: placesFieldsSelector)
+    let curbsidePickup = ConfigData(
+      name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
+      action: placesFieldsSelector)
+    // Original place details place fields.
+    var placeFieldSamples = [
+      name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
+      priceLevel, types, website, viewPort, addressComponents, photos, ratingsTotal, minutes,
+      status, iconImageURL, iconBackgroundColor,
+    ]
+    // Shopping and Restaurant boolean attributes place fields.
+    placeFieldSamples += [takeout, delivery, dineIn, curbsidePickup]
+    sections.append(ConfigSection(name: "Place Fields", samples: placeFieldSamples))
     return sections
   }()
 

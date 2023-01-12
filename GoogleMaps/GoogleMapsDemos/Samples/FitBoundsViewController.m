@@ -18,6 +18,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface FitBoundsViewController () <GMSMapViewDelegate>
+
 @end
 
 @implementation FitBoundsViewController {
@@ -51,8 +52,8 @@
   _markers = [NSMutableArray arrayWithObject:sydneyMarker];
   [_markers addObject:anotherSydneyMarker];
 
-  // Create a button that, when pressed, updates the camera to fit the bounds
-  // of the specified markers.
+  // Create a button that, when pressed, updates the camera to fit the bounds of the specified
+  // markers.
   UIBarButtonItem *fitBoundsButton =
       [[UIBarButtonItem alloc] initWithTitle:@"Fit Bounds"
                                        style:UIBarButtonItemStylePlain

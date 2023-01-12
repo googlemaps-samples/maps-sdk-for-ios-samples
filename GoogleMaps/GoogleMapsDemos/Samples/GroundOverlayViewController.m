@@ -42,6 +42,7 @@
 
   // Add the ground overlay, centered in Newark, NJ
   GMSGroundOverlay *groundOverlay = [[GMSGroundOverlay alloc] init];
+
   // Image from http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg
   groundOverlay.icon = [UIImage imageNamed:@"newark_nj_1922.jpg"];
   groundOverlay.tappable = YES;

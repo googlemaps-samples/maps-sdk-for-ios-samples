@@ -15,9 +15,7 @@
 
 #import "GooglePlacesDemos/Samples/PagingPhotoView.h"
 
-/**
- * Class to store the image and text views that display the image and attributions.
- */
+/** Class to store the image and text views that display the image and attributions. */
 @interface ImageViewAndAttribution : NSObject
 
 @property(nonatomic, strong) UIImageView *imageView;
@@ -36,11 +34,16 @@
 @end
 
 @implementation PagingPhotoView {
-  // An array of |ImageViewAndAttribution| objects representing the actual views that are
-  // being displayed.
+  /**
+   * An array of |ImageViewAndAttribution| objects representing the actual views that are being
+   * displayed.
+   */
   NSMutableArray *_photoImageViews;
-  // Whether we should update the image and attribution view frames on the next |layoutSubviews|
-  // call. This should be set to YES whenever the frame is updated or the photos change.
+
+  /**
+   * Whether we should update the image and attribution view frames on the next |layoutSubviews|
+   * call. This should be set to YES whenever the frame is updated or the photos change.
+   */
   BOOL _imageLayoutUpdateNeeded;
 }
 
@@ -141,9 +144,7 @@
       CGSizeMake(_photoImageViews.count * self.frame.size.width, usableScrollViewHeight);
 }
 
-/**
- * Updates the frames of the images and attributions.
- */
+/** Updates the frames of the images and attributions. */
 - (void)layoutImages {
   CGFloat contentWidth = 0;
   CGFloat scrollViewWidth = self.bounds.size.width;
