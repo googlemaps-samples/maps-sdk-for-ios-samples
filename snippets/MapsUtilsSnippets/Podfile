@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'MapsUtilsSnippets' do
     platform :ios, '13.0'
-    pod 'GoogleMaps', '7.2.0'
+    pod 'GoogleMaps', '7.3.0'
     pod 'Google-Maps-iOS-Utils', '4.1.0'
 end
