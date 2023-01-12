@@ -42,8 +42,8 @@
   [GMSServices setMetalRendererEnabled:YES];
   self.servicesHandle = [GMSServices sharedServices];
 
-  // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for
-  // a demo.
+  // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for a
+  // demo.
   NSLog(@"Open source licenses:\n%@", [GMSServices openSourceLicenseInfo]);
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -65,9 +65,8 @@
   [mapView animateToCameraPosition:camera];
   [CATransaction commit];
 
-  // Melbourne marker has a InfoWindow so return NO to allow markerInfoWindow to
-  // fire. Also check that the marker isn't already selected so that the
-  // InfoWindow doesn't close.
+  // Melbourne marker has a InfoWindow so return NO to allow markerInfoWindow to fire. Also check
+  // that the marker isn't already selected so that the InfoWindow doesn't close.
   if (marker == _melbourneMarker && mapView.selectedMarker != _melbourneMarker) {
     return NO;
   }

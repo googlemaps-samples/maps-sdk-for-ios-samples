@@ -47,9 +47,13 @@ static CGFloat const kButtonTopMargin = 100.f;
 - (UIButton *)createShowAutocompleteButton:(SEL)selector;
 
 - (void)autocompleteDidSelectPlace:(GMSPlace *)place;
+
 - (void)autocompleteDidFail:(NSError *)error;
+
 - (void)autocompleteDidCancel;
+
 - (void)showCustomMessageInResultPane:(NSString *)message;
+
 - (void)resetViews;
 
 @end

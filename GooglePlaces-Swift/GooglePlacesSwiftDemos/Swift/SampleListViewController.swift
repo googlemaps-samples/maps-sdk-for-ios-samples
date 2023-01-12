@@ -22,11 +22,14 @@ class SampleListViewController: UITableViewController {
   let sampleSections = Samples.allSamples()
 
   let configuration: AutocompleteConfiguration = {
-    let fields: [GMSPlaceField] = [
+    // Original place details place fields.
+    var fields: [GMSPlaceField] = [
       .name, .placeID, .plusCode, .coordinate, .openingHours, .phoneNumber, .formattedAddress,
       .rating, .userRatingsTotal, .priceLevel, .types, .website, .viewport, .addressComponents,
       .photos, .utcOffsetMinutes, .businessStatus, .iconImageURL, .iconBackgroundColor,
     ]
+    // Shopping and Restaurant Boolean Attribute Place Fields.
+    fields += [.takeout, .delivery, .dineIn, .curbsidePickup]
     return AutocompleteConfiguration(
       autocompleteFilter: GMSAutocompleteFilter(),
       placeFields: GMSPlaceField(rawValue: fields.reduce(0) { $0 | $1.rawValue }))

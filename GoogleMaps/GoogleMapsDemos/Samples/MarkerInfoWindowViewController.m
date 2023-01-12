@@ -19,6 +19,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface MarkerInfoWindowViewController () <GMSMapViewDelegate>
+
 @end
 
 @implementation MarkerInfoWindowViewController {

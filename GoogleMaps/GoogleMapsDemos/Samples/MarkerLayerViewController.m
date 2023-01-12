@@ -18,6 +18,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface CoordsList : NSObject
+
 @property(nonatomic, readonly, copy) GMSPath *path;
 @property(nonatomic, readonly) NSUInteger target;
 

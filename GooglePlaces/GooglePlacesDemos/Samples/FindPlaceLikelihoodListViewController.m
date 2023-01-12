@@ -24,7 +24,7 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
 
 @interface ButtonCoordinateView : UIView
 
-// The button used to trigger the fetch likelihoods from coordinate action.
+/** The button used to trigger the fetch likelihoods from coordinate action. */
 @property(nonatomic, strong) UIButton *button;
 
 @end
@@ -70,7 +70,7 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
   ]];
 }
 
-// Sets the title and target for the button.
+/** Sets the title and target for the button. */
 - (void)fillWithButtonTitle:(NSString *)title
                      target:(id)target
                      action:(SEL)action
@@ -87,8 +87,11 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
 @interface FindPlaceLikelihoodListViewController ()
 
 @property(nonatomic, strong) UITableView *tableView;
+
 @property(nonatomic, strong) NSArray<GMSPlaceLikelihood *> *placeLikelihoods;
+
 @property(nonatomic, strong) UILabel *errorLabel;
+
 @property(nonatomic, strong) ButtonCoordinateView *currentButtonCoordinateView;
 
 @end
@@ -182,7 +185,7 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
 
 #pragma mark - Button Handlers
 
-// Requests location services authorization if needed, and starts updating location.
+/** Requests location services authorization if needed, and starts updating location. */
 - (void)onCurrentLocationTap {
   if (![FindPlaceLikelihoodListViewController areLocationServicesEnabledAndAuthorized]) {
     [_locationManager requestWhenInUseAuthorization];
@@ -205,7 +208,7 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
 
 #pragma mark - CLLocationManagerDelegate
 
-// Retries retrieving current location if user has granted location services permission.
+/** Retries retrieving current location if user has granted location services permission. */
 - (void)locationManager:(CLLocationManager *)manager
     didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
@@ -244,7 +247,7 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
 
 #pragma mark - Helpers
 
-// Checks if user has authorized location services required for retrieving device location.
+/** Checks if user has authorized location services required for retrieving device location. */
 + (BOOL)areLocationServicesEnabledAndAuthorized {
   if (![CLLocationManager locationServicesEnabled]) {
     return NO;

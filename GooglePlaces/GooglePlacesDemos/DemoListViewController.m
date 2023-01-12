@@ -83,7 +83,6 @@ static const CGFloat kEdgeBuffer = 8;
   // Register a plain old UITableViewCell as this will be sufficient for our list.
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 
-  //  [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(orientationChanged:)
                                                name:UIDeviceOrientationDidChangeNotification
@@ -144,8 +143,8 @@ static const CGFloat kEdgeBuffer = 8;
   _nextSelectionYPos = [UIApplication sharedApplication].statusBarFrame.size.height;
   [scrollView addSubview:[self headerLabelForTitle:@"Autocomplete Filters"]];
 
-  // Set up the individual autocomplete type filters we can limit the results to.
-  // Add a heading for the place fields that we can request.
+  // Set up the individual autocomplete type filters we can limit the results to. Add a heading for
+  // the place fields that we can request.
   _nextSelectionYPos += kSelectionHeight;
   [scrollView addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeRestaurant]];
   [scrollView addSubview:[self selectionButtonForAutocompleteFilterType:kGMSPlaceTypeAirport]];

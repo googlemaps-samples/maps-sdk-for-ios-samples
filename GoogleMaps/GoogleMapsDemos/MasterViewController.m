@@ -41,7 +41,6 @@ typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSa
 
   _demoSections = [Samples loadSections];
   _demos = [Samples loadDemos];
-
 }
 
 #pragma mark - UITableViewController

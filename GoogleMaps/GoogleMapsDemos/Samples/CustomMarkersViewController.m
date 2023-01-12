@@ -70,8 +70,8 @@ static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
 
 - (void)didTapAdd {
   for (int i = 0; i < 10; ++i) {
-    // Add a marker every 0.25 seconds for the next ten markers, randomly
-    // within the bounds of the camera as it is at that point.
+    // Add a marker every 0.25 seconds for the next ten markers, randomly within the bounds of the
+    // camera as it is at that point.
     double delayInSeconds = (i * 0.25);
     dispatch_time_t popTime =
         dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -91,8 +91,8 @@ static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
   CLLocationDegrees latitude =
       bounds.southWest.latitude + randf() * (bounds.northEast.latitude - bounds.southWest.latitude);
 
-  // If the visible region crosses the antimeridian (the right-most point is
-  // "smaller" than the left-most point), adjust the longitude accordingly.
+  // If the visible region crosses the antimeridian (the right-most point is "smaller" than the
+  // left-most point), adjust the longitude accordingly.
   BOOL offset = (bounds.northEast.longitude < bounds.southWest.longitude);
   CLLocationDegrees longitude =
       bounds.southWest.longitude +

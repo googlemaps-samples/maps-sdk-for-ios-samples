@@ -74,8 +74,7 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
   if (!_firstLocationUpdate) {
-    // If the first location update has not yet been received, then jump to that
-    // location.
+    // If the first location update has not yet been received, then jump to that location.
     _firstLocationUpdate = YES;
     CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
     _mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate zoom:14];
