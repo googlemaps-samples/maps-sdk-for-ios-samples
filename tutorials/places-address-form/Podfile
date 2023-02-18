@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-  target 'places-address-form' do
-  pod 'GooglePlaces'
+target 'places-address-form' do
+  platform :ios, '13.0'
+  pod 'GooglePlaces', '7.3.0'
 end
