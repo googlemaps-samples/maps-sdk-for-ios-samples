@@ -17,21 +17,6 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface GMSPolyline (length)
-
-@property(nonatomic, readonly) double length;
-
-@end
-
-@implementation GMSPolyline (length)
-
-- (double)length {
-  GMSLengthKind kind = [self geodesic] ? kGMSLengthGeodesic : kGMSLengthRhumb;
-  return [[self path] lengthOfKind:kind];
-}
-
-@end
-
 static CLLocationCoordinate2D kSydneyAustralia = {-33.866901, 151.195988};
 static CLLocationCoordinate2D kHawaiiUSA = {21.291982, -157.821856};
 static CLLocationCoordinate2D kFiji = {-18, 179};

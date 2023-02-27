@@ -149,26 +149,60 @@ class ConfigurationViewController: UIViewController {
     let iconBackgroundColor = ConfigData(
       name: "Icon Background Color", tag: Int(GMSPlaceField.iconBackgroundColor.rawValue),
       action: placesFieldsSelector)
-    let takeout = ConfigData(
-      name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
-      action: placesFieldsSelector)
-    let delivery = ConfigData(
-      name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
-      action: placesFieldsSelector)
-    let dineIn = ConfigData(
-      name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
-      action: placesFieldsSelector)
-    let curbsidePickup = ConfigData(
-      name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
-      action: placesFieldsSelector)
-    // Original place details place fields.
+    #if BuildFlag_Places_EnableBooleanPlacesAttributes
+      let takeout = ConfigData(
+        name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
+        action: placesFieldsSelector)
+      let delivery = ConfigData(
+        name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
+        action: placesFieldsSelector)
+      let dineIn = ConfigData(
+        name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
+        action: placesFieldsSelector)
+      let curbsidePickup = ConfigData(
+        name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
+        action: placesFieldsSelector)
+      let reservable = ConfigData(
+        name: "Reservable", tag: Int(GMSPlaceField.reservable.rawValue),
+        action: placesFieldsSelector)
+      let servesBreakfast = ConfigData(
+        name: "ServesBreakfast", tag: Int(GMSPlaceField.servesBreakfast.rawValue),
+        action: placesFieldsSelector)
+      let servesLunch = ConfigData(
+        name: "ServesLunch", tag: Int(GMSPlaceField.servesLunch.rawValue),
+        action: placesFieldsSelector)
+      let servesDinner = ConfigData(
+        name: "ServesDinner", tag: Int(GMSPlaceField.servesDinner.rawValue),
+        action: placesFieldsSelector)
+      let servesBeer = ConfigData(
+        name: "ServesBeer", tag: Int(GMSPlaceField.servesBeer.rawValue),
+        action: placesFieldsSelector)
+      let servesWine = ConfigData(
+        name: "ServesWine", tag: Int(GMSPlaceField.servesWine.rawValue),
+        action: placesFieldsSelector)
+      let servesBrunch = ConfigData(
+        name: "ServesBrunch", tag: Int(GMSPlaceField.servesBrunch.rawValue),
+        action: placesFieldsSelector)
+      let servesVegetarianFood = ConfigData(
+        name: "ServesVegetarianFood", tag: Int(GMSPlaceField.servesVegetarianFood.rawValue),
+        action: placesFieldsSelector)
+      let wheelchairAccessibleEntrance = ConfigData(
+        name: "WheelchairAccessibleEntrance",
+        tag: Int(GMSPlaceField.wheelchairAccessibleEntrance.rawValue),
+        action: placesFieldsSelector)
+    #endif  // BuildFlag_Places_EnableBooleanPlacesAttributes
     var placeFieldSamples = [
       name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
-      priceLevel, types, website, viewPort, addressComponents, photos, ratingsTotal, minutes,
+      ratingsTotal, priceLevel, types, website, viewPort, addressComponents, photos, minutes,
       status, iconImageURL, iconBackgroundColor,
     ]
-    // Shopping and Restaurant boolean attributes place fields.
-    placeFieldSamples += [takeout, delivery, dineIn, curbsidePickup]
+    #if BuildFlag_Places_EnableBooleanPlacesAttributes
+      placeFieldSamples += [
+        takeout, delivery, dineIn, curbsidePickup, reservable, servesBreakfast,
+        servesLunch, servesDinner, servesBeer, servesWine, servesBrunch, servesVegetarianFood,
+        wheelchairAccessibleEntrance,
+      ]
+    #endif  // BuildFlag_Places_EnableBooleanPlacesAttributes
     sections.append(ConfigSection(name: "Place Fields", samples: placeFieldSamples))
     return sections
   }()
@@ -186,7 +220,7 @@ class ConfigurationViewController: UIViewController {
 
   private lazy var closeButton: UIButton = {
     let button = UIButton()
-    button.backgroundColor = .blue
+    button.backgroundColor = .systemBlue
     button.setTitle("Close", for: .normal)
     button.setTitleColor(.white, for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -288,7 +322,7 @@ class ConfigurationViewController: UIViewController {
   }
 
   @objc private func placesFieldsSwitch(_ sender: UISwitch) {
-    var field = UInt(sender.tag)
+    var field = UInt64(sender.tag)
     if sender.isOn {
       field |= configuration.placeFields.rawValue
     } else {

@@ -15,8 +15,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property(nonatomic, nullable) id servicesHandle;
+@interface SampleListViewController
+    : UITableViewController <UISplitViewControllerDelegate, UISearchResultsUpdating>
 
 @end

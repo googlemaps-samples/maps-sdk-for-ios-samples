@@ -144,8 +144,10 @@
 + (NSDictionary *)newDemo:(Class)viewControllerClass
                 withTitle:(NSString *)title
            andDescription:(NSString *)description {
-  return [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller", title,
-                                                      @"title", description, @"description", nil];
+  return
+      [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller", title,
+                                                   @"title", NSStringFromClass(viewControllerClass),
+                                                   @"className", description, @"description", nil];
 }
 
 @end

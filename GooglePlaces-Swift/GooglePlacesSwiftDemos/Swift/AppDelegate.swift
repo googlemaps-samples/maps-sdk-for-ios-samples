@@ -15,9 +15,7 @@ import GooglePlaces
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  var window: UIWindow?
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
   func application(
     _ application: UIApplication,
@@ -25,14 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ) -> Bool {
 
     GMSPlacesClient.provideAPIKey(apiKey)
-    let viewController = SampleListViewController()
 
-    let frame = UIScreen.main.bounds
-    let window = UIWindow(frame: frame)
-
-    window.rootViewController = UINavigationController(rootViewController: viewController)
-    window.makeKeyAndVisible()
-    self.window = window
+    // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good
+    // for a demo.
+    print("Google Places open source licenses:\n%@", GMSPlacesClient.openSourceLicenseInfo())
     return true
+  }
+
+  func application(
+    _ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession,
+    options: UIScene.ConnectionOptions
+  ) -> UISceneConfiguration {
+    let config = UISceneConfiguration(
+      name: "Default configuration", sessionRole: connectingSceneSession.role)
+    config.delegateClass = SceneDelegate.self
+    return config
   }
 }

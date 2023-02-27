@@ -24,12 +24,8 @@ class AutocompleteWithTextFieldController: AutocompleteBaseViewController {
     let searchField = UITextField(frame: .zero)
     searchField.translatesAutoresizingMaskIntoConstraints = false
     searchField.borderStyle = .none
-    if #available(iOS 13.0, *) {
-      searchField.textColor = .label
-      searchField.backgroundColor = .systemBackground
-    } else {
-      searchField.backgroundColor = .white
-    }
+    searchField.textColor = .label
+    searchField.backgroundColor = .systemBackground
     searchField.placeholder = NSLocalizedString(
       "Demo.Content.Autocomplete.EnterTextPrompt",
       comment: "Prompt to enter text for autocomplete demo")
@@ -49,7 +45,7 @@ class AutocompleteWithTextFieldController: AutocompleteBaseViewController {
 
   private lazy var tableDataSource: GMSAutocompleteTableDataSource = {
     let tableDataSource = GMSAutocompleteTableDataSource()
-    tableDataSource.tableCellBackgroundColor = .white
+    tableDataSource.tableCellBackgroundColor = .systemBackground
     tableDataSource.delegate = self
     if let config = autocompleteConfiguration {
       tableDataSource.autocompleteFilter = config.autocompleteFilter
@@ -61,7 +57,6 @@ class AutocompleteWithTextFieldController: AutocompleteBaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
     searchField.delegate = self
 
     view.addSubview(searchField)

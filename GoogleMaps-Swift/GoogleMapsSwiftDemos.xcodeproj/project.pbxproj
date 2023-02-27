@@ -7,99 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0000CCE582DF20F853E43502 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E451B3A594633E32B3131 /* CameraViewController.swift */; };
 		02DF0DD4C3D8B5849C510C23 /* step6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 582E8D45A41BDDC81EA48DD7 /* step6@2x.png */; };
 		04E60E4743F55E6BFC17B7B3 /* bulgaria-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D56F2A707892084368A7E2 /* bulgaria-large.png */; };
-		050406632494411530724D59 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E451B3A594633E32B3131 /* CameraViewController.swift */; };
 		05CF5A358A5758D0A61027A5 /* boat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D10973A4336C45EE56319A9B /* boat@2x.png */; };
 		07C43705738284E4921A680D /* step4.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C7DF8FF79FD6CE7012853F /* step4.png */; };
-		0848AB82AC6F3B0FECE1F8EB /* AnimatedUIViewMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9C05F3A051F688CF7F4BF /* AnimatedUIViewMarkerViewController.swift */; };
 		0AA49E1F095C6DD67BBDC556 /* voyager@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB44254CA7D0DECE9C14158D /* voyager@2x.png */; };
-		0F93D761F7F3E88F3AC41872 /* VisibleRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B644212DDBA2509AD4CF5A /* VisibleRegionViewController.swift */; };
+		0B806397B1092EB141DCE52C /* DoubleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD03041A5EAA400168D31F /* DoubleMapViewController.swift */; };
+		0F1EA55F7B0EAA26EB2060A2 /* SnapshotReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB76DC4B0DC1CB6692AE61E /* SnapshotReadyViewController.swift */; };
 		11BF5BA8105198E326CF4F96 /* aeroplane.png in Resources */ = {isa = PBXBuildFile; fileRef = B26D6D4D0FD65566CA60C29A /* aeroplane.png */; };
-		19A020B8B2E13315FB1FBB7C /* SDKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */; };
-		1ADEBA1B14420446FB9A6CED /* StyledMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1DB5D699D162AC375E1C9 /* StyledMapViewController.swift */; };
+		156F720D1E526A533B03DD2B /* MarkerEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD93738C4D90134DB506ECFE /* MarkerEventsViewController.swift */; };
+		188F5FEB25C05500FFF796C4 /* SampleMapStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18764F42392A93B39C775AB /* SampleMapStyle.swift */; };
 		1E769ACDBCCB6DB84D5E3E8E /* h1.png in Resources */ = {isa = PBXBuildFile; fileRef = 996FCE46D4BD31A4E02C2473 /* h1.png */; };
 		20F35834239A135EC77A752C /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221F6743F6F3DB331816D7D3 /* arrow@2x.png */; };
 		21AFA9E1157E41E761EDC099 /* newark_nj_1922.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37B898C1EEE5364AEE5EDAA /* newark_nj_1922.jpg */; };
-		21B875B6EAB68337956FD34A /* FixedPanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B1B4AD1EF5754F84355B /* FixedPanoramaViewController.swift */; };
 		26B8792B58E56800CA3D60ED /* step2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1D1A994D7ECBF890F0034A /* step2@2x.png */; };
+		26D1A664AD19C1BAD7551777 /* libPods-GoogleMapsSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA28C25BC5FDEC28E429D90D /* libPods-GoogleMapsSwiftDemos.a */; };
 		293B8794611FD45B631FE20C /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5014E3BCF7EBF869B9F9BC7 /* step2.png */; };
+		2B28FB6F052E4609695C6CD5 /* PanoramaServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27175E880CA9EEC63374BD4 /* PanoramaServiceController.swift */; };
+		2C0E3A82E5EFE9F47DB9256F /* FrameRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020DE40B5B1E19C53A7E1982 /* FrameRateViewController.swift */; };
 		2D218EA1029C3FB7A528179F /* spitfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E37B0AEBC49DF8A0F89492 /* spitfire.png */; };
 		2E3A841E83BC75E113066610 /* boat.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1DB9C65356269FB0E9805F /* boat.png */; };
-		2E95158A2C1721CA7ABFECE6 /* MarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F2473A7C9EB8BA05986B /* MarkersViewController.swift */; };
-		2EAE979399F5CA2511BE5BA3 /* TrafficMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4091BA2074B3B691B1AAD79F /* TrafficMapViewController.swift */; };
-		35A79A4595AA1501292367CD /* MarkerInfoWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD61BF07E9A5511F02937FE /* MarkerInfoWindowViewController.swift */; };
+		33F23B3B99CCD40567D80076 /* MapZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B924A31846136307374FE /* MapZoomViewController.swift */; };
 		362C49E4DB90848A82AA5F1B /* museum-exhibits.json in Resources */ = {isa = PBXBuildFile; fileRef = AFCF3BFD151B8E93B8704001 /* museum-exhibits.json */; };
-		37AFC96C482B454124F33CC4 /* PolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B90031ED0D2E68FA9EF93 /* PolylinesViewController.swift */; };
-		3B4CCB318097EC3802D5C7DB /* MapTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B29C49F7B36D477192D04 /* MapTypesViewController.swift */; };
+		3888570B6E197983F2249FCD /* PaddingBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6181B3AED573910BA0F2D6B /* PaddingBehaviorViewController.swift */; };
+		3C0A5FE1143A58DBEA18A599 /* IndoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E35664DD7AE7235688F9964 /* IndoorViewController.swift */; };
 		3D3F2A8EA739004B1489A792 /* step8.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD1B4A1869A5ED24977724F /* step8.png */; };
 		41B7BD6313F16FFB24A404B2 /* step7.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3D93ABBF24BFEF78629B0D /* step7.png */; };
-		43B8D86A769F11ABFE6AD309 /* CustomMarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C82F193D6253A379BF3FD /* CustomMarkersViewController.swift */; };
-		4412D5711BE701B4DF734178 /* MarkerLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CD72476857CF2A348366 /* MarkerLayerViewController.swift */; };
 		4773BB1B2EBD65AEC32F9E7C /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E67F17F84C0169D05D684B /* step3.png */; };
+		4788C5C048ACF0FC15C2A75A /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8CA03ED74DC7887D70CCA6 /* Samples.swift */; };
+		47F0AC7126A1B045383D2D1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886CC72C988DDBC1F268FD3 /* SceneDelegate.swift */; };
 		4A9E3BF5489DCA1C7A200A64 /* mapstyle-retro.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0F7227CD83A68A40D74050 /* mapstyle-retro.json */; };
+		4A9F5DDF75B725448DB6B0EF /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABCFB71E0D9B75FA2091CF /* PanoramaViewController.swift */; };
 		4D932F94F684532C309EB4BF /* step7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C96B86B64A6F458F79250076 /* step7@2x.png */; };
 		4EA38ACBC98F34B1F0AF5BDD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922338CA529F228A03DE6422 /* UIKit.framework */; };
 		4F01A0839D992FC9F724CD85 /* mapstyle-silver.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CF698467FA9E7F200017B3 /* mapstyle-silver.json */; };
-		4F2010D4F4CE365D7C9429BB /* GestureControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84B21AF0FE670AF73B8015 /* GestureControlViewController.swift */; };
+		5016E68430C4B4F06ACA1596 /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F342A6AF95FF580F924D74 /* SampleListViewController.swift */; };
 		51B06A8BE3A738B98EC2B2B3 /* botswana-large.png in Resources */ = {isa = PBXBuildFile; fileRef = F531ABFE1A21DA26444A02BC /* botswana-large.png */; };
-		5568DB534296C9CD8CC2A00E /* AnimatedCurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2566CE33406BE9F4AE26CFC0 /* AnimatedCurrentLocationViewController.swift */; };
-		5811112B03470DB82ACDB282 /* SampleMapStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18764F42392A93B39C775AB /* SampleMapStyle.swift */; };
+		550FE98EC9032009D39A6EA1 /* FixedPanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B1B4AD1EF5754F84355B /* FixedPanoramaViewController.swift */; };
 		58C1F1AFB8E52C5A7D70FD54 /* aeroplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAC16DE0E8CC752D17EB04A /* aeroplane@2x.png */; };
-		5F65DDF4BB17B537F4C8E54A /* PaddingBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6181B3AED573910BA0F2D6B /* PaddingBehaviorViewController.swift */; };
 		6305177FAABE60AC55BDC3E4 /* bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = 713A9415F77D646F9547193B /* bulgaria.png */; };
-		6AEAC3D559B1D8BFC6773E3D /* MarkerEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD93738C4D90134DB506ECFE /* MarkerEventsViewController.swift */; };
-		6B10D929BF31288BBE5AE3FB /* libPods-GoogleMapsSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7008070647C5D4ADC14A596 /* libPods-GoogleMapsSwiftDemos.a */; };
-		6E635564BF1D56286E3689D4 /* PanoramaServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27175E880CA9EEC63374BD4 /* PanoramaServiceController.swift */; };
+		63AA012E2D9D55A712B7B766 /* MarkerLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CD72476857CF2A348366 /* MarkerLayerViewController.swift */; };
+		6F974DAC19BC11133EBD3B64 /* StructuredGeocoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A99C0C04795272C12DD9EF /* StructuredGeocoderViewController.swift */; };
+		6FE45DC6C071ABCD078807F7 /* SDKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */; };
 		6FEFF5E13C84596B02FC5CEC /* step5.png in Resources */ = {isa = PBXBuildFile; fileRef = 24E559AA1425536C6D0ACF0D /* step5.png */; };
-		704C7F6D4A183ABECFC0D5D2 /* DoubleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFD03041A5EAA400168D31F /* DoubleMapViewController.swift */; };
-		7161517EBA94CFD44FBCCB71 /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F342A6AF95FF580F924D74 /* SampleListViewController.swift */; };
-		764385F9027D9523479A7747 /* MapLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB41AE386954E4085FAA85 /* MapLayerViewController.swift */; };
-		7AF88636DA7A15509816640A /* IndoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E35664DD7AE7235688F9964 /* IndoorViewController.swift */; };
-		8093A33366A0C6CDBF8175A1 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7916340031F78D38C594C4 /* MyLocationViewController.swift */; };
+		7148D5BB00ABDA10E0F0C5A4 /* SampleLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B919F5AC728E794E349D4A3 /* SampleLevel.swift */; };
+		71C2D64F6C0E6E8694320943 /* MarkerInfoWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD61BF07E9A5511F02937FE /* MarkerInfoWindowViewController.swift */; };
+		76B15EA60EA7D5B327D47BF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E0C7EAB68D8720DCB2CAC0 /* AppDelegate.swift */; };
+		793779D4C5EF17E64E9A6B88 /* BasicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AB6411A9C7E6CEDB98041D /* BasicMapViewController.swift */; };
+		7A2ADB0D632A94D7D60F67A7 /* VisibleRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B644212DDBA2509AD4CF5A /* VisibleRegionViewController.swift */; };
+		7C4EF58C8DA531E5FC32D9DD /* GeocoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1BEF5B3B6C6A990EA98C5 /* GeocoderViewController.swift */; };
 		8679E8541C17881309FB5F11 /* MapsDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE0C90254383DA8C437CD0A /* MapsDemoAssets.xcassets */; };
-		87EFAC483852D953A7D49778 /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABCFB71E0D9B75FA2091CF /* PanoramaViewController.swift */; };
 		88135F34106D3360A5820F96 /* popup_santa.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D48B3FFC6D573CF2673D451 /* popup_santa.png */; };
-		883D5B6710A85BA011E819D8 /* FrameRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020DE40B5B1E19C53A7E1982 /* FrameRateViewController.swift */; };
-		901043470A299C77DD977AD7 /* GeocoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1BEF5B3B6C6A990EA98C5 /* GeocoderViewController.swift */; };
 		91D8C803DEDB4A701699AF8D /* glow-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A676DB2BE6F08848CCC5F44 /* glow-marker@2x.png */; };
 		93DF8E1D616607C73D24D731 /* step5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCC6728BCC97657B2285199 /* step5@2x.png */; };
-		960FB4FB5A416023B5C19485 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8CA03ED74DC7887D70CCA6 /* Samples.swift */; };
-		96C875435D27456CC476392F /* PolygonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54F70F6C6426F576247C16F /* PolygonsViewController.swift */; };
-		9E993392AC110B9DC9DA3BF3 /* SnapshotReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB76DC4B0DC1CB6692AE61E /* SnapshotReadyViewController.swift */; };
+		97DD9977EC5047161D0F7A40 /* GroundOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B67562D8E4B0D00C7B4BB /* GroundOverlayViewController.swift */; };
+		9B820E7BA576743B85114CB7 /* GestureControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84B21AF0FE670AF73B8015 /* GestureControlViewController.swift */; };
+		9DDFC10B53970CA1F0007AF5 /* MarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F2473A7C9EB8BA05986B /* MarkersViewController.swift */; };
 		A1F2BF43DACC00B6B26249F8 /* mapstyle-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE971B436125DBE256A5FA5 /* mapstyle-night.json */; };
 		A412E68F580DA7D80E303215 /* track.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F56EA0940A859776C9DD3 /* track.json */; };
 		A4FC0324F71E06035CB2BE88 /* popup_santa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8CE19F8126C25D885E758AC /* popup_santa@2x.png */; };
+		A558875AEB68DDE9D1A63798 /* GradientPolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C6A03E42A9983A4FB4A7E3 /* GradientPolylinesViewController.swift */; };
 		A586B9513453238497AB855A /* step4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE2B2F064E5D2B955799B90 /* step4@2x.png */; };
-		A7F7DC3D6B9C07F4E2F38B1D /* GMSMapStyle+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A391184A7EAD7C072E62 /* GMSMapStyle+Bundle.swift */; };
+		ABF592027F3E684817715EDD /* PolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B90031ED0D2E68FA9EF93 /* PolylinesViewController.swift */; };
 		AC10E7A466233271826AB625 /* spitfire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 522113F4629950AB8239E18A /* spitfire@2x.png */; };
-		ADFD0DC714EACE455C372CCE /* CustomIndoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08A9836FC58ADF5E6C36DC /* CustomIndoorViewController.swift */; };
-		AE4C33AE3175E973D0A992CB /* GradientPolylinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C6A03E42A9983A4FB4A7E3 /* GradientPolylinesViewController.swift */; };
+		AF7238FE8B018260C51578B6 /* StyledMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1DB5D699D162AC375E1C9 /* StyledMapViewController.swift */; };
 		B3F740B819DBAA1F4E651157 /* h1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4429DACE39F5B3E2E31B963D /* h1@2x.png */; };
 		B6565F6882481535DAB5C86A /* voyager.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A5B8956E7E8B6AF430CC416 /* voyager.png */; };
 		B69D158DC43E0889B5BF1561 /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F17F1884FB9429A59D92A98A /* glow-marker.png */; };
 		B7345D33E5BF31A00280355C /* step1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1488DDE60393FF03CF8A87 /* step1@2x.png */; };
 		B9465AA9D8B047C4FF6EFF98 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9E40F7B9F8AFC4EF0BB41 /* step1.png */; };
-		C121251773CF4FA4A952B71B /* IndoorMuseumNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E4201AB786148B34D7190E /* IndoorMuseumNavigationViewController.swift */; };
+		B9A86B6A12CD89751A59B283 /* PolygonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54F70F6C6426F576247C16F /* PolygonsViewController.swift */; };
+		BC338ACA3F71AD2AB5BB55E6 /* TrafficMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4091BA2074B3B691B1AAD79F /* TrafficMapViewController.swift */; };
+		BE232DD5D3AE0A5D14DA43F4 /* CustomMarkersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C82F193D6253A379BF3FD /* CustomMarkersViewController.swift */; };
 		C29CA0E15834811100992B2E /* x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6041A5D425D71CDF9418ABE /* x29@2x.png */; };
-		C436CB51B6339682C12CA1DE /* TileLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5BE26208B06737B4653C /* TileLayerViewController.swift */; };
 		C7EBC2EA4F8DE36B09BCB5C9 /* argentina-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EDDB89D7FC679C6141D5F7F /* argentina-large.png */; };
+		C997DD044658258CF28058BB /* AnimatedCurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2566CE33406BE9F4AE26CFC0 /* AnimatedCurrentLocationViewController.swift */; };
 		CA20AF965D945AFC7DA5FB88 /* australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F546CBD85FE306F988C2F0 /* australia.png */; };
-		CAEB1364E10364FD325286E0 /* SampleLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B919F5AC728E794E349D4A3 /* SampleLevel.swift */; };
 		CBCC9C39BE2C3870BF2F29A8 /* australia-large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8E6590B2109C88BF5DF3BF /* australia-large@2x.png */; };
 		CC516093DCE57637E995CD6C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A29805B04CA5A5071F63E40F /* arrow.png */; };
+		CE0349DCBBE305F2A475E6ED /* MapLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB41AE386954E4085FAA85 /* MapLayerViewController.swift */; };
 		D3E1235A287B63F1C8326B39 /* step3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B055CD3729E64D455BC5B034 /* step3@2x.png */; };
-		D3F0E31952BD099E5142C821 /* FitBoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE707A4130CDA88BBCC2DD4 /* FitBoundsViewController.swift */; };
 		D581AE7D87DF1D47CFB93CFA /* botswana.png in Resources */ = {isa = PBXBuildFile; fileRef = F838C1A5E413CE8D5CC1CA85 /* botswana.png */; };
-		DA3CD21AC41670F05CAA3CC0 /* GroundOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B67562D8E4B0D00C7B4BB /* GroundOverlayViewController.swift */; };
+		DC204BFAEB6DCDA7F7610536 /* GMSMapStyle+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A391184A7EAD7C072E62 /* GMSMapStyle+Bundle.swift */; };
 		DEA4846A15B8330203AB1573 /* step6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4864D7EE574742D69D0917F3 /* step6.png */; };
-		E07C174AB3E3A37AC2D6EB0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E0C7EAB68D8720DCB2CAC0 /* AppDelegate.swift */; };
-		E7CE0B441E9B6C72AA6DC587 /* MapZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B924A31846136307374FE /* MapZoomViewController.swift */; };
-		EEEA6B72CE55B439AA2B6D54 /* StructuredGeocoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A99C0C04795272C12DD9EF /* StructuredGeocoderViewController.swift */; };
+		DFBE1D0F69ADD7B44416635D /* MapTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B29C49F7B36D477192D04 /* MapTypesViewController.swift */; };
+		E31E402B435CE656EAF45BD6 /* CustomIndoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08A9836FC58ADF5E6C36DC /* CustomIndoorViewController.swift */; };
+		E3D9CA39859BD1CDB3863347 /* FitBoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE707A4130CDA88BBCC2DD4 /* FitBoundsViewController.swift */; };
+		EFF3F2E5F34BAB29EBE27D38 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7916340031F78D38C594C4 /* MyLocationViewController.swift */; };
 		F0AC2AA4D171EC887FE1532C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFB2179FECC8DF98666E98A /* LaunchScreen.storyboard */; };
-		F134806EAE9235AE132495CA /* BasicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AB6411A9C7E6CEDB98041D /* BasicMapViewController.swift */; };
+		F1AECCBACB7BC8DDB3DB2887 /* IndoorMuseumNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E4201AB786148B34D7190E /* IndoorMuseumNavigationViewController.swift */; };
+		F1E12C97E57BD8D71DA70360 /* TileLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5BE26208B06737B4653C /* TileLayerViewController.swift */; };
 		F269AECF0CD0F37AAD2D09CD /* step8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E604082110AE5DB05E1B7C5 /* step8@2x.png */; };
 		F37349A51F746D3C2D991773 /* australia-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E9911385541153DF35EE99 /* australia-large.png */; };
+		F49EEF61AEC832CE859F6B37 /* AnimatedUIViewMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9C05F3A051F688CF7F4BF /* AnimatedUIViewMarkerViewController.swift */; };
 		FE3B7D57BDD934A0FF2E3405 /* x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E2784C6B7A0900490D68D /* x29.png */; };
 		FF9199E04763094C5992E3BA /* argentina.png in Resources */ = {isa = PBXBuildFile; fileRef = 822521FD132C2E44D03EE0E8 /* argentina.png */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 		4091BA2074B3B691B1AAD79F /* TrafficMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficMapViewController.swift; sourceTree = "<group>"; };
 		4429DACE39F5B3E2E31B963D /* h1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h1@2x.png"; sourceTree = "<group>"; };
 		4864D7EE574742D69D0917F3 /* step6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step6.png; sourceTree = "<group>"; };
+		4886CC72C988DDBC1F268FD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49E9C05F3A051F688CF7F4BF /* AnimatedUIViewMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedUIViewMarkerViewController.swift; sourceTree = "<group>"; };
 		4A7916340031F78D38C594C4 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		4C9B924A31846136307374FE /* MapZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomViewController.swift; sourceTree = "<group>"; };
@@ -161,11 +163,13 @@
 		8E604082110AE5DB05E1B7C5 /* step8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step8@2x.png"; sourceTree = "<group>"; };
 		922338CA529F228A03DE6422 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		922B67562D8E4B0D00C7B4BB /* GroundOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundOverlayViewController.swift; sourceTree = "<group>"; };
+		9334E54EFF0349CC4CEBB633 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleMapsSwiftDemos/Pods-GoogleMapsSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		962C5BE26208B06737B4653C /* TileLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileLayerViewController.swift; sourceTree = "<group>"; };
 		996FCE46D4BD31A4E02C2473 /* h1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = h1.png; sourceTree = "<group>"; };
 		9DEB41AE386954E4085FAA85 /* MapLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLayerViewController.swift; sourceTree = "<group>"; };
 		A29805B04CA5A5071F63E40F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		A6181B3AED573910BA0F2D6B /* PaddingBehaviorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingBehaviorViewController.swift; sourceTree = "<group>"; };
+		AA28C25BC5FDEC28E429D90D /* libPods-GoogleMapsSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMapsSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD5CD72476857CF2A348366 /* MarkerLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerLayerViewController.swift; sourceTree = "<group>"; };
 		AD1D1A994D7ECBF890F0034A /* step2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step2@2x.png"; sourceTree = "<group>"; };
 		AFCF3BFD151B8E93B8704001 /* museum-exhibits.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = "museum-exhibits.json"; sourceTree = "<group>"; };
@@ -181,11 +185,9 @@
 		CBE707A4130CDA88BBCC2DD4 /* FitBoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitBoundsViewController.swift; sourceTree = "<group>"; };
 		CBFD03041A5EAA400168D31F /* DoubleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleMapViewController.swift; sourceTree = "<group>"; };
 		CD93738C4D90134DB506ECFE /* MarkerEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerEventsViewController.swift; sourceTree = "<group>"; };
-		D0A3F16E35CB153BCAD44348 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleMapsSwiftDemos/Pods-GoogleMapsSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		D10973A4336C45EE56319A9B /* boat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boat@2x.png"; sourceTree = "<group>"; };
 		D1A99C0C04795272C12DD9EF /* StructuredGeocoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuredGeocoderViewController.swift; sourceTree = "<group>"; };
 		D27175E880CA9EEC63374BD4 /* PanoramaServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaServiceController.swift; sourceTree = "<group>"; };
-		D7008070647C5D4ADC14A596 /* libPods-GoogleMapsSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMapsSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConstants.swift; sourceTree = "<group>"; };
 		DF1488DDE60393FF03CF8A87 /* step1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step1@2x.png"; sourceTree = "<group>"; };
 		E18764F42392A93B39C775AB /* SampleMapStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMapStyle.swift; sourceTree = "<group>"; };
@@ -210,13 +212,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA38ACBC98F34B1F0AF5BDD /* UIKit.framework in Frameworks */,
-				6B10D929BF31288BBE5AE3FB /* libPods-GoogleMapsSwiftDemos.a in Frameworks */,
+				26D1A664AD19C1BAD7551777 /* libPods-GoogleMapsSwiftDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		276F12798307D9B2AED683F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9334E54EFF0349CC4CEBB633 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		395189041FA097C5575D97CF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				395189041FA097C5575D97CF /* Resources */,
-				8BF021AC36DD22F0A28F7B6E /* Swift */,
+				EFA8BDBE867496134E5B35DD /* Swift */,
 				1DE0C90254383DA8C437CD0A /* MapsDemoAssets.xcassets */,
 			);
 			path = GoogleMapsSwiftDemos;
@@ -338,22 +349,11 @@
 			path = "Museum-Icons";
 			sourceTree = "<group>";
 		};
-		8BF021AC36DD22F0A28F7B6E /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				8237F31C5C62148D587A20A9 /* Samples */,
-				24E0C7EAB68D8720DCB2CAC0 /* AppDelegate.swift */,
-				DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */,
-				83F342A6AF95FF580F924D74 /* SampleListViewController.swift */,
-			);
-			path = Swift;
-			sourceTree = "<group>";
-		};
 		AC723F443153D968479E59F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				922338CA529F228A03DE6422 /* UIKit.framework */,
-				D7008070647C5D4ADC14A596 /* libPods-GoogleMapsSwiftDemos.a */,
+				AA28C25BC5FDEC28E429D90D /* libPods-GoogleMapsSwiftDemos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				D0ED9A279E12177F7FDFA2FF /* Source */,
 				AC723F443153D968479E59F3 /* Frameworks */,
 				DD0B6FB690051F4443F4132B /* Products */,
-				E5BD34CB8C9DC54688AFC752 /* Pods */,
+				276F12798307D9B2AED683F5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,13 +384,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5BD34CB8C9DC54688AFC752 /* Pods */ = {
+		EFA8BDBE867496134E5B35DD /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				D0A3F16E35CB153BCAD44348 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */,
+				8237F31C5C62148D587A20A9 /* Samples */,
+				24E0C7EAB68D8720DCB2CAC0 /* AppDelegate.swift */,
+				DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */,
+				83F342A6AF95FF580F924D74 /* SampleListViewController.swift */,
+				4886CC72C988DDBC1F268FD3 /* SceneDelegate.swift */,
 			);
-			name = Pods;
-			path = Pods;
+			path = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,11 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65556A7591C40D0E8B77989F /* Build configuration list for PBXNativeTarget "GoogleMapsSwiftDemos" */;
 			buildPhases = (
-				E15C83033FE4866813FBBAFF /* [CP] Check Pods Manifest.lock */,
+				22432B23D4628E20F9594F88 /* [CP] Check Pods Manifest.lock */,
 				2ADDADBB329E244AF7ED1FB2 /* Resources */,
 				22EB17F407E92B9B4F3B601A /* Sources */,
 				B4530C282FE2BDE3D1071779 /* Frameworks */,
-				3C986E38329B5EB5E95075F2 /* [CP] Copy Pods Resources */,
+				C42A22FD9FFB7260C790CB73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -502,7 +505,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C986E38329B5EB5E95075F2 /* [CP] Copy Pods Resources */ = {
+		22432B23D4628E20F9594F88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleMapsSwiftDemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C42A22FD9FFB7260C790CB73 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -525,28 +550,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleMapsSwiftDemos/Pods-GoogleMapsSwiftDemos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E15C83033FE4866813FBBAFF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GoogleMapsSwiftDemos-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -554,48 +557,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7CE0B441E9B6C72AA6DC587 /* MapZoomViewController.swift in Sources */,
-				5811112B03470DB82ACDB282 /* SampleMapStyle.swift in Sources */,
-				CAEB1364E10364FD325286E0 /* SampleLevel.swift in Sources */,
-				37AFC96C482B454124F33CC4 /* PolylinesViewController.swift in Sources */,
-				6E635564BF1D56286E3689D4 /* PanoramaServiceController.swift in Sources */,
-				C436CB51B6339682C12CA1DE /* TileLayerViewController.swift in Sources */,
-				8093A33366A0C6CDBF8175A1 /* MyLocationViewController.swift in Sources */,
-				0F93D761F7F3E88F3AC41872 /* VisibleRegionViewController.swift in Sources */,
-				3B4CCB318097EC3802D5C7DB /* MapTypesViewController.swift in Sources */,
-				7AF88636DA7A15509816640A /* IndoorViewController.swift in Sources */,
-				6AEAC3D559B1D8BFC6773E3D /* MarkerEventsViewController.swift in Sources */,
-				2EAE979399F5CA2511BE5BA3 /* TrafficMapViewController.swift in Sources */,
-				9E993392AC110B9DC9DA3BF3 /* SnapshotReadyViewController.swift in Sources */,
-				050406632494411530724D59 /* CameraViewController.swift in Sources */,
-				ADFD0DC714EACE455C372CCE /* CustomIndoorViewController.swift in Sources */,
-				EEEA6B72CE55B439AA2B6D54 /* StructuredGeocoderViewController.swift in Sources */,
-				1ADEBA1B14420446FB9A6CED /* StyledMapViewController.swift in Sources */,
-				C121251773CF4FA4A952B71B /* IndoorMuseumNavigationViewController.swift in Sources */,
-				4412D5711BE701B4DF734178 /* MarkerLayerViewController.swift in Sources */,
-				4F2010D4F4CE365D7C9429BB /* GestureControlViewController.swift in Sources */,
-				43B8D86A769F11ABFE6AD309 /* CustomMarkersViewController.swift in Sources */,
-				0848AB82AC6F3B0FECE1F8EB /* AnimatedUIViewMarkerViewController.swift in Sources */,
-				21B875B6EAB68337956FD34A /* FixedPanoramaViewController.swift in Sources */,
-				5F65DDF4BB17B537F4C8E54A /* PaddingBehaviorViewController.swift in Sources */,
-				5568DB534296C9CD8CC2A00E /* AnimatedCurrentLocationViewController.swift in Sources */,
-				704C7F6D4A183ABECFC0D5D2 /* DoubleMapViewController.swift in Sources */,
-				87EFAC483852D953A7D49778 /* PanoramaViewController.swift in Sources */,
-				2E95158A2C1721CA7ABFECE6 /* MarkersViewController.swift in Sources */,
-				96C875435D27456CC476392F /* PolygonsViewController.swift in Sources */,
-				883D5B6710A85BA011E819D8 /* FrameRateViewController.swift in Sources */,
-				DA3CD21AC41670F05CAA3CC0 /* GroundOverlayViewController.swift in Sources */,
-				960FB4FB5A416023B5C19485 /* Samples.swift in Sources */,
-				AE4C33AE3175E973D0A992CB /* GradientPolylinesViewController.swift in Sources */,
-				F134806EAE9235AE132495CA /* BasicMapViewController.swift in Sources */,
-				A7F7DC3D6B9C07F4E2F38B1D /* GMSMapStyle+Bundle.swift in Sources */,
-				901043470A299C77DD977AD7 /* GeocoderViewController.swift in Sources */,
-				D3F0E31952BD099E5142C821 /* FitBoundsViewController.swift in Sources */,
-				35A79A4595AA1501292367CD /* MarkerInfoWindowViewController.swift in Sources */,
-				764385F9027D9523479A7747 /* MapLayerViewController.swift in Sources */,
-				7161517EBA94CFD44FBCCB71 /* SampleListViewController.swift in Sources */,
-				E07C174AB3E3A37AC2D6EB0A /* AppDelegate.swift in Sources */,
-				19A020B8B2E13315FB1FBB7C /* SDKConstants.swift in Sources */,
+				33F23B3B99CCD40567D80076 /* MapZoomViewController.swift in Sources */,
+				188F5FEB25C05500FFF796C4 /* SampleMapStyle.swift in Sources */,
+				7148D5BB00ABDA10E0F0C5A4 /* SampleLevel.swift in Sources */,
+				ABF592027F3E684817715EDD /* PolylinesViewController.swift in Sources */,
+				2B28FB6F052E4609695C6CD5 /* PanoramaServiceController.swift in Sources */,
+				F1E12C97E57BD8D71DA70360 /* TileLayerViewController.swift in Sources */,
+				EFF3F2E5F34BAB29EBE27D38 /* MyLocationViewController.swift in Sources */,
+				7A2ADB0D632A94D7D60F67A7 /* VisibleRegionViewController.swift in Sources */,
+				DFBE1D0F69ADD7B44416635D /* MapTypesViewController.swift in Sources */,
+				3C0A5FE1143A58DBEA18A599 /* IndoorViewController.swift in Sources */,
+				156F720D1E526A533B03DD2B /* MarkerEventsViewController.swift in Sources */,
+				BC338ACA3F71AD2AB5BB55E6 /* TrafficMapViewController.swift in Sources */,
+				0F1EA55F7B0EAA26EB2060A2 /* SnapshotReadyViewController.swift in Sources */,
+				0000CCE582DF20F853E43502 /* CameraViewController.swift in Sources */,
+				E31E402B435CE656EAF45BD6 /* CustomIndoorViewController.swift in Sources */,
+				6F974DAC19BC11133EBD3B64 /* StructuredGeocoderViewController.swift in Sources */,
+				AF7238FE8B018260C51578B6 /* StyledMapViewController.swift in Sources */,
+				F1AECCBACB7BC8DDB3DB2887 /* IndoorMuseumNavigationViewController.swift in Sources */,
+				63AA012E2D9D55A712B7B766 /* MarkerLayerViewController.swift in Sources */,
+				9B820E7BA576743B85114CB7 /* GestureControlViewController.swift in Sources */,
+				BE232DD5D3AE0A5D14DA43F4 /* CustomMarkersViewController.swift in Sources */,
+				F49EEF61AEC832CE859F6B37 /* AnimatedUIViewMarkerViewController.swift in Sources */,
+				550FE98EC9032009D39A6EA1 /* FixedPanoramaViewController.swift in Sources */,
+				3888570B6E197983F2249FCD /* PaddingBehaviorViewController.swift in Sources */,
+				C997DD044658258CF28058BB /* AnimatedCurrentLocationViewController.swift in Sources */,
+				0B806397B1092EB141DCE52C /* DoubleMapViewController.swift in Sources */,
+				4A9F5DDF75B725448DB6B0EF /* PanoramaViewController.swift in Sources */,
+				9DDFC10B53970CA1F0007AF5 /* MarkersViewController.swift in Sources */,
+				B9A86B6A12CD89751A59B283 /* PolygonsViewController.swift in Sources */,
+				2C0E3A82E5EFE9F47DB9256F /* FrameRateViewController.swift in Sources */,
+				97DD9977EC5047161D0F7A40 /* GroundOverlayViewController.swift in Sources */,
+				4788C5C048ACF0FC15C2A75A /* Samples.swift in Sources */,
+				A558875AEB68DDE9D1A63798 /* GradientPolylinesViewController.swift in Sources */,
+				793779D4C5EF17E64E9A6B88 /* BasicMapViewController.swift in Sources */,
+				DC204BFAEB6DCDA7F7610536 /* GMSMapStyle+Bundle.swift in Sources */,
+				7C4EF58C8DA531E5FC32D9DD /* GeocoderViewController.swift in Sources */,
+				E3D9CA39859BD1CDB3863347 /* FitBoundsViewController.swift in Sources */,
+				71C2D64F6C0E6E8694320943 /* MarkerInfoWindowViewController.swift in Sources */,
+				CE0349DCBBE305F2A475E6ED /* MapLayerViewController.swift in Sources */,
+				5016E68430C4B4F06ACA1596 /* SampleListViewController.swift in Sources */,
+				76B15EA60EA7D5B327D47BF3 /* AppDelegate.swift in Sources */,
+				6FE45DC6C071ABCD078807F7 /* SDKConstants.swift in Sources */,
+				47F0AC7126A1B045383D2D1E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +617,7 @@
 		};
 		6798450D013ACAFF39CF0187 /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0A3F16E35CB153BCAD44348 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */;
+			baseConfigurationReference = 9334E54EFF0349CC4CEBB633 /* Pods-GoogleMapsSwiftDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

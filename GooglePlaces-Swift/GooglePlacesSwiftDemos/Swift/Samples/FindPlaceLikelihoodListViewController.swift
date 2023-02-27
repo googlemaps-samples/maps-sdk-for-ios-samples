@@ -47,10 +47,11 @@ class FindPlaceLikelihoodListViewController: UIViewController {
     super.viewDidLoad()
 
     navigationController?.navigationBar.isTranslucent = false
-    view.backgroundColor = .white
+    view.backgroundColor = .systemBackground
+
     let button = UIButton()
     button.setTitle("Find from current location", for: .normal)
-    button.setTitleColor(.blue, for: .normal)
+    button.setTitleColor(.systemBlue, for: .normal)
     button.addTarget(
       self, action: #selector(loadLikelihoodFromCurrentLocation), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
