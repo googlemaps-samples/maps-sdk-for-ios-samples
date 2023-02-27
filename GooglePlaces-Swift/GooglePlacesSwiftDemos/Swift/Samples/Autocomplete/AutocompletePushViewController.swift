@@ -35,7 +35,7 @@ class AutocompletePushViewController: AutocompleteBaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
+
     automaticallyAdjustsScrollViewInsets = true
 
     view.addSubview(showWidgetButton)

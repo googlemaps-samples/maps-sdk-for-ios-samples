@@ -60,18 +60,16 @@ static const CGFloat kEdgeBuffer = 8;
   [super viewDidLoad];
 
   UINavigationBar *navBar = self.navigationController.navigationBar;
-  if (@available(iOS 13, *)) {
-    UINavigationBarAppearance *navBarAppearance = [[UINavigationBarAppearance alloc] init];
-    [navBarAppearance configureWithOpaqueBackground];
-    navBarAppearance.backgroundColor = [UIColor systemBackgroundColor];
-    [navBarAppearance
-        setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor labelColor]}];
 
-    navBar.standardAppearance = navBarAppearance;
-    navBar.scrollEdgeAppearance = navBarAppearance;
-  } else {
-    navBar.translucent = NO;
-  }
+  UINavigationBarAppearance *navBarAppearance = [[UINavigationBarAppearance alloc] init];
+  [navBarAppearance configureWithOpaqueBackground];
+  navBarAppearance.backgroundColor = [UIColor systemBackgroundColor];
+  [navBarAppearance
+      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor labelColor]}];
+
+  navBar.standardAppearance = navBarAppearance;
+  navBar.scrollEdgeAppearance = navBarAppearance;
+
   [self setUpEditSelectionsUI];
 
   // Add button to the header to edit the place field selections.
@@ -129,15 +127,7 @@ static const CGFloat kEdgeBuffer = 8;
 - (void)setUpEditSelectionsUI {
   // Initialize the place fields selection UI.
   UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
-  if (@available(iOS 13.0, *)) {
-    scrollView.backgroundColor = [UIColor systemBackgroundColor];
-  } else {
-    scrollView.backgroundColor = [UIColor whiteColor];
-  }
-#else
-  scrollView.backgroundColor = [UIColor whiteColor];
-#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+  scrollView.backgroundColor = [UIColor systemBackgroundColor];
 
   // Add heading for the autocomplete type filters.
   _nextSelectionYPos = [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -174,17 +164,16 @@ static const CGFloat kEdgeBuffer = 8;
 
   // Set up the individual place fields that we can request.
   _nextSelectionYPos += kSelectionHeight;
-  for (NSUInteger placeField = GMSPlaceFieldName; placeField <= GMSPlaceFieldIconBackgroundColor;
+  for (uint64_t placeField = GMSPlaceFieldName; placeField <= GMSPlaceFieldIconBackgroundColor;
        placeField <<= 1) {
     [scrollView addSubview:[self selectionButtonForPlaceField:(GMSPlaceField)placeField]];
   }
-
 
   // Add the close button to dismiss the selection UI.
   UIButton *close =
       [[UIButton alloc] initWithFrame:CGRectMake(0, _nextSelectionYPos, self.view.frame.size.width,
                                                  kSelectionHeight)];
-  close.backgroundColor = [UIColor blueColor];
+  close.backgroundColor = [UIColor systemBlueColor];
   [close setTitle:@"Close" forState:UIControlStateNormal];
   [close setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
   [close addTarget:self
@@ -238,9 +227,9 @@ static const CGFloat kEdgeBuffer = 8;
   [selectionButton addTarget:self
                       action:@selector(selectionButtonTapped:)
             forControlEvents:UIControlEventTouchUpInside];
-  [selectionButton setBackgroundColor:[UIColor whiteColor]];
+  [selectionButton setBackgroundColor:[UIColor systemBackgroundColor]];
   [selectionButton setTitle:title forState:UIControlStateNormal];
-  [selectionButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [selectionButton setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
   selectionButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
   [selectionButton addSubview:selectionSwitch];
   return selectionButton;

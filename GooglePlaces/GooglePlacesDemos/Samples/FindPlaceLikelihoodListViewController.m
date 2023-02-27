@@ -116,15 +116,8 @@ static NSString *const kCellIdentifier = @"LikelihoodCellIdentifier";
   _locationManager = locationManager;
 
   self.title = [NSString stringWithFormat:@"Find place likelihoods from location"];
-#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
-  if (@available(iOS 13.0, *)) {
-    self.view.backgroundColor = [UIColor systemBackgroundColor];
-  } else {
-    self.view.backgroundColor = [UIColor whiteColor];
-  }
-#else
-  self.view.backgroundColor = [UIColor whiteColor];
-#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+
+  self.view.backgroundColor = [UIColor systemBackgroundColor];
 
   UIStackView *mainStackView = [[UIStackView alloc] init];
   mainStackView.axis = UILayoutConstraintAxisVertical;

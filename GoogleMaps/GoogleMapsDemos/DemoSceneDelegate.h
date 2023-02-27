@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC. All rights reserved.
+ * Copyright 2022 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -15,8 +15,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property(nonatomic, nullable) id servicesHandle;
-
+@interface DemoSceneDelegate : UIResponder <UIWindowSceneDelegate>
+@property(nonatomic, nullable) UIWindow *window;
+@property(nonatomic, nullable) UISplitViewController *splitViewController;
 @end
+
+NS_ASSUME_NONNULL_END

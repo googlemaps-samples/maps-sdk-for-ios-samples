@@ -50,7 +50,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
   if ((self = [super initWithFrame:frame])) {
     _photoImageViews = [NSMutableArray array];
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor systemBackgroundColor];
     self.pagingEnabled = YES;
   }
   return self;

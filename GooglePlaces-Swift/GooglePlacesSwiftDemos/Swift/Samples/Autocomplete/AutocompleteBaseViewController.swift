@@ -40,11 +40,8 @@ class AutocompleteBaseViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    if #available(iOS 13.0, *) {
-      view.backgroundColor = .systemBackground
-    } else {
-      view.backgroundColor = .white
-    }
+    view.backgroundColor = .systemBackground
+
     view.addSubview(textView)
     textView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pagingPhotoView)
@@ -79,9 +76,8 @@ class AutocompleteBaseViewController: UIViewController {
       text.append(attributions)
     }
 
-    if #available(iOS 13.0, *) {
-      text.addAttribute(.foregroundColor, value: UIColor.label, range: NSMakeRange(0, text.length))
-    }
+    text.addAttribute(.foregroundColor, value: UIColor.label, range: NSMakeRange(0, text.length))
+
     textView.attributedText = text
     textView.isHidden = false
     pagingPhotoView.isHidden = true
