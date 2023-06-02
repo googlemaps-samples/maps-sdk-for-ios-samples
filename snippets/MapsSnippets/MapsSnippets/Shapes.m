@@ -171,4 +171,65 @@ GMSMapView *mapView;
   // [END maps_ios_shapes_circles_customize]
 }
 
+- (void)spritePolyLine {
+  // [START maps_ios_polyline_sprite]
+  GMSMutablePath *path = [GMSMutablePath path];
+  [path addLatitude:-37.81319 longitude:144.96298];
+  [path addLatitude:-31.95285 longitude:115.85734];
+  polyline.strokeWidth = 20;
+  GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+
+  UIImage *image = [UIImage imageNamed:@"imageFromBundleOrAsset"];
+  GMSStrokeStyle *transparentStampStroke = [GMSStrokeStyle transparentStrokeWithStampStyle:[GMSSpriteStyle spriteStyleWithImage:image]];
+
+  GMSStyleSpan *span = [GMSStyleSpan spanWithStyle:transparentStampStroke];
+  polyline.spans = @[span];
+  polyline.map = _mapView;
+  // [END maps_ios_polyline_sprite]
+}
+
+- (void)texturePolyline {
+  // [START maps_ios_polyline_texture]
+  GMSMutablePath *path = [GMSMutablePath path];
+  [path addLatitude:-37.81319 longitude:144.96298];
+  [path addLatitude:-31.95285 longitude:115.85734];
+  GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+  polyline.strokeWidth = 20;
+  GMSStrokeStyle *redWithStamp = [GMSStrokeStyle solidColor:[UIColor redColor]];
+
+  UIImage *image = [UIImage imageNamed:@"imageFromBundleOrAsset"]; // Image could be from anywhere
+  redWithStamp.stampStyle = [GMSTextureStyle textureStyleWithImage:image];
+
+  GMSStyleSpan *span = [GMSStyleSpan spanWithStyle:redWithStamp];
+  polyline.spans = @[span];
+  polyline.map = _mapView;
+  // [END maps_ios_polyline_texture]
+}
+
+- (void)mapCapabilties {
+  // [START maps_ios_map_capabilities]
+  GMSMutablePath *path = [GMSMutablePath path];
+  [path addLatitude:-37.81319 longitude:144.96298];
+  [path addLatitude:-31.95285 longitude:115.85734];
+
+  UIImage *_Nonnull image = [UIImage imageNamed:@"imageFromBundleOrAsset"]; // Image could be from anywhere
+
+  NSArray<GMSStyleSpan *> * spans;
+  if (_mapView.mapCapabilities & GMSMapCapabilityFlagsSpritePolylines) {
+    GMSSpriteStyle *spriteStyle = [GMSSpriteStyle spriteStyleWithImage:image];
+    GMSStrokeStyle *stroke = [GMSStrokeStyle transparentStrokeWithStampStyle:spriteStyle];
+    spans = @[ [GMSStyleSpan spanWithStyle:stroke] ];
+  } else {
+    GMSStrokeStyle *stroke = [GMSStrokeStyle solidColor:UIColor.clearColor];
+    stroke.stampStyle = [GMSTextureStyle textureStyleWithImage:image];
+    spans = @[ [GMSStyleSpan spanWithStyle:stroke] ];
+  }
+
+  GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+  polyline.strokeWidth = 20;
+  polyline.spans = spans;
+  polyline.map = _mapView;
+  // [END maps_ios_map_capabilities]
+}
+
 @end

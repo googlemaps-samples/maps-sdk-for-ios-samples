@@ -178,4 +178,59 @@ class Shapes {
     circle.strokeWidth = 5
     // [END maps_ios_shapes_circles_customize]
   }
+
+  func spritePolyline() {
+      // [START maps_ios_polyline_sprite]
+      let path = GMSMutablePath()
+      path.addLatitude(-37.81319, longitude: 144.96298)
+      path.addLatitude(-31.95285, longitude: 115.85734)
+      let polyline = GMSPolyline(path: path)
+      polyline.strokeWidth = 20
+      let image = UIImage(named: "imageFromBundleOrAsset")! // Image could be from anywhere
+      let stampStyle = GMSSpriteStyle(image: image)
+      let transparentStampStroke = GMSStrokeStyle.transparentStroke(withStamp: stampStyle)
+      let span = GMSStyleSpan(style: transparentStampStroke)
+      polyline.spans = [span]
+      polyline.map = mapView
+      // [END maps_ios_polyline_sprite]
+    }
+
+    func texturePolyline() {
+      // [START maps_ios_polyline_texture]
+      let path = GMSMutablePath()
+      path.addLatitude(-37.81319, longitude: 144.96298)
+      path.addLatitude(-31.95285, longitude: 115.85734)
+      let polyline = GMSPolyline(path: path)
+      polyline.strokeWidth = 20
+      let redWithStamp = GMSStrokeStyle.solidColor(.red)
+      let image = UIImage(named: "imageFromBundleOrAsset")! // Image could be from anywhere
+      redWithStamp.stampStyle = GMSTextureStyle(image: image)
+      let span = GMSStyleSpan(style: redWithStamp)
+      polyline.spans = [span]
+      polyline.map = mapView
+      // [END maps_ios_polyline_texture]
+    }
+
+    func mapCapabilities() {
+      // [START maps_ios_map_capabilities]
+      let path = GMSMutablePath()
+      path.addLatitude(-37.81319, longitude: 144.96298)
+      path.addLatitude(-31.95285, longitude: 115.85734)
+      let polyline = GMSPolyline(path: path)
+      polyline.strokeWidth = 20
+      let image = UIImage(named: "imageFromBundleOrAsset")! // Image could be from anywhere
+      let spans: [GMSStyleSpan]
+      if (mapView.mapCapabilities.contains(.spritePolylines)) {
+        let spriteStyle = GMSSpriteStyle(image: image)
+        let stroke = GMSStrokeStyle.transparentStroke(withStamp: spriteStyle)
+        spans = [ GMSStyleSpan(style: stroke) ]
+      } else {
+        let stroke = GMSStrokeStyle.solidColor(.clear)
+        stroke.stampStyle = GMSTextureStyle(image: image)
+        spans = [ GMSStyleSpan(style: stroke) ]
+      }
+      polyline.spans = spans
+      polyline.map = mapView
+      // [END maps_ios_map_capabilities]
+    }
 }
