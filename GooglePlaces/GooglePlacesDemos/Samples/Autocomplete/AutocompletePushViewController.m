@@ -16,6 +16,7 @@
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompletePushViewController.h"
 
 #import <GooglePlaces/GooglePlaces.h>
+#import "GooglePlacesDemos/Support/BaseDemoViewController.h"
 
 @interface AutocompletePushViewController () <GMSAutocompleteViewControllerDelegate>
 @end
