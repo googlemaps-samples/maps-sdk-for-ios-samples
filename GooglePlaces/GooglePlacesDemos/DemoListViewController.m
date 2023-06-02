@@ -119,6 +119,7 @@ static const CGFloat kEdgeBuffer = 8;
   UIViewController *viewController =
       [demo createViewControllerWithAutocompleteFilter:autocompleteFilter
                                            placeFields:[self selectedPlaceFields]];
+
   [self.navigationController pushViewController:viewController animated:YES];
 }
 

@@ -16,7 +16,7 @@
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithSearchViewController.h"
 
 #import <GooglePlaces/GooglePlaces.h>
-
+#import "GooglePlacesDemos/Support/BaseDemoViewController.h"
 NSString *const kSearchBarAccessibilityIdentifier = @"searchBarAccessibilityIdentifier";
 
 @interface AutocompleteWithSearchViewController () <GMSAutocompleteResultsViewControllerDelegate,

@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'GooglePlacesDemos' do
-    platform :ios, '13.0'
-    pod 'GooglePlaces', '= 7.4.0'
+    platform :ios, '14.0'
+    pod 'GooglePlaces', '= 8.0.0'
 end

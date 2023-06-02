@@ -27,13 +27,6 @@ class SampleListViewController: UITableViewController {
       .rating, .userRatingsTotal, .priceLevel, .types, .website, .viewport, .addressComponents,
       .photos, .utcOffsetMinutes, .businessStatus, .iconImageURL, .iconBackgroundColor,
     ]
-    #if BuildFlag_Places_EnableBooleanPlacesAttributes
-      fields += [
-        .takeout, .delivery, .dineIn, .curbsidePickup, .reservable, .servesBreakfast,
-        .servesLunch, .servesDinner, .servesBeer, .servesWine, .servesBrunch, .servesVegetarianFood,
-        .wheelchairAccessibleEntrance,
-      ]
-    #endif  // BuildFlag_Places_EnableBooleanPlacesAttributes
     return AutocompleteConfiguration(
       autocompleteFilter: GMSAutocompleteFilter(),
       placeFields: GMSPlaceField(rawValue: fields.reduce(0) { $0 | $1.rawValue }))

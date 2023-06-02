@@ -23,6 +23,17 @@ static const double kSeattleLatitudeDegrees = 47.6089945;
 static const double kSeattleLongitudeDegrees = -122.3410462;
 static const double kZoom = 14;
 static const double kStrokeWidth = 20;
+/* The following encoded path was constructed by using the Directions API.
+ * This is the path from the Space Needle to Paramount Theatre, with the mode of transport
+ * set to walking.
+ * Please see the documentation https://developers.google.com/maps/documentation/directions
+ * for more detail.
+ */
+static NSString *const kEncodedPathForWalkingDirections =
+    @"ezsaHxkwiVLc@FQ?G@G@GDKBEPED?@@B@FOJSOUDIZk@?cB?w@?iA@yLAs@?IB?Ae@@_A?sACoA?EB??e@?u@A}A@{@`@"
+    @"EBGv@_C\\aA?M?G@WHCFB|@kCRm@DQ?EDB@FZP?E@_@CC?oA?O\\i@j@mAN[DWd@GIq@BA?CBUVcAhA_CLUBDL_@@Bf@"
+    @"eA`@o@|@iBCCRa@DD^aAf@{@`@}@Xc@GIVc@DDj@iANe@x@cBHUACRYNPZQHLDFDCVSB?CGKYHGr@s@r@g@v@o@"
+    @"GUVSBC@FDJJK";
 
 @implementation StampedPolylinesViewController
 
@@ -37,7 +48,17 @@ static const double kStrokeWidth = 20;
   map.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   [self.view addSubview:map];
 
-  // Make a texture stamped polyline.
+  [self addTextureStampedPolylineToMap:map];
+  [self addGradientTextureStampedPolylineToMap:map];
+  [self addSpriteWalkingDotStampedPolylineToMap:map];
+}
+
+/**
+ * Creates a texture stamped polyline and adds it to the supplied map.
+ *
+ * @param map The map to add the polyline to.
+ */
+- (void)addTextureStampedPolylineToMap:(GMSMapView *)map {
   GMSMutablePath *path = [GMSMutablePath path];
   [path addLatitude:kSeattleLatitudeDegrees + 0.003 longitude:kSeattleLongitudeDegrees - 0.003];
   [path addLatitude:kSeattleLatitudeDegrees - 0.005 longitude:kSeattleLongitudeDegrees - 0.005];
@@ -51,8 +72,14 @@ static const double kStrokeWidth = 20;
   texturePolyline.map = map;
   texturePolyline.strokeWidth = kStrokeWidth;
   texturePolyline.spans = @[ [GMSStyleSpan spanWithStyle:solidStroke] ];
+}
 
-  // Make a gradient texture polyline.
+/**
+ * Creates a texture stamped polyline with gradient background and adds it to the supplied map.
+ *
+ * @param map The map to add the polyline to.
+ */
+- (void)addGradientTextureStampedPolylineToMap:(GMSMapView *)map {
   GMSMutablePath *texturePath = [GMSMutablePath path];
   [texturePath addLatitude:kSeattleLatitudeDegrees - 0.012 longitude:kSeattleLongitudeDegrees];
   [texturePath addLatitude:kSeattleLatitudeDegrees - 0.012
@@ -69,6 +96,23 @@ static const double kStrokeWidth = 20;
   gradientTexturePolyline.spans = @[ [GMSStyleSpan spanWithStyle:gradientStroke] ];
   gradientTexturePolyline.zIndex = 1;
   gradientTexturePolyline.map = map;
+}
+
+/**
+ * Creates a sprite stamped polyline, using walking dots as the sprite, to the supplied map.
+ *
+ * @param map The map to add the polyline to.
+ */
+- (void)addSpriteWalkingDotStampedPolylineToMap:(GMSMapView *)map {
+  GMSPath *path = [GMSPath pathFromEncodedPath:kEncodedPathForWalkingDirections];
+
+  UIImage *_Nonnull stamp = (UIImage *_Nonnull)[UIImage imageNamed:@"walking_dot.png"];
+  GMSStrokeStyle *stroke = [GMSStrokeStyle solidColor:[UIColor redColor]];
+  stroke.stampStyle = [GMSSpriteStyle spriteStyleWithImage:stamp];
+  GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+  polyline.map = map;
+  polyline.strokeWidth = kStrokeWidth;
+  polyline.spans = @[ [GMSStyleSpan spanWithStyle:stroke] ];
 }
 
 @end

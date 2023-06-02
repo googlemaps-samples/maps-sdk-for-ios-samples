@@ -15,6 +15,7 @@
 		3B9C352B6D5D1EFC26634090 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508D3D314E8989F6A8B1386 /* ConfigurationViewController.swift */; };
 		4049499CCDEF9E212D79D732 /* PagingPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C092A8A676304070F968409 /* PagingPhotoView.swift */; };
 		4F5A706C3EA996535B2D1984 /* SDKDemoAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B665D719F951D76696D33BC /* SDKDemoAPIKey.swift */; };
+		50795DF756B576CC8A1F6EAA /* libPods-GooglePlacesSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED79C110E7676428782D441 /* libPods-GooglePlacesSwiftDemos.a */; };
 		5CB1F895DD9C8B1ADC8DE20A /* SampleDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1EF7458BEAB01DE68663 /* SampleDatas.swift */; };
 		682AFB396B2B86F4CE39BCDC /* AutocompleteBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288ED3B967A57B6410B96F8 /* AutocompleteBaseViewController.swift */; };
 		6B674CAF48552E8B4EDEE8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E58F93255E608F3E70DF9E /* AppDelegate.swift */; };
@@ -25,7 +26,6 @@
 		BA576744D32A7DE182CE33B1 /* AutocompleteWithTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD305E3260332F5AAB435A2 /* AutocompleteWithTextFieldController.swift */; };
 		D248A9237F51145B3A03A71F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909B59B2299866076C468ED7 /* UIKit.framework */; };
 		D9ACCD7795CF2F5BC448175A /* AutocompletePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497012428CC54B7C4F56083 /* AutocompletePushViewController.swift */; };
-		DE1C2EBF3D791A9FE3657F66 /* libPods-GooglePlacesSwiftDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99441175D69E60D59CC6F7B /* libPods-GooglePlacesSwiftDemos.a */; };
 		E0F36B0E72285A3AB896E53A /* PlacesDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA6980061CFCF840AFCEDC2 /* PlacesDemoAssets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 		0D889387B0B1BD3F73F8E146 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E2A6EA83A2B6BE60F8631EA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1508D3D314E8989F6A8B1386 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		194D1887811663BB3CD85EE1 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GooglePlacesSwiftDemos/Pods-GooglePlacesSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		1B25F0846D9BEA0ACB3F71D2 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E734E67258D377F8B1D5CE5 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
 		276DCC46CD2ED5E1134AB1A4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		4B665D719F951D76696D33BC /* SDKDemoAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKDemoAPIKey.swift; sourceTree = "<group>"; };
 		4C8B7C99AD9C286DB7B585B4 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56E48B9ECE73CA99453E7414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5867C603C7D51AF9C766A045 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesSwiftDemos.default.xcconfig"; path = "Target Support Files/Pods-GooglePlacesSwiftDemos/Pods-GooglePlacesSwiftDemos.default.xcconfig"; sourceTree = "<group>"; };
 		5C1C6440B4CD894A2407D495 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ED1528FE1672661AAE1060D /* fr_CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr_CA; path = fr_CA.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60BD4C90E355BA1E2BE02C40 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -77,7 +77,6 @@
 		952DA97814F23494FF58F3DF /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9558BF7AD24E294645E279C5 /* en_GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en_GB; path = en_GB.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DADFC6AEC2D2E3896A828CA /* es_419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es_419; path = es_419.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A99441175D69E60D59CC6F7B /* libPods-GooglePlacesSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GooglePlacesSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAE5F734790D532EE25185C /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABF8E968A1C74354A3486DF3 /* AutocompleteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteModalViewController.swift; sourceTree = "<group>"; };
 		AFB0AAEF9F27A855E4A33128 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		F1286D2602562EFE56DF7C74 /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = pt_PT.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497012428CC54B7C4F56083 /* AutocompletePushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompletePushViewController.swift; sourceTree = "<group>"; };
 		F6C83E585F96D948E93AF704 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FED79C110E7676428782D441 /* libPods-GooglePlacesSwiftDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GooglePlacesSwiftDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,17 +101,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D248A9237F51145B3A03A71F /* UIKit.framework in Frameworks */,
-				DE1C2EBF3D791A9FE3657F66 /* libPods-GooglePlacesSwiftDemos.a in Frameworks */,
+				50795DF756B576CC8A1F6EAA /* libPods-GooglePlacesSwiftDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B859E09722500E8D8A066EF /* Pods */ = {
+		0E0C7C88486108CBAD58CB76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5867C603C7D51AF9C766A045 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */,
+				194D1887811663BB3CD85EE1 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				909B59B2299866076C468ED7 /* UIKit.framework */,
-				A99441175D69E60D59CC6F7B /* libPods-GooglePlacesSwiftDemos.a */,
+				FED79C110E7676428782D441 /* libPods-GooglePlacesSwiftDemos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 				A7DC475C5DF48F75B36886C4 /* Source */,
 				64686740F39E131CEB63787F /* Frameworks */,
 				FFA58D2498A93FE9768A06C4 /* Products */,
-				4B859E09722500E8D8A066EF /* Pods */,
+				0E0C7C88486108CBAD58CB76 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,11 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBD1C4119186BF7EAD0F4BB8 /* Build configuration list for PBXNativeTarget "GooglePlacesSwiftDemos" */;
 			buildPhases = (
-				51CA21A10A11A96D3FDF2CB2 /* [CP] Check Pods Manifest.lock */,
+				D61E2953DFBD107C6E3F437B /* [CP] Check Pods Manifest.lock */,
 				53456A6BC8EDD8F18A987C27 /* Resources */,
 				C418CB9FC5E37E7815CC9AF5 /* Sources */,
 				0BF8505E4DA2E957E40C9A5E /* Frameworks */,
-				E7522E80C63B6AC9BD6D8FC0 /* [CP] Copy Pods Resources */,
+				58DE049D3CFF5A82B299066A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,29 +311,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51CA21A10A11A96D3FDF2CB2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GooglePlacesSwiftDemos-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7522E80C63B6AC9BD6D8FC0 /* [CP] Copy Pods Resources */ = {
+		58DE049D3CFF5A82B299066A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,6 +332,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesSwiftDemos/Pods-GooglePlacesSwiftDemos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D61E2953DFBD107C6E3F437B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GooglePlacesSwiftDemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -455,14 +455,14 @@
 		};
 		8BE6213F076EE7282AFFB455 /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5867C603C7D51AF9C766A045 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */;
+			baseConfigurationReference = 194D1887811663BB3CD85EE1 /* Pods-GooglePlacesSwiftDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ./GooglePlacesSwiftDemos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					.,

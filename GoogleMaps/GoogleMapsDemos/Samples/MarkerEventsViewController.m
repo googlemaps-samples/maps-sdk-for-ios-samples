@@ -22,6 +22,7 @@
 @implementation MarkerEventsViewController {
   GMSMapView *_mapView;
   GMSMarker *_melbourneMarker;
+  BOOL _rotating;
 }
 
 - (void)viewDidLoad {
@@ -54,14 +55,21 @@
 }
 
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
-  // Animate to the marker
-  [CATransaction begin];
-  [CATransaction setAnimationDuration:3.f];  // 3 second animation
-
   GMSCameraPosition *camera = [[GMSCameraPosition alloc] initWithTarget:marker.position
                                                                    zoom:8
                                                                 bearing:50
                                                            viewingAngle:60];
+  // Animate to the marker
+  [CATransaction begin];
+  [CATransaction setAnimationDuration:3.f];  // 3 second animation
+  [CATransaction setCompletionBlock:^{
+    if (_rotating) {  // Animation was interrupted by orientation change.
+      [CATransaction
+          setDisableActions:true];  // Disable animation to avoid interruption from rotation.
+      [_mapView animateToCameraPosition:camera];
+    }
+  }];
+
   [mapView animateToCameraPosition:camera];
   [CATransaction commit];
 
@@ -73,6 +81,18 @@
 
   // The Tap has been handled so return YES
   return YES;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+  _rotating = true;
+  [coordinator
+      animateAlongsideTransition:nil
+                      completion:^(
+                          id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+                        _rotating = false;
+                      }];
+  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
 @end

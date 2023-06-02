@@ -16,7 +16,8 @@
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithCustomColors.h"
 
 #import <GooglePlaces/GooglePlaces.h>
-
+#import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteBaseViewController.h"
+#import "GooglePlacesDemos/Support/BaseDemoViewController.h"
 /**
  * Simple subclass of GMSAutocompleteViewController solely for the purpose of localising appearance
  * proxy changes to this part of the demo app.
