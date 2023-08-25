@@ -23,7 +23,9 @@ static const double kSeattleLatitudeDegrees = 47.6089945;
 static const double kSeattleLongitudeDegrees = -122.3410462;
 static const double kZoom = 14;
 static const double kStrokeWidth = 20;
-/* The following encoded path was constructed by using the Directions API.
+
+/**
+ * The following encoded path was constructed by using the Directions API.
  * This is the path from the Space Needle to Paramount Theatre, with the mode of transport
  * set to walking.
  * Please see the documentation https://developers.google.com/maps/documentation/directions

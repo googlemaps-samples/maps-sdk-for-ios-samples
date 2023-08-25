@@ -53,12 +53,12 @@
 
 @implementation Samples
 
-+ (NSArray *)loadSections {
++ (NSArray<NSString *> *)loadSections {
   return @[ @"Map", @"Panorama", @"Overlays", @"Camera", @"Services" ];
 }
 
-+ (NSArray *)loadDemos {
-  NSArray<NSDictionary<NSString *, id> *> *mapDemos = @[
++ (NSArray<NSArray<DemoDefinition *> *> *)loadDemos {
+  NSArray<DemoDefinition *> *mapDemos = @[
     [self newDemo:[BasicMapViewController class] withTitle:@"Basic Map" andDescription:nil],
     [self newDemo:[MapTypesViewController class] withTitle:@"Map Types" andDescription:nil],
     [self newDemo:[StampedPolylinesViewController class]
@@ -91,14 +91,14 @@
     [self newDemo:[StyledMapViewController class] withTitle:@"Styled Map" andDescription:nil],
   ];
 
-  NSArray *panoramaDemos = @[
+  NSArray<DemoDefinition *> *panoramaDemos = @[
     [self newDemo:[PanoramaViewController class] withTitle:@"Street View" andDescription:nil],
     [self newDemo:[FixedPanoramaViewController class]
              withTitle:@"Fixed Street View"
         andDescription:nil]
   ];
 
-  NSArray *overlayDemos = @[
+  NSArray<DemoDefinition *> *overlayDemos = @[
     [self newDemo:[MarkersViewController class] withTitle:@"Markers" andDescription:nil],
     [self newDemo:[CustomMarkersViewController class]
              withTitle:@"Custom Markers"
@@ -125,13 +125,13 @@
         andDescription:nil]
   ];
 
-  NSArray *cameraDemos = @[
+  NSArray<DemoDefinition *> *cameraDemos = @[
     [self newDemo:[FitBoundsViewController class] withTitle:@"Fit Bounds" andDescription:nil],
     [self newDemo:[CameraViewController class] withTitle:@"Camera Animation" andDescription:nil],
     [self newDemo:[MapLayerViewController class] withTitle:@"Map Layer" andDescription:nil]
   ];
 
-  NSArray *servicesDemos = @[
+  NSArray<DemoDefinition *> *servicesDemos = @[
     [self newDemo:[GeocoderViewController class] withTitle:@"Geocoder" andDescription:nil],
     [self newDemo:[StructuredGeocoderViewController class]
              withTitle:@"Structured Geocoder"
@@ -141,13 +141,13 @@
   return @[ mapDemos, panoramaDemos, overlayDemos, cameraDemos, servicesDemos ];
 }
 
-+ (NSDictionary *)newDemo:(Class)viewControllerClass
-                withTitle:(NSString *)title
-           andDescription:(NSString *)description {
-  return
-      [[NSDictionary alloc] initWithObjectsAndKeys:viewControllerClass, @"controller", title,
-                                                   @"title", NSStringFromClass(viewControllerClass),
-                                                   @"className", description, @"description", nil];
++ (DemoDefinition *)newDemo:(Class)viewControllerClass
+                  withTitle:(NSString *)title
+             andDescription:(NSString *)description {
+  return [[DemoDefinition alloc]
+      initWithObjectsAndKeys:viewControllerClass, @"controller", title, @"title",
+                             NSStringFromClass(viewControllerClass), @"className", description,
+                             @"description", nil];
 }
 
 @end
