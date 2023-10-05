@@ -15,9 +15,9 @@
 
 #import "GoogleMapsDemos/DemoAppDelegate.h"
 
-#import <GoogleMaps/GoogleMaps.h>
 #import "GoogleMapsDemos/DemoSceneDelegate.h"
 #import "GoogleMapsDemos/SDKDemoAPIKey.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation DemoAppDelegate
 

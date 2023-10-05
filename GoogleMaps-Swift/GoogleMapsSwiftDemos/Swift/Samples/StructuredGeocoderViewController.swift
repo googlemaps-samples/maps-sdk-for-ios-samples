@@ -57,7 +57,7 @@ extension StructuredGeocoderViewController: GMSMapViewDelegate {
         snippet.append("subLocality: \(subLocality)\n")
       }
       if let locality = address.locality {
-        snippet.append("subLocality: \(locality)\n")
+        snippet.append("locality: \(locality)\n")
       }
       if let administrativeArea = address.administrativeArea {
         snippet.append("administrativeArea: \(administrativeArea)\n")

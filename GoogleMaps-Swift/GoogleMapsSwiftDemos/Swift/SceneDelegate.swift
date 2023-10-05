@@ -24,17 +24,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let scene = scene as? UIWindowScene else { return }
     window = .init(windowScene: scene)
 
-    // On iOS 15, continue to use opaque navigation bars like earlier iOS versions.
-    if #available(iOS 15.0, *) {
-      let navBarAppearance = UINavigationBarAppearance()
-      navBarAppearance.configureWithOpaqueBackground()
-      UINavigationBar.appearance().standardAppearance = navBarAppearance
-      UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-    }
-
     let sampleListViewController = SampleListViewController()
     let navigationController = UINavigationController(rootViewController: sampleListViewController)
-    window?.rootViewController = navigationController
+    let detailController = UIViewController()
+    let splitViewController = UISplitViewController()
+
+    splitViewController.delegate = sampleListViewController
+    splitViewController.preferredDisplayMode = .oneBesideSecondary
+    splitViewController.viewControllers = [navigationController, detailController]
+    window?.rootViewController = splitViewController
     window?.makeKeyAndVisible()
   }
 }

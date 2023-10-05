@@ -48,7 +48,6 @@
       [[GMSAutocompleteViewController alloc] init];
   autocompleteViewController.delegate = self;
   autocompleteViewController.autocompleteFilter = self.autocompleteFilter;
-  autocompleteViewController.placeFields = self.placeFields;
 
   // Returns new GMSAutocompleteViewController instance.
   return autocompleteViewController;
