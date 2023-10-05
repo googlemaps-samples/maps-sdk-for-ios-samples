@@ -63,8 +63,12 @@ static CGFloat const kButtonPadding = 10.f;
       NSLocalizedString(@"Demo.Content.Autocomplete.Styling.Colors.HotDogStand",
                         @"Button title for the 'Hot Dog Stand' styled autocomplete widget.");
 
+  UIFont *preferredBodyFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
   UIButton *brownThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [brownThemeButton setTitle:titleYellowAndBrown forState:UIControlStateNormal];
+  NSAttributedString *yellowAndBrownAttributedTitle =
+      [[NSAttributedString alloc] initWithString:titleYellowAndBrown
+                                      attributes:@{NSFontAttributeName : preferredBodyFont}];
+  [brownThemeButton setAttributedTitle:yellowAndBrownAttributedTitle forState:UIControlStateNormal];
   [brownThemeButton setTitleColor:textColor forState:UIControlStateNormal];
   [brownThemeButton addTarget:self
                        action:@selector(openBrownTheme:)
@@ -78,7 +82,11 @@ static CGFloat const kButtonPadding = 10.f;
   [brownThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *blackThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [blackThemeButton setTitle:titleWhiteOnBlack forState:UIControlStateNormal];
+  NSAttributedString *blackThemeButtonAttributedTitle =
+      [[NSAttributedString alloc] initWithString:titleWhiteOnBlack
+                                      attributes:@{NSFontAttributeName : preferredBodyFont}];
+  [blackThemeButton setAttributedTitle:blackThemeButtonAttributedTitle
+                              forState:UIControlStateNormal];
   [blackThemeButton setTitleColor:textColor forState:UIControlStateNormal];
   [blackThemeButton addTarget:self
                        action:@selector(openBlackTheme:)
@@ -93,7 +101,10 @@ static CGFloat const kButtonPadding = 10.f;
   [blackThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *blueThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [blueThemeButton setTitle:titleBlueColors forState:UIControlStateNormal];
+  NSAttributedString *blueThemeButtonAttributedTitle =
+      [[NSAttributedString alloc] initWithString:titleBlueColors
+                                      attributes:@{NSFontAttributeName : preferredBodyFont}];
+  [blueThemeButton setAttributedTitle:blueThemeButtonAttributedTitle forState:UIControlStateNormal];
   [blueThemeButton setTitleColor:textColor forState:UIControlStateNormal];
   [blueThemeButton addTarget:self
                       action:@selector(openBlueTheme:)
@@ -108,7 +119,11 @@ static CGFloat const kButtonPadding = 10.f;
   [blueThemeButton.widthAnchor constraintEqualToConstant:kButtonWidth].active = YES;
 
   UIButton *hotDogThemeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [hotDogThemeButton setTitle:titleHotDogStand forState:UIControlStateNormal];
+  NSAttributedString *hotDogThemeButtonAttributedTitle =
+      [[NSAttributedString alloc] initWithString:titleHotDogStand
+                                      attributes:@{NSFontAttributeName : preferredBodyFont}];
+  [hotDogThemeButton setAttributedTitle:hotDogThemeButtonAttributedTitle
+                               forState:UIControlStateNormal];
   [hotDogThemeButton setTitleColor:textColor forState:UIControlStateNormal];
   [hotDogThemeButton addTarget:self
                         action:@selector(openHotDogTheme:)
@@ -326,7 +341,6 @@ static CGFloat const kButtonPadding = 10.f;
   GMSAutocompleteViewController *acController = [[GMSStyledAutocompleteViewController alloc] init];
   acController.delegate = self;
   acController.autocompleteFilter = self.autocompleteFilter;
-  acController.placeFields = self.placeFields;
   acController.tableCellBackgroundColor = backgroundColor;
   acController.tableCellSeparatorColor = separatorColor;
   acController.primaryTextColor = primaryTextColor;

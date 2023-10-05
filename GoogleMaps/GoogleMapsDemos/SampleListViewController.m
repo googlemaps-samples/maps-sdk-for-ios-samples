@@ -15,8 +15,9 @@
 
 #import "GoogleMapsDemos/SampleListViewController.h"
 
-#import <GoogleMaps/GoogleMaps.h>
 #import "GoogleMapsDemos/Samples/Samples.h"
+#import <GoogleMaps/GoogleMaps.h>
+
 
 typedef NSMutableArray<NSArray<NSDictionary<NSString *, NSObject *> *> *> DemoSamplesArray;
 

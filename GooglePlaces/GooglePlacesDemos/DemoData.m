@@ -90,7 +90,7 @@
       [[DemoSection alloc]
           initWithTitle:NSLocalizedString(@"Demo.Section.Title.FindPlaceLikelihood",
                                           @"Title of the findPlaceLikelihood demo section")
-                  demos:findPlaceLikelihoodDemos]
+                  demos:findPlaceLikelihoodDemos],
     ];
   }
   return self;

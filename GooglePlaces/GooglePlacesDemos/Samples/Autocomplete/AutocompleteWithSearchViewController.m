@@ -41,7 +41,6 @@ NSString *const kSearchBarAccessibilityIdentifier = @"searchBarAccessibilityIden
 
   _acViewController = [[GMSAutocompleteResultsViewController alloc] init];
   _acViewController.autocompleteFilter = self.autocompleteFilter;
-  _acViewController.placeFields = self.placeFields;
   _acViewController.delegate = self;
 
   _searchController =

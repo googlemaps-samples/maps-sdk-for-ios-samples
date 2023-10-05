@@ -86,6 +86,10 @@
                value:[UIColor labelColor]
                range:NSMakeRange(0, text.length)];
 
+  [text addAttribute:NSFontAttributeName
+               value:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]
+               range:NSMakeRange(0, text.length)];
+
   _textView.attributedText = text;
   [_textView setIsAccessibilityElement:YES];
   [_textView setHidden:NO];
@@ -165,7 +169,14 @@
 - (UIButton *)createButton:(SEL)selector title:(NSString *)title {
   // Create a button to show the autocomplete widget.
   UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-  [button setTitle:title forState:UIControlStateNormal];
+
+  // Set button title to have a font attirbute that respond to the device text size
+  NSAttributedString *buttonTitle = [[NSAttributedString alloc]
+      initWithString:title
+          attributes:@{
+            NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody]
+          }];
+  [button setAttributedTitle:buttonTitle forState:UIControlStateNormal];
 
   // Set the text color to adapt to light and dark mode.
   [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];

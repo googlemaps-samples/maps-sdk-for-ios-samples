@@ -149,60 +149,71 @@ class ConfigurationViewController: UIViewController {
     let iconBackgroundColor = ConfigData(
       name: "Icon Background Color", tag: Int(GMSPlaceField.iconBackgroundColor.rawValue),
       action: placesFieldsSelector)
-    #if BuildFlag_Places_EnableBooleanPlacesAttributes
-      let takeout = ConfigData(
-        name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
-        action: placesFieldsSelector)
-      let delivery = ConfigData(
-        name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
-        action: placesFieldsSelector)
-      let dineIn = ConfigData(
-        name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
-        action: placesFieldsSelector)
-      let curbsidePickup = ConfigData(
-        name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
-        action: placesFieldsSelector)
-      let reservable = ConfigData(
-        name: "Reservable", tag: Int(GMSPlaceField.reservable.rawValue),
-        action: placesFieldsSelector)
-      let servesBreakfast = ConfigData(
-        name: "ServesBreakfast", tag: Int(GMSPlaceField.servesBreakfast.rawValue),
-        action: placesFieldsSelector)
-      let servesLunch = ConfigData(
-        name: "ServesLunch", tag: Int(GMSPlaceField.servesLunch.rawValue),
-        action: placesFieldsSelector)
-      let servesDinner = ConfigData(
-        name: "ServesDinner", tag: Int(GMSPlaceField.servesDinner.rawValue),
-        action: placesFieldsSelector)
-      let servesBeer = ConfigData(
-        name: "ServesBeer", tag: Int(GMSPlaceField.servesBeer.rawValue),
-        action: placesFieldsSelector)
-      let servesWine = ConfigData(
-        name: "ServesWine", tag: Int(GMSPlaceField.servesWine.rawValue),
-        action: placesFieldsSelector)
-      let servesBrunch = ConfigData(
-        name: "ServesBrunch", tag: Int(GMSPlaceField.servesBrunch.rawValue),
-        action: placesFieldsSelector)
-      let servesVegetarianFood = ConfigData(
-        name: "ServesVegetarianFood", tag: Int(GMSPlaceField.servesVegetarianFood.rawValue),
-        action: placesFieldsSelector)
-      let wheelchairAccessibleEntrance = ConfigData(
-        name: "WheelchairAccessibleEntrance",
-        tag: Int(GMSPlaceField.wheelchairAccessibleEntrance.rawValue),
-        action: placesFieldsSelector)
-    #endif  // BuildFlag_Places_EnableBooleanPlacesAttributes
+    let takeout = ConfigData(
+      name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
+      action: placesFieldsSelector)
+    let delivery = ConfigData(
+      name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
+      action: placesFieldsSelector)
+    let dineIn = ConfigData(
+      name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
+      action: placesFieldsSelector)
+    let curbsidePickup = ConfigData(
+      name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
+      action: placesFieldsSelector)
+    let reservable = ConfigData(
+      name: "Reservable", tag: Int(GMSPlaceField.reservable.rawValue),
+      action: placesFieldsSelector)
+    let servesBreakfast = ConfigData(
+      name: "Serves Breakfast", tag: Int(GMSPlaceField.servesBreakfast.rawValue),
+      action: placesFieldsSelector)
+    let servesLunch = ConfigData(
+      name: "Serves Lunch", tag: Int(GMSPlaceField.servesLunch.rawValue),
+      action: placesFieldsSelector)
+    let servesDinner = ConfigData(
+      name: "Serves Dinner", tag: Int(GMSPlaceField.servesDinner.rawValue),
+      action: placesFieldsSelector)
+    let servesBeer = ConfigData(
+      name: "Serves Beer", tag: Int(GMSPlaceField.servesBeer.rawValue),
+      action: placesFieldsSelector)
+    let servesWine = ConfigData(
+      name: "Serves Wine", tag: Int(GMSPlaceField.servesWine.rawValue),
+      action: placesFieldsSelector)
+    let servesBrunch = ConfigData(
+      name: "Serves Brunch", tag: Int(GMSPlaceField.servesBrunch.rawValue),
+      action: placesFieldsSelector)
+    let servesVegetarianFood = ConfigData(
+      name: "Serves Vegetarian Food", tag: Int(GMSPlaceField.servesVegetarianFood.rawValue),
+      action: placesFieldsSelector)
+    let wheelchairAccessibleEntrance = ConfigData(
+      name: "Wheelchair Accessible Entrance",
+      tag: Int(GMSPlaceField.wheelchairAccessibleEntrance.rawValue),
+      action: placesFieldsSelector)
+    let currentOpeningHours = ConfigData(
+      name: "Current Opening Hours", tag: Int(GMSPlaceField.currentOpeningHours.rawValue),
+      action: placesFieldsSelector)
+    let secondaryOpeningHours = ConfigData(
+      name: "Secondary Opening Hours", tag: Int(GMSPlaceField.secondaryOpeningHours.rawValue),
+      action: placesFieldsSelector)
+    let editorialSummary = ConfigData(
+      name: "Editorial Summary", tag: Int(GMSPlaceField.editorialSummary.rawValue),
+      action: placesFieldsSelector)
     var placeFieldSamples = [
       name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
       ratingsTotal, priceLevel, types, website, viewPort, addressComponents, photos, minutes,
       status, iconImageURL, iconBackgroundColor,
     ]
-    #if BuildFlag_Places_EnableBooleanPlacesAttributes
-      placeFieldSamples += [
-        takeout, delivery, dineIn, curbsidePickup, reservable, servesBreakfast,
-        servesLunch, servesDinner, servesBeer, servesWine, servesBrunch, servesVegetarianFood,
-        wheelchairAccessibleEntrance,
-      ]
-    #endif  // BuildFlag_Places_EnableBooleanPlacesAttributes
+    placeFieldSamples += [
+      takeout, delivery, dineIn, curbsidePickup, reservable, servesBreakfast,
+      servesLunch, servesDinner, servesBeer, servesWine, servesBrunch, servesVegetarianFood,
+      wheelchairAccessibleEntrance,
+    ]
+    placeFieldSamples += [
+      currentOpeningHours, secondaryOpeningHours,
+    ]
+    placeFieldSamples += [
+      editorialSummary
+    ]
     sections.append(ConfigSection(name: "Place Fields", samples: placeFieldSamples))
     return sections
   }()
