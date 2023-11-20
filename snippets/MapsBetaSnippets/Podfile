@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'MapsBetaSnippets' do
+    platform :ios, '10.0'
+    pod 'GoogleMaps', '= 3.10.0-beta1'
+end
