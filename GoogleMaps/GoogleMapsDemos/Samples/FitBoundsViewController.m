@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/FitBoundsViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @interface FitBoundsViewController () <GMSMapViewDelegate>
 
@@ -23,7 +27,7 @@
 
 @implementation FitBoundsViewController {
   GMSMapView *_mapView;
-  NSMutableArray *_markers;
+  NSMutableArray<GMSMarker *> *_markers;
 }
 
 - (void)viewDidLoad {
@@ -49,7 +53,7 @@
   anotherSydneyMarker.map = _mapView;
 
   // Create a list of markers, adding the Sydney marker.
-  _markers = [NSMutableArray arrayWithObject:sydneyMarker];
+  _markers = [NSMutableArray<GMSMarker *> arrayWithObject:sydneyMarker];
   [_markers addObject:anotherSydneyMarker];
 
   // Create a button that, when pressed, updates the camera to fit the bounds of the specified
@@ -64,7 +68,7 @@
 
 - (void)didTapFitBounds {
   if (_markers.count == 0) return;
-  CLLocationCoordinate2D firstPos = ((GMSMarker *)_markers.firstObject).position;
+  CLLocationCoordinate2D firstPos = _markers.firstObject.position;
   GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:firstPos
                                                                      coordinate:firstPos];
   for (GMSMarker *marker in _markers) {

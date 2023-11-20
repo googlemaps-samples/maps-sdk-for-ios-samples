@@ -17,7 +17,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation MarkerEventsViewController {
   GMSMapView *_mapView;

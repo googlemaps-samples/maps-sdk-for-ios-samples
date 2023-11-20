@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/PolylinesViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 static CLLocationCoordinate2D kSydneyAustralia = {-33.866901, 151.195988};
 static CLLocationCoordinate2D kHawaiiUSA = {21.291982, -157.821856};

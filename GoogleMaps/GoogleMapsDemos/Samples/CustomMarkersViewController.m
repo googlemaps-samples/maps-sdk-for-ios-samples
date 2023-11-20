@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/CustomMarkersViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 static int kMarkerCount = 0;
 

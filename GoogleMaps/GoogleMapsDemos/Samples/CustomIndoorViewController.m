@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/CustomIndoorViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @interface CustomIndoorViewController () <GMSIndoorDisplayDelegate,
                                           UIPickerViewDelegate,
@@ -93,7 +97,7 @@
   _levels = [levels copy];
 
   [_levelPickerView reloadAllComponents];
-  [_levelPickerView selectRow:-1 inComponent:0 animated:NO];
+  [_levelPickerView selectRow:0 inComponent:0 animated:NO];
 
   // UIPickerView insists on having some data; disable interaction if there's no levels.
   _levelPickerView.userInteractionEnabled = (_levels.count > 0);

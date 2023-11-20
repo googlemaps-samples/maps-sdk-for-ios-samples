@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/StampedPolylinesViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 

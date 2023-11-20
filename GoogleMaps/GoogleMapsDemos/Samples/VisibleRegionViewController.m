@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/VisibleRegionViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 static const CGFloat kOverlayHeight = 140.0f;
 
