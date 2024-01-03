@@ -1,6 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+platform :ios, '14.0'
+
 target 'GoogleMapsSwiftDemos' do
-    platform :ios, '14.0'
-    pod 'GoogleMaps', '= 8.2.0'
+    pod 'GoogleMaps', '= 8.3.1'
 end

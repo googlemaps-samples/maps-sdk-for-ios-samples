@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '14.0'
+
 target 'map-with-marker' do
-  platform :ios, '14.0'
-  pod 'GoogleMaps', '8.0.0'
+  pod 'GoogleMaps', '8.3.1'
 end
