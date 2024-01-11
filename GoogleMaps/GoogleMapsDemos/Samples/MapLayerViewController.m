@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/MapLayerViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation MapLayerViewController {
   GMSMapView *_mapView;

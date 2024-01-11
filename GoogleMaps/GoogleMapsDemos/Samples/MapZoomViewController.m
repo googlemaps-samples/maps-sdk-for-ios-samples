@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/MapZoomViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation MapZoomViewController {
   GMSMapView *_mapView;

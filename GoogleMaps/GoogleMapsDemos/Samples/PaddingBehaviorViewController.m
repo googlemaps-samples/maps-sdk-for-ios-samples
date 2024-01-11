@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/PaddingBehaviorViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
 

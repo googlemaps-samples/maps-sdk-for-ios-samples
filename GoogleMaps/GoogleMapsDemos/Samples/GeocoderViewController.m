@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/GeocoderViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation GeocoderViewController {
   GMSMapView *_mapView;

@@ -21,6 +21,9 @@
 #import "GoogleMapsDemos/Samples/CameraViewController.h"
 #import "GoogleMapsDemos/Samples/CustomIndoorViewController.h"
 #import "GoogleMapsDemos/Samples/CustomMarkersViewController.h"
+#import "GoogleMapsDemos/Samples/DataDrivenStylingBasicViewController.h"
+#import "GoogleMapsDemos/Samples/DataDrivenStylingEventsViewController.h"
+#import "GoogleMapsDemos/Samples/DataDrivenStylingSearchViewController.h"
 #import "GoogleMapsDemos/Samples/DoubleMapViewController.h"
 #import "GoogleMapsDemos/Samples/FitBoundsViewController.h"
 #import "GoogleMapsDemos/Samples/FixedPanoramaViewController.h"
@@ -54,7 +57,7 @@
 @implementation Samples
 
 + (NSArray<NSString *> *)loadSections {
-  return @[ @"Map", @"Panorama", @"Overlays", @"Camera", @"Services" ];
+  return @[ @"Map", @"Panorama", @"Overlays", @"Camera", @"Data-driven styling", @"Services" ];
 }
 
 + (NSArray<NSArray<DemoDefinition *> *> *)loadDemos {
@@ -131,6 +134,18 @@
     [self newDemo:[MapLayerViewController class] withTitle:@"Map Layer" andDescription:nil]
   ];
 
+  NSArray<DemoDefinition *> *dataDrivenStylingDemos = @[
+    [self newDemo:[DataDrivenStylingBasicViewController class]
+             withTitle:@"Basic"
+        andDescription:nil],
+    [self newDemo:[DataDrivenStylingEventsViewController class]
+             withTitle:@"Events"
+        andDescription:nil],
+    [self newDemo:[DataDrivenStylingSearchViewController class]
+             withTitle:@"Places from text search"
+        andDescription:nil]
+  ];
+
   NSArray<DemoDefinition *> *servicesDemos = @[
     [self newDemo:[GeocoderViewController class] withTitle:@"Geocoder" andDescription:nil],
     [self newDemo:[StructuredGeocoderViewController class]
@@ -138,7 +153,9 @@
         andDescription:nil],
   ];
 
-  return @[ mapDemos, panoramaDemos, overlayDemos, cameraDemos, servicesDemos ];
+  return @[
+    mapDemos, panoramaDemos, overlayDemos, cameraDemos, dataDrivenStylingDemos, servicesDemos
+  ];
 }
 
 + (DemoDefinition *)newDemo:(Class)viewControllerClass

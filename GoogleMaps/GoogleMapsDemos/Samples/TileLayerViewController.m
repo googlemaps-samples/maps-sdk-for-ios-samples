@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/TileLayerViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation TileLayerViewController {
   UISegmentedControl *_switcher;

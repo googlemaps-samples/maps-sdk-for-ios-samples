@@ -15,7 +15,11 @@
 
 #import "GoogleMapsDemos/Samples/CameraViewController.h"
 
+#if __has_feature(modules)
+@import GoogleMaps;
+#else
 #import <GoogleMaps/GoogleMaps.h>
+#endif
 
 @implementation CameraViewController {
   GMSMapView *_mapView;
