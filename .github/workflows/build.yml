@@ -110,10 +110,10 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleMaps/GoogleMapsDemos/SDKDemoAPIKey.h
+            sed -i .prev '/#error/'d GoogleMaps/GoogleMapsXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
-            xcodebuild -workspace GoogleMaps/GoogleMapsDemos.xcworkspace \
+            xcodebuild -workspace GoogleMaps/GoogleMapsXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
@@ -135,10 +135,10 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleMaps-Swift/GoogleMapsSwiftDemos/Swift/SDKConstants.swift
+            sed -i .prev '/#error/'d GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos/Swift/SDKConstants.swift
 
             echo "Building"
-            xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftDemos.xcworkspace \
+            xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsSwiftDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
@@ -160,10 +160,10 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesDemos/SDKDemoAPIKey.h
+            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
-            xcodebuild -workspace GooglePlaces/GooglePlacesDemos.xcworkspace \
+            xcodebuild -workspace GooglePlaces/GooglePlacesXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
@@ -185,10 +185,10 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GooglePlaces-Swift/GooglePlacesSwiftDemos/Swift/SDKDemoAPIKey.swift
+            sed -i .prev '/#error/'d GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
 
             echo "Building"
-            xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftDemos.xcworkspace \
+            xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesSwiftDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
