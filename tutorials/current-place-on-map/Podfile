@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target 'current-place-on-map' do
   platform :ios, '14.0'
-  pod 'GoogleMaps', '8.0.0'
-  pod 'GooglePlaces', '8.0.0'
+  pod 'GoogleMaps', '8.4.0'
+  pod 'GooglePlaces', '8.5.0'
 end
