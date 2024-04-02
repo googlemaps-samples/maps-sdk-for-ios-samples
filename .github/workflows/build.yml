@@ -114,7 +114,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GoogleMaps/GoogleMapsXCFrameworkDemos.xcworkspace \
-            -scheme GoogleMapsDemos \
+            -scheme GoogleMapsXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GoogleMaps-Swift:
@@ -139,7 +139,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos.xcworkspace \
-            -scheme GoogleMapsSwiftDemos \
+            -scheme GoogleMapsSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GooglePlaces:
@@ -164,7 +164,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GooglePlaces/GooglePlacesXCFrameworkDemos.xcworkspace \
-            -scheme GooglePlacesDemos \
+            -scheme GooglePlacesXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GooglePlaces-Swift:
@@ -189,7 +189,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos.xcworkspace \
-            -scheme GooglePlacesSwiftDemos \
+            -scheme GooglePlacesSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-current-place-on-map:
