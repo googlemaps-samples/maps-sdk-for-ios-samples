@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '14.0'
 
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GoogleMaps', '8.0.0'
+  pod 'GoogleMaps', '8.4.0'
 end
 
 source 'https://github.com/CocoaPods/Specs.git'
@@ -11,5 +11,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '14.0'
 
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GooglePlaces', '8.0.0'
+  pod 'GooglePlaces', '8.5.0'
 end

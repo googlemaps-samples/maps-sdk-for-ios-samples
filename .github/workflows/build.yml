@@ -110,11 +110,11 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleMaps/GoogleMapsDemos/SDKDemoAPIKey.h
+            sed -i .prev '/#error/'d GoogleMaps/GoogleMapsXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
-            xcodebuild -workspace GoogleMaps/GoogleMapsDemos.xcworkspace \
-            -scheme GoogleMapsDemos \
+            xcodebuild -workspace GoogleMaps/GoogleMapsXCFrameworkDemos.xcworkspace \
+            -scheme GoogleMapsXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GoogleMaps-Swift:
@@ -135,11 +135,11 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleMaps-Swift/GoogleMapsSwiftDemos/Swift/SDKConstants.swift
+            sed -i .prev '/#error/'d GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos/Swift/SDKConstants.swift
 
             echo "Building"
-            xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftDemos.xcworkspace \
-            -scheme GoogleMapsSwiftDemos \
+            xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos.xcworkspace \
+            -scheme GoogleMapsSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GooglePlaces:
@@ -160,11 +160,11 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesDemos/SDKDemoAPIKey.h
+            sed -i .prev '/#error/'d GooglePlaces/GooglePlacesXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
-            xcodebuild -workspace GooglePlaces/GooglePlacesDemos.xcworkspace \
-            -scheme GooglePlacesDemos \
+            xcodebuild -workspace GooglePlaces/GooglePlacesXCFrameworkDemos.xcworkspace \
+            -scheme GooglePlacesXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-GooglePlaces-Swift:
@@ -185,11 +185,11 @@ jobs:
         - name: Build project
           run: |
             echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GooglePlaces-Swift/GooglePlacesSwiftDemos/Swift/SDKDemoAPIKey.swift
+            sed -i .prev '/#error/'d GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
 
             echo "Building"
-            xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftDemos.xcworkspace \
-            -scheme GooglePlacesSwiftDemos \
+            xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos.xcworkspace \
+            -scheme GooglePlacesSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
     build-current-place-on-map:
