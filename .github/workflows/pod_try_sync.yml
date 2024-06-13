@@ -74,6 +74,17 @@ jobs:
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
         echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
 
+    # Copy pod try GoogleNavigation Objective-C to current copy
+    - name: Copy pod try GoogleNavigation Objective-C changes into current copy
+      run: |
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation 1
+
+    # Copy pod try GoogleNavigation Swift to current copy
+    - name: Copy pod try GoogleNavigation Swift changes into current copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleNavigation-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation-Swift 2
+
     # Commit changes
     - name: PR Changes
       uses: peter-evans/create-pull-request@v4
@@ -85,6 +96,6 @@ jobs:
         author: googlemaps-bot <googlemaps-bot@google.com>
         title: 'chore: Update Maps and Places samples from CocoaPods'
         body: |
-          Pulling in changes from `pod try GoogleMaps` and `pod try GooglePlaces`.
+          Pulling in changes from `pod try GoogleMaps`, `pod try GooglePlaces` and `pod try GoogleNavigation`.
           **Note:** Make sure to update CocoaPods (Podfile) dependencies
         branch: googlemaps-bot/update_samples
