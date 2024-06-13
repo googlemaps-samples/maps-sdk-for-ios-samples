@@ -92,10 +92,10 @@ jobs:
       if: steps.pod_try_copy.outputs.filtered_lines_modified > 0
       with:
         token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
-        commit-message: 'chore: Update Maps and Places samples from CocoaPods'
+        commit-message: 'chore: Update Maps, Places and Navigation samples from CocoaPods'
         committer: googlemaps-bot <googlemaps-bot@google.com>
         author: googlemaps-bot <googlemaps-bot@google.com>
-        title: 'chore: Update Maps and Places samples from CocoaPods'
+        title: 'chore: Update Maps, Places and Navigation samples from CocoaPods'
         body: |
           Pulling in changes from `pod try GoogleMaps`, `pod try GooglePlaces` and `pod try GoogleNavigation`.
           **Note:** Make sure to update CocoaPods (Podfile) dependencies
