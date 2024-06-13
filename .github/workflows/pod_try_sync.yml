@@ -68,10 +68,22 @@ jobs:
 
     # Copy pod try GooglePlaces Swift to current copy
     - name: Copy pod try GooglePlaces Swift changes into current copy
-      id: pod_try_copy
       run: |
         mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
+
+    # Copy pod try GoogleNavigation Objective-C to current copy
+    - name: Copy pod try GoogleNavigation Objective-C changes into current copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleNavigation
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation 1
+
+    # Copy pod try GoogleNavigation Swift to current copy
+    - name: Copy pod try GoogleNavigation Swift changes into current copy
+      id: pod_try_copy
+      run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleNavigation-Swift
+        $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation-Swift 2
         echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
 
     # Commit changes
@@ -80,11 +92,11 @@ jobs:
       if: steps.pod_try_copy.outputs.filtered_lines_modified > 0
       with:
         token: ${{ secrets.SYNCED_GITHUB_TOKEN_REPO }}
-        commit-message: 'chore: Update Maps and Places samples from CocoaPods'
+        commit-message: 'chore: Update Maps, Places and Navigation samples from CocoaPods'
         committer: googlemaps-bot <googlemaps-bot@google.com>
         author: googlemaps-bot <googlemaps-bot@google.com>
-        title: 'chore: Update Maps and Places samples from CocoaPods'
+        title: 'chore: Update Maps, Places and Navigation samples from CocoaPods'
         body: |
-          Pulling in changes from `pod try GoogleMaps` and `pod try GooglePlaces`.
+          Pulling in changes from `pod try GoogleMaps`, `pod try GooglePlaces` and `pod try GoogleNavigation`.
           **Note:** Make sure to update CocoaPods (Podfile) dependencies
         branch: googlemaps-bot/update_samples
