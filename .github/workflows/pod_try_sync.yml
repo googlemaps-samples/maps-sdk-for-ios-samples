@@ -68,11 +68,9 @@ jobs:
 
     # Copy pod try GooglePlaces Swift to current copy
     - name: Copy pod try GooglePlaces Swift changes into current copy
-      id: pod_try_copy
       run: |
         mkdir -p $GITHUB_WORKSPACE/GooglePlaces-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GooglePlaces $GITHUB_WORKSPACE/GooglePlaces-Swift 2
-        echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
 
     # Copy pod try GoogleNavigation Objective-C to current copy
     - name: Copy pod try GoogleNavigation Objective-C changes into current copy
@@ -82,9 +80,11 @@ jobs:
 
     # Copy pod try GoogleNavigation Swift to current copy
     - name: Copy pod try GoogleNavigation Swift changes into current copy
+      id: pod_try_copy
       run: |
         mkdir -p $GITHUB_WORKSPACE/GoogleNavigation-Swift
         $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation-Swift 2
+        echo "::set-output name=filtered_lines_modified::$(git status | grep "modified" | grep -v "pbxproj" | wc -l)"
 
     # Commit changes
     - name: PR Changes
