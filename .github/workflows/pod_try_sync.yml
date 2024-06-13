@@ -77,6 +77,7 @@ jobs:
     # Copy pod try GoogleNavigation Objective-C to current copy
     - name: Copy pod try GoogleNavigation Objective-C changes into current copy
       run: |
+        mkdir -p $GITHUB_WORKSPACE/GoogleNavigation
         $GITHUB_WORKSPACE/copy_pod_try.sh GoogleNavigation $GITHUB_WORKSPACE/GoogleNavigation 1
 
     # Copy pod try GoogleNavigation Swift to current copy
