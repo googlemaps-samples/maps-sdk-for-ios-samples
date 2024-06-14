@@ -31,6 +31,10 @@ final class PolylinesViewController: UIViewController {
 
   override func loadView() {
     view = mapView
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     mapView.accessibilityElementsHidden = true
   }
 

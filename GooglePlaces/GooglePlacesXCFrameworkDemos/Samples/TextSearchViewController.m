@@ -138,6 +138,8 @@ static NSString *const kCellIdentifier = @"TextSearchCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   GMSPlace *place = _placeResults[indexPath.row];
   tableView.hidden = YES;
+  [_textQueryField setHidden:YES];
+  [_textQueryField resignFirstResponder];
   [super autocompleteDidSelectPlace:place];
 }
 

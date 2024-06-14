@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+platform :ios, '15.0'
+
 target 'GoogleMapsXCFrameworkDemos' do
   project 'GoogleMapsXCFrameworkDemos'
     platform :ios, '15.0'

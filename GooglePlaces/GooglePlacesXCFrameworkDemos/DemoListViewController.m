@@ -325,6 +325,7 @@ static const CGFloat kEdgeBuffer = 8;
       GMSPlacePropertyCurrentOpeningHours : @"Current Opening Hours",
       GMSPlacePropertySecondaryOpeningHours : @"Secondary Opening Hours",
       GMSPlacePropertyEditorialSummary : @"Editorial Summary",
+      GMSPlacePropertyReviews : @"Reviews",
     };
   });
 

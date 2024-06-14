@@ -7,24 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003D6C357C901982F7E5F96D /* AutocompleteWithCustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BE59454C206D016A202004 /* AutocompleteWithCustomColors.m */; };
+		01335741D1C0B4C5311FE389 /* TextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D20A477E797179C860C0748 /* TextSearchViewController.m */; };
 		0C41A3F920083AC37B85715D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C495D537F9A203DF67AE21E4 /* LaunchScreen.storyboard */; };
-		1E7231AA14F05A1983D2DF1A /* AutocompleteModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A8BC243D0B6C1316FE643A /* AutocompleteModalViewController.m */; };
+		23FFCDCEC4E8398E725CA42C /* AutocompleteWithCustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BE59454C206D016A202004 /* AutocompleteWithCustomColors.m */; };
+		32FB89F6FF7DC014433F4EB9 /* AutocompleteModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A8BC243D0B6C1316FE643A /* AutocompleteModalViewController.m */; };
+		34EE65D55421E4D055817851 /* AutocompleteWithTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3117150D926F631213AF4E29 /* AutocompleteWithTextFieldController.m */; };
 		4A554C2F351560F835E29373 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46504F07FEC0C81D7402DBDD /* UIKit.framework */; };
+		4A83B2341AE9864E084D0B70 /* PagingPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD388E577507FDDDA03E06A /* PagingPhotoView.m */; };
 		5679EE04A9B360411647663F /* DemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CA734A435425B8FF74875 /* DemoListViewController.m */; };
-		6D5D0F87EAE3F4BB4F657915 /* AutocompleteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E25AD6D6DEAC1491CE7511 /* AutocompleteBaseViewController.m */; };
 		6E798543119E6BDE1F35CBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD724EB31AC6BCE47EEC1C37 /* main.m */; };
-		70782B014D750322FD82F6EF /* AutocompleteWithSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D5E3F84F54FFD1451AD90C /* AutocompleteWithSearchViewController.m */; };
+		746C20A87ADD61FE39286173 /* AutocompleteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E25AD6D6DEAC1491CE7511 /* AutocompleteBaseViewController.m */; };
 		851E8B5E37B1195558560497 /* DemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 448F969C8481659679CC8626 /* DemoSceneDelegate.m */; };
 		8EEF8A1C0D173F1E94831D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CC7D792593140325DD90732 /* Localizable.strings */; };
-		A7039072AAC6CF7A997D670D /* AutocompleteWithTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3117150D926F631213AF4E29 /* AutocompleteWithTextFieldController.m */; };
-		ACDE91D68338193649C29A6E /* TextSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D20A477E797179C860C0748 /* TextSearchViewController.m */; };
+		A5F3FA6403082BA26BDAC1F6 /* SearchNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA77B902CC0EEEC765C9238 /* SearchNearbyViewController.m */; };
+		B1DB0BF97CA068E91BF49815 /* AutocompletePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215518BFE0C1ED5F8A6AD8B9 /* AutocompletePushViewController.m */; };
+		B6B105B1D8E3DB722E343C90 /* FindPlaceLikelihoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 724F6CE3B0E7557AF7826B2A /* FindPlaceLikelihoodListViewController.m */; };
 		B9CEBA18039DE065C329D4DE /* PlacesDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4082206210BF08EBB513E3 /* PlacesDemoAssets.xcassets */; };
-		C0AF3DDD66343462E37241CB /* libPods-GooglePlacesXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 982C6162EFD672D4430BACE0 /* libPods-GooglePlacesXCFrameworkDemos.a */; };
-		CB3EDB63B73E7B2B6C9BFB19 /* FindPlaceLikelihoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 724F6CE3B0E7557AF7826B2A /* FindPlaceLikelihoodListViewController.m */; };
+		C11C0EA951F7FC840D6EA68F /* libPods-GooglePlacesXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20C90264006C1DC70D7B7CF /* libPods-GooglePlacesXCFrameworkDemos.a */; };
 		D58EE9FC946F7EBF03F4507C /* BaseDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAFBE0E107C99DA3801BACF /* BaseDemoViewController.m */; };
-		DFB3C017CE1FFFC58A941F1F /* PagingPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD388E577507FDDDA03E06A /* PagingPhotoView.m */; };
-		F0F275424E14311851748C32 /* AutocompletePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215518BFE0C1ED5F8A6AD8B9 /* AutocompletePushViewController.m */; };
+		EA0BB9CD89C5FF1931323B04 /* AutocompleteWithSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D5E3F84F54FFD1451AD90C /* AutocompleteWithSearchViewController.m */; };
 		F1041F6BF354A1899621AD90 /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A95A60C639AC388E2A28CB /* DemoAppDelegate.m */; };
 		FC1BA44E3A687D4C6F2541CE /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFD416C83764B1FEA9FBAD /* DemoData.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		08F33AE1AFBA0DB29A1208F2 /* GooglePlacesXCFrameworkDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglePlacesXCFrameworkDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0159A4CAC381783AF56572 /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = pt_PT.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F2DB0B0B354C8736A21C7FA /* DemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAppDelegate.h; sourceTree = "<group>"; };
+		0FA77B902CC0EEEC765C9238 /* SearchNearbyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchNearbyViewController.m; sourceTree = "<group>"; };
 		1191FA97EE86B0158F998DC1 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1278B652010E75F9299E980D /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1340F54E20BB2DA3040F8CA4 /* DemoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoListViewController.h; sourceTree = "<group>"; };
@@ -80,7 +82,6 @@
 		865580737B7A2C6070A57F57 /* es_419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es_419; path = es_419.lproj/Localizable.strings; sourceTree = "<group>"; };
 		930BF07A3DE556163FF730FB /* en_IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en_IN; path = en_IN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		972394DBA3456A20F395DE17 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		982C6162EFD672D4430BACE0 /* libPods-GooglePlacesXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GooglePlacesXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A47FF6E08B297C3BACE6AD5 /* AutocompleteWithCustomColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutocompleteWithCustomColors.h; sourceTree = "<group>"; };
 		9D20A477E797179C860C0748 /* TextSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextSearchViewController.m; sourceTree = "<group>"; };
 		A74B23CA07491B20ED8F9C8A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -94,13 +95,15 @@
 		BAA7E3A6100A104149228ACA /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BBD388E577507FDDDA03E06A /* PagingPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagingPhotoView.m; sourceTree = "<group>"; };
 		BFB35BA82C4BF03080343FB0 /* PagingPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagingPhotoView.h; sourceTree = "<group>"; };
-		C1891B590B272FD38DBA5753 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GooglePlacesXCFrameworkDemos/Pods-GooglePlacesXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
 		C3BD045FDDBC52D4E46E8640 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3C4CCF51FCA70475B07CDEB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8A95A60C639AC388E2A28CB /* DemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppDelegate.m; sourceTree = "<group>"; };
 		CF87E20D934CA462A40D249E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D035CF2BD8BB1EB470F57520 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GooglePlacesXCFrameworkDemos/Pods-GooglePlacesXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
+		D123FC133AA827BAEEE2CDAF /* SearchNearbyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchNearbyViewController.h; sourceTree = "<group>"; };
 		DCAFBE0E107C99DA3801BACF /* BaseDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseDemoViewController.m; sourceTree = "<group>"; };
 		DD724EB31AC6BCE47EEC1C37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E20C90264006C1DC70D7B7CF /* libPods-GooglePlacesXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GooglePlacesXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDFD416C83764B1FEA9FBAD /* DemoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoData.m; sourceTree = "<group>"; };
 		EFB10A1766E31E432D14BCD5 /* DemoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoData.h; sourceTree = "<group>"; };
 		F1F76B5F9CFFF567057EDAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,32 +119,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A554C2F351560F835E29373 /* UIKit.framework in Frameworks */,
-				C0AF3DDD66343462E37241CB /* libPods-GooglePlacesXCFrameworkDemos.a in Frameworks */,
+				C11C0EA951F7FC840D6EA68F /* libPods-GooglePlacesXCFrameworkDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EB06FDFDC36928B16903A9D /* Samples */ = {
-			isa = PBXGroup;
-			children = (
-				EEC1CDCA2CD52659EFB20CDF /* Autocomplete */,
-				449C3057646937219408BC90 /* FindPlaceLikelihoodListViewController.h */,
-				724F6CE3B0E7557AF7826B2A /* FindPlaceLikelihoodListViewController.m */,
-				BFB35BA82C4BF03080343FB0 /* PagingPhotoView.h */,
-				BBD388E577507FDDDA03E06A /* PagingPhotoView.m */,
-				2D38B24DE23468B01D9BD2B0 /* TextSearchViewController.h */,
-				9D20A477E797179C860C0748 /* TextSearchViewController.m */,
-			);
-			path = Samples;
-			sourceTree = "<group>";
-		};
 		171718D454AF3776D8C36582 /* GooglePlacesXCFrameworkDemos */ = {
 			isa = PBXGroup;
 			children = (
 				A86F158249DA99BB2AF319AB /* Resources */,
-				0EB06FDFDC36928B16903A9D /* Samples */,
+				D888500DE07091664FCB0A75 /* Samples */,
 				97BC680C602AC73BB3DE5A6A /* Support */,
 				0F2DB0B0B354C8736A21C7FA /* DemoAppDelegate.h */,
 				C8A95A60C639AC388E2A28CB /* DemoAppDelegate.m */,
@@ -177,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				46504F07FEC0C81D7402DBDD /* UIKit.framework */,
-				982C6162EFD672D4430BACE0 /* libPods-GooglePlacesXCFrameworkDemos.a */,
+				E20C90264006C1DC70D7B7CF /* libPods-GooglePlacesXCFrameworkDemos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,23 +190,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AB2456DE2826D636E43C12C3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C1891B590B272FD38DBA5753 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BD1D8313AC9B4697D9565F79 = {
 			isa = PBXGroup;
 			children = (
 				5D5C086080C3D6F95A446823 /* Source */,
 				7D7FCBA6BE1EAF3071B9A4C6 /* Frameworks */,
 				268D0670BCF08310AC4169BE /* Products */,
-				AB2456DE2826D636E43C12C3 /* Pods */,
+				FA6F91E0AB055B09F6850FA3 /* Pods */,
 			);
+			sourceTree = "<group>";
+		};
+		D888500DE07091664FCB0A75 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1CDCA2CD52659EFB20CDF /* Autocomplete */,
+				449C3057646937219408BC90 /* FindPlaceLikelihoodListViewController.h */,
+				724F6CE3B0E7557AF7826B2A /* FindPlaceLikelihoodListViewController.m */,
+				BFB35BA82C4BF03080343FB0 /* PagingPhotoView.h */,
+				BBD388E577507FDDDA03E06A /* PagingPhotoView.m */,
+				D123FC133AA827BAEEE2CDAF /* SearchNearbyViewController.h */,
+				0FA77B902CC0EEEC765C9238 /* SearchNearbyViewController.m */,
+				2D38B24DE23468B01D9BD2B0 /* TextSearchViewController.h */,
+				9D20A477E797179C860C0748 /* TextSearchViewController.m */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 		EEC1CDCA2CD52659EFB20CDF /* Autocomplete */ = {
@@ -239,6 +235,15 @@
 			path = Autocomplete;
 			sourceTree = "<group>";
 		};
+		FA6F91E0AB055B09F6850FA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D035CF2BD8BB1EB470F57520 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,11 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2B4231C4A531F8C0982DA6 /* Build configuration list for PBXNativeTarget "GooglePlacesXCFrameworkDemos" */;
 			buildPhases = (
-				DA96C530193846F4ADEBC68C /* [CP] Check Pods Manifest.lock */,
+				CBB9631192F54EDFF7060E76 /* [CP] Check Pods Manifest.lock */,
 				F1FE60B3EEE84D1BCEF51FDA /* Resources */,
 				723E3969C707F6CEDF182AAB /* Sources */,
 				D22E9B56CE3179180CE4527B /* Frameworks */,
-				386C633461F2D334CA02D2A9 /* [CP] Copy Pods Resources */,
+				C3672AA1E561AE49055C0684 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,7 +346,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		386C633461F2D334CA02D2A9 /* [CP] Copy Pods Resources */ = {
+		C3672AA1E561AE49055C0684 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,7 +368,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesXCFrameworkDemos/Pods-GooglePlacesXCFrameworkDemos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA96C530193846F4ADEBC68C /* [CP] Check Pods Manifest.lock */ = {
+		CBB9631192F54EDFF7060E76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,15 +399,16 @@
 			files = (
 				FC1BA44E3A687D4C6F2541CE /* DemoData.m in Sources */,
 				5679EE04A9B360411647663F /* DemoListViewController.m in Sources */,
-				ACDE91D68338193649C29A6E /* TextSearchViewController.m in Sources */,
-				CB3EDB63B73E7B2B6C9BFB19 /* FindPlaceLikelihoodListViewController.m in Sources */,
-				70782B014D750322FD82F6EF /* AutocompleteWithSearchViewController.m in Sources */,
-				F0F275424E14311851748C32 /* AutocompletePushViewController.m in Sources */,
-				6D5D0F87EAE3F4BB4F657915 /* AutocompleteBaseViewController.m in Sources */,
-				A7039072AAC6CF7A997D670D /* AutocompleteWithTextFieldController.m in Sources */,
-				003D6C357C901982F7E5F96D /* AutocompleteWithCustomColors.m in Sources */,
-				1E7231AA14F05A1983D2DF1A /* AutocompleteModalViewController.m in Sources */,
-				DFB3C017CE1FFFC58A941F1F /* PagingPhotoView.m in Sources */,
+				01335741D1C0B4C5311FE389 /* TextSearchViewController.m in Sources */,
+				B6B105B1D8E3DB722E343C90 /* FindPlaceLikelihoodListViewController.m in Sources */,
+				EA0BB9CD89C5FF1931323B04 /* AutocompleteWithSearchViewController.m in Sources */,
+				B1DB0BF97CA068E91BF49815 /* AutocompletePushViewController.m in Sources */,
+				746C20A87ADD61FE39286173 /* AutocompleteBaseViewController.m in Sources */,
+				34EE65D55421E4D055817851 /* AutocompleteWithTextFieldController.m in Sources */,
+				23FFCDCEC4E8398E725CA42C /* AutocompleteWithCustomColors.m in Sources */,
+				32FB89F6FF7DC014433F4EB9 /* AutocompleteModalViewController.m in Sources */,
+				A5F3FA6403082BA26BDAC1F6 /* SearchNearbyViewController.m in Sources */,
+				4A83B2341AE9864E084D0B70 /* PagingPhotoView.m in Sources */,
 				6E798543119E6BDE1F35CBA8 /* main.m in Sources */,
 				D58EE9FC946F7EBF03F4507C /* BaseDemoViewController.m in Sources */,
 				F1041F6BF354A1899621AD90 /* DemoAppDelegate.m in Sources */,
@@ -475,7 +481,7 @@
 /* Begin XCBuildConfiguration section */
 		42221301ABD01D7649CBC58D /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1891B590B272FD38DBA5753 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */;
+			baseConfigurationReference = D035CF2BD8BB1EB470F57520 /* Pods-GooglePlacesXCFrameworkDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = (
 					x86_64,
@@ -485,7 +491,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ./GooglePlacesXCFrameworkDemos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = (
 					.,
 					"$(SDKROOT)/System/Library/Frameworks",

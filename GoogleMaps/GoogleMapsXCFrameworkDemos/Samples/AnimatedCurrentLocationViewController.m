@@ -14,6 +14,7 @@
  */
 
 #import "GoogleMapsXCFrameworkDemos/Samples/AnimatedCurrentLocationViewController.h"
+#import <Foundation/Foundation.h>
 
 #if __has_feature(modules)
 @import GoogleMaps;
@@ -36,6 +37,8 @@
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   _mapView.settings.myLocationButton = NO;
   _mapView.settings.indoorPicker = NO;
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
 
   self.view = _mapView;
 
@@ -81,12 +84,13 @@
 
     // Animated walker images derived from a www.angryanimator.com tutorial.
     // See: http://www.angryanimator.com/word/2010/11/26/tutorial-2-walk-cycle/
-
-    NSArray *frames = @[
-      [UIImage imageNamed:@"step1"], [UIImage imageNamed:@"step2"], [UIImage imageNamed:@"step3"],
-      [UIImage imageNamed:@"step4"], [UIImage imageNamed:@"step5"], [UIImage imageNamed:@"step6"],
-      [UIImage imageNamed:@"step7"], [UIImage imageNamed:@"step8"]
-    ];
+    NSMutableArray<UIImage *> *frames = [[NSMutableArray alloc] init];
+    for (int i = 1; i < 10; i++) {
+      UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"step%d", i]];
+      if (image) {
+        [frames addObject:image];
+      }
+    }
 
     _locationMarker.icon = [UIImage animatedImageWithImages:frames duration:0.8];
     _locationMarker.groundAnchor = CGPointMake(0.5f, 0.97f);  // Taking into account walker's shadow

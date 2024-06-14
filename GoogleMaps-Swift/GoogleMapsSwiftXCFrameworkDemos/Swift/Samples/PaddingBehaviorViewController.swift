@@ -24,6 +24,10 @@ class PaddingBehaviorViewController: UIViewController {
     let mapView = GMSMapView(frame: .zero, camera: camera)
     mapView.padding = UIEdgeInsets(top: 0, left: 20, bottom: 40, right: 60)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     return mapView
   }()
   private lazy var panoramaView: GMSPanoramaView = GMSPanoramaView()

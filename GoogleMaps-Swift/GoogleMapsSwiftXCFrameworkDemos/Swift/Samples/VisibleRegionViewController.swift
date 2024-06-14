@@ -24,6 +24,10 @@ class VisibleRegionViewController: UIViewController {
     mapView.isMyLocationEnabled = true
     mapView.padding = UIEdgeInsets(
       top: 0, left: 0, bottom: VisibleRegionViewController.overlayHeight, right: 0)
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     return mapView
   }()
   private lazy var overlay: UIView = {

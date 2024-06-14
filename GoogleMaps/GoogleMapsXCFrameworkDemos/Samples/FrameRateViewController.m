@@ -36,6 +36,8 @@
                                                           longitude:151.2086
                                                                zoom:6];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   self.view = _mapView;
 
   // Add a display for the current frame rate mode.

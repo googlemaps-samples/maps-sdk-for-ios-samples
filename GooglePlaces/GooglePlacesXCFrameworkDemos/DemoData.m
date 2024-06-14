@@ -29,6 +29,7 @@
 #import "GooglePlacesXCFrameworkDemos/Samples/FindPlaceLikelihoodListViewController.h"
 #import "GooglePlacesXCFrameworkDemos/Support/BaseDemoViewController.h"
 
+#import "GooglePlacesXCFrameworkDemos/Samples/SearchNearbyViewController.h"
 #import "GooglePlacesXCFrameworkDemos/Samples/TextSearchViewController.h"
 @implementation Demo {
   Class _viewControllerClass;
@@ -104,6 +105,8 @@
         initWithViewControllerClass:[FindPlaceLikelihoodListViewController class]] ];
     NSArray<Demo *> *textSearchDemos =
         @[ [[Demo alloc] initWithViewControllerClass:[TextSearchViewController class]] ];
+    NSArray<Demo *> *nearbySearchDemos =
+        @[ [[Demo alloc] initWithViewControllerClass:[SearchNearbyViewController class]] ];
     _sections = @[
       [[DemoSection alloc]
           initWithTitle:NSLocalizedString(@"Demo.Section.Title.Autocomplete",
@@ -116,6 +119,10 @@
       [[DemoSection alloc] initWithTitle:NSLocalizedString(@"Demo.Section.Title.TextSearch",
                                                            @"Title of the textSearch demo section")
                                    demos:textSearchDemos],
+      [[DemoSection alloc]
+          initWithTitle:NSLocalizedString(@"Demo.Section.Title.SearchNearby",
+                                          @"Title of the searchNearby demo section")
+                  demos:nearbySearchDemos],
     ];
   }
   return self;

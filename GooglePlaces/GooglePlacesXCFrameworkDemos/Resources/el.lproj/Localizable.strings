@@ -33,6 +33,8 @@
 "Demo.Section.Title.FindPlaceLikelihood"="Likelihoods";
 // Title of the textSearch demo section
 "Demo.Section.Title.TextSearch"="Text Search";
+// Title of the nearbySearch demo section
+"Demo.Section.Title.SearchNearby"="Search Nearby";
 
 // Button title for 'show autocomplete widget'
 "Demo.Content.Autocomplete.ShowWidgetButton"="Show Autocomplete Widget";

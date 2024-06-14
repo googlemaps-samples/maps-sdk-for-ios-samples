@@ -95,123 +95,12 @@ class ConfigurationViewController: UIViewController {
     sections.append(
       ConfigSection(name: "Autocomplete Restriction Bounds", samples: [canada, kansas]))
 
+    var placeSamples = [ConfigData]()
     let actionSelector = #selector(placesPropertiesSwitch)
-    let name = ConfigData(
-      name: "Name", tag: Int(GMSPlaceField.name.rawValue), action: actionSelector)
-    let placeId = ConfigData(
-      name: "Place ID", tag: Int(GMSPlaceField.placeID.rawValue),
-      action: actionSelector)
-    let plusCode = ConfigData(
-      name: "Plus Code", tag: Int(GMSPlaceField.plusCode.rawValue),
-      action: actionSelector)
-    let coordinate = ConfigData(
-      name: "Coordinate", tag: Int(GMSPlaceField.coordinate.rawValue),
-      action: actionSelector)
-    let openingHours = ConfigData(
-      name: "Opening Hours", tag: Int(GMSPlaceField.openingHours.rawValue),
-      action: actionSelector)
-    let phoneNumber = ConfigData(
-      name: "Phone Number", tag: Int(GMSPlaceField.phoneNumber.rawValue),
-      action: actionSelector)
-    let formattedAddress = ConfigData(
-      name: "Formatted Address", tag: Int(GMSPlaceField.formattedAddress.rawValue),
-      action: actionSelector)
-    let rating = ConfigData(
-      name: "Rating", tag: Int(GMSPlaceField.rating.rawValue), action: actionSelector)
-    let priceLevel = ConfigData(
-      name: "Price Level", tag: Int(GMSPlaceField.priceLevel.rawValue),
-      action: actionSelector)
-    let types = ConfigData(
-      name: "Types", tag: Int(GMSPlaceField.types.rawValue), action: actionSelector)
-    let website = ConfigData(
-      name: "Website", tag: Int(GMSPlaceField.website.rawValue),
-      action: actionSelector)
-    let viewPort = ConfigData(
-      name: "Viewport", tag: Int(GMSPlaceField.viewport.rawValue),
-      action: actionSelector)
-    let addressComponents = ConfigData(
-      name: "Address Components", tag: Int(GMSPlaceField.addressComponents.rawValue),
-      action: actionSelector)
-    let photos = ConfigData(
-      name: "Photos", tag: Int(GMSPlaceField.photos.rawValue), action: actionSelector)
-    let ratingsTotal = ConfigData(
-      name: "User Ratings Total", tag: Int(GMSPlaceField.userRatingsTotal.rawValue),
-      action: actionSelector)
-    let minutes = ConfigData(
-      name: "UTC Offset Minutes", tag: Int(GMSPlaceField.utcOffsetMinutes.rawValue),
-      action: actionSelector)
-    let status = ConfigData(
-      name: "Business Status", tag: Int(GMSPlaceField.businessStatus.rawValue),
-      action: actionSelector)
-    let iconImageURL = ConfigData(
-      name: "Icon Image URL", tag: Int(GMSPlaceField.iconImageURL.rawValue),
-      action: actionSelector)
-    let iconBackgroundColor = ConfigData(
-      name: "Icon Background Color", tag: Int(GMSPlaceField.iconBackgroundColor.rawValue),
-      action: actionSelector)
-    let takeout = ConfigData(
-      name: "Takeout", tag: Int(GMSPlaceField.takeout.rawValue),
-      action: actionSelector)
-    let delivery = ConfigData(
-      name: "Delivery", tag: Int(GMSPlaceField.delivery.rawValue),
-      action: actionSelector)
-    let dineIn = ConfigData(
-      name: "Dine In", tag: Int(GMSPlaceField.dineIn.rawValue),
-      action: actionSelector)
-    let curbsidePickup = ConfigData(
-      name: "Curbside Pickup", tag: Int(GMSPlaceField.curbsidePickup.rawValue),
-      action: actionSelector)
-    let reservable = ConfigData(
-      name: "Reservable", tag: Int(GMSPlaceField.reservable.rawValue),
-      action: actionSelector)
-    let servesBreakfast = ConfigData(
-      name: "Serves Breakfast", tag: Int(GMSPlaceField.servesBreakfast.rawValue),
-      action: actionSelector)
-    let servesLunch = ConfigData(
-      name: "Serves Lunch", tag: Int(GMSPlaceField.servesLunch.rawValue),
-      action: actionSelector)
-    let servesDinner = ConfigData(
-      name: "Serves Dinner", tag: Int(GMSPlaceField.servesDinner.rawValue),
-      action: actionSelector)
-    let servesBeer = ConfigData(
-      name: "Serves Beer", tag: Int(GMSPlaceField.servesBeer.rawValue),
-      action: actionSelector)
-    let servesWine = ConfigData(
-      name: "Serves Wine", tag: Int(GMSPlaceField.servesWine.rawValue),
-      action: actionSelector)
-    let servesBrunch = ConfigData(
-      name: "Serves Brunch", tag: Int(GMSPlaceField.servesBrunch.rawValue),
-      action: actionSelector)
-    let servesVegetarianFood = ConfigData(
-      name: "Serves Vegetarian Food", tag: Int(GMSPlaceField.servesVegetarianFood.rawValue),
-      action: actionSelector)
-    let wheelchairAccessibleEntrance = ConfigData(
-      name: "Wheelchair Accessible Entrance",
-      tag: Int(GMSPlaceField.wheelchairAccessibleEntrance.rawValue),
-      action: actionSelector)
-    let currentOpeningHours = ConfigData(
-      name: "Current Opening Hours", tag: Int(GMSPlaceField.currentOpeningHours.rawValue),
-      action: actionSelector)
-    let secondaryOpeningHours = ConfigData(
-      name: "Secondary Opening Hours", tag: Int(GMSPlaceField.secondaryOpeningHours.rawValue),
-      action: actionSelector)
-    let editorialSummary = ConfigData(
-      name: "Editorial Summary", tag: Int(GMSPlaceField.editorialSummary.rawValue),
-      action: actionSelector)
-    var placeSamples = [
-      name, placeId, plusCode, coordinate, openingHours, phoneNumber, formattedAddress, rating,
-      ratingsTotal, priceLevel, types, website, viewPort, addressComponents, photos, minutes,
-      status, iconImageURL, iconBackgroundColor, takeout, delivery, dineIn, curbsidePickup,
-      reservable, servesBreakfast,
-      servesLunch, servesDinner, servesBeer, servesWine, servesBrunch, servesVegetarianFood,
-      wheelchairAccessibleEntrance,
-    ]
-    placeSamples += [
-      currentOpeningHours, secondaryOpeningHours,
-    ]
-    placeSamples += [
-      editorialSummary
-    ]
+    for (index, property) in GMSPlaceProperty.allProperties.enumerated() {
+      placeSamples.append(
+        ConfigData(name: property.description, tag: index, action: actionSelector))
+    }
     sections.append(ConfigSection(name: "Place Properties", samples: placeSamples))
     return sections
   }()
@@ -234,6 +123,7 @@ class ConfigurationViewController: UIViewController {
     button.setTitleColor(.white, for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(tapCloseButton(_:)), for: .touchUpInside)
+    button.contentVerticalAlignment = .top
     return button
   }()
 
@@ -259,9 +149,10 @@ class ConfigurationViewController: UIViewController {
       tableView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
     ])
     NSLayoutConstraint.activate([
-      closeButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+      closeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       closeButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
       closeButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+      closeButton.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom + 60.0),
     ])
   }
 
@@ -302,6 +193,31 @@ class ConfigurationViewController: UIViewController {
       return
     }
     configuration.autocompleteFilter.type = type
+    // Set the types property according to roughly what the old type values correspond to. See the
+    // comments for https://source.corp.google.com/search?q=symbol:GMSPlacesAutocompleteTypeFilter%20file:iPhone%2FMaps%2FSDK
+    switch type {
+    case .geocode:
+      configuration.autocompleteFilter.types = [kGMSPlaceTypeGeocode]
+    case .address:
+      configuration.autocompleteFilter.types = [kGMSPlaceTypeStreetAddress]
+    case .establishment:
+      configuration.autocompleteFilter.types = [kGMSPlaceTypeEstablishment]
+    case .region:
+      configuration.autocompleteFilter.types = [
+        kGMSPlaceTypeLocality,
+        kGMSPlaceTypeSublocality,
+        kGMSPlaceTypePostalCode,
+        kGMSPlaceTypeCountry,
+        kGMSPlaceTypeAdministrativeAreaLevel1,
+      ]
+    case .city:
+      configuration.autocompleteFilter.types = [
+        kGMSPlaceTypeLocality,
+        kGMSPlaceTypeAdministrativeAreaLevel3,
+      ]
+    default:
+      configuration.autocompleteFilter.types = nil
+    }
   }
 
   @objc private func canadaSwitch(_ sender: UISwitch) {
@@ -335,7 +251,7 @@ class ConfigurationViewController: UIViewController {
     if sender.isOn {
       configuration.placeProperties.append(property)
     } else {
-      let properties = configuration.placeProperties.filter { $0 == property }
+      let properties = configuration.placeProperties.filter { $0 != property }
       configuration.placeProperties = properties
     }
   }
@@ -380,7 +296,7 @@ extension ConfigurationViewController: UITableViewDataSource {
     default:
       break
     }
-    switchView.isEnabled = false
+    switchView.addTarget(self, action: sample.action, for: .valueChanged)
     cell.accessoryView = switchView
     return cell
   }
@@ -415,7 +331,7 @@ extension ConfigurationViewController: UITableViewDelegate {
   }
 }
 
-extension GMSPlaceProperty {
+extension GMSPlaceProperty: CustomStringConvertible {
   /// All place properties.
   public static var allProperties: [GMSPlaceProperty] = {
     var all: [GMSPlaceProperty] = [
@@ -457,6 +373,50 @@ extension GMSPlaceProperty {
       .secondaryOpeningHours,
     ]
     all += [.editorialSummary]
+    all += [.reviews]
     return all
   }()
+
+  public var description: String {
+    switch self {
+    case .name: return "Name"
+    case .placeID: return "Place ID"
+    case .plusCode: return "Plus Code"
+    case .coordinate: return "Coordinate"
+    case .openingHours: return "Opening Hours"
+    case .phoneNumber: return "Phone Number"
+    case .formattedAddress: return "Formatted Address"
+    case .rating: return "Rating"
+    case .priceLevel: return "Price Level"
+    case .types: return "Types"
+    case .website: return "Website"
+    case .viewport: return "Viewport"
+    case .addressComponents: return "Address Components"
+    case .photos: return "Photos"
+    case .userRatingsTotal: return "User Ratings Total"
+    case .utcOffsetMinutes: return "UTC Offset Minutes"
+    case .businessStatus: return "Business Status"
+    case .iconImageURL: return "Icon Image URL"
+    case .iconBackgroundColor: return "Icon Background Color"
+    case .takeout: return "Takeout"
+    case .delivery: return "Delivery"
+    case .dineIn: return "Dine In"
+    case .curbsidePickup: return "Curbside Pickup"
+    case .reservable: return "Reservable"
+    case .servesBreakfast: return "Serves Breakfast"
+    case .servesLunch: return "Serves Lunch"
+    case .servesDinner: return "Serves Dinner"
+    case .servesBeer: return "Serves Beer"
+    case .servesWine: return "Serves Wine"
+    case .servesBrunch: return "Serves Brunch"
+    case .servesVegetarianFood: return "Serves Vegetarian Food"
+    case .wheelchairAccessibleEntrance: return "Wheelchair Accessible Entrance"
+    case .currentOpeningHours: return "Current Opening Hours"
+    case .secondaryOpeningHours: return "Secondary Opening Hours"
+    case .editorialSummary: return "Editorial Summary"
+    // Reviews field does not exist in GMSPlaceFieldMask, appending 1 to last field for demo app
+    case .reviews: return "Reviews"
+    default: return "Unknown Case"
+    }
+  }
 }
