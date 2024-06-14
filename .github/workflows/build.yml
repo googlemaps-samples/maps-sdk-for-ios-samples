@@ -192,6 +192,56 @@ jobs:
             -scheme GooglePlacesSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
+    build-GoogleNavigation:
+        runs-on: macos-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Install CocoaPods
+          run: |
+              sudo gem install cocoapods
+
+        - name: Run pod install
+          run: |
+              pod install --project-directory=GoogleNavigation/
+
+        - name: Build project
+          run: |
+            echo "Replacing #error for API key"
+            sed -i .prev '/#error/'d GoogleNavigation/GoogleNavXCFrameworkDemos/SDKDemoAPIKey.h
+
+            echo "Building"
+            xcodebuild -workspace GoogleNavigation/GoogleNavXCFrameworkDemos.xcworkspace \
+            -scheme GoogleNavigationXCFrameworkDemos \
+            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+
+    build-GoogleNavigation-Swift:
+        runs-on: macos-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Install CocoaPods
+          run: |
+              sudo gem install cocoapods
+
+        - name: Run pod install
+          run: |
+              pod install --project-directory=GoogleNavigation-Swift/
+
+        - name: Build project
+          run: |
+            echo "Replacing #error for API key"
+            sed -i .prev '/#error/'d GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
+
+            echo "Building"
+            xcodebuild -workspace GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos.xcworkspace \
+            -scheme GoogleNavigationSwiftXCFrameworkDemos \
+            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+
     build-current-place-on-map:
         runs-on: macos-latest
 
@@ -293,6 +343,8 @@ jobs:
         - build-GoogleMaps-Swift
         - build-GooglePlaces
         - build-GooglePlaces-Swift
+        - build-GoogleNavigation
+        - build-GoogleNavigation-Swift
         - build-current-place-on-map
         - build-map-with-marker
         - build-places-address-form
