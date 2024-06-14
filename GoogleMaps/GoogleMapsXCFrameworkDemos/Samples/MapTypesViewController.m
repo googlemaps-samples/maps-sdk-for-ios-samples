@@ -39,6 +39,8 @@ static NSString *const kTerrainType = @"Terrain";
                                                                zoom:12];
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   self.view = _mapView;
 
   // The possible different types to show.

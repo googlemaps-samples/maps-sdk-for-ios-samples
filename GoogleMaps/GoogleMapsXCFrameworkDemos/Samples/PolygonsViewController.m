@@ -36,6 +36,8 @@
                                                           longitude:-77.508545
                                                                zoom:4];
   GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   mapView.delegate = self;  // needed for didTapOverlay delegate method
 
   self.view = mapView;

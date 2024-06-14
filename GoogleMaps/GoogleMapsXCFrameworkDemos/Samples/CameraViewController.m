@@ -34,6 +34,8 @@
                                                             bearing:0
                                                        viewingAngle:0];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _mapView.settings.zoomGestures = NO;
   _mapView.settings.scrollGestures = NO;
   _mapView.settings.rotateGestures = NO;

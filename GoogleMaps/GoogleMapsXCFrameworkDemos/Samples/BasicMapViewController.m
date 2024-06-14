@@ -33,6 +33,8 @@
                                                                zoom:14];
   GMSMapView *view = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   view.delegate = self;
+  // Opt the MapView in automatic dark mode switching.
+  view.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   self.view = view;
 
   // Add status label, initially hidden.

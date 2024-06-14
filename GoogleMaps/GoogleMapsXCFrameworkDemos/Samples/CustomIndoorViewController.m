@@ -43,6 +43,8 @@
   self.view.backgroundColor = [UIColor grayColor];
 
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _mapView.settings.myLocationButton = NO;
   _mapView.settings.indoorPicker = NO;  // We are implementing a custom level picker.
 

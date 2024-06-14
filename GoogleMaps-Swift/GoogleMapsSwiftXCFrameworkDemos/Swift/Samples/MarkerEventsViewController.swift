@@ -30,6 +30,10 @@ final class MarkerEventsViewController: UIViewController {
     sydneyMarker.map = mapView
     melbourneMarker.map = mapView
     mapView.delegate = self
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
   }
 }

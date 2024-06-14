@@ -52,9 +52,6 @@ class AutocompleteWithSearchViewController: AutocompleteBaseViewController {
     searchController.searchResultsUpdater = autoCompleteController
     searchController.modalPresentationStyle =
       UIDevice.current.userInterfaceIdiom == .pad ? .popover : .fullScreen
-
-    // Prevents the tableview goes under the navigation bar.
-    automaticallyAdjustsScrollViewInsets = true
   }
 }
 

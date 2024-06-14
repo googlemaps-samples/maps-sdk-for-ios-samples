@@ -34,14 +34,7 @@ class FindPlaceLikelihoodListViewController: UIViewController {
     return tableView
   }()
   private lazy var placeClient: GMSPlacesClient = GMSPlacesClient.shared()
-  private var areLocationServicesEnabledAndAuthorized: Bool {
-    guard CLLocationManager.locationServicesEnabled() else {
-      return false
-    }
-
-    let status = CLLocationManager.authorizationStatus()
-    return status == .authorizedAlways || status == .authorizedWhenInUse
-  }
+  private var areLocationServicesEnabledAndAuthorized: Bool = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -118,6 +111,9 @@ extension FindPlaceLikelihoodListViewController: CLLocationManagerDelegate {
   func locationManager(
     _ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus
   ) {
+    areLocationServicesEnabledAndAuthorized =
+      CLLocationManager.locationServicesEnabled()
+      && (status == .authorizedAlways || status == .authorizedWhenInUse)
     if status == .authorizedWhenInUse {
       // Retry current location fetch once user enables Location Services.
       loadLikelihoodFromCurrentLocation()

@@ -24,6 +24,10 @@ final class GroundOverlayViewController: UIViewController {
     let newark = GMSGeometryInterpolate(southWest, northEast, 0.5)
     let cameraPosition = GMSCameraPosition(target: newark, zoom: 12, bearing: 0, viewingAngle: 45)
     let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     mapView.delegate = self
     view = mapView
 

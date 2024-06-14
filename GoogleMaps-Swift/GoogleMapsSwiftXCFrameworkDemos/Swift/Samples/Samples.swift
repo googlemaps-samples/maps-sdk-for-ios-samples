@@ -13,9 +13,28 @@
 
 import UIKit
 
+/// Stores sample view controller configuration.
 struct Sample {
-  let viewControllerClass: UIViewController.Type
+  typealias ViewControllerProvider = () -> UIViewController
+  let provider: ViewControllerProvider
   let title: String
+  let searchString: String
+
+  init(title: String, provider: @escaping ViewControllerProvider) {
+    self.title = title
+    self.provider = provider
+    self.searchString = title
+  }
+
+  init(viewControllerClass: UIViewController.Type, title: String) {
+    self.provider = { viewControllerClass.init() }
+    self.title = title
+    self.searchString = "\(title)-\(viewControllerClass)"
+  }
+
+  var viewController: UIViewController {
+    provider()
+  }
 }
 
 struct Section {
@@ -88,7 +107,8 @@ enum Samples {
       Sample(
         viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder"),
     ]
-    return [
+
+    var sections = [
       Section(name: "Map", samples: mapSamples),
       Section(name: "Panorama", samples: panoramaSamples),
       Section(name: "Overlays", samples: overlaySamples),
@@ -96,5 +116,7 @@ enum Samples {
       Section(name: "Camera", samples: cameraSamples),
       Section(name: "Services", samples: serviceSamples),
     ]
+
+    return sections
   }
 }

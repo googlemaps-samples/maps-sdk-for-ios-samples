@@ -21,6 +21,7 @@
 #import "GoogleMapsXCFrameworkDemos/Samples/CameraViewController.h"
 #import "GoogleMapsXCFrameworkDemos/Samples/CustomIndoorViewController.h"
 #import "GoogleMapsXCFrameworkDemos/Samples/CustomMarkersViewController.h"
+#import "GoogleMapsXCFrameworkDemos/Samples/DarkModeViewController.h"
 #import "GoogleMapsXCFrameworkDemos/Samples/DataDrivenStylingBasicViewController.h"
 #import "GoogleMapsXCFrameworkDemos/Samples/DataDrivenStylingEventsViewController.h"
 #import "GoogleMapsXCFrameworkDemos/Samples/DataDrivenStylingSearchViewController.h"
@@ -92,6 +93,9 @@
              withTitle:@"Padding Behavior"
         andDescription:nil],
     [self newDemo:[StyledMapViewController class] withTitle:@"Styled Map" andDescription:nil],
+    [self newDemo:[DarkModeViewController class]
+             withTitle:@"Dark Mode Settings"
+        andDescription:nil],
   ];
 
   NSArray<DemoDefinition *> *panoramaDemos = @[

@@ -20,10 +20,18 @@ class DoubleMapViewController: UIViewController {
     latitude: 37.7847, longitude: -122.41, zoom: 5)
   private lazy var mapView: GMSMapView = {
     let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     return mapView
   }()
   private lazy var boundMapView: GMSMapView = {
     let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     return mapView
   }()
 

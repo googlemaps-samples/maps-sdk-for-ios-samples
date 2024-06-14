@@ -45,6 +45,8 @@ static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
                                                           longitude:151.2086
                                                                zoom:6];
   _mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _mapView.padding = UIEdgeInsetsMake(0, 20, 40, 60);
   _mapView.delegate = self;
   _mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

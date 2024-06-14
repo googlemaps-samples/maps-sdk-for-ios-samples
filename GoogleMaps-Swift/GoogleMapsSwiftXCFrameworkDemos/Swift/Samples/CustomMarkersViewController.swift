@@ -24,6 +24,9 @@ class CustomMarkersViewController: UIViewController {
   }()
 
   override func loadView() {
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
     addDefaultMarkers()
     navigationController?.navigationBar.isTranslucent = false

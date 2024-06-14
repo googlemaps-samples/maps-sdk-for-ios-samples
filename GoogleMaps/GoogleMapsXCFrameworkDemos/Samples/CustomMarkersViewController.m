@@ -36,6 +36,8 @@ static CGFloat randf() { return (((float)arc4random() / 0x100000000) * 1.0f); }
                                                           longitude:144.966085
                                                                zoom:4];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   [self addDefaultMarkers];
 
   // Add a button which adds random markers to the map.

@@ -25,6 +25,9 @@ class AnimatedUIViewMarkerViewController: UIViewController {
   private var infoView: UIImageView?
 
   override func loadView() {
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
     mapView.delegate = self
   }

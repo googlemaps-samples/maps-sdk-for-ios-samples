@@ -48,6 +48,9 @@ class IndoorMuseumNavigationViewController: UIViewController {
   private var sampleLevels: [SampleLevel] = []
 
   override func loadView() {
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
   }
 

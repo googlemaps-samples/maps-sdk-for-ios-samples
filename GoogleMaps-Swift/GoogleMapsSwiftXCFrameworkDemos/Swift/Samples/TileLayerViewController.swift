@@ -35,6 +35,10 @@ final class TileLayerViewController: UIViewController {
   override func loadView() {
     mapView.isBuildingsEnabled = false
     mapView.isIndoorEnabled = false
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
 
     // The possible floors that might be shown.

@@ -69,21 +69,32 @@ class AutocompleteBaseViewController: UIViewController {
   }
 
   func autocompleteDidSelectPlace(_ place: GMSPlace) {
-    let text = NSMutableAttributedString(string: place.description)
-    text.append(NSAttributedString(string: "\nPlace status: "))
-    text.append(NSAttributedString(string: place.isOpen().description))
-    if let attributions = place.attributions {
-      text.append(NSAttributedString(string: "\n\n"))
-      text.append(attributions)
+    GMSPlacesClient.shared().isOpen(with: place) { [weak self] openStatus, error in
+      guard let self else { return }
+      let text = NSMutableAttributedString(string: place.description)
+      text.append(NSAttributedString(string: "\nPlace status: "))
+      text.append(NSAttributedString(string: openStatus.description))
+      if let error {
+        let errorDescription = String(
+          format: NSLocalizedString(
+            "Demo.Content.Autocomplete.FailedErrorMessage",
+            comment: "Format string for 'autocomplete failed with error' message"), error as NSError
+        )
+        text.append(NSAttributedString(string: errorDescription))
+      }
+      if let attributions = place.attributions {
+        text.append(NSAttributedString(string: "\n\n"))
+        text.append(attributions)
+      }
+
+      text.addAttribute(
+        .font, value: UIFont.preferredFont(forTextStyle: .caption1),
+        range: NSRange(location: 0, length: text.length))
+      text.addAttribute(.foregroundColor, value: UIColor.label, range: NSMakeRange(0, text.length))
+
+      self.textView.attributedText = text
+      self.textView.isHidden = false
     }
-
-    text.addAttribute(
-      .font, value: UIFont.preferredFont(forTextStyle: .caption1),
-      range: NSRange(location: 0, length: text.length))
-    text.addAttribute(.foregroundColor, value: UIColor.label, range: NSMakeRange(0, text.length))
-
-    textView.attributedText = text
-    textView.isHidden = false
     pagingPhotoView.isHidden = true
     if let photos = place.photos, photos.count > 0 {
       preloadPhotoList(photos: photos)

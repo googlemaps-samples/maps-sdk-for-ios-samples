@@ -23,6 +23,10 @@ final class PolygonsViewController: UIViewController {
 
   override func loadView() {
     mapView.delegate = self
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
   }
 

@@ -39,6 +39,8 @@
                                                           bearing:0
                                                      viewingAngle:45];
   GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   mapView.delegate = self;
 
   // Add the ground overlay, centered in Newark, NJ

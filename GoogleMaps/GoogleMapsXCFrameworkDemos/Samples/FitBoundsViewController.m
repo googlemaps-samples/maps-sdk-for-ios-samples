@@ -37,6 +37,8 @@
                                                                zoom:4];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
   _mapView.delegate = self;
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   self.view = _mapView;
 
   // Add a default marker around Sydney.

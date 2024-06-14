@@ -40,6 +40,8 @@
   CGRect frame = self.view.bounds;
   frame.size.height = frame.size.height / 2;
   _mapView = [GMSMapView mapWithFrame:frame camera:[DoubleMapViewController defaultCamera]];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight |
                               UIViewAutoresizingFlexibleBottomMargin;
 
@@ -50,6 +52,8 @@
   frame.size.height = frame.size.height / 2;
   frame.origin.y = frame.size.height;
   _boundMapView = [GMSMapView mapWithFrame:frame camera:[DoubleMapViewController defaultCamera]];
+  // Opt the MapView in automatic dark mode switching.
+  _boundMapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _boundMapView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
                                    UIViewAutoresizingFlexibleHeight |
                                    UIViewAutoresizingFlexibleTopMargin;

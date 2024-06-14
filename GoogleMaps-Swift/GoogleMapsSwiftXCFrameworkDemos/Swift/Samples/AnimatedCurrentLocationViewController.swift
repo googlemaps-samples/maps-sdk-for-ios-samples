@@ -28,6 +28,10 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   override func loadView() {
     mapView.settings.myLocationButton = false
     mapView.settings.indoorPicker = false
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
   }
 
