@@ -45,6 +45,10 @@ final class MarkerLayerViewController: UIViewController {
 
   override func loadView() {
     mapView.isMyLocationEnabled = true
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
     mapView.delegate = self
   }

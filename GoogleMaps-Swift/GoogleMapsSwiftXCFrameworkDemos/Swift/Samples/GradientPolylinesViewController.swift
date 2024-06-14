@@ -42,6 +42,9 @@ final class GradientPolylinesViewController: UIViewController {
   }()
 
   override func loadView() {
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     view = mapView
   }
 

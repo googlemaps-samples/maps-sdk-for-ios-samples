@@ -32,6 +32,8 @@
                                                           longitude:144.966085
                                                                zoom:4];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   self.view = _mapView;
 
   GMSMapView *mapView = _mapView;

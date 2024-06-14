@@ -35,6 +35,8 @@ static const CGFloat kOverlayHeight = 140.0f;
                                                           longitude:144.966085
                                                                zoom:4];
   _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
 
   // Enable my location button to show more UI components updating.
   _mapView.settings.myLocationButton = YES;

@@ -39,6 +39,8 @@
                                                           longitude:144.966085
                                                                zoom:4];
   GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  // Opt the MapView in automatic dark mode switching.
+  mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
 
   _sydneyMarker = [[GMSMarker alloc] init];
   _sydneyMarker.title = @"Sydney";

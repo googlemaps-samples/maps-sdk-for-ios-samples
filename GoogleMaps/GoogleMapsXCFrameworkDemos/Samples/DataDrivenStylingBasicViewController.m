@@ -178,7 +178,8 @@ static NSString *const kMapIDWithCountry = @"";
                    initialValue:(float)value {
   UILabel *uiLabel = [[UILabel alloc] init];
   uiLabel.text = label;
-  uiLabel.font = [uiLabel.font fontWithSize:9];
+  uiLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
+  uiLabel.adjustsFontForContentSizeCategory = YES;
   [parent addArrangedSubview:uiLabel];
 
   UISlider *slider = [[UISlider alloc] init];
@@ -194,7 +195,7 @@ static NSString *const kMapIDWithCountry = @"";
   UIStackView *stackView = [[UIStackView alloc] init];
   stackView.axis = UILayoutConstraintAxisVertical;
   stackView.translatesAutoresizingMaskIntoConstraints = NO;
-  stackView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+  stackView.backgroundColor = [[UIColor systemBackgroundColor] colorWithAlphaComponent:0.5];
 
   // The first style control is for the single area being highlighted while the second one is the
   // base style for all other areas.
@@ -207,7 +208,8 @@ static NSString *const kMapIDWithCountry = @"";
 
   UILabel *label = [[UILabel alloc] init];
   label.text = title;
-  label.font = [label.font fontWithSize:10];
+  label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+  label.adjustsFontForContentSizeCategory = YES;
   label.textAlignment = NSTextAlignmentCenter;
   [stackView addArrangedSubview:label];
 

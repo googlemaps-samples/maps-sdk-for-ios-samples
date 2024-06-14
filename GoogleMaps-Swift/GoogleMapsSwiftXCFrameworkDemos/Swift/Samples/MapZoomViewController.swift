@@ -64,6 +64,8 @@ class MapZoomViewController: UIViewController {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
     let mapView = GMSMapView(frame: .zero, camera: camera)
     mapView.settings.scrollGestures = false
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
     return mapView
   }()
 

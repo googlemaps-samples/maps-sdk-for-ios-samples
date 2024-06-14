@@ -30,6 +30,9 @@ class CameraViewController: UIViewController {
   private var timer: Timer?
 
   override func loadView() {
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     mapView.settings.zoomGestures = false
     mapView.settings.scrollGestures = false
     mapView.settings.rotateGestures = false

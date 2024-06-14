@@ -86,6 +86,22 @@ enum Samples {
         comment:
           "Title of the textSearch demo section"), samples: textSearchSample)
     sections.append(textSearchSection)
+
+    let searchNearbySample: [Sample] = [
+      Sample(
+        viewControllerClass: SearchNearbyViewController.self,
+        title: NSLocalizedString(
+          "Demo.Section.Title.SearchNearby",
+          comment:
+            "Title of the searchNearby demo section"))
+    ]
+    let searchNearbySection = Section(
+      name: NSLocalizedString(
+        "Demo.Section.Title.SearchNearby",
+        comment:
+          "Title of the searchNearby demo section"), samples: searchNearbySample)
+    sections.append(searchNearbySection)
+
     return sections
   }
 }

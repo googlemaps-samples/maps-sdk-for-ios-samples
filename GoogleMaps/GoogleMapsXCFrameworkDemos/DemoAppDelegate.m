@@ -38,7 +38,6 @@
                                  userInfo:nil];
   }
   [GMSServices provideAPIKey:kAPIKey];
-
   // Metal is the preferred renderer.
   [GMSServices setMetalRendererEnabled:YES];
   self.servicesHandle = [GMSServices sharedServices];

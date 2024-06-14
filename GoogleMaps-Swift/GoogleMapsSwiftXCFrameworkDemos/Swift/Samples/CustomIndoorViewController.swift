@@ -73,7 +73,7 @@ extension CustomIndoorViewController: GMSIndoorDisplayDelegate {
     self.sampleLevels = sampleLevels
 
     levelPickerView.reloadAllComponents()
-    levelPickerView.selectRow(-1, inComponent: 0, animated: false)
+    levelPickerView.selectRow(0, inComponent: 0, animated: false)
   }
 
   func didChangeActiveLevel(_ level: GMSIndoorLevel?) {

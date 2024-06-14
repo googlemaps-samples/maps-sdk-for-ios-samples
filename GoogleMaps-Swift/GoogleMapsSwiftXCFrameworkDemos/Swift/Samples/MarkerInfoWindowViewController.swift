@@ -32,6 +32,10 @@ final class MarkerInfoWindowViewController: UIViewController {
   override func loadView() {
     let cameraPosition = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
     let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+
+    // Opt the MapView into automatic dark mode switching.
+    mapView.overrideUserInterfaceStyle = .unspecified
+
     mapView.delegate = self
     view = mapView
 
