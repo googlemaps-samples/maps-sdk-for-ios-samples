@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'GoogleNavSwiftXCFrameworkDemos' do
+    platform :ios, '15.0'
+    pod 'GoogleNavigation', '= 9.0.0'
+end
