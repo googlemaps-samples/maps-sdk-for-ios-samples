@@ -1,9 +1,9 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/maps-sdk-for-ios-samples)
 ![Apache-2.0](https://img.shields.io/badge/license-Apache-blue)
 
-# Google Maps SDK for iOS, Google Places API for iOS, and Google Navigation API for iOS sample code
+# Google Maps SDK for iOS, Google Places SDK for iOS, and Google Navigation SDK for iOS sample code
 
-This repository contains sample code for use with the Google Maps SDK for iOS, Google Places API for iOS and Google Navigation API for iOS.
+This repository contains sample code for use with the Google Maps SDK for iOS, Google Places SDK for iOS and Google Navigation SDK for iOS.
 
 ## GoogleMaps
 
