@@ -1,10 +1,9 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/maps-sdk-for-ios-samples)
 ![Apache-2.0](https://img.shields.io/badge/license-Apache-blue)
 
-# Google Maps SDK for iOS and Google Places API for iOS sample code
+# Google Maps SDK for iOS, Google Places SDK for iOS, and Google Navigation SDK for iOS sample code
 
-This repository contains sample code for use with the Google Maps SDK for iOS
-and Google Places API for iOS.
+This repository contains sample code for use with the Google Maps SDK for iOS, Google Places SDK for iOS and Google Navigation SDK for iOS.
 
 ## GoogleMaps
 
@@ -50,6 +49,29 @@ $ open GooglePlacesSwiftDemos.xcworkspace
 
 You will need to add an API Key to `GooglePlacesDemos/SDKDemoAPIKey.h`. Please see the
 [documentation](https://developers.google.com/places/ios-api/start#get-key)
+for details on how to get an API Key.
+
+## GoogleNavigation
+
+The `GoogleNavigation` and `GoogleNavigation-Swift` sub-directory contains the sample code that is downloaded
+when you run `pod try GoogleNavigation`. To use this project:
+
+```
+$ cd GoogleNavigation
+$ pod install
+$ open GoogleNavigationDemos.xcworkspace
+```
+
+For Swift samples:
+
+```
+$ cd GoogleNavigation-Swift
+$ pod install
+$ open GoogleNavigationSwiftDemos.xcworkspace
+```
+
+You will need to add an API Key to `GoogleNavigationDemos/SDKDemoAPIKey.h`. Please
+[contact the sales team](https://cloud.google.com/contact-maps)
 for details on how to get an API Key.
 
 ## MapsAndPlacesDemo
