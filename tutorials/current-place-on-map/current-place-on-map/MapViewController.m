@@ -6,6 +6,7 @@
 //  Copyright © 2020 William French. All rights reserved.
 //
 
+// [START maps_ios_current_place]
 #import "MapViewController.h"
 #import "PlacesViewController.h"
 @import CoreLocation;
@@ -199,3 +200,4 @@
 // [END maps_ios_current_place_location_manager_delegate]
 
 @end
+// [END maps_ios_current_place]
