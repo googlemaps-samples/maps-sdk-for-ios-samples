@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+// [START maps_ios_current_place]
 import UIKit
 import GooglePlaces
 
@@ -93,3 +94,4 @@ extension PlacesViewController: UITableViewDataSource {
   }
 }
 // [END maps_ios_current_place_tableviewdatasource]
+// [END maps_ios_current_place]
