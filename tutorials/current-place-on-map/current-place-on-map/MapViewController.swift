@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+// [START maps_ios_current_place]
 import UIKit
 import GoogleMaps
 import GooglePlaces
@@ -193,3 +194,4 @@ extension MapViewController: CLLocationManagerDelegate {
   }
 }
 // [END maps_ios_current_place_location_manager_delegate]
+// [END maps_ios_current_place]
