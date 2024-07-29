@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'MapsSnippets' do
-    platform :ios, '14.0'
-    pod 'GoogleMaps', '8.4.0'
+    platform :ios, '15.0'
+    pod 'GoogleMaps', '9.0.0'
 end
