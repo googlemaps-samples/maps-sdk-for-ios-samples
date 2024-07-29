@@ -3,5 +3,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '15.0'
 
 target 'GoogleMapsXCFrameworkDemos' do
+    project 'GoogleMapsXCFrameworkDemos'
     pod 'GoogleMaps', '= 9.0.0'
 end
