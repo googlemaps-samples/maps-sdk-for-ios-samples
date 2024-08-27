@@ -256,8 +256,6 @@ static NSArray<NSString *> *SplitStringToArray(NSString *string) {
 }
 
 - (void)sendSearchNearbyRequest {
-  _placeResults = [NSArray array];
-
   if ([self checkTextFieldIsValid:_latitudeField] && [self checkTextFieldIsValid:_longitudeField] &&
       [self checkTextFieldIsValid:_radiusField]) {
     id<GMSPlaceLocationRestriction> circularLocation =

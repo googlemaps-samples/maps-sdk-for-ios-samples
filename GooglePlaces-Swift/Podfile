@@ -4,5 +4,5 @@ platform :ios, '15.0'
 
 target 'GooglePlacesSwiftXCFrameworkDemos' do
     project 'GooglePlacesSwiftXCFrameworkDemos'
-    pod 'GooglePlaces', '= 9.0.0'
+    pod 'GooglePlaces', '= 9.1.0'
 end

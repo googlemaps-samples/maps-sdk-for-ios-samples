@@ -293,13 +293,16 @@ static const CGFloat kControlsHeightExpanded = 200.f;
   [self.mainStackView addArrangedSubview:_navigationSessionView];
 
   // Add a map.
-  _mapView = [[GMSMapView alloc] initWithFrame:CGRectZero];
+  _mapView = [[GMSMapView alloc] init];
   // Associate the map view with the above navigation session.
   [_mapView enableNavigationWithSession:_navigationSession];
   // We don't want turn-by-turn navigation right now, so turn that back off.
   _mapView.navigationEnabled = NO;
   [self.mainStackView addArrangedSubview:_mapView];
   [self.mainStackView setNeedsLayout];
+  // Opt the mapView into automatic dark mode switching. Dark mode setting would take effect only if
+  // navigationEnabled is NO.
+  _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
   _mapView.settings.compassButton = YES;
   _mapView.settings.showsDestinationMarkers = NO;
   _mapView.delegate = self;
@@ -406,6 +409,15 @@ static const CGFloat kControlsHeightExpanded = 200.f;
                               selector:@selector(simulationTimeScaleMultiplierSelected:)
                   selectedSegmentIndex:2];
   [controls addArrangedSubview:simulationTimeScaleSegmentedControl];
+
+  // Add a segmented control for dark mode type. Dark mode setting would take effect only if
+  // navigationEnabled is NO.
+  NSArray<NSString *> *_darkModeTypes = @[ @"Follows Device", @"Light", @"Dark" ];
+  UIView *darkModeTypeControl =
+      [self segmentedControlWithTitles:_darkModeTypes
+                              selector:@selector(darkModeTypeControlChanged:)
+                  selectedSegmentIndex:0];
+  [controls addArrangedSubview:darkModeTypeControl];
 
   // Add switch for whether to simulate location to the next stop when departing.
   // This defaults to on if we're running on simulator, but off if we're running on a real device.
@@ -537,6 +549,12 @@ static const CGFloat kControlsHeightExpanded = 200.f;
   float simulationSpeedMultiplier =
       [[segmentedControl titleForSegmentAtIndex:segmentedControl.selectedSegmentIndex] floatValue];
   _navigationSession.locationSimulator.speedMultiplier = simulationSpeedMultiplier;
+}
+
+- (void)darkModeTypeControlChanged:(UISegmentedControl *)segmentedControl {
+  UIUserInterfaceStyle darkModeTypes[] = {UIUserInterfaceStyleUnspecified,
+                                          UIUserInterfaceStyleLight, UIUserInterfaceStyleDark};
+  _mapView.overrideUserInterfaceStyle = darkModeTypes[segmentedControl.selectedSegmentIndex];
 }
 
 - (void)changeGuidanceActive:(NavDemoSwitch *)control {

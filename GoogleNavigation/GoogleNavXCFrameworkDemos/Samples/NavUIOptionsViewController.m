@@ -111,7 +111,7 @@ static const CGFloat kStandardPadding = 8.0;
   _waypoints = [NSMutableArray array];
 
   // Add a map.
-  _mapView = [[GMSMapView alloc] initWithFrame:CGRectZero];
+  _mapView = [[GMSMapView alloc] init];
   _mapView.navigationEnabled = YES;
   _mapView.cameraMode = GMSNavigationCameraModeFollowing;
   _mapView.travelMode = GMSNavigationTravelModeDriving;
@@ -425,7 +425,12 @@ static const CGFloat kStandardPadding = 8.0;
 
 /** Continues to the next user generated waypoint along the route. */
 - (void)continueToNextWaypoint {
-  [_mapView.navigator continueToNextDestination];
+  if (!_waypoints.count) {
+    return;
+  }
+  [_waypoints removeObjectAtIndex:0];
+
+  [self requestRoute];
 }
 
 /** Updates the camera perspective. */

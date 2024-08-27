@@ -26,7 +26,7 @@
 @implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
   NSLog(@"Build version: %s", __VERSION__);
   if (kAPIKey.length == 0) {
     // Blow up if APIKey has not yet been set.
@@ -38,6 +38,7 @@
                                  userInfo:nil];
   }
   [GMSServices provideAPIKey:kAPIKey];
+
   // Metal is the preferred renderer.
   [GMSServices setMetalRendererEnabled:YES];
   self.servicesHandle = [GMSServices sharedServices];

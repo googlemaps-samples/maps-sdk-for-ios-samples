@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _mapView = [[GMSMapView alloc] initWithFrame:CGRectZero];
+  _mapView = [[GMSMapView alloc] init];
   _mapView.navigationEnabled = YES;
   _mapView.cameraMode = GMSNavigationCameraModeFollowing;
   _mapView.travelMode = GMSNavigationTravelModeDriving;

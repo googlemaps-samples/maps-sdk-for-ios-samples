@@ -4,5 +4,5 @@ platform :ios, '15.0'
 
 target 'GoogleNavXCFrameworkDemos' do
     project 'GoogleNavXCFrameworkDemos'
-    pod 'GoogleNavigation', '= 9.0.0'
+    pod 'GoogleNavigation', '= 9.1.0'
 end

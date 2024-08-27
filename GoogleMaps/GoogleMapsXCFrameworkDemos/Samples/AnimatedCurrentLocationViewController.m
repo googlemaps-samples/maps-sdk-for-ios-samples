@@ -85,7 +85,7 @@
     // Animated walker images derived from a www.angryanimator.com tutorial.
     // See: http://www.angryanimator.com/word/2010/11/26/tutorial-2-walk-cycle/
     NSMutableArray<UIImage *> *frames = [[NSMutableArray alloc] init];
-    for (int i = 1; i < 10; i++) {
+    for (int i = 1; i < 9; i++) {
       UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"step%d", i]];
       if (image) {
         [frames addObject:image];
