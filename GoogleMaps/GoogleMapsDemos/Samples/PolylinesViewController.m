@@ -12,7 +12,7 @@
  * ANY KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+// [START maps_ios_sample_draw_polylines]
 #import "GoogleMapsDemos/Samples/PolylinesViewController.h"
 
 #import <GoogleMaps/GoogleMaps.h>
@@ -96,3 +96,4 @@ static bool kAnimate = true;
 }
 
 @end
+// [END maps_ios_sample_draw_polylines]

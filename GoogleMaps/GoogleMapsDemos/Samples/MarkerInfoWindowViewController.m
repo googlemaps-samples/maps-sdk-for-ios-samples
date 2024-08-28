@@ -12,7 +12,7 @@
  * ANY KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+// [START maps_ios_sample_marker_info_window]
 #import "GoogleMapsDemos/Samples/MarkerInfoWindowViewController.h"
 
 #import "GoogleMapsDemos/UIViewController+GMSToastMessages.h"
@@ -94,3 +94,4 @@
 }
 
 @end
+// [END maps_ios_sample_marker_info_window]

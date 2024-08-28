@@ -12,7 +12,7 @@
  * ANY KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+// [START maps_ios_sample_marker_events]
 #import "GoogleMapsDemos/Samples/MarkerEventsViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -96,3 +96,4 @@
 }
 
 @end
+// [END maps_ios_sample_marker_events]
