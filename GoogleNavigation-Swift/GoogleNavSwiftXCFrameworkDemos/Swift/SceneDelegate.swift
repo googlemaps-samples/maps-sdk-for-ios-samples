@@ -1,4 +1,4 @@
-/// Copyright 2020 Google LLC. All rights reserved.
+/// Copyright 2024 Google LLC. All rights reserved.
 ///
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -11,11 +11,13 @@
 /// ANY KIND, either express or implied. See the License for the specific language governing
 /// permissions and limitations under the License.
 
+import CarPlay
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
+  var carPlayInterfaceController: CPInterfaceController?
 
   func scene(
     _ scene: UIScene, willConnectTo session: UISceneSession,
@@ -40,4 +42,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.rootViewController = splitViewController
     window?.makeKeyAndVisible()
   }
+}
+
+extension SceneDelegate: CPTemplateApplicationSceneDelegate, CPInterfaceControllerDelegate {
+
+  func templateApplicationScene(
+    _ templateApplicationScene: CPTemplateApplicationScene,
+    didConnect interfaceController: CPInterfaceController, to window: CPWindow
+  ) {
+    carPlayInterfaceController = interfaceController
+    carPlayInterfaceController?.delegate = self
+    let applicationSceneController =
+      CarPlayApplicationSceneInformationController.makeInformationTemplate(window: window)
+    carPlayInterfaceController?.setRootTemplate(applicationSceneController, animated: false)
+  }
+
 }

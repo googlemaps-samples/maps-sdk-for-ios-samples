@@ -496,8 +496,13 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
     }
 
     func heightForAccessoryViewConstrained(to size: CGSize, on mapView: GMSMapView) -> CGFloat {
-      return waypointInformationLabel.sizeThatFits(size).height + self.layoutMargins.top
-        + self.layoutMargins.bottom
+      let insetSize = CGSize(
+        width: size.width - (self.layoutMargins.left + self.layoutMargins.right),
+        height: size.height)
+      let height =
+        waypointInformationLabel.sizeThatFits(insetSize).height
+        + self.layoutMargins.top + self.layoutMargins.bottom
+      return height
     }
   }
 }
