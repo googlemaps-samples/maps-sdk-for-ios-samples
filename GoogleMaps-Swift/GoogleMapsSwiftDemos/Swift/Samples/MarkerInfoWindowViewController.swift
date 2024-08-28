@@ -10,7 +10,7 @@
 // the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
 // ANY KIND, either express or implied. See the License for the specific language governing
 // permissions and limitations under the License.
-
+// [START maps_ios_sample_marker_info_window]
 import GoogleMaps
 import UIKit
 
@@ -85,3 +85,4 @@ extension UIViewController {
       })
   }
 }
+// [END maps_ios_sample_marker_info_window]
