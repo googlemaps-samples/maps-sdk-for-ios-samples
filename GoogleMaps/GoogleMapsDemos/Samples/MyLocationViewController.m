@@ -12,7 +12,7 @@
  * ANY KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+// [START maps_ios_sample_my_location_button]
 #import "GoogleMapsDemos/Samples/MyLocationViewController.h"
 
 #import <GoogleMaps/GoogleMaps.h>
@@ -82,3 +82,4 @@
 }
 
 @end
+// [END maps_ios_sample_my_location_button]

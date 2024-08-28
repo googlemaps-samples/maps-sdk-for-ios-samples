@@ -12,7 +12,7 @@
  * ANY KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+// [START maps_ios_sample_draw_polygons]
 #import "GoogleMapsDemos/Samples/PolygonsViewController.h"
 
 #import <GoogleMaps/GoogleMaps.h>
@@ -279,3 +279,4 @@
 }
 
 @end
+// [END maps_ios_sample_draw_polygons]
