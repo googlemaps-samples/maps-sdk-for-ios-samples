@@ -132,12 +132,15 @@ extension AutocompleteBaseViewController {
       let downloadGroup = DispatchGroup()
       photos.forEach { photo in
         downloadGroup.enter()
-        placeClient.loadPlacePhoto(photo) { imageData, error in
-          if let image = imageData, let attributions = photo.attributions {
+        let fetchPhotoRequest = GMSFetchPhotoRequest(
+          photoMetadata: photo, maxSize: CGSize(width: 4800, height: 4800))
+        placeClient.fetchPhoto(with: fetchPhotoRequest) { image, error in
+          if let image, let attributions = photo.attributions {
             attributedPhotos.append(AttributedPhoto(image: image, attributions: attributions))
           }
           downloadGroup.leave()
         }
+        return
       }
 
       downloadGroup.notify(queue: DispatchQueue.main) {

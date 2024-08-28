@@ -15,6 +15,8 @@
 
 #import "GoogleMapsXCFrameworkDemos/SampleListViewController.h"
 
+#import <UIKit/UIKit.h>
+
 #import "GoogleMapsXCFrameworkDemos/Samples/Samples.h"
 #if __has_feature(modules)
 @import GoogleMaps;

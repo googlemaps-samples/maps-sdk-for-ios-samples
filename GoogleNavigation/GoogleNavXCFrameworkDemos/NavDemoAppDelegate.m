@@ -26,6 +26,8 @@
 @implementation NavDemoAppDelegate {
 }
 
+@synthesize window = _window;
+
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"Build version: %s", __VERSION__);
@@ -40,12 +42,6 @@
   }
 
   [GMSServices provideAPIKey:kAPIKey];
-  BOOL enableMetal = YES;
-  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
-  if ([userDefaults objectForKey:@"metal_preference"]) {
-    enableMetal = [userDefaults boolForKey:@"metal_preference"];
-  }
-  [GMSServices setMetalRendererEnabled:enableMetal];
 
   return YES;
 }

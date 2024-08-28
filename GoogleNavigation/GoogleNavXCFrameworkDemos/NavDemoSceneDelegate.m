@@ -33,7 +33,6 @@
 #import "GoogleNavXCFrameworkDemos/NavDemoMasterViewController.h"
 
 @interface NavDemoSceneDelegate () <CarPlaySharedStateListener, CPInterfaceControllerDelegate>
-
 @end
 
 @implementation NavDemoSceneDelegate {
@@ -53,7 +52,6 @@
     willConnectToSession:(UISceneSession *)session
                  options:(UISceneConnectionOptions *)connectionOptions {
   if ([scene isKindOfClass:[UIWindowScene class]]) {
-    [GMSServices setMetalRendererEnabled:YES];
 
     // Log the required open source licenses!  Yes, just NSLog-ing them is not
     // enough but is good for a demo.

@@ -4,5 +4,5 @@ platform :ios, '15.0'
 
 target 'GoogleMapsXCFrameworkDemos' do
     project 'GoogleMapsXCFrameworkDemos'
-    pod 'GoogleMaps', '= 9.0.0'
+    pod 'GoogleMaps', '= 9.1.0'
 end
