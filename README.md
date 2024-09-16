@@ -70,8 +70,8 @@ $ pod install
 $ open GoogleNavigationSwiftDemos.xcworkspace
 ```
 
-You will need to add an API Key to `GoogleNavigationDemos/SDKDemoAPIKey.h`. Please
-[contact the sales team](https://cloud.google.com/contact-maps)
+You will need to add an API Key to `GoogleNavigationDemos/SDKDemoAPIKey.h`. Please see the
+[documentation](https://developers.google.com/maps/documentation/navigation/ios-sdk/get-api-key)
 for details on how to get an API Key.
 
 ## MapsAndPlacesDemo
