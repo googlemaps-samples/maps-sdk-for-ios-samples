@@ -5,6 +5,15 @@
 build/
 DerivedData/
 
+# Swift Package Manager
+.build/
+Package.resolved
+.swiftpm/
+.netrc
+
+# Config files with sensitive data
+*.xcconfig
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
