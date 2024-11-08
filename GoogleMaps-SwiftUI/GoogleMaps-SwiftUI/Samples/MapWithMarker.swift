@@ -36,7 +36,7 @@ struct MapWithMarker: View {
              //Adds one or more markers to be displayed on the map
             .mapMarkers(singleMarker)
             .mapType(.terrain)
-            .ignoresSafeArea()
+            .ignoresSafeAreaExceptTop()   //Optional property for samples display
         
     }
     

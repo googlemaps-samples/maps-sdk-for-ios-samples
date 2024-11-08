@@ -35,8 +35,6 @@ struct BasicMap: View {
          4. Changes to the map will update mapOptions in BasicMap
       */
        GoogleMapView(options: $mapOptions)
-           .ignoresSafeArea()  // Makes the map fill the entire screen
-       
-       //TODO: What about polylines? That would be neat.
+           .ignoresSafeAreaExceptTop()   //Optional property for samples display
    }
 }

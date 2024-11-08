@@ -40,7 +40,8 @@ struct GoogleMaps_SwiftUIApp: App {
         WindowGroup {
            // BasicMap()
            // MapWithContainer()
-            MapWithDelegate()
+           // MapWithDelegate()
+            Dialog()
         }
     }
 }
