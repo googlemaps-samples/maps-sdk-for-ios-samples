@@ -14,38 +14,29 @@
 import SwiftUI
 import GoogleMaps
 
-struct BasicMapView: View {
+struct BasicMap: View {
     
-    @State private var mapOptions = {
-       // 1. Create new options
-       var options = GMSMapViewOptions()
-       
-       // 2. Set the camera position
-       options.camera = GMSCameraPosition.camera(
-           withLatitude: 37.7749,
-           longitude: -122.4194,
-           zoom: 12
-       )
-       
-       // 3. Return the configured options
-       return options
+    @State private var mapOptions: GMSMapViewOptions = {
+        var options = GMSMapViewOptions()
+        // Initialize map centered on San Francisco
+        options.camera = .camera(.sanFrancisco)
+                
+        // Or with custom zoom level for closer view
+        // options.camera = .camera(.sanFrancisco, zoom: 15)
+        return options
     }()
     
-    // Single marker example
-    let singleMarker = [
-       GMSMarker(position: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194))
-    ]
-
    var body: some View {
       /*
         The $ prefix creates a two-way binding to mapOptions. This means:
          1. GoogleMapView can read the current mapOptions
          2. GoogleMapView can update mapOptions if the map state changes
-         3. Changes to mapOptions in BasicMapView will update the map
-         4. Changes to the map will update mapOptions in BasicMapView
+         3. Changes to mapOptions in BasicMap will update the map
+         4. Changes to the map will update mapOptions in BasicMap
       */
        GoogleMapView(options: $mapOptions)
-           .mapMarkers(singleMarker)
-           .edgesIgnoringSafeArea(.all)  // Makes the map fill the entire screen
+           .ignoresSafeArea()  // Makes the map fill the entire screen
+       
+       //TODO: What about polylines? That would be neat.
    }
 }

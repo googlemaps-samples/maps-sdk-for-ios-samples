@@ -18,12 +18,14 @@ import GoogleMaps
 struct GoogleMaps_SwiftUIApp: App {
     
     init() {
-        // API Key Setup:
-       // 1. Create a .xcconfig file at the project root level
-       // 2. Add this line: API_KEY = your_api_key_here
-       // 3. Get an API key from: https://developers.google.com/maps/documentation/ios-sdk/get-api-key
-       //
-       // Note: Never commit your actual API key to source control
+        /*
+         API Key Setup:
+         1. Create a .xcconfig file at the project root level
+         2. Add this line: API_KEY = your_api_key_here
+         3. Get an API key from: https://developers.google.com/maps/documentation/ios-sdk/get-api-key
+       
+         Note: Never commit your actual API key to source control
+        */
         
         guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else {
           fatalError("Info.plist not found")
@@ -36,7 +38,9 @@ struct GoogleMaps_SwiftUIApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            BasicMapView()
+           // BasicMap()
+           // MapWithContainer()
+            MapWithDelegate()
         }
     }
 }
