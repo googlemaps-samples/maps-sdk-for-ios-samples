@@ -14,27 +14,29 @@
 import SwiftUI
 import GoogleMaps
 
-struct BasicMap: View {
+struct MapWithStreetView: View {
     
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
-        options.camera = .camera(.sanFrancisco)
+        options.camera = .streetLevel(.sanFrancisco, bearing: 45)
                 
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
+        
+        // For 3D perspective view
+        // options.camera = .camera(.sanFrancisco, zoom: 18, bearing: 45, viewingAngle: 45)
+        
+        // Quick street-level 3D view
+        // options.camera = .streetLevel(.sanFrancisco, bearing: 45)
         return options
     }()
     
    var body: some View {
-      /*
-        The $ prefix creates a two-way binding to mapOptions. This means:
-         1. GoogleMapView can read the current mapOptions
-         2. GoogleMapView can update mapOptions if the map state changes
-         3. Changes to mapOptions in BasicMap will update the map
-         4. Changes to the map will update mapOptions in BasicMap
-      */
+       
+       //Map camera position set to street-level 3D perspective.
        GoogleMapView(options: $mapOptions)
            .ignoresSafeAreaExceptTop()   //Optional property for samples display
    }
 }
+

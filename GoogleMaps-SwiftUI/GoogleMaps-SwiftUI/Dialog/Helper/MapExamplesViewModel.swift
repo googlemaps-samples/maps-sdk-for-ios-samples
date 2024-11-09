@@ -23,6 +23,11 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(BasicMap())
         ),
         MapExample(
+            title: "Map with Street View",
+            description: "Map camera position set to street-level 3D perspective.",
+            destination: AnyView(MapWithStreetView())
+        ),
+        MapExample(
             title: "Map with marker",
             description: "Implements a map marker as a viewModifier. Extends the GMSMarker model.",
             destination: AnyView(MapWithMarker())
