@@ -44,6 +44,12 @@ extension GMSCameraPosition {
                 longitude: -122.3321,
                 zoom: zoom            // Default provides good city overview
             )
+       case .googleplex:
+           return GMSCameraPosition(
+               latitude: 37.4220,     // Googleplex HQ
+               longitude: -122.0841,
+               zoom: zoom             // Default provides good campus overview
+           )
        }
    }
 }
@@ -62,6 +68,10 @@ enum MapLocation {
    /// Seattle, Washington - Major Pacific Northwest tech center
    /// Centered on downtown, including Pike Place Market and Seattle Center area
    case seattle
+    
+    /// Mountain View, California - Google's Global Headquarters
+    /// Centered on the Googleplex campus, including Charleston Park and the Android Lawn Statues
+    case googleplex
       
    // Add more locations as needed. Example format:
    /// /// City Name, State/Country - Brief description

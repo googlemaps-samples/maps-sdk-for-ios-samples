@@ -18,22 +18,41 @@ class MapExamplesViewModel: ObservableObject {
     
     @Published var examples: [MapExample] = [
         MapExample(
-            title: "Basic Map",
-            description: "Simple map implementation",
+            title: "Basic map",
+            description: "A simple map. Shows how to configure GMSMapViewOptions as a map binding.",
             destination: AnyView(BasicMap())
         ),
         MapExample(
-            title: "Custom Markers",
-            description: "Adding markers to the map",
+            title: "Map with marker",
+            description: "Implements a map marker as a viewModifier. Extends the GMSMarker model.",
             destination: AnyView(MapWithMarker())
         ),
-        // Add other examples here
+        MapExample(
+            title: "Map with markers",
+            description: "Applies a collection of markers to a map. Extends the GMSMarker model.",
+            destination: AnyView(MapWithMarkers())
+        ),
+        MapExample(
+            title: "Map with Types",
+            description: "How to set the satellite, terrain, or hybrid map type property.",
+            destination: AnyView(MapWithTypes())
+        ),
+        MapExample(
+            title: "Map with Containers",
+            description: "Shows integration with SwiftUI layouts, allowing for standard modifiers like frame and padding.",
+            destination: AnyView(MapWithContainer())
+        ),
+        MapExample(
+            title: "Map with Delegate",
+            description: "A GoogleMapView configured with a handler for map tap events.",
+            destination: AnyView(MapWithDelegate())
+        )
     ]
     
-    //set intial dialog map options
+    //set intial dialog map options - override default zoom level
     let mapOptions: GMSMapViewOptions = {
             var options = GMSMapViewOptions()
-            options.camera = .camera(.seattle)  //location predefined in a helper class
+        options.camera = .camera(.googleplex, zoom: 13)  //location predefined in a helper class
             return options
         }()
 

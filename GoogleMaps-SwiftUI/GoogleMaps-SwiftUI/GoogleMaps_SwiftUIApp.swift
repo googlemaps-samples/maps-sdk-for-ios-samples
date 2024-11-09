@@ -38,9 +38,7 @@ struct GoogleMaps_SwiftUIApp: App {
     }
     var body: some Scene {
         WindowGroup {
-           // BasicMap()
-           // MapWithContainer()
-           // MapWithDelegate()
+            //present the dialog of map samples
             Dialog()
         }
     }

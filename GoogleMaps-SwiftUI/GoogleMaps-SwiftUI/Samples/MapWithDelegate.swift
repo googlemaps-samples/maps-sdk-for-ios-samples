@@ -16,10 +16,11 @@ import GoogleMaps
 
 struct MapWithDelegate: View {
     
+    @State private var tappedLocation: String = "Tap the map to see coordinates"
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
-        options.camera = .camera(.seattle)
+        options.camera = .camera(.googleplex)
                 
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
@@ -28,11 +29,14 @@ struct MapWithDelegate: View {
     
    var body: some View {
        
-       // Handle tap events with latitude/longitude coordinates
+       /// Tap handling is implemented through a delegate pattern: GoogleMapView exposes an onMapTapped modifier
+       /// that stores a coordinate handler in GoogleMapViewDelegate. When the underlying GMSMapView detects a tap,
+       /// it calls the delegate's mapView(_:didTapAt:) method, which then executes the stored handler with the
+       /// tap coordinates.
        GoogleMapView(options: $mapOptions)
            .onMapTapped { coordinate in
               print("Map tapped at: \(coordinate.latitude), \(coordinate.longitude)")
            }
-           .ignoresSafeArea()  // Makes the map fill the entire screen
+           .ignoresSafeArea(.container, edges: [.bottom, .horizontal])
    }
 }

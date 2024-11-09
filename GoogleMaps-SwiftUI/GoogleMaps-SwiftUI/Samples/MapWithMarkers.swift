@@ -38,8 +38,7 @@ struct MapWithMarkers: View {
         GoogleMapView(options: $mapOptions)
              //Adds one or more markers to be displayed on the map
             .mapMarkers(multipleMarker)
-            .ignoresSafeArea()
+            .ignoresSafeAreaExceptTop()   //Optional property for samples display
     }
-    
 }
 

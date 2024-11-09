@@ -35,9 +35,7 @@ struct MapWithMarker: View {
         GoogleMapView(options: $mapOptions)
              //Adds one or more markers to be displayed on the map
             .mapMarkers(singleMarker)
-            .mapType(.terrain)
             .ignoresSafeAreaExceptTop()   //Optional property for samples display
-        
     }
     
 }

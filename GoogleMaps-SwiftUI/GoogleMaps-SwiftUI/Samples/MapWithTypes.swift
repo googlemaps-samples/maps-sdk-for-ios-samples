@@ -34,7 +34,7 @@ struct MapWithTypes: View {
        // .terrain - Topographic data showing elevation, vegetation, and natural features
        // .hybrid - Satellite imagery combined with road overlays and place labels
        GoogleMapView(options: $mapOptions)
-           .mapType(.terrain)
-           .ignoresSafeArea()  // Makes the map fill the entire screen
+           .mapType(.satellite)
+           .ignoresSafeAreaExceptTop()   //Optional property for samples display
    }
 }

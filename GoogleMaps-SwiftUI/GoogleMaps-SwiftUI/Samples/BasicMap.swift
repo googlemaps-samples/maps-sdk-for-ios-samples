@@ -19,7 +19,7 @@ struct BasicMap: View {
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
-        options.camera = .camera(.sanFrancisco)
+        options.camera = .camera(.newYork)
                 
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
