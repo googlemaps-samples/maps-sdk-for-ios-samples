@@ -35,6 +35,6 @@ struct BasicMap: View {
          4. Changes to the map will update mapOptions in BasicMap
       */
        GoogleMapView(options: $mapOptions)
-           .ignoresSafeAreaExceptTop()   //Optional property for samples display
+           .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }

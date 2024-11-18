@@ -36,7 +36,7 @@ struct MapWithStreetView: View {
        
        //Map camera position set to street-level 3D perspective.
        GoogleMapView(options: $mapOptions)
-           .ignoresSafeAreaExceptTop()   //Optional property for samples display
+           .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }
 

@@ -78,10 +78,10 @@ extension GoogleMapView {
    }
 }
 
-extension GoogleMapView {
-    /// Configures the map view to ignore safe areas except for the top
+extension View {
+    /// Configures the view to ignore safe areas except for the top
     /// - Returns: A view that fills the screen except for the top safe area
     func ignoresSafeAreaExceptTop() -> some View {
-        self.ignoresSafeArea(.container, edges: [.bottom, .horizontal])
+        ignoresSafeArea(.container, edges: [.bottom, .horizontal])
     }
 }

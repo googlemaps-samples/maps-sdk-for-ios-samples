@@ -16,7 +16,6 @@ import GoogleMaps
 
 struct MapWithDelegate: View {
     
-    @State private var tappedLocation: String = "Tap the map to see coordinates"
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
@@ -37,6 +36,6 @@ struct MapWithDelegate: View {
            .onMapTapped { coordinate in
               print("Map tapped at: \(coordinate.latitude), \(coordinate.longitude)")
            }
-           .ignoresSafeArea(.container, edges: [.bottom, .horizontal])
+           .ignoresSafeAreaExceptTop() //optional property for samples display
    }
 }

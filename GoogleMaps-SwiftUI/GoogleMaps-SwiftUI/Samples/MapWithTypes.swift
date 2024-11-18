@@ -35,6 +35,6 @@ struct MapWithTypes: View {
        // .hybrid - Satellite imagery combined with road overlays and place labels
        GoogleMapView(options: $mapOptions)
            .mapType(.satellite)
-           .ignoresSafeAreaExceptTop()   //Optional property for samples display
+           .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }

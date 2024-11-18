@@ -29,7 +29,7 @@ struct MapWithContainer: View {
    var body: some View {
        VStack(spacing: 16) {
            GoogleMapView(options: $mapOptions)
-               .ignoresSafeAreaExceptTop()   //Optional property for samples display
+               .ignoresSafeAreaExceptTop()   //optional property for samples display
                .frame(maxWidth: .infinity, minHeight: 325)
            
            VStack(alignment: .leading) {
