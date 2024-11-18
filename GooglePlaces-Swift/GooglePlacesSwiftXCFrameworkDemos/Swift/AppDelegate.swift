@@ -14,7 +14,7 @@
 import GooglePlaces
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
   func application(

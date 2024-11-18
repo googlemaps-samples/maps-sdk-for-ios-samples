@@ -50,7 +50,7 @@ class RoutingOptionsViewController: BaseSampleViewController {
 
   /// The main map view.
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero)
+    let mapView = GMSMapView()
     mapView.isNavigationEnabled = true
     mapView.settings.compassButton = true
     mapView.delegate = self
@@ -64,6 +64,9 @@ class RoutingOptionsViewController: BaseSampleViewController {
     }
   }
 
+  /// The last type of waypoint destination(s) that was used in this sample.
+  private var lastDestinationType: DestinationType = .custom
+
   /// Displays instructions for the current destination type.
   private lazy var destinationTypeInstructionLabel: UILabel = {
     let label = MenuUIHelpers.makeLabel(text: destinationType.instructionText)
@@ -76,39 +79,7 @@ class RoutingOptionsViewController: BaseSampleViewController {
   private var customWaypoints = [GMSNavigationWaypoint]()
 
   /// Returns the waypoints for the current destination type.
-  private var currentWaypoints: [GMSNavigationWaypoint] {
-    // Hard-coded waypoints like this would normally be rare, but they are used here to demonstrate
-    // the different ways to create a waypoint.
-    switch destinationType {
-    case .custom:
-      return customWaypoints
-    case .coordinate:
-      if let ohloneCollege = GMSNavigationWaypoint(
-        location: CLLocationCoordinate2DMake(37.529032, -121.918846),
-        title: "Ohlone College")
-      {
-        return [ohloneCollege]
-      }
-    case .placeID:
-      if let paramountTheatre = GMSNavigationWaypoint(
-        placeID: "ChIJI2TVmK2Aj4ARxVVzT6uIQMw",
-        title: "Paramount Theatre, Oakland")
-      {
-        return [paramountTheatre]
-      }
-    case .multi:
-      if let ohloneCollege = GMSNavigationWaypoint(
-        location: CLLocationCoordinate2DMake(37.529032, -121.918846),
-        title: "Ohlone College"),
-        let paramountTheatre = GMSNavigationWaypoint(
-          placeID: "ChIJI2TVmK2Aj4ARxVVzT6uIQMw",
-          title: "Paramount Theatre, Oakland")
-      {
-        return [ohloneCollege, paramountTheatre]
-      }
-    }
-    return []
-  }
+  private var currentWaypoints = [GMSNavigationWaypoint]()
 
   /// Receives a target distance from the user.
   private lazy var targetDistanceTextField: UITextField = {
@@ -188,13 +159,13 @@ class RoutingOptionsViewController: BaseSampleViewController {
 
     // Add an avoid highways switch.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Avoid highways",
         onValueChanged: (target: self, action: #selector(avoidHighwaysSwitchDidUpdate))))
 
     // Add an avoid tolls switch.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Avoid tolls",
         onValueChanged: (target: self, action: #selector(avoidTollsSwitchDidUpdate))))
 
@@ -217,13 +188,51 @@ class RoutingOptionsViewController: BaseSampleViewController {
         onValueChanged: (target: self, action: #selector(alternateRoutesStrategyControlDidUpdate))))
   }
 
+  private func createWaypoints() -> [GMSNavigationWaypoint] {
+    switch destinationType {
+    case .custom:
+      return customWaypoints
+    case .coordinate:
+      if let ohloneCollege = GMSNavigationWaypoint(
+        location: CLLocationCoordinate2DMake(37.529032, -121.918846),
+        title: "Ohlone College")
+      {
+        return [ohloneCollege]
+      }
+    case .placeID:
+      if let paramountTheatre = GMSNavigationWaypoint(
+        placeID: "ChIJI2TVmK2Aj4ARxVVzT6uIQMw",
+        title: "Paramount Theatre, Oakland")
+      {
+        return [paramountTheatre]
+      }
+    case .multi:
+      if let ohloneCollege = GMSNavigationWaypoint(
+        location: CLLocationCoordinate2DMake(37.529032, -121.918846),
+        title: "Ohlone College"),
+        let paramountTheatre = GMSNavigationWaypoint(
+          placeID: "ChIJI2TVmK2Aj4ARxVVzT6uIQMw",
+          title: "Paramount Theatre, Oakland")
+      {
+        return [ohloneCollege, paramountTheatre]
+      }
+    }
+    return []
+  }
+
   // MARK: - Menu handlers
 
   /// Requests a route with the selected destination type, travel mode and options.
   @objc private func requestRoute() {
-    // Clear any custom markers first to reduce clutter on the map.
-    if destinationType == .custom {
-      mapView.clear()
+    // If the destination type has changed, create new waypoints.
+    if lastDestinationType != destinationType || currentWaypoints.isEmpty {
+      currentWaypoints = createWaypoints()
+      lastDestinationType = destinationType
+    }
+
+    // If the destination type is custom and new waypoints were created, update the custom waypoints
+    if destinationType == .custom && !customWaypoints.isEmpty {
+      currentWaypoints = customWaypoints
     }
     // Set the routing options target distance if `.deltaToTargetDistance` is the routing strategy.
     if routingOptions.routingStrategy == .deltaToTargetDistance
@@ -238,6 +247,7 @@ class RoutingOptionsViewController: BaseSampleViewController {
 
     // Clear previous destinations and set the new destinations.
     let navigator = mapView.navigator
+    clearRoute()
     navigator?.clearDestinations()
     navigator?.setDestinations(currentWaypoints, routingOptions: routingOptions) { routeStatus in
       self.handleRouteCallback(with: routeStatus)
@@ -249,8 +259,8 @@ class RoutingOptionsViewController: BaseSampleViewController {
     mapView.navigator?.clearDestinations()
     if destinationType == .custom {
       customWaypoints.removeAll()
-      mapView.clear()
     }
+    mapView.clear()
     mapView.cameraMode = .following
   }
 
@@ -267,7 +277,14 @@ class RoutingOptionsViewController: BaseSampleViewController {
 
   /// Continues to the next destination in a multi-waypoint route.
   @objc private func continueToNextWaypoint() {
-    mapView.navigator?.continueToNextDestination()
+    if !currentWaypoints.isEmpty {
+      currentWaypoints.removeFirst()
+      if currentWaypoints.isEmpty {
+        clearRoute()
+      } else {
+        requestRoute()
+      }
+    }
   }
 
   /// Starts simulating along the current route.

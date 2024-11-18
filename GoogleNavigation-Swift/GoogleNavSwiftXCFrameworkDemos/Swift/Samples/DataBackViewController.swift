@@ -23,7 +23,7 @@ import UIKit
 class DataBackViewController: BaseSampleViewController {
   /// The main map view.
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero)
+    let mapView = GMSMapView()
     mapView.isNavigationEnabled = true
     mapView.settings.compassButton = true
     mapView.delegate = self
@@ -195,7 +195,10 @@ class DataBackViewController: BaseSampleViewController {
 
   /// Continues to the next destination in a multi-waypoint route.
   @objc private func continueToNextWaypoint() {
-    mapView.navigator?.continueToNextDestination()
+    if !waypoints.isEmpty {
+      waypoints.removeFirst()
+      requestRoute()
+    }
   }
 
   /// Starts simulating along the current route.

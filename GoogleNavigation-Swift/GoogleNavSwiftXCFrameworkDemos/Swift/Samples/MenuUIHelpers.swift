@@ -13,7 +13,7 @@
 
 import UIKit
 
-typealias TargetActionPair = (target: Any, action: Selector)
+typealias TargetActionPair = (target: Any?, action: Selector)
 
 /// Helper functions for creating UI elements to add to a menu. This provides common functionality
 /// for samples and does not demonstrate any significant functionality of Google Navigation SDK.
@@ -101,29 +101,6 @@ enum MenuUIHelpers {
     let titleLabel = makeLabel(text: title)
     titleLabel.textAlignment = .center
     return makeStackView(axis: .vertical, arrangedSubviews: [titleLabel, segmentedControl])
-  }
-
-  /// Makes a `UISwitch` with the given options suitable for use in a menu.
-  ///
-  /// - Parameters:
-  ///   - title: An optional title set for a label to the left of the switch. Defaults to nil.
-  ///   - targetActionPair: Set as the switch's target/action for the `.valueChanged` event.
-  /// - Returns: If `title` is present, returns a `UIStackView` with a label to the left of the
-  ///   switch. Otherwise returns just the switch.
-  static func makeSwitch(
-    title: String? = nil,
-    onValueChanged targetActionPair: TargetActionPair
-  ) -> UIView {
-    let switchElement = UISwitch()
-    switchElement.addTarget(
-      targetActionPair.target, action: targetActionPair.action, for: .valueChanged)
-
-    guard let title = title else { return switchElement }
-
-    let titleLabel = makeLabel(text: title)
-    let stackView = makeStackView(arrangedSubviews: [titleLabel, switchElement])
-    stackView.distribution = .fill
-    return stackView
   }
 
   /// Makes a `UITextField` with the given options suitable for use in a menu.

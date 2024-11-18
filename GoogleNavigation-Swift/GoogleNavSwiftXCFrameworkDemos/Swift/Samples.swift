@@ -50,6 +50,8 @@ enum Samples {
       Sample(viewControllerClass: StopoverViewController.self, title: "Stopover"),
       Sample(viewControllerClass: NavigationUIOptionsViewController.self, title: "UI Options"),
       Sample(viewControllerClass: DataBackViewController.self, title: "Data Back"),
+      Sample(
+        viewControllerClass: NavigationSessionViewController.self, title: "Navigation Session"),
     ]
 
     var sections = [
