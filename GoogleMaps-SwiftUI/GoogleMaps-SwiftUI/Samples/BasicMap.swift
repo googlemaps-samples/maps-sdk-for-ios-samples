@@ -41,7 +41,7 @@ struct BasicMap: View {
 
 /*
 #Preview("Map with Marker..") {
-    let _ =  GMSServices.provideAPIKey("AIzaSyD_YGH54w8zx1cjno9EWRZH1jp_8r4i35M")
+    let _ =  GMSServices.provideAPIKey("")
     let someView = BasicMap()
     someView
 }
