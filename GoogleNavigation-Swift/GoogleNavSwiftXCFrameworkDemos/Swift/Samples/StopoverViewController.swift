@@ -91,7 +91,10 @@ class StopoverViewController: BaseSampleViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 1.295720, longitude: 103.848683, zoom: 13)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.isNavigationEnabled = true
     mapView.cameraMode = .following
     mapView.settings.isRecenterButtonEnabled = true
@@ -127,7 +130,7 @@ class StopoverViewController: BaseSampleViewController {
 
     // Add a stopover switch.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Vehicle Stopover",
         onValueChanged: (target: self, action: #selector(updateVehicleStopover))))
 

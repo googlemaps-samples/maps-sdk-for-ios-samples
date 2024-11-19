@@ -36,7 +36,7 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
 
   /// The main map view.
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero)
+    let mapView = GMSMapView()
     mapView.isNavigationEnabled = true
     mapView.cameraMode = .following
     mapView.settings.compassButton = true
@@ -177,7 +177,7 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
 
     // Add a switch to toggle auto follow mode.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Auto follow mode",
         onValueChanged: (target: self, action: #selector(autoFollowModeSwitchDidUpdate))))
 
@@ -189,27 +189,36 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
         onValueChanged: (target: self, action: #selector(mapViewModeControlDidUpdate)))
     )
 
+    // Add segmented control to adjust frame rate.
+    addMenuSubview(
+      MenuUIHelpers.makeSegmentedControl(
+        title: "Frame Rate",
+        segmentTitles: ["PowerSave", "Conservative", "Maximum"],
+        onValueChanged: (target: self, action: #selector(frameRateControlDidUpdate)),
+        selectedSegmentIndex: 2)
+    )
+
     // Add a switch to toggle custom header colors.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Customized header",
         onValueChanged: (target: self, action: #selector(customizedHeaderSwitchDidUpdate))))
 
     // Add a switch to toggle fullscreen.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Fullscreen",
         onValueChanged: (target: self, action: #selector(fullscreenSwitchDidUpdate))))
 
     // Add a switch to toggle the header accessory view.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Header accessory view",
         onValueChanged: (target: self, action: #selector(headerAccessoryViewSwitchDidUpdate))))
 
     // Add a switch to toggle accessibility on mapView elements.
     addMenuSubview(
-      MenuUIHelpers.makeSwitch(
+      NavDemoSwitch(
         title: "Hide accessibility elements",
         onValueChanged: (
           target: self, action: #selector(accessibilitySwitchDidUpdate)
@@ -250,7 +259,10 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
 
   /// Continues to the next destination in a multi-waypoint route.
   @objc private func continueToNextWaypoint() {
-    mapView.navigator?.continueToNextDestination()
+    if !waypoints.isEmpty {
+      waypoints.removeFirst()
+      requestRoute()
+    }
   }
 
   /// Starts simulating along the current route.
@@ -374,6 +386,19 @@ class NavigationUIOptionsViewController: BaseSampleViewController {
       settings.navigationHeaderInstructionsFirstRowFont = nil
       settings.navigationHeaderInstructionsSecondRowFont = nil
       settings.navigationHeaderInstructionsConjunctionsFont = nil
+    }
+  }
+
+  @objc private func frameRateControlDidUpdate(_ segmentedControl: UISegmentedControl) {
+    switch segmentedControl.selectedSegmentIndex {
+    case 0:
+      mapView.preferredFrameRate = .powerSave
+    case 1:
+      mapView.preferredFrameRate = .conservative
+    case 2:
+      mapView.preferredFrameRate = .maximum
+    default:
+      mapView.preferredFrameRate = .maximum
     }
   }
 

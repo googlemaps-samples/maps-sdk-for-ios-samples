@@ -207,6 +207,10 @@ static NSString *const kControlsScrollViewIdentifier = @"ControlsScrollView";
   [self updateLabel];
 }
 
+- (void)navigatorDidChangeRoute:(GMSNavigator *)navigator {
+  [self updateLabel];
+}
+
 @end
 
 /** The height of the control pane when it is expanded. */
