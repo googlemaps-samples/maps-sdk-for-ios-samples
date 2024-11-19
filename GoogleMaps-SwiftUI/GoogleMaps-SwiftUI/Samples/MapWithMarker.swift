@@ -35,7 +35,14 @@ struct MapWithMarker: View {
         GoogleMapView(options: $mapOptions)
              //Adds one or more markers to be displayed on the map
             .mapMarkers(singleMarker)
+            .onMarkerTapped { marker in
+                    print("Marker tapped at: \(marker.position)")
+                    // Return true to indicate you handled the tap
+                    // Return false to allow default behavior
+                    return true
+                }
             .ignoresSafeAreaExceptTop()   //opptional property for samples display
     }
+    
     
 }

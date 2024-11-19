@@ -20,7 +20,7 @@ struct BasicMap: View {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .camera(.sanFrancisco)
-                
+        
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
         return options
@@ -38,3 +38,11 @@ struct BasicMap: View {
            .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }
+
+/*
+#Preview("Map with Marker..") {
+    let _ =  GMSServices.provideAPIKey("AIzaSyD_YGH54w8zx1cjno9EWRZH1jp_8r4i35M")
+    let someView = BasicMap()
+    someView
+}
+*/

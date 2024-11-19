@@ -23,9 +23,9 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(BasicMap())
         ),
         MapExample(
-            title: "Map with Street View",
+            title: "Map with Street Level",
             description: "Map camera position set to street-level 3D perspective.",
-            destination: AnyView(MapWithStreetView())
+            destination: AnyView(MapWithStreetLevel())
         ),
         MapExample(
             title: "Map with marker",

@@ -76,6 +76,16 @@ extension GoogleMapView {
        view.mapDelegate.tapHandler = handler
        return view
    }
+    
+    /// Adds a handler for marker tap events
+    /// - Parameter handler: A closure that will be called when a marker is tapped
+    ///   Return true to indicate that the marker tap was handled and the default behavior should be suppressed
+    /// - Returns: A GoogleMapView configured with the marker tap handler
+    func onMarkerTapped(_ handler: @escaping (GMSMarker) -> Bool) -> some View {
+        let view = self
+        view.mapDelegate.markerTapHandler = handler
+        return view
+    }
 }
 
 extension View {

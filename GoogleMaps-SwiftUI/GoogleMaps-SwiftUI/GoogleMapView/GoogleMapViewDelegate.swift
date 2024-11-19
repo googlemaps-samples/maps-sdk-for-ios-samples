@@ -16,8 +16,14 @@ import GoogleMaps
 
 class GoogleMapViewDelegate: NSObject, GMSMapViewDelegate {
     var tapHandler: ((CLLocationCoordinate2D) -> Void)?
+    var markerTapHandler: ((GMSMarker) -> Bool)?
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         tapHandler?(coordinate)
     }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return markerTapHandler?(marker) ?? false
+    }
+
 }

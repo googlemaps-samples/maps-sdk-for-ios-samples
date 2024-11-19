@@ -14,7 +14,7 @@
 import SwiftUI
 import GoogleMaps
 
-struct MapWithStreetView: View {
+struct MapWithStreetLevel: View {
     
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
