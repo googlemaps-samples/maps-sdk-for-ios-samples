@@ -28,6 +28,16 @@ NS_ASSUME_NONNULL_BEGIN
                          bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 
+/** Initializes a view controller for the given controller and window. */
+- (instancetype)initWithWindow:(CPWindow *)window NS_DESIGNATED_INITIALIZER;
+
+/**
+ * Terminates the map controller.
+ *
+ * This method should be called when the map controller is no longer needed.
+ */
+- (void)terminate;
+
 @end
 
 NS_ASSUME_NONNULL_END

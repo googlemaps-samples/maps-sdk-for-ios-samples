@@ -88,7 +88,7 @@ class SideOfRoadViewController: BaseSampleViewController {
   private let options: [DestinationWaypoint] = DestinationWaypoint.allCases
 
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero)
+    let mapView = GMSMapView()
     mapView.isNavigationEnabled = true
     mapView.cameraMode = .following
     mapView.settings.isRecenterButtonEnabled = false

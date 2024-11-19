@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00657192363D06BBA881F3C8 /* CarPlayApplicationSceneInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C7592AD54B2D557710DB /* CarPlayApplicationSceneInformationController.m */; };
-		158D73D048695418C2865884 /* sdkdemos_icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8DDD2B79543F571E805D43 /* sdkdemos_icon-72.png */; };
-		15A91D9FE4A78E6F3777BEB0 /* libPods-GoogleNavXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44698A06AED0CB84B3A68A15 /* libPods-GoogleNavXCFrameworkDemos.a */; };
-		1944F3C69C3B695109CC5E87 /* sdkdemos_icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5C8B75FB265857CFB94EA6 /* sdkdemos_icon-72@2x.png */; };
-		2142875F8C2C4C8074D974E6 /* NavUIOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F36DCD0EC7054003394401C /* NavUIOptionsViewController.m */; };
-		23F9E892EAC022D32A043AC0 /* CarPlayConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D902FF533856EA8D9446C718 /* CarPlayConnectionManager.m */; };
-		3A429F387E619A5A62A0AFC2 /* NavDemoSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7DDB5B2710F88A1EB53E0D /* NavDemoSwitch.m */; };
-		4E5314345E616C3DB70E155C /* CarPlaySharedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D5D6F704B438C6D3A2D88 /* CarPlaySharedState.m */; };
-		5494F41098F8A89842574CFD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE8B27CF8BEAE1312AE8CF2 /* BaseViewController.m */; };
-		550BE3FF5D3ABA62A44FEEA2 /* CarPlayApplicationSceneMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD619C2CD1ACC6C7C8B604 /* CarPlayApplicationSceneMapController.m */; };
-		5DBCBF49F475BC715A7CA003 /* sdkdemos_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4836DADDA512595EAC555860 /* sdkdemos_icon.png */; };
-		60208ABB784781DE6E4A10A9 /* sdkdemos_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC2C0EF7A9F6BC5C7052728 /* sdkdemos_icon@2x.png */; };
-		77C44B3F2F8AAE25A5EBB869 /* SideOfRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B30A281053A452C4B55262 /* SideOfRoadViewController.m */; };
-		89224EADB0E49F4A4F4A9ED5 /* StopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF807E07AB7A3FD8F18DD40 /* StopoverViewController.m */; };
-		8C7919A21F9C24CB35393A38 /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1F97ED7BBC5D4DD681025F /* DemoData.m */; };
-		8E91E671E0E913ADC35D0520 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A40617BC84289457DB73DD /* main.m */; };
-		8F61236A6895BEA6B17D858E /* RoutingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E485EFA67A5534BF0FEF /* RoutingOptionsViewController.m */; };
-		957577CA4F9769AFD2F63404 /* DirectionsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CC57852047DA26DF23E2D0 /* DirectionsListViewController.m */; };
-		A6D9BB48C4BFCE600132F0FB /* NavDemoStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A233FED8279D37EEA1E71F1B /* NavDemoStringUtils.m */; };
-		C03452882B5F94AE39583EAB /* NavDemoUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F36455A6DBFFB4C78AA516 /* NavDemoUtilities.m */; };
-		C410B9EFDAA5200072B8C22A /* NavDemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A56D6F758F2129BFD26AA2D /* NavDemoSceneDelegate.m */; };
-		C46033E91CFF8AE46F97C1A2 /* NavDemoMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D9E82BA740BD33E5B0151 /* NavDemoMasterViewController.m */; };
-		CDE3172D415D26FD0F6FE299 /* NavDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A32E134551AD284FCE5CD5E6 /* NavDemoAppDelegate.m */; };
-		EEBEDD79C24DAF71B0BA75D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E763D9FA7C37510F7290CD82 /* UIKit.framework */; };
-		FE14CFA7529ADF2C10A7DCCF /* NavigationSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9B8A324892E7366A586 /* NavigationSessionViewController.m */; };
+		02DFC98DC5B99AB14BBB98C2 /* NavUIOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F36DCD0EC7054003394401C /* NavUIOptionsViewController.m */; };
+		1532BFCF77473A5CB627B228 /* CarPlayConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D902FF533856EA8D9446C718 /* CarPlayConnectionManager.m */; };
+		20EF05E1EEBEAC1848DBD01F /* NavDemoMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D9E82BA740BD33E5B0151 /* NavDemoMasterViewController.m */; };
+		3252E1CB887B83E47DB61A32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A40617BC84289457DB73DD /* main.m */; };
+		36AF6ECB8D4A1181149A678C /* DirectionsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CC57852047DA26DF23E2D0 /* DirectionsListViewController.m */; };
+		40B4251794CE202D17277743 /* CarPlayApplicationSceneInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C7592AD54B2D557710DB /* CarPlayApplicationSceneInformationController.m */; };
+		4A33109B71EA1A7D620DABF7 /* sdkdemos_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4836DADDA512595EAC555860 /* sdkdemos_icon.png */; };
+		536749681303DDC2474672A2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE8B27CF8BEAE1312AE8CF2 /* BaseViewController.m */; };
+		5D6DE1ACFA824304D93D17D4 /* NavDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A32E134551AD284FCE5CD5E6 /* NavDemoAppDelegate.m */; };
+		604D4F29CE9CC700A9DFC326 /* CarPlaySharedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D5D6F704B438C6D3A2D88 /* CarPlaySharedState.m */; };
+		6CDD24F9C90F0319F47C97B9 /* NavigationSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9B8A324892E7366A586 /* NavigationSessionViewController.m */; };
+		72116940A8152AC34A73A020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E763D9FA7C37510F7290CD82 /* UIKit.framework */; };
+		84027EA31EEE000AF496C5C2 /* StopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF807E07AB7A3FD8F18DD40 /* StopoverViewController.m */; };
+		85D41924D9A86C454CF36166 /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1F97ED7BBC5D4DD681025F /* DemoData.m */; };
+		912063F347F6FE1706970F7F /* RoutingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E485EFA67A5534BF0FEF /* RoutingOptionsViewController.m */; };
+		9CF67B7F0E2AAB1BACB5CC6D /* sdkdemos_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC2C0EF7A9F6BC5C7052728 /* sdkdemos_icon@2x.png */; };
+		A243FDE2BBE6D10A021DD971 /* SideOfRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B30A281053A452C4B55262 /* SideOfRoadViewController.m */; };
+		A8C074C588ADA4E14717D37E /* NavDemoSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7DDB5B2710F88A1EB53E0D /* NavDemoSwitch.m */; };
+		AE858C5F05D526DF404BBA34 /* libPods-GoogleNavXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 647BCC3E831C148EAB648F3E /* libPods-GoogleNavXCFrameworkDemos.a */; };
+		C964FE5B1C46DD9918DB70BD /* NavDemoUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F36455A6DBFFB4C78AA516 /* NavDemoUtilities.m */; };
+		D08099D3E5114AAC54F87476 /* sdkdemos_icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8DDD2B79543F571E805D43 /* sdkdemos_icon-72.png */; };
+		D549F86A31A49B2F13E5BCBF /* CarPlayApplicationSceneMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD619C2CD1ACC6C7C8B604 /* CarPlayApplicationSceneMapController.m */; };
+		DD1CB06E719001E0120D1D49 /* NavDemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A56D6F758F2129BFD26AA2D /* NavDemoSceneDelegate.m */; };
+		E6FF8DA5D08136C24F97E7DB /* NavDemoStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A233FED8279D37EEA1E71F1B /* NavDemoStringUtils.m */; };
+		FF4247DD5646A7A3397BD6FD /* sdkdemos_icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5C8B75FB265857CFB94EA6 /* sdkdemos_icon-72@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +39,7 @@
 		02DD0A79894CB80C7116449A /* NavDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavDemoAppDelegate.h; sourceTree = "<group>"; };
 		084D9E82BA740BD33E5B0151 /* NavDemoMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavDemoMasterViewController.m; sourceTree = "<group>"; };
 		0A87B6CDF4D943B44408EF37 /* SideOfRoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideOfRoadViewController.h; sourceTree = "<group>"; };
+		1456A67D6221D1291F54C1E4 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleNavXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleNavXCFrameworkDemos/Pods-GoogleNavXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
 		176845FEEE19C9FCF267F864 /* CarPlaySharedState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPlaySharedState.h; sourceTree = "<group>"; };
 		1CBA1B689139D71125C1E30A /* CarPlayConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPlayConnectionManager.h; sourceTree = "<group>"; };
 		1CF807E07AB7A3FD8F18DD40 /* StopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopoverViewController.m; sourceTree = "<group>"; };
@@ -47,14 +48,13 @@
 		25B30A281053A452C4B55262 /* SideOfRoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideOfRoadViewController.m; sourceTree = "<group>"; };
 		25FD619C2CD1ACC6C7C8B604 /* CarPlayApplicationSceneMapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarPlayApplicationSceneMapController.m; sourceTree = "<group>"; };
 		2CB6220D21CE8A4F650D0180 /* NavDemoSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavDemoSceneDelegate.h; sourceTree = "<group>"; };
-		44698A06AED0CB84B3A68A15 /* libPods-GoogleNavXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleNavXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4836DADDA512595EAC555860 /* sdkdemos_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sdkdemos_icon.png; sourceTree = "<group>"; };
 		4A5D5D6F704B438C6D3A2D88 /* CarPlaySharedState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarPlaySharedState.m; sourceTree = "<group>"; };
 		54F36455A6DBFFB4C78AA516 /* NavDemoUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavDemoUtilities.m; sourceTree = "<group>"; };
-		5B5B0DF1478AF88B32D10830 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleNavXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleNavXCFrameworkDemos/Pods-GoogleNavXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
 		61756D44E565BCEDC00E182A /* CarPlayApplicationSceneMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPlayApplicationSceneMapController.h; sourceTree = "<group>"; };
 		6303534765661BB55FF3F3A6 /* GoogleNavXCFrameworkDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleNavXCFrameworkDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CAAC192F777BDB7B936B71 /* NavDemoMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavDemoMasterViewController.h; sourceTree = "<group>"; };
+		647BCC3E831C148EAB648F3E /* libPods-GoogleNavXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleNavXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE214B652C358F5833431E2 /* NavDemoStringUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavDemoStringUtils.h; sourceTree = "<group>"; };
 		6E6FF7AB2D7A0CA8FBE4AB17 /* RoutingOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoutingOptionsViewController.h; sourceTree = "<group>"; };
 		6F4BA9B8A324892E7366A586 /* NavigationSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationSessionViewController.m; sourceTree = "<group>"; };
@@ -89,31 +89,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEBEDD79C24DAF71B0BA75D0 /* UIKit.framework in Frameworks */,
-				15A91D9FE4A78E6F3777BEB0 /* libPods-GoogleNavXCFrameworkDemos.a in Frameworks */,
+				72116940A8152AC34A73A020 /* UIKit.framework in Frameworks */,
+				AE858C5F05D526DF404BBA34 /* libPods-GoogleNavXCFrameworkDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0349670172CF54AE10FFC68A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5B5B0DF1478AF88B32D10830 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		0613B693A3C5A371249EA119 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				1867F193549AA23B088B9696 /* GoogleNavXCFrameworkDemos */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
 		166B2755C7FC6BC7D82AC754 /* CarPlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,11 +155,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5B668767C4CFE41B91D6AF3A /* Frameworks */ = {
+		8F18D6CDDF08673078481559 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E763D9FA7C37510F7290CD82 /* UIKit.framework */,
-				44698A06AED0CB84B3A68A15 /* libPods-GoogleNavXCFrameworkDemos.a */,
+				647BCC3E831C148EAB648F3E /* libPods-GoogleNavXCFrameworkDemos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,14 +185,31 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
+		B470677EA4C249346CAB94B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1456A67D6221D1291F54C1E4 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B7350518DC55898D172116E6 = {
 			isa = PBXGroup;
 			children = (
-				0613B693A3C5A371249EA119 /* Source */,
-				5B668767C4CFE41B91D6AF3A /* Frameworks */,
+				CCF2A973951044955059DB60 /* Source */,
+				8F18D6CDDF08673078481559 /* Frameworks */,
 				1B10B8A58D78FBFBFCEC053E /* Products */,
-				0349670172CF54AE10FFC68A /* Pods */,
+				B470677EA4C249346CAB94B5 /* Pods */,
 			);
+			sourceTree = "<group>";
+		};
+		CCF2A973951044955059DB60 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1867F193549AA23B088B9696 /* GoogleNavXCFrameworkDemos */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 		DD43B750EA39FB80B6513549 /* Images */ = {
@@ -230,11 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F7E204FCBBF8C27C00235CB /* Build configuration list for PBXNativeTarget "GoogleNavXCFrameworkDemos" */;
 			buildPhases = (
-				C70324283FD530D2B80E1979 /* [CP] Check Pods Manifest.lock */,
+				908E6CF5EE769C79D75BDAFD /* [CP] Check Pods Manifest.lock */,
 				1E965DCF453CADBB767B7394 /* Resources */,
 				37E82AA33F0EA23DB75ECB21 /* Sources */,
 				E6C45C348CA9B1BFF8CA2A5C /* Frameworks */,
-				F9524ACE46B57747F1DC0F3B /* [CP] Copy Pods Resources */,
+				D06C2829DAE237A4CB9DD247 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,17 +275,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60208ABB784781DE6E4A10A9 /* sdkdemos_icon@2x.png in Resources */,
-				5DBCBF49F475BC715A7CA003 /* sdkdemos_icon.png in Resources */,
-				158D73D048695418C2865884 /* sdkdemos_icon-72.png in Resources */,
-				1944F3C69C3B695109CC5E87 /* sdkdemos_icon-72@2x.png in Resources */,
+				9CF67B7F0E2AAB1BACB5CC6D /* sdkdemos_icon@2x.png in Resources */,
+				4A33109B71EA1A7D620DABF7 /* sdkdemos_icon.png in Resources */,
+				D08099D3E5114AAC54F87476 /* sdkdemos_icon-72.png in Resources */,
+				FF4247DD5646A7A3397BD6FD /* sdkdemos_icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C70324283FD530D2B80E1979 /* [CP] Check Pods Manifest.lock */ = {
+		908E6CF5EE769C79D75BDAFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,7 +307,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9524ACE46B57747F1DC0F3B /* [CP] Copy Pods Resources */ = {
+		D06C2829DAE237A4CB9DD247 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,25 +338,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E5314345E616C3DB70E155C /* CarPlaySharedState.m in Sources */,
-				00657192363D06BBA881F3C8 /* CarPlayApplicationSceneInformationController.m in Sources */,
-				550BE3FF5D3ABA62A44FEEA2 /* CarPlayApplicationSceneMapController.m in Sources */,
-				23F9E892EAC022D32A043AC0 /* CarPlayConnectionManager.m in Sources */,
-				8C7919A21F9C24CB35393A38 /* DemoData.m in Sources */,
-				C410B9EFDAA5200072B8C22A /* NavDemoSceneDelegate.m in Sources */,
-				3A429F387E619A5A62A0AFC2 /* NavDemoSwitch.m in Sources */,
-				A6D9BB48C4BFCE600132F0FB /* NavDemoStringUtils.m in Sources */,
-				C03452882B5F94AE39583EAB /* NavDemoUtilities.m in Sources */,
-				8F61236A6895BEA6B17D858E /* RoutingOptionsViewController.m in Sources */,
-				FE14CFA7529ADF2C10A7DCCF /* NavigationSessionViewController.m in Sources */,
-				5494F41098F8A89842574CFD /* BaseViewController.m in Sources */,
-				957577CA4F9769AFD2F63404 /* DirectionsListViewController.m in Sources */,
-				77C44B3F2F8AAE25A5EBB869 /* SideOfRoadViewController.m in Sources */,
-				2142875F8C2C4C8074D974E6 /* NavUIOptionsViewController.m in Sources */,
-				89224EADB0E49F4A4F4A9ED5 /* StopoverViewController.m in Sources */,
-				C46033E91CFF8AE46F97C1A2 /* NavDemoMasterViewController.m in Sources */,
-				8E91E671E0E913ADC35D0520 /* main.m in Sources */,
-				CDE3172D415D26FD0F6FE299 /* NavDemoAppDelegate.m in Sources */,
+				604D4F29CE9CC700A9DFC326 /* CarPlaySharedState.m in Sources */,
+				40B4251794CE202D17277743 /* CarPlayApplicationSceneInformationController.m in Sources */,
+				D549F86A31A49B2F13E5BCBF /* CarPlayApplicationSceneMapController.m in Sources */,
+				1532BFCF77473A5CB627B228 /* CarPlayConnectionManager.m in Sources */,
+				85D41924D9A86C454CF36166 /* DemoData.m in Sources */,
+				DD1CB06E719001E0120D1D49 /* NavDemoSceneDelegate.m in Sources */,
+				A8C074C588ADA4E14717D37E /* NavDemoSwitch.m in Sources */,
+				E6FF8DA5D08136C24F97E7DB /* NavDemoStringUtils.m in Sources */,
+				C964FE5B1C46DD9918DB70BD /* NavDemoUtilities.m in Sources */,
+				912063F347F6FE1706970F7F /* RoutingOptionsViewController.m in Sources */,
+				6CDD24F9C90F0319F47C97B9 /* NavigationSessionViewController.m in Sources */,
+				536749681303DDC2474672A2 /* BaseViewController.m in Sources */,
+				36AF6ECB8D4A1181149A678C /* DirectionsListViewController.m in Sources */,
+				A243FDE2BBE6D10A021DD971 /* SideOfRoadViewController.m in Sources */,
+				02DFC98DC5B99AB14BBB98C2 /* NavUIOptionsViewController.m in Sources */,
+				84027EA31EEE000AF496C5C2 /* StopoverViewController.m in Sources */,
+				20EF05E1EEBEAC1848DBD01F /* NavDemoMasterViewController.m in Sources */,
+				3252E1CB887B83E47DB61A32 /* main.m in Sources */,
+				5D6DE1ACFA824304D93D17D4 /* NavDemoAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 /* Begin XCBuildConfiguration section */
 		214A854AC87F74D9754516CB /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B5B0DF1478AF88B32D10830 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */;
+			baseConfigurationReference = 1456A67D6221D1291F54C1E4 /* Pods-GoogleNavXCFrameworkDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = (
 					x86_64,

@@ -7,28 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038A02EFD4E9E9E6B9214812 /* RoutingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FB69B214FB18F5A67B950 /* RoutingOptionsViewController.swift */; };
+		15840D6EDEE91AAEB23EDD4B /* NavigationUIOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E1261DEA6032884F8DBF79 /* NavigationUIOptionsViewController.swift */; };
 		173AA08724831C31A790FF35 /* sdkdemos_icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F707B406E5F6163D4F9A91B4 /* sdkdemos_icon-72.png */; };
+		1F0732683A6A599F14EFCE51 /* DirectionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441347187E627E16933337D /* DirectionsListViewController.swift */; };
+		36A01C632CFF773859084295 /* DataBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0037238B773A4A26F4B5DE /* DataBackViewController.swift */; };
 		3A92A5973B714428EFD75CBE /* sdkdemos_icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C85CE7271EB1D14BFD7782 /* sdkdemos_icon-72@2x.png */; };
+		49D133D6F625195FC8521780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE5E48DA228BB59860ACE23 /* UIKit.framework */; };
 		4EEE3524457DE349E3DD37F0 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617FDDABDC70DD453461D77 /* Samples.swift */; };
 		54A7283DE1892D3D78736CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77538FBE427713CB816C755A /* AppDelegate.swift */; };
+		5A21420C97BBC6E893196CDB /* libPods-GoogleNavSwiftXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24548A46F9E842A5C09A36CB /* libPods-GoogleNavSwiftXCFrameworkDemos.a */; };
+		5A294265D3EFC4B371C9EDE4 /* NavigationSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A8A512BD957DC1626C57C /* NavigationSessionViewController.swift */; };
 		629711051AE66BD0F8D5D108 /* sdkdemos_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821EB50DDBB1FEB45F54B146 /* sdkdemos_icon@2x.png */; };
 		6BD4DBC8C93ACDF7F882B8AD /* CarPlayApplicationSceneInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6BDD380853B13035AE4B7 /* CarPlayApplicationSceneInformationController.swift */; };
-		6CE928428FF1B34702CB2482 /* GMSRouteStatus+CustomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990BA4E907B27C466CA96C8 /* GMSRouteStatus+CustomString.swift */; };
-		6FBDDFC62156A3D092118BAA /* DataBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0037238B773A4A26F4B5DE /* DataBackViewController.swift */; };
-		733F016776FD961655D5FEF8 /* BaseSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFEE69AB9CBD4876EAB882 /* BaseSampleViewController.swift */; };
 		745E78FEA809A2965D74B2CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AA50DA7CCEEDA35CD2E59 /* SceneDelegate.swift */; };
-		848FFC1BE25FF366AB204583 /* libPods-GoogleNavSwiftXCFrameworkDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F7BD70321935A126562419 /* libPods-GoogleNavSwiftXCFrameworkDemos.a */; };
-		87DC471D87A0792166F4DBEE /* NavigationUIOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E1261DEA6032884F8DBF79 /* NavigationUIOptionsViewController.swift */; };
-		9FC729F6A3AD91E17640FC76 /* StopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819E459253950DAE6A0D537 /* StopoverViewController.swift */; };
-		A230D8CF5162269A40537BD9 /* DirectionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441347187E627E16933337D /* DirectionsListViewController.swift */; };
+		7A474626032F5671D1FC58C2 /* BasicNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46CD816554630041C1D32E /* BasicNavigationViewController.swift */; };
+		7CB38CAD1A37353EE91306EB /* NavDemoSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE955240EDADAE394FFC0CA /* NavDemoSwitch.swift */; };
+		84BAF0969B29D3CBF17895DA /* StopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819E459253950DAE6A0D537 /* StopoverViewController.swift */; };
+		AAC874534B8F30AD4E7A5E31 /* SideOfRoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12CE7B597AC6A1DCF7896F1 /* SideOfRoadViewController.swift */; };
+		AF157D5A0FD4C291AF3B87BD /* MenuUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163BD5B9A1B07873BF1AFF3 /* MenuUIHelpers.swift */; };
 		AFA47ED7ABA843986B2225B2 /* SDKDemoAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F5EC505BBD6A25B59E4E /* SDKDemoAPIKey.swift */; };
-		B0E91027DE6A82A0778AFB3A /* SideOfRoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12CE7B597AC6A1DCF7896F1 /* SideOfRoadViewController.swift */; };
-		B82519995D61986A2460DD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE5E48DA228BB59860ACE23 /* UIKit.framework */; };
-		C7814F92B5575AB36490AADB /* BasicNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46CD816554630041C1D32E /* BasicNavigationViewController.swift */; };
-		D2E2EC3FD35D573A36A65555 /* MenuUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163BD5B9A1B07873BF1AFF3 /* MenuUIHelpers.swift */; };
 		E1261AC6CA73CE535A6883F5 /* sdkdemos_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2098C9338CCEA5019C68E /* sdkdemos_icon.png */; };
-		F475E1DC06C168207372E745 /* RoutingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FB69B214FB18F5A67B950 /* RoutingOptionsViewController.swift */; };
+		F07CA9640BD3841B8A959C79 /* BaseSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFEE69AB9CBD4876EAB882 /* BaseSampleViewController.swift */; };
 		F56132BC998B765F6233F232 /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56C0322BA0AE65C91FC3E1 /* SampleListViewController.swift */; };
+		F72E96CF8D8E9CF22663C3E0 /* GMSRouteStatus+CustomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990BA4E907B27C466CA96C8 /* GMSRouteStatus+CustomString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +38,15 @@
 		0B0037238B773A4A26F4B5DE /* DataBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBackViewController.swift; sourceTree = "<group>"; };
 		1617FDDABDC70DD453461D77 /* Samples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
 		17C85CE7271EB1D14BFD7782 /* sdkdemos_icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdkdemos_icon-72@2x.png"; sourceTree = "<group>"; };
-		2CD1EDDC20CB620322DBAC69 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleNavSwiftXCFrameworkDemos/Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
+		24548A46F9E842A5C09A36CB /* libPods-GoogleNavSwiftXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleNavSwiftXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		297A8A512BD957DC1626C57C /* NavigationSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSessionViewController.swift; sourceTree = "<group>"; };
 		2D56C0322BA0AE65C91FC3E1 /* SampleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListViewController.swift; sourceTree = "<group>"; };
 		3BA6BDD380853B13035AE4B7 /* CarPlayApplicationSceneInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayApplicationSceneInformationController.swift; sourceTree = "<group>"; };
 		4819E459253950DAE6A0D537 /* StopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopoverViewController.swift; sourceTree = "<group>"; };
+		4FE059D982007E9FBCD283F5 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig"; path = "Target Support Files/Pods-GoogleNavSwiftXCFrameworkDemos/Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig"; sourceTree = "<group>"; };
 		5CE5E48DA228BB59860ACE23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69E1261DEA6032884F8DBF79 /* NavigationUIOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUIOptionsViewController.swift; sourceTree = "<group>"; };
-		72F7BD70321935A126562419 /* libPods-GoogleNavSwiftXCFrameworkDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleNavSwiftXCFrameworkDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BE955240EDADAE394FFC0CA /* NavDemoSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoSwitch.swift; sourceTree = "<group>"; };
 		77538FBE427713CB816C755A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AED462B824D8CF459C3A820 /* GoogleNavSwiftXCFrameworkDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleNavSwiftXCFrameworkDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		821EB50DDBB1FEB45F54B146 /* sdkdemos_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdkdemos_icon@2x.png"; sourceTree = "<group>"; };
@@ -63,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82519995D61986A2460DD28 /* UIKit.framework in Frameworks */,
-				848FFC1BE25FF366AB204583 /* libPods-GoogleNavSwiftXCFrameworkDemos.a in Frameworks */,
+				49D133D6F625195FC8521780 /* UIKit.framework in Frameworks */,
+				5A21420C97BBC6E893196CDB /* libPods-GoogleNavSwiftXCFrameworkDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,23 +83,41 @@
 			path = CarPlay;
 			sourceTree = "<group>";
 		};
-		1AC6BD76C9C91945209B37D7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5CE5E48DA228BB59860ACE23 /* UIKit.framework */,
-				72F7BD70321935A126562419 /* libPods-GoogleNavSwiftXCFrameworkDemos.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1BF4C93FD285F583BD375BD4 = {
 			isa = PBXGroup;
 			children = (
 				A881143985DFC468E50E55CD /* Source */,
-				1AC6BD76C9C91945209B37D7 /* Frameworks */,
+				7E8BB36B8A95BCCD0943D0C8 /* Frameworks */,
 				77AB0A863C92B414E22C212E /* Products */,
-				82B136E876CB89CFEA3EC6B9 /* Pods */,
+				7B843019290B4C4950654280 /* Pods */,
 			);
+			sourceTree = "<group>";
+		};
+		39B15B32426E2A4F7F1BC17D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6BE955240EDADAE394FFC0CA /* NavDemoSwitch.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3BF6237C3BB7D227BBBF1ADD /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				39B15B32426E2A4F7F1BC17D /* Utils */,
+				97CFEE69AB9CBD4876EAB882 /* BaseSampleViewController.swift */,
+				9B46CD816554630041C1D32E /* BasicNavigationViewController.swift */,
+				0B0037238B773A4A26F4B5DE /* DataBackViewController.swift */,
+				B441347187E627E16933337D /* DirectionsListViewController.swift */,
+				C990BA4E907B27C466CA96C8 /* GMSRouteStatus+CustomString.swift */,
+				0163BD5B9A1B07873BF1AFF3 /* MenuUIHelpers.swift */,
+				297A8A512BD957DC1626C57C /* NavigationSessionViewController.swift */,
+				69E1261DEA6032884F8DBF79 /* NavigationUIOptionsViewController.swift */,
+				C42FB69B214FB18F5A67B950 /* RoutingOptionsViewController.swift */,
+				F12CE7B597AC6A1DCF7896F1 /* SideOfRoadViewController.swift */,
+				4819E459253950DAE6A0D537 /* StopoverViewController.swift */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 		77AB0A863C92B414E22C212E /* Products */ = {
@@ -106,20 +128,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		82B136E876CB89CFEA3EC6B9 /* Pods */ = {
+		7B843019290B4C4950654280 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2CD1EDDC20CB620322DBAC69 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */,
+				4FE059D982007E9FBCD283F5 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E8BB36B8A95BCCD0943D0C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CE5E48DA228BB59860ACE23 /* UIKit.framework */,
+				24548A46F9E842A5C09A36CB /* libPods-GoogleNavSwiftXCFrameworkDemos.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8A23E6011C6A2E32B082EA0B /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				1340D54303F2BBF2727D2920 /* CarPlay */,
-				EC4365F9BC21671BD0F2F233 /* Samples */,
+				3BF6237C3BB7D227BBBF1ADD /* Samples */,
 				77538FBE427713CB816C755A /* AppDelegate.swift */,
 				A9F4F5EC505BBD6A25B59E4E /* SDKDemoAPIKey.swift */,
 				2D56C0322BA0AE65C91FC3E1 /* SampleListViewController.swift */,
@@ -150,23 +181,6 @@
 			path = Resources/Images;
 			sourceTree = "<group>";
 		};
-		EC4365F9BC21671BD0F2F233 /* Samples */ = {
-			isa = PBXGroup;
-			children = (
-				97CFEE69AB9CBD4876EAB882 /* BaseSampleViewController.swift */,
-				9B46CD816554630041C1D32E /* BasicNavigationViewController.swift */,
-				0B0037238B773A4A26F4B5DE /* DataBackViewController.swift */,
-				B441347187E627E16933337D /* DirectionsListViewController.swift */,
-				C990BA4E907B27C466CA96C8 /* GMSRouteStatus+CustomString.swift */,
-				0163BD5B9A1B07873BF1AFF3 /* MenuUIHelpers.swift */,
-				69E1261DEA6032884F8DBF79 /* NavigationUIOptionsViewController.swift */,
-				C42FB69B214FB18F5A67B950 /* RoutingOptionsViewController.swift */,
-				F12CE7B597AC6A1DCF7896F1 /* SideOfRoadViewController.swift */,
-				4819E459253950DAE6A0D537 /* StopoverViewController.swift */,
-			);
-			path = Samples;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,11 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B74174651F6063BC55B20C23 /* Build configuration list for PBXNativeTarget "GoogleNavSwiftXCFrameworkDemos" */;
 			buildPhases = (
-				D360F9C373ECB84F3E26AE46 /* [CP] Check Pods Manifest.lock */,
+				80BD9AB368CF71C9C7FEB462 /* [CP] Check Pods Manifest.lock */,
 				A615EB11588E44CCF0E6D13B /* Resources */,
 				4CD2D071AD5D684951B4F799 /* Sources */,
 				8A1AA5E42F3D67C5755252E5 /* Frameworks */,
-				1AC5CD76ECD2E23AA91CD36E /* [CP] Copy Pods Resources */,
+				EA5F5EBCC244573573AACE47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,7 +243,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AC5CD76ECD2E23AA91CD36E /* [CP] Copy Pods Resources */ = {
+		80BD9AB368CF71C9C7FEB462 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleNavSwiftXCFrameworkDemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA5F5EBCC244573573AACE47 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,28 +289,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleNavSwiftXCFrameworkDemos/Pods-GoogleNavSwiftXCFrameworkDemos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D360F9C373ECB84F3E26AE46 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GoogleNavSwiftXCFrameworkDemos-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -283,16 +297,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BD4DBC8C93ACDF7F882B8AD /* CarPlayApplicationSceneInformationController.swift in Sources */,
-				A230D8CF5162269A40537BD9 /* DirectionsListViewController.swift in Sources */,
-				733F016776FD961655D5FEF8 /* BaseSampleViewController.swift in Sources */,
-				9FC729F6A3AD91E17640FC76 /* StopoverViewController.swift in Sources */,
-				6CE928428FF1B34702CB2482 /* GMSRouteStatus+CustomString.swift in Sources */,
-				F475E1DC06C168207372E745 /* RoutingOptionsViewController.swift in Sources */,
-				D2E2EC3FD35D573A36A65555 /* MenuUIHelpers.swift in Sources */,
-				6FBDDFC62156A3D092118BAA /* DataBackViewController.swift in Sources */,
-				B0E91027DE6A82A0778AFB3A /* SideOfRoadViewController.swift in Sources */,
-				87DC471D87A0792166F4DBEE /* NavigationUIOptionsViewController.swift in Sources */,
-				C7814F92B5575AB36490AADB /* BasicNavigationViewController.swift in Sources */,
+				1F0732683A6A599F14EFCE51 /* DirectionsListViewController.swift in Sources */,
+				F07CA9640BD3841B8A959C79 /* BaseSampleViewController.swift in Sources */,
+				84BAF0969B29D3CBF17895DA /* StopoverViewController.swift in Sources */,
+				7CB38CAD1A37353EE91306EB /* NavDemoSwitch.swift in Sources */,
+				F72E96CF8D8E9CF22663C3E0 /* GMSRouteStatus+CustomString.swift in Sources */,
+				5A294265D3EFC4B371C9EDE4 /* NavigationSessionViewController.swift in Sources */,
+				038A02EFD4E9E9E6B9214812 /* RoutingOptionsViewController.swift in Sources */,
+				AF157D5A0FD4C291AF3B87BD /* MenuUIHelpers.swift in Sources */,
+				36A01C632CFF773859084295 /* DataBackViewController.swift in Sources */,
+				AAC874534B8F30AD4E7A5E31 /* SideOfRoadViewController.swift in Sources */,
+				15840D6EDEE91AAEB23EDD4B /* NavigationUIOptionsViewController.swift in Sources */,
+				7A474626032F5671D1FC58C2 /* BasicNavigationViewController.swift in Sources */,
 				F56132BC998B765F6233F232 /* SampleListViewController.swift in Sources */,
 				4EEE3524457DE349E3DD37F0 /* Samples.swift in Sources */,
 				54A7283DE1892D3D78736CAF /* AppDelegate.swift in Sources */,
@@ -306,7 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		7AB2FEFD1D26E09B00EEEAEE /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CD1EDDC20CB620322DBAC69 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */;
+			baseConfigurationReference = 4FE059D982007E9FBCD283F5 /* Pods-GoogleNavSwiftXCFrameworkDemos.default.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

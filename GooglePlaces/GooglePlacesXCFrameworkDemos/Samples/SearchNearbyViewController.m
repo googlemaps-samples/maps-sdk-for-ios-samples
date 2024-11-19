@@ -73,6 +73,10 @@ static NSArray<NSString *> *SplitStringToArray(NSString *string) {
     _titleLabel.text = title;
 
     _textField = [[UITextField alloc] initWithFrame:CGRectZero];
+    BOOL isRTL = [UIApplication sharedApplication].userInterfaceLayoutDirection ==
+                 UIUserInterfaceLayoutDirectionRightToLeft;
+    NSTextAlignment textAlignment = isRTL ? NSTextAlignmentRight : NSTextAlignmentLeft;
+    _textField.textAlignment = textAlignment;
     _textField.backgroundColor = [UIColor secondarySystemBackgroundColor];
     _textField.delegate = self;
 

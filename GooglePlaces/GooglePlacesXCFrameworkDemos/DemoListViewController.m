@@ -14,6 +14,7 @@
  */
 
 #import "GooglePlacesXCFrameworkDemos/DemoListViewController.h"
+#import <UIKit/UIKit.h>
 
 #if __has_feature(modules)
 @import GooglePlaces;
@@ -175,6 +176,11 @@ static const CGFloat kEdgeBuffer = 8;
   for (GMSPlaceProperty placeProperty in GMSPlacePropertyArray()) {
     [scrollView addSubview:[self selectionButtonForPlaceProperty:placeProperty]];
   }
+
+  [scrollView addSubview:[self headerLabelForTitle:@"Internal Usage Attribution ID"]];
+  _nextSelectionYPos += kSelectionHeight;
+  [scrollView addSubview:[self viewForAddingInternalUsageAttributionID]];
+  _nextSelectionYPos += kSelectionHeight;
 
   // Add the close button to dismiss the selection UI.
   UIButton *close =
@@ -357,6 +363,35 @@ static const CGFloat kEdgeBuffer = 8;
   _restrictionBoundsMap[area] = [self switchFromButton:selectionButton];
   [_restrictionBoundsMap[area] setOn:NO];
   return selectionButton;
+}
+
+- (UIView *)viewForAddingInternalUsageAttributionID {
+  UITextField *textField =
+      [[UITextField alloc] initWithFrame:CGRectMake(0, _nextSelectionYPos,
+                                                    self.view.frame.size.width, kSelectionHeight)];
+  textField.placeholder = @"Internal Usage Attribution ID(restart to clear)";
+  UIButton *button =
+      [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kSelectionSwitchWidth, kSelectionHeight)];
+  button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+  [button.widthAnchor constraintEqualToConstant:kSelectionSwitchWidth].active = YES;
+  [button setBackgroundColor:[UIColor systemGreenColor]];
+  [button setTitle:@"Add" forState:UIControlStateNormal];
+  [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  button.clipsToBounds = YES;
+  button.layer.cornerRadius = (kSelectionHeight - kEdgeBuffer) / 2;
+  textField.rightView = button;
+  textField.rightViewMode = UITextFieldViewModeAlways;
+  button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+  [button addTarget:self
+                action:@selector(addInternalUsageAttributionIDs:)
+      forControlEvents:UIControlEventTouchUpInside];
+  return textField;
+}
+
+- (void)addInternalUsageAttributionIDs:(UIButton *)button {
+  UITextView *textField = (UITextView *)button.superview;
+  [GMSPlacesClient addInternalUsageAttributionID:textField.text];
+  textField.text = @"";
 }
 
 - (UISwitch *)switchFromButton:(UIButton *)button {
