@@ -135,8 +135,6 @@ static BOOL NavInfosHaveSameSteps(GMSNavigationNavInfo *_Nullable navInfo1,
 /** Call this to update lastLocation. */
 - (void)setLastLocation:(CLLocation *)lastLocation isRoadSnapped:(BOOL)isRoadSnapped;
 
-/** Initializes a view controller for the given controller and window. */
-- (instancetype)initWithWindow:(CPWindow *)window NS_DESIGNATED_INITIALIZER;
 
 @end
 
@@ -286,6 +284,10 @@ static BOOL NavInfosHaveSameSteps(GMSNavigationNavInfo *_Nullable navInfo1,
   if (sharedState.turnByTurnGuidanceActive) {
     [self turnByTurnGuidanceActiveDidChangeInState:sharedState];
   }
+}
+
+- (void)terminate {
+  _window.rootViewController = nil;
 }
 
 #pragma mark - Public Property Implementations

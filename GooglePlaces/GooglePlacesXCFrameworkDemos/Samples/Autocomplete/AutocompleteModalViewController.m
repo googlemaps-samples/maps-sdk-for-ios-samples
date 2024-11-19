@@ -53,6 +53,7 @@
       [[GMSAutocompleteViewController alloc] init];
   autocompleteViewController.delegate = self;
   autocompleteViewController.autocompleteFilter = self.autocompleteFilter;
+  autocompleteViewController.modalPresentationStyle = UIModalPresentationFullScreen;
   autocompleteViewController.placeProperties = self.placeProperties;
   [self presentViewController:autocompleteViewController animated:YES completion:nil];
   [_showAutocompleteWidgetButton setHidden:YES];

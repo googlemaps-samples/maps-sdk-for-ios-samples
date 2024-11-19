@@ -45,7 +45,7 @@
   // The controller for the CarPlay application scene, if it is connected.
   NSObject<CarPlaySceneController> *_carPlayApplicationSceneController;
   // The map controller for the CarPlay application scene, if it is active.
-  NSObject<CarPlaySceneController> *_carPlayApplicationSceneMapController;
+  CarPlayApplicationSceneMapController *_carPlayApplicationSceneMapController;
 }
 
 - (void)scene:(UIScene *)scene
@@ -141,8 +141,8 @@
 - (void)setApplicationSceneControllerFromState:(CarPlaySharedState *)state {
   if (state.enabled && !_carPlayApplicationSceneMapController) {
     // Set map controller
-    _carPlayApplicationSceneMapController = [CarPlayApplicationSceneMapController
-        sceneControllerWithWindow:_carPlayApplicationSceneWindow];
+    _carPlayApplicationSceneMapController = [[CarPlayApplicationSceneMapController alloc]
+        initWithWindow:_carPlayApplicationSceneWindow];
     [_carPlayInterfaceController pushTemplate:_carPlayApplicationSceneMapController.carPlayTemplate
                                      animated:YES];
   } else if (_carPlayApplicationSceneMapController && !state.enabled) {
@@ -155,6 +155,7 @@
 }
 
 - (void)mapControllerDidPop {
+  [_carPlayApplicationSceneMapController terminate];
   _carPlayApplicationSceneMapController = nil;
 }
 

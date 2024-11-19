@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 target 'current-place-on-map' do
   platform :ios, '15.0'
   pod 'GoogleMaps', '9.0.0'

@@ -31,7 +31,7 @@ class BasicNavigationViewController: UIViewController {
   }()
 
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero)
+    let mapView = GMSMapView()
     mapView.isNavigationEnabled = true
     mapView.settings.compassButton = true
     mapView.delegate = self

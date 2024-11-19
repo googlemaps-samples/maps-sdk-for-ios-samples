@@ -86,7 +86,6 @@ enum Samples {
         comment:
           "Title of the textSearch demo section"), samples: textSearchSample)
     sections.append(textSearchSection)
-
     let searchNearbySample: [Sample] = [
       Sample(
         viewControllerClass: SearchNearbyViewController.self,
