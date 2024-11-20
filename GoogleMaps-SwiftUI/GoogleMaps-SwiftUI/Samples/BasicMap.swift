@@ -38,11 +38,3 @@ struct BasicMap: View {
            .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }
-
-/*
-#Preview("Map with Marker..") {
-    let _ =  GMSServices.provideAPIKey("")
-    let someView = BasicMap()
-    someView
-}
-*/

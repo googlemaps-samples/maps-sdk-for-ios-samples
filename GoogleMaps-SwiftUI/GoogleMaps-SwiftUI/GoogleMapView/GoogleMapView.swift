@@ -16,82 +16,91 @@ import GoogleMaps
 
 /// A SwiftUI wrapper for GMSMapView that displays a map with optional markers and configurable map type
 struct GoogleMapView: UIViewRepresentable {
-    @Binding var options: GMSMapViewOptions
-    private let markers: [GMSMarker]
-    private let mapType: GMSMapViewType
-    private let mapDelegate: GoogleMapViewDelegate
-    
-    /// Initializes a new GoogleMapView instance
-    /// - Parameters:
-    ///   - options: Binding to GMSMapViewOptions for configuring the map
-    ///   - markers: Array of GMSMarker objects to display on the map (optional)
-    ///   - mapType: The type of map to display (defaults to .normal)
-    init(options: Binding<GMSMapViewOptions>,
-         markers: [GMSMarker] = [],
-         mapType: GMSMapViewType = .normal) {
-        
-        self._options = options
-        self.markers = markers
-        self.mapType = mapType
-        self.mapDelegate = GoogleMapViewDelegate()
-    }
-    
-    func makeUIView(context: Context) -> GMSMapView {
-        let mapView = GMSMapView(options: options)
-        mapView.mapType = mapType
-        mapView.delegate = mapDelegate
-        
-        markers.forEach { marker in
-            marker.map = mapView
-        }
-        return mapView
-    }
-    
-    func updateUIView(_ uiView: GMSMapView, context: Context) {
-        uiView.mapType = mapType // Update map type if it changes
-    }
+   /// Binding to map options that can be updated from parent view
+   @Binding var options: GMSMapViewOptions
+   
+   /// Array of markers to display on the map
+   private let markers: [GMSMarker]
+   
+   /// Type of map to display (normal, satellite, hybrid, terrain)
+   private let mapType: GMSMapViewType
+   
+   /// Shared delegate instance to handle map interactions across all instances
+   /// Using static ensures callbacks work together when chaining modifiers
+   private static let mapDelegate = GoogleMapViewDelegate()
+   
+
+   init(options: Binding<GMSMapViewOptions>,
+        markers: [GMSMarker] = [],
+        mapType: GMSMapViewType = .normal) {
+       self._options = options
+       self.markers = markers
+       self.mapType = mapType
+   }
+   
+   /// Creates the underlying UIKit map view
+   func makeUIView(context: Context) -> GMSMapView {
+       // Initialize map with current options
+       let mapView = GMSMapView(options: options)
+       mapView.mapType = mapType
+       
+       // Set shared delegate to handle interactions
+       mapView.delegate = Self.mapDelegate
+       
+       // Add any markers to the map
+       markers.forEach { marker in
+           marker.map = mapView
+       }
+       return mapView
+   }
+   
+   /// Updates the map view when SwiftUI state changes
+   func updateUIView(_ uiView: GMSMapView, context: Context) {
+       uiView.mapType = mapType // Update map type if changed
+   }
 }
 
-// Extension to add marker and map type support specifically to GoogleMapView
+// MARK: - viewModifiers and callbacks
+
 extension GoogleMapView {
-    /// Adds one or more markers to be displayed on the map
-    /// - Parameter markers: An array of GMSMarker objects. Pass a single marker in an array for individual placement
-    /// - Returns: A GoogleMapView configured with the specified markers
-    func mapMarkers(_ markers: [GMSMarker]) -> GoogleMapView {
-        GoogleMapView(options: self._options, markers: markers, mapType: self.mapType)
-    }
-    
-    /// Sets the type of map to display
-    /// - Parameter type: The GMSMapViewType to use (e.g. .normal, .satellite, .hybrid, .terrain)
-    /// - Returns: A GoogleMapView configured with the specified map type
-    func mapType(_ type: GMSMapViewType) -> GoogleMapView {
-        GoogleMapView(options: self._options, markers: self.markers, mapType: type)
-    }
-    
-   /// Adds a handler for map tap events
-   /// - Parameter handler: A closure that will be called when the map is tapped, providing the coordinate
-   /// - Returns: A GoogleMapView configured with the tap handler
-   func onMapTapped(_ handler: @escaping (CLLocationCoordinate2D) -> Void) -> some View {
-       let view = self
-       view.mapDelegate.tapHandler = handler
-       return view
+   /// Adds markers to the map
+   /// - Parameter markers: Array of GMSMarker objects to display
+   /// - Returns: New GoogleMapView instance with updated markers
+   func mapMarkers(_ markers: [GMSMarker]) -> GoogleMapView {
+       GoogleMapView(options: _options, markers: markers, mapType: mapType)
    }
-    
-    /// Adds a handler for marker tap events
-    /// - Parameter handler: A closure that will be called when a marker is tapped
-    ///   Return true to indicate that the marker tap was handled and the default behavior should be suppressed
-    /// - Returns: A GoogleMapView configured with the marker tap handler
-    func onMarkerTapped(_ handler: @escaping (GMSMarker) -> Bool) -> some View {
-        let view = self
-        view.mapDelegate.markerTapHandler = handler
-        return view
-    }
+   
+   /// Changes the map display type
+   /// - Parameter type: GMSMapViewType to use (.normal, .satellite, etc)
+   /// - Returns: New GoogleMapView instance with updated map type
+   func mapType(_ type: GMSMapViewType) -> GoogleMapView {
+       GoogleMapView(options: _options, markers: markers, mapType: type)
+   }
+   
+   /// Adds handler for map tap events
+   /// - Parameter handler: Closure called when map is tapped, providing tap coordinates
+   /// - Returns: Same GoogleMapView instance with updated tap handler
+   func onMapTapped(_ handler: @escaping (CLLocationCoordinate2D) -> Void) -> GoogleMapView {
+       Self.mapDelegate.tapHandler = handler
+       return self
+   }
+   
+   /// Adds handler for marker tap events
+   /// - Parameter handler: Closure called when marker is tapped
+   /// - Returns: Same GoogleMapView instance with updated marker handler
+   /// Return true from handler to indicate tap was handled
+   func onMarkerTapped(_ handler: @escaping (GMSMarker) -> Bool) -> GoogleMapView {
+       Self.mapDelegate.markerTapHandler = handler
+       return self
+   }
 }
+
 
 extension View {
-    /// Configures the view to ignore safe areas except for the top
-    /// - Returns: A view that fills the screen except for the top safe area
-    func ignoresSafeAreaExceptTop() -> some View {
-        ignoresSafeArea(.container, edges: [.bottom, .horizontal])
-    }
+   /// Configures the view to ignore safe areas except for the top
+   /// Useful for map views that should fill the screen below status bar
+   /// - Returns: Modified view that extends to screen edges except top
+   func ignoresSafeAreaExceptTop() -> some View {
+       ignoresSafeArea(.container, edges: [.bottom, .horizontal])
+   }
 }

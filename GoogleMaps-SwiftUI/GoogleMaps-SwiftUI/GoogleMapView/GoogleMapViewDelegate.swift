@@ -14,16 +14,27 @@
 import Foundation
 import GoogleMaps
 
+/// Delegate class that handles map interaction events from GMSMapView
+/// Provides callback support for map taps and marker taps through closure handlers
 class GoogleMapViewDelegate: NSObject, GMSMapViewDelegate {
-    var tapHandler: ((CLLocationCoordinate2D) -> Void)?
-    var markerTapHandler: ((GMSMarker) -> Bool)?
     
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        tapHandler?(coordinate)
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        return markerTapHandler?(marker) ?? false
-    }
-
+   var tapHandler: ((CLLocationCoordinate2D) -> Void)?
+   var markerTapHandler: ((GMSMarker) -> Bool)?
+   
+   /// Called by GMSMapView when user taps the map at a specific coordinate
+   /// - Parameters:
+   ///   - mapView: The GMSMapView that detected the tap
+   ///   - coordinate: The geographic coordinate where the tap occurred
+   func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+       tapHandler?(coordinate) // Forward tap to handler if one is set
+   }
+   
+   /// Called by GMSMapView when user taps a marker on the map
+   /// - Parameters:
+   ///   - mapView: The GMSMapView that detected the tap
+   ///   - marker: The GMSMarker that was tapped
+   /// - Returns: true if tap was handled by the app, false to allow default marker behavior
+   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+       return markerTapHandler?(marker) ?? false // Forward to handler or use default behavior
+   }
 }
