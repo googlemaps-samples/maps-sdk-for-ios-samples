@@ -38,6 +38,13 @@ class TextSearchViewController: AutocompleteBaseViewController,
     textQueryField.placeholder = "Enter Text Search Query"
     textQueryField.backgroundColor = .secondarySystemBackground
     textQueryField.translatesAutoresizingMaskIntoConstraints = false
+    if UIView.userInterfaceLayoutDirection(
+      for: textQueryField.semanticContentAttribute) == .rightToLeft
+    {
+      textQueryField.textAlignment = .right
+    } else {
+      textQueryField.textAlignment = .left
+    }
     return textQueryField
   }()
 

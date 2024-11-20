@@ -14,7 +14,7 @@
 import GoogleMaps
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
   private var services: Any?

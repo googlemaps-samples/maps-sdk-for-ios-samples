@@ -128,6 +128,7 @@ extension AutocompleteWithTextFieldController: UITextFieldDelegate {
   }
 
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    dismissResultView()
     textField.resignFirstResponder()
     textField.text = ""
     tableDataSource.clearResults()

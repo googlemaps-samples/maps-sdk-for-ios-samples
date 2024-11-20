@@ -243,6 +243,14 @@ static const CGFloat kStandardPadding = 8.0;
   mapViewTypeControl.selectedSegmentIndex = 0;
   [controls addArrangedSubview:mapViewTypeControl];
 
+  // Add a segmented control to select the frame rate.
+  UILabel *frameRateLabel = GMSNavigationCreateLabelWithText(@"Frame Rate");
+  [controls addArrangedSubview:frameRateLabel];
+  UISegmentedControl *frameRateSegmentedControl = GMSNavigationCreateSegmentedControl(
+      self, @selector(frameRateControlDidUpdate:), @[ @"PowerSave", @"Conservative", @"Maximum" ]);
+  frameRateSegmentedControl.selectedSegmentIndex = 2;
+  [controls addArrangedSubview:frameRateSegmentedControl];
+
   // Add a button to collapse the UI controls area to make the map occupy the full screen.
   UIButton *collapseButton =
       GMSNavigationCreateButton(self, @selector(toggleMenuCollapsed), @"Menu");
@@ -538,6 +546,23 @@ static const CGFloat kStandardPadding = 8.0;
 
 - (void)mapTypeControlDidUpdate:(UISegmentedControl *)mapTypeControl {
   _mapView.mapType = kMapViewTypeChoices[mapTypeControl.selectedSegmentIndex];
+}
+
+- (void)frameRateControlDidUpdate:(UISegmentedControl *)frameRateControl {
+  switch (frameRateControl.selectedSegmentIndex) {
+    case 0:
+      _mapView.preferredFrameRate = kGMSFrameRatePowerSave;
+      break;
+    case 1:
+      _mapView.preferredFrameRate = kGMSFrameRateConservative;
+      break;
+    case 2:
+      _mapView.preferredFrameRate = kGMSFrameRateMaximum;
+      break;
+    default:
+      _mapView.preferredFrameRate = kGMSFrameRateMaximum;
+      break;
+  }
 }
 
 #pragma mark - GMSNavigationListener

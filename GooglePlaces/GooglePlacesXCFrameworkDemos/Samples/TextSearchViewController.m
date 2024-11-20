@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC. All rights reserved.
+// Copyright 2023 Google LLC. All rights reserved.
 //
 //
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -60,6 +60,14 @@ static NSString *const kCellIdentifier = @"TextSearchCellIdentifier";
   _textQueryField.placeholder = @"Enter Text Search Query";
   _textQueryField.backgroundColor = [UIColor secondarySystemBackgroundColor];
   _textQueryField.translatesAutoresizingMaskIntoConstraints = false;
+  if ([UIView
+          userInterfaceLayoutDirectionForSemanticContentAttribute:_textQueryField
+                                                                      .semanticContentAttribute] ==
+      UIUserInterfaceLayoutDirectionRightToLeft) {
+    _textQueryField.textAlignment = NSTextAlignmentRight;
+  } else {
+    _textQueryField.textAlignment = NSTextAlignmentLeft;
+  }
   [self.view addSubview:_textQueryField];
 
   [NSLayoutConstraint activateConstraints:@[
