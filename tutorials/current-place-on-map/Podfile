@@ -1,6 +1,0 @@
-source 'https://cdn.cocoapods.org/'
-target 'current-place-on-map' do
-  platform :ios, '15.0'
-  pod 'GoogleMaps', '9.0.0'
-  pod 'GooglePlaces', '9.0.0'
-end
