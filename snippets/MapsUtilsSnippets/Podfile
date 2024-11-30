@@ -1,9 +1,0 @@
-source 'https://cdn.cocoapods.org/'
-
-use_frameworks!
-
-target 'MapsUtilsSnippets' do
-    platform :ios, '15.0'
-    pod 'GoogleMaps', '9.0.0'
-    pod 'Google-Maps-iOS-Utils', '6.0.0'
-end
