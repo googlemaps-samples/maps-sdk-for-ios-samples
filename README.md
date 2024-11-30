@@ -1,6 +1,3 @@
-{}
-[]
-
 # Google Maps SDK for iOS, Google Places SDK for iOS, and Google Navigation SDK for iOS sample code
 
 This repository contains sample code for use with the Google Maps SDK for iOS, Google Places SDK for iOS and Google Navigation SDK for iOS.
