@@ -16,26 +16,53 @@ import GoogleMaps
 
 struct MapWithDelegate: View {
     
+    @State var response: String = ""
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
-        options.camera = .camera(.googleplex)
+        options.camera = .camera(.sanFrancisco)
                 
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
         return options
     }()
     
+    // multiple marker example
+    let multipleMarkers = [
+        GMSMarker(position: .chinatownGate),
+        GMSMarker(position: .coitTower),
+        GMSMarker(position: .ferryBuilding),
+        GMSMarker(position: .fishermansWharf)
+    ]
+    
    var body: some View {
-       
-       /// Tap handling is implemented through a delegate pattern: GoogleMapView exposes an onMapTapped modifier
-       /// that stores a coordinate handler in GoogleMapViewDelegate. When the underlying GMSMapView detects a tap,
-       /// it calls the delegate's mapView(_:didTapAt:) method, which then executes the stored handler with the
-       /// tap coordinates.
-       GoogleMapView(options: $mapOptions)
-           .onMapTapped { coordinate in
-              print("Map tapped at: \(coordinate.latitude), \(coordinate.longitude)")
+    
+       VStack(spacing: 16) {
+           GoogleMapView(options: $mapOptions)
+               .mapMarkers(multipleMarkers)
+               .onMarkerTapped { marker in
+                   response = "Marker tapped at: \(marker.position)"
+                   return true
+               }
+               .onMapTapped { coordinate in
+                   response = "Map tapped at: \(coordinate.latitude), \(coordinate.longitude)"
+               }
+               .ignoresSafeAreaExceptTop()
+               .frame(maxWidth: .infinity, minHeight: 325)
+           
+           HStack {
+               VStack(alignment: .leading, spacing: 8) {
+                   Text("Tap a Map location or Marker")
+                       .font(.headline)
+                   
+                   Text(response)
+                       .font(.body)
+                       .foregroundColor(.secondary)
+               }
+               Spacer()
            }
-           .ignoresSafeAreaExceptTop() //optional property for samples display
+           .padding(.horizontal)
+       }
+
    }
 }

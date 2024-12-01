@@ -27,7 +27,7 @@ struct MapWithMarkers: View {
     }()
     
     // multiple marker example
-    let multipleMarker = [
+    let multipleMarkers = [
         GMSMarker(position: .chinatownGate),
         GMSMarker(position: .coitTower),
         GMSMarker(position: .ferryBuilding),
@@ -37,7 +37,7 @@ struct MapWithMarkers: View {
     var body: some View {
         GoogleMapView(options: $mapOptions)
              //Adds one or more markers to be displayed on the map
-            .mapMarkers(multipleMarker)
+            .mapMarkers(multipleMarkers)
             .ignoresSafeAreaExceptTop()   //optional property for samples display
     }
 }

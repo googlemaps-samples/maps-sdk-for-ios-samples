@@ -35,14 +35,6 @@ struct MapWithMarker: View {
         GoogleMapView(options: $mapOptions)
              //Adds one or more markers to be displayed on the map
             .mapMarkers(singleMarker)
-        
-            .onMarkerTapped { marker in
-                print("Marker tapped at: \(marker.position)")
-                return true
-            }
-            .onMapTapped { coordinate in
-                print("Map tapped at: \(coordinate.latitude), \(coordinate.longitude)")
-            }
     }
         
 }

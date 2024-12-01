@@ -18,8 +18,8 @@ struct BasicMap: View {
     
     @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
-        // Initialize map centered on San Francisco
-        options.camera = .camera(.sanFrancisco)
+        // Initialize map centered at Google HQ
+        options.camera = .camera(.googleplex)
         
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
