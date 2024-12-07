@@ -15,26 +15,31 @@ import SwiftUI
 import GoogleMaps
 
 struct BasicMap: View {
-    
-    @State private var mapOptions: GMSMapViewOptions = {
+    @State private var defaultOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
-        // Initialize map centered at Google HQ
         options.camera = .camera(.googleplex)
-        
-        // Or with custom zoom level for closer view
-        // options.camera = .camera(.sanFrancisco, zoom: 15)
         return options
     }()
     
-   var body: some View {
-      /*
-        The $ prefix creates a two-way binding to mapOptions. This means:
-         1. GoogleMapView can read the current mapOptions
-         2. GoogleMapView can update mapOptions if the map state changes
-         3. Changes to mapOptions in BasicMap will update the map
-         4. Changes to the map will update mapOptions in BasicMap
-      */
-       GoogleMapView(options: $mapOptions)
-           .ignoresSafeAreaExceptTop()   //optional property for samples display
-   }
+    var body: some View {
+        /*
+        GoogleMapView can be configured using view modifier:
+            GoogleMapView()
+                .mapOptions(newOptions)
+            - Preferred method for updating map options at initialization or during the view lifecycle
+            - Can be chained with other modifiers like mapMarkers() and mapType()
+        */
+        VStack {
+            GoogleMapView()
+                .mapOptions(defaultOptions)
+                .ignoresSafeAreaExceptTop()
+            
+            Button("Fly to New York") {
+                let newOptions = GMSMapViewOptions()
+                newOptions.camera = .camera(.newYork)
+                defaultOptions = newOptions
+            }
+            .padding()
+        }
+    }
 }

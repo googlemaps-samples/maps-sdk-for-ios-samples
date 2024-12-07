@@ -16,7 +16,7 @@ import GoogleMaps
 
 struct MapWithStreetLevel: View {
     
-    @State private var mapOptions: GMSMapViewOptions = {
+    @State private var defaultOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .streetLevel(.sanFrancisco, bearing: 45)
@@ -35,7 +35,8 @@ struct MapWithStreetLevel: View {
    var body: some View {
        
        //Map camera position set to street-level 3D perspective.
-       GoogleMapView(options: $mapOptions)
+       GoogleMapView()
+           .mapOptions(defaultOptions)
            .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }

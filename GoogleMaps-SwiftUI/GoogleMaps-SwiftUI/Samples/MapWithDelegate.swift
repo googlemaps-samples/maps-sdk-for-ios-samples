@@ -17,7 +17,7 @@ import GoogleMaps
 struct MapWithDelegate: View {
     
     @State var response: String = ""
-    @State private var mapOptions: GMSMapViewOptions = {
+    @State private var defaultOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .camera(.sanFrancisco)
@@ -38,7 +38,8 @@ struct MapWithDelegate: View {
    var body: some View {
     
        VStack(spacing: 16) {
-           GoogleMapView(options: $mapOptions)
+           GoogleMapView()
+               .mapOptions(defaultOptions)
                .mapMarkers(multipleMarkers)
                .onMarkerTapped { marker in
                    response = "Marker tapped at: \(marker.position)"

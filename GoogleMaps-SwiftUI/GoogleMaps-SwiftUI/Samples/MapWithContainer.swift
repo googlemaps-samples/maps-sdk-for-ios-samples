@@ -16,7 +16,7 @@ import GoogleMaps
 
 struct MapWithContainer: View {
     
-    @State private var mapOptions: GMSMapViewOptions = {
+    @State private var defaultOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .camera(.seattle)
@@ -28,7 +28,8 @@ struct MapWithContainer: View {
     
    var body: some View {
        VStack(spacing: 16) {
-           GoogleMapView(options: $mapOptions)
+           GoogleMapView()
+               .mapOptions(defaultOptions)
                .ignoresSafeAreaExceptTop()   //optional property for samples display
                .frame(maxWidth: .infinity, minHeight: 325)
            

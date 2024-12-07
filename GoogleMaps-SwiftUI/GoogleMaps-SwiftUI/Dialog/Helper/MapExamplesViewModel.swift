@@ -19,7 +19,7 @@ class MapExamplesViewModel: ObservableObject {
     @Published var examples: [MapExample] = [
         MapExample(
             title: "Basic map",
-            description: "A simple map. Shows how to configure GMSMapViewOptions as a map binding.",
+            description: "A simple map. Shows how to configure GMSMapViewOptions as a view modifier.",
             destination: AnyView(BasicMap())
         ),
         MapExample(
@@ -48,8 +48,8 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(MapWithContainer())
         ),
         MapExample(
-            title: "Map with Delegate",
-            description: "A GoogleMapView configured with a handler for map tap events.",
+            title: "Map with Delegates",
+            description: "A GoogleMapView configured with handlers for map and marker tap events.",
             destination: AnyView(MapWithDelegate())
         )
     ]

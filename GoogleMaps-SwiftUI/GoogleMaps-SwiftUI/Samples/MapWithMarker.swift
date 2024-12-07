@@ -16,7 +16,7 @@ import GoogleMaps
 
 struct MapWithMarker: View {
     
-    @State private var mapOptions: GMSMapViewOptions = {
+    @State private var defaultOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .camera(.sanFrancisco)
@@ -32,7 +32,8 @@ struct MapWithMarker: View {
     ]
     
     var body: some View {
-        GoogleMapView(options: $mapOptions)
+        GoogleMapView()
+            .mapOptions(defaultOptions)
              //Adds one or more markers to be displayed on the map
             .mapMarkers(singleMarker)
     }
