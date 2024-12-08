@@ -16,8 +16,9 @@ import GoogleMaps
 
 /// A SwiftUI wrapper for GMSMapView that displays a map with optional markers and configurable map type
 struct GoogleMapView: UIViewRepresentable {
-   /// Binding to map options that can be updated from parent view
-   @Binding var options: GMSMapViewOptions
+    
+   // Configuration properties - set at initialization
+   private let options: GMSMapViewOptions
    
    /// Array of markers to display on the map
    private let markers: [GMSMarker]
@@ -25,18 +26,21 @@ struct GoogleMapView: UIViewRepresentable {
    /// Type of map to display (normal, satellite, hybrid, terrain)
    private let mapType: GMSMapViewType
    
+   // Runtime updatable properties
+   private var camera: GMSCameraPosition?
+   private var backgroundColor: UIColor?
+   
    /// Shared delegate instance to handle map interactions across all instances
    /// Using static ensures callbacks work together when chaining modifiers
    private static let mapDelegate = GoogleMapViewDelegate()
    
-
-    init(options: Binding<GMSMapViewOptions> = .constant(GMSMapViewOptions()),
-         markers: [GMSMarker] = [],
-         mapType: GMSMapViewType = .normal) {
-        self._options = options
-        self.markers = markers
-        self.mapType = mapType
-    }
+   init(options: GMSMapViewOptions,
+        markers: [GMSMarker] = [],
+        mapType: GMSMapViewType = .normal) {
+       self.options = options
+       self.markers = markers
+       self.mapType = mapType
+   }
    
    /// Creates the underlying UIKit map view
    func makeUIView(context: Context) -> GMSMapView {
@@ -52,52 +56,66 @@ struct GoogleMapView: UIViewRepresentable {
    
    /// Updates the map view when SwiftUI state changes
    func updateUIView(_ uiView: GMSMapView, context: Context) {
-             
-      // Update camera if it exists and has changed
-      if let newCamera = options.camera, uiView.camera != newCamera {
-          uiView.camera = newCamera
-      }
-    
-      // Update background color if it exists and has changed
-      if let newBackgroundColor = options.backgroundColor, uiView.backgroundColor != newBackgroundColor {
-          uiView.backgroundColor = newBackgroundColor
-      }
+       // Update runtime properties if set
+       if let camera = camera {
+           uiView.camera = camera
+       }
        
-       // refresh markers to the map
+       if let backgroundColor = backgroundColor {
+           uiView.backgroundColor = backgroundColor
+       }
+       
+       // Refresh markers on the map
        markers.forEach { marker in
            marker.map = uiView
        }
        
-      uiView.mapType = mapType // Update map type if changed
+       uiView.mapType = mapType // Update map type if changed
    }
 }
 
-// MARK: - viewModifiers and callbacks
+// MARK: - viewModifiers and Markers
 
 extension GoogleMapView {
-    /// Updates map options
-    /// - Parameter options: New GMSMapViewOptions to apply
-    /// - Returns: New GoogleMapView instance with updated options
-    func mapOptions(_ options: GMSMapViewOptions) -> GoogleMapView {
-        GoogleMapView(options: .constant(options), markers: markers, mapType: mapType)
+    /// Updates the camera position of the map view during runtime
+    /// - Parameter position: New camera position to apply
+    /// - Returns: Updated GoogleMapView instance
+    func camera(_ position: GMSCameraPosition?) -> GoogleMapView {
+        var view = self
+        if let position = position {
+            view.camera = position
+        }
+        return view
     }
     
+    /// Updates the background color of the map view during runtime
+    /// - Parameter color: New background color to apply
+    /// - Returns: Updated GoogleMapView instance
+    func backgroundColor(_ color: UIColor) -> GoogleMapView {
+        var view = self
+        view.backgroundColor = color
+        return view
+    }
     
-   /// Adds markers to the map
-   /// - Parameter markers: Array of GMSMarker objects to display
-   /// - Returns: New GoogleMapView instance with updated markers
-   func mapMarkers(_ markers: [GMSMarker]) -> GoogleMapView {
-       GoogleMapView(options: _options, markers: markers, mapType: mapType)
-   }
+    /// Changes the map display type
+    /// - Parameter type: GMSMapViewType to use (.normal, .satellite, etc)
+    /// - Returns: New GoogleMapView instance with updated map type
+    func mapType(_ type: GMSMapViewType) -> GoogleMapView {
+        GoogleMapView(options: options, markers: markers, mapType: type)
+    }
     
-   
-   /// Changes the map display type
-   /// - Parameter type: GMSMapViewType to use (.normal, .satellite, etc)
-   /// - Returns: New GoogleMapView instance with updated map type
-   func mapType(_ type: GMSMapViewType) -> GoogleMapView {
-       GoogleMapView(options: _options, markers: markers, mapType: type)
-   }
-   
+    /// Adds markers to the map
+    /// - Parameter markers: Array of GMSMarker objects to display
+    /// - Returns: New GoogleMapView instance with updated markers
+    func mapMarkers(_ markers: [GMSMarker]) -> GoogleMapView {
+        GoogleMapView(options: options, markers: markers, mapType: mapType)
+    }
+
+}
+
+// MARK: - View Callbacks
+
+extension GoogleMapView {
    /// Adds handler for map tap events
    /// - Parameter handler: Closure called when map is tapped, providing tap coordinates
    /// - Returns: Same GoogleMapView instance with updated tap handler
@@ -115,7 +133,6 @@ extension GoogleMapView {
        return self
    }
 }
-
 
 extension View {
    /// Configures the view to ignore safe areas except for the top

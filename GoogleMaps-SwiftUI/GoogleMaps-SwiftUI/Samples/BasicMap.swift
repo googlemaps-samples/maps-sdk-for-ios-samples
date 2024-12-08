@@ -15,29 +15,28 @@ import SwiftUI
 import GoogleMaps
 
 struct BasicMap: View {
-    @State private var defaultOptions: GMSMapViewOptions = {
+    
+    // Initial options - set once at creation
+    private let mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
-        options.camera = .camera(.googleplex)
+        options.camera = .camera(.googleplex)  // Initial camera position
         return options
     }()
     
+    // Runtime updatable property
+    @State private var newCamera: GMSCameraPosition?
+    
     var body: some View {
-        /*
-        GoogleMapView can be configured using view modifier:
-            GoogleMapView()
-                .mapOptions(newOptions)
-            - Preferred method for updating map options at initialization or during the view lifecycle
-            - Can be chained with other modifiers like mapMarkers() and mapType()
-        */
         VStack {
-            GoogleMapView()
-                .mapOptions(defaultOptions)
+            GoogleMapView(options: mapOptions)
+                .camera(newCamera)  // Runtime camera updates
                 .ignoresSafeAreaExceptTop()
             
-            Button("Fly to New York") {
-                let newOptions = GMSMapViewOptions()
-                newOptions.camera = .camera(.newYork)
-                defaultOptions = newOptions
+            VStack(spacing: 12) {
+                Button("Fly to New York") {
+                    newCamera = .camera(.newYork)
+                }
+                
             }
             .padding()
         }

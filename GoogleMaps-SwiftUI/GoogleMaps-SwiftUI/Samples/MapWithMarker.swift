@@ -15,27 +15,24 @@ import SwiftUI
 import GoogleMaps
 
 struct MapWithMarker: View {
-    
-    @State private var defaultOptions: GMSMapViewOptions = {
-        var options = GMSMapViewOptions()
-        // Initialize map centered on San Francisco
-        options.camera = .camera(.sanFrancisco)
-        
-        // Or with custom zoom level for closer view
-        // options.camera = .camera(.sanFrancisco, zoom: 15)
-        return options
-    }()
-    
-    // Single marker example
-    let singleMarker = [
-        GMSMarker(position: .sanFrancisco)
-    ]
-    
-    var body: some View {
-        GoogleMapView()
-            .mapOptions(defaultOptions)
-             //Adds one or more markers to be displayed on the map
-            .mapMarkers(singleMarker)
-    }
-        
+   private let mapOptions: GMSMapViewOptions = {
+       
+       var options = GMSMapViewOptions()
+       // Initialize map centered on San Francisco
+       options.camera = .camera(.sanFrancisco)
+       
+       // Or with custom zoom level for closer view
+       // options.camera = .camera(.sanFrancisco, zoom: 15)
+       return options
+   }()
+   
+   // Single marker example - no @State needed since markers won't change during runtime
+   let markers = [
+       GMSMarker(position: .sanFrancisco)
+   ]
+   
+   var body: some View {
+       GoogleMapView(options: mapOptions)
+           .mapMarkers(markers)
+   }
 }

@@ -14,20 +14,21 @@
 import SwiftUI
 import GoogleMaps
 
+
 struct Dialog: View {
-    
     @StateObject private var viewModel = MapExamplesViewModel()
-    @State private var mapOptions: GMSMapViewOptions
     
-    init() {
-        _mapOptions = State(initialValue: MapExamplesViewModel().mapOptions)
-    }
+    private let mapOptions: GMSMapViewOptions = {
+        var options = GMSMapViewOptions()
+        options.camera = .camera(.googleplex)
+        return options
+    }()
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 // Top half - Map View centered on Seattle
-                GoogleMapView(options: $mapOptions)
+                GoogleMapView(options: mapOptions)
                     .frame(maxWidth: .infinity)
                     .frame(height: UIScreen.main.bounds.height * 0.5)
                 

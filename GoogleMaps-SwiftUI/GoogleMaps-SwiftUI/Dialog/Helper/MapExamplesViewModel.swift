@@ -19,7 +19,7 @@ class MapExamplesViewModel: ObservableObject {
     @Published var examples: [MapExample] = [
         MapExample(
             title: "Basic map",
-            description: "A simple map. Shows how to configure GMSMapViewOptions as a view modifier.",
+            description: "A simple map. Shows how to initalize and upddate map options.",
             destination: AnyView(BasicMap())
         ),
         MapExample(
@@ -54,11 +54,4 @@ class MapExamplesViewModel: ObservableObject {
         )
     ]
     
-    //set intial dialog map options - override default zoom level
-    let mapOptions: GMSMapViewOptions = {
-            var options = GMSMapViewOptions()
-        options.camera = .camera(.googleplex, zoom: 13)  //location predefined in a helper class
-            return options
-        }()
-
 }

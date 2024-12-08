@@ -16,7 +16,7 @@ import GoogleMaps
 
 struct MapWithTypes: View {
     
-    @State private var defaultOptions: GMSMapViewOptions = {
+    @State private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
         options.camera = .camera(.sanFrancisco)
@@ -33,8 +33,7 @@ struct MapWithTypes: View {
        // .satellite - Satellite imagery without street labels or overlays
        // .terrain - Topographic data showing elevation, vegetation, and natural features
        // .hybrid - Satellite imagery combined with road overlays and place labels
-       GoogleMapView()
-           .mapOptions(defaultOptions)
+       GoogleMapView(options: mapOptions)
            .mapType(.satellite)
            .ignoresSafeAreaExceptTop()   //optional property for samples display
    }

@@ -15,31 +15,30 @@ import SwiftUI
 import GoogleMaps
 
 struct MapWithMarkers: View {
-    
-    @State private var defaultOptions: GMSMapViewOptions = {
+    private let mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
-        // Initialize map centered on San Francisco
         options.camera = .camera(.sanFrancisco)
-        
-        // Or with custom zoom level for closer view
-        // options.camera = .camera(.sanFrancisco, zoom: 15)
         return options
     }()
     
-    // multiple marker example
-    let multipleMarkers = [
+    // Make markers mutable with @State
+    @State private var markers: [GMSMarker] = [
         GMSMarker(position: .chinatownGate),
         GMSMarker(position: .coitTower),
-        GMSMarker(position: .ferryBuilding),
-        GMSMarker(position: .fishermansWharf)
+        GMSMarker(position: .ferryBuilding)
     ]
     
     var body: some View {
-        GoogleMapView()
-            .mapOptions(defaultOptions)
-             //Adds one or more markers to be displayed on the map
-            .mapMarkers(multipleMarkers)
-            .ignoresSafeAreaExceptTop()   //optional property for samples display
+        VStack {
+            GoogleMapView(options: mapOptions)
+                .mapMarkers(markers)
+                .ignoresSafeAreaExceptTop()
+            
+            Button("Add Fisherman's Wharf") {
+                markers.append(GMSMarker(position: .fishermansWharf))
+            }
+            .padding()
+        }
     }
 }
 

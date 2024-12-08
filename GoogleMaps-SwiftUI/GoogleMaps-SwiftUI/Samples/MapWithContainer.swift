@@ -16,32 +16,28 @@ import GoogleMaps
 
 struct MapWithContainer: View {
     
-    @State private var defaultOptions: GMSMapViewOptions = {
+    private let mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
-        // Initialize map centered on San Francisco
-        options.camera = .camera(.seattle)
-                
-        // Or with custom zoom level for closer view
-        // options.camera = .camera(.sanFrancisco, zoom: 15)
+        options.camera = .camera(.seattle)  // Initial camera centered on Seattle
         return options
     }()
-    
-   var body: some View {
-       VStack(spacing: 16) {
-           GoogleMapView()
-               .mapOptions(defaultOptions)
-               .ignoresSafeAreaExceptTop()   //optional property for samples display
-               .frame(maxWidth: .infinity, minHeight: 325)
-           
-           VStack(alignment: .leading) {
-               Text("Working with Container Views")
-                   .font(.headline)
-               
-               Text("The GoogleMapView seamlessly integrates with SwiftUI layouts, allowing for standard modifiers like frame and padding.")
-                   .font(.body)
-                   .foregroundColor(.secondary)
-           }
-           .padding(.horizontal)
-       }
-   }
+        
+    var body: some View {
+        VStack(spacing: 16) {
+            
+            GoogleMapView(options: mapOptions)
+                .ignoresSafeAreaExceptTop()   // Optional property for samples display
+                .frame(maxWidth: .infinity, minHeight: 325)
+            
+            VStack(alignment: .leading) {
+                Text("Working with Container Views")
+                    .font(.headline)
+                
+                Text("The GoogleMapView seamlessly integrates with SwiftUI layouts, allowing for standard modifiers like frame and padding.")
+                    .font(.body)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+        }
+    }
 }
