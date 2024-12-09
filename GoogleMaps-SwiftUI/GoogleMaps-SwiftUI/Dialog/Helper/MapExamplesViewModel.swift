@@ -23,9 +23,9 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(BasicMap())
         ),
         MapExample(
-            title: "Map with Street Level",
+            title: "Map with custom camera",
             description: "Map camera position set to street-level 3D perspective.",
-            destination: AnyView(MapWithStreetLevel())
+            destination: AnyView(MapWithCustomCamera())
         ),
         MapExample(
             title: "Map with marker",
@@ -38,19 +38,19 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(MapWithMarkers())
         ),
         MapExample(
-            title: "Map with Types",
+            title: "Map types",
             description: "How to set the satellite, terrain, or hybrid map type property.",
-            destination: AnyView(MapWithTypes())
+            destination: AnyView(MapTypes())
         ),
         MapExample(
-            title: "Map with Containers",
+            title: "Map with containers",
             description: "Shows integration with SwiftUI layouts, allowing for standard modifiers like frame and padding.",
             destination: AnyView(MapWithContainer())
         ),
         MapExample(
-            title: "Map with Delegates",
+            title: "Handle map events",
             description: "A GoogleMapView configured with handlers for map and marker tap events.",
-            destination: AnyView(MapWithDelegate())
+            destination: AnyView(HandleMapEvents())
         )
     ]
     

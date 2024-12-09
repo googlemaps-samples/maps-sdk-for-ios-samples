@@ -14,7 +14,7 @@
 import SwiftUI
 import GoogleMaps
 
-struct MapWithDelegate: View {
+struct HandleMapEvents: View {
     
     @State var response: String = ""
     

@@ -14,27 +14,29 @@
 import SwiftUI
 import GoogleMaps
 
-struct MapWithTypes: View {
+struct MapWithCustomCamera: View {
     
         private var mapOptions: GMSMapViewOptions = {
         var options = GMSMapViewOptions()
         // Initialize map centered on San Francisco
-        options.camera = .camera(.sanFrancisco)
-        
+        options.camera = .streetLevel(.sanFrancisco, bearing: 45)
+                
         // Or with custom zoom level for closer view
         // options.camera = .camera(.sanFrancisco, zoom: 15)
+        
+        // For 3D perspective view
+        // options.camera = .camera(.sanFrancisco, zoom: 18, bearing: 45, viewingAngle: 45)
+        
+        // Quick street-level 3D view
+        // options.camera = .streetLevel(.sanFrancisco, bearing: 45)
         return options
     }()
     
    var body: some View {
-  
-       // Available map types:
-       // .normal - Standard road map with streets, political boundaries, and labels
-       // .satellite - Satellite imagery without street labels or overlays
-       // .terrain - Topographic data showing elevation, vegetation, and natural features
-       // .hybrid - Satellite imagery combined with road overlays and place labels
+       
+       //Map camera position set to street-level 3D perspective.
        GoogleMapView(options: mapOptions)
-           .mapType(.satellite)
            .ignoresSafeAreaExceptTop()   //optional property for samples display
    }
 }
+
