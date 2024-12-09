@@ -19,7 +19,7 @@ class MapExamplesViewModel: ObservableObject {
     @Published var examples: [MapExample] = [
         MapExample(
             title: "Basic map",
-            description: "A simple map. Shows how to initalize and upddate map options.",
+            description: "A simple map. Shows how to initalize and update map options.",
             destination: AnyView(BasicMap())
         ),
         MapExample(

@@ -15,6 +15,7 @@ import SwiftUI
 import GoogleMaps
 
 struct MapWithMarker: View {
+    
    private let mapOptions: GMSMapViewOptions = {
        
        var options = GMSMapViewOptions()
