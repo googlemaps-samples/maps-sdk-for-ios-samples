@@ -23,6 +23,11 @@ class MapExamplesViewModel: ObservableObject {
             destination: AnyView(BasicMap())
         ),
         MapExample(
+            title: "Basic map with MapID",
+            description: "Shows how to initialize a map with a mapID.",
+            destination: AnyView(BasicMapWithMapID())
+        ),
+        MapExample(
             title: "Map with custom camera",
             description: "Map camera position set to street-level 3D perspective.",
             destination: AnyView(MapWithCustomCamera())
