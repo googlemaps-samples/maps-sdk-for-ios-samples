@@ -21,7 +21,7 @@ struct GoogleMapView: UIViewRepresentable {
    private let options: GMSMapViewOptions
    
    /// Array of markers to display on the map
-   private let markers: [GMSMarker]
+   private var markers: [GMSMarker]
    
    /// Type of map to display (normal, satellite, hybrid, terrain)
    private let mapType: GMSMapViewType
@@ -108,7 +108,9 @@ extension GoogleMapView {
     /// - Parameter markers: Array of GMSMarker objects to display
     /// - Returns: New GoogleMapView instance with updated markers
     func mapMarkers(_ markers: [GMSMarker]) -> GoogleMapView {
-        GoogleMapView(options: options, markers: markers, mapType: mapType)
+        var view = self
+        view.markers = markers
+        return view
     }
 
 }
