@@ -65,6 +65,9 @@ struct GoogleMapView: UIViewRepresentable {
            uiView.backgroundColor = backgroundColor
        }
        
+       //clears all markers and polylines
+       uiView.clear()
+       
        // Refresh markers on the map
        markers.forEach { marker in
            marker.map = uiView
