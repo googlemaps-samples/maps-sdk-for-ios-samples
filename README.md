@@ -10,13 +10,15 @@ This repository contains sample code for use with the Google Maps SDK for iOS, G
 The `GoogleMaps` and `GoogleMaps-Swift` sub-directory contains the sample code that is downloaded
 when you run `pod try GoogleMaps`. To use this project:
 
+For Objective-C samples:
+
 ```
 $ cd GoogleMaps
 $ pod install
 $ open GoogleMapsDemos.xcworkspace
 ```
 
-For Swift samples:
+For Swift (UIKit) samples:
 
 ```
 $ cd GoogleMaps-Swift
@@ -27,6 +29,19 @@ $ open GoogleMapsSwiftDemos.xcworkspace
 You will need to add an API Key to `GoogleMapsDemos/SDKDemoAPIKey.h`. Please see the
 [documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key)
 for details on how to get an API Key.
+
+## GoogleMaps-SwiftUI
+
+The `GoogleMaps-SwiftUI` sub-directory contains sample code demonstrating how to integrate Google Maps SDK with SwiftUI applications. It provides a modern SwiftUI wrapper around `GMSMapView` with a declarative API for common map configurations and interactions. To use this project:
+
+```
+$ cd GoogleMaps-SwiftUI
+$ open GoogleMaps-SwiftUI.xcodeproj
+```
+
+You will need to add an API Key to your configuration. Please see the [documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key) for details on how to get an API Key.
+
+This project uses Swift Package Manager and requires the [GoogleMaps package](https://github.com/googlemaps/ios-maps-sdk). The sample code demonstrates best practices for integrating Google Maps into SwiftUI-based iOS applications.
 
 ## GooglePlaces
 
