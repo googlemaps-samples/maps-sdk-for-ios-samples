@@ -17,9 +17,15 @@ import UIKit
 class IndoorViewController: UIViewController {
 
   let mapStyleOptions: [SampleMapStyle] = [.retro, .grayscale, .night, .normal]
+    
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+
+    let mapView = GMSMapView(options: options)
     mapView.settings.myLocationButton = true
     return mapView
   }()

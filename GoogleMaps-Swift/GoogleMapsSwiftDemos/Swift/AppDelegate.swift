@@ -21,10 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-
+      
+    //provide a valid api key
     GMSServices.provideAPIKey(SDKConstants.apiKey)
-    // Metal is the preferred renderer.
-    GMSServices.setMetalRendererEnabled(true)
 
     return true
   }

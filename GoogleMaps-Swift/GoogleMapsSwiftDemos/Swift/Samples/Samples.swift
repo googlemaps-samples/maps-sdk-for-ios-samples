@@ -16,6 +16,7 @@ import UIKit
 struct Sample {
   let viewControllerClass: UIViewController.Type
   let title: String
+  //TODO: Add a description property to this struct and populate with through the allSamples function.
 }
 
 struct Section {
