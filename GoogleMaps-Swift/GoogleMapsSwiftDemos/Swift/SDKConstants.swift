@@ -15,7 +15,7 @@ import CoreLocation
 
 //TODO: Do we want to adopt the new model for loading api-keys?
 enum SDKConstants {
-  static let apiKey = "AIzaSyDAWNbdPQ_kU2oP6Ora0trBNDwxMkPHDP4"
+  static let apiKey = ""
 }
 
 extension CLLocationCoordinate2D {
