@@ -25,6 +25,9 @@ class SampleListViewController: UIViewController {
     super.viewDidLoad()
 
     view.addSubview(tableView)
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 90 // Provide an estimate for optimization
+      
     tableView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -43,19 +46,40 @@ extension SampleListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return sampleSections[section].samples.count
   }
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(
-      withIdentifier: SampleListViewController.sampleCellIdentifier, for: indexPath)
-    if let sample = sample(at: indexPath) {
-      cell.textLabel?.text = sample.title
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Create a new cell with value1 style (title on left, detail on right)
+        var cell = tableView.dequeueReusableCell(
+            withIdentifier: SampleListViewController.sampleCellIdentifier, for: indexPath)
+            
+        // Replace with subtitle style if needed
+        if cell.detailTextLabel == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: SampleListViewController.sampleCellIdentifier)
+        }
+            
+        if let sample = sample(at: indexPath) {
+            // Configure title - make it bold
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            cell.textLabel?.text = sample.title
+            
+            // Configure subtitle - gray color, larger size, and multiline
+            cell.detailTextLabel?.textColor = UIColor.gray
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15) // Increase font size here
+            cell.detailTextLabel?.text = sample.description
+            cell.detailTextLabel?.numberOfLines = 0 // Allow multiple lines
+            
+            // Add disclosure indicator (chevron)
+            cell.accessoryType = .disclosureIndicator
+        }
+            
+        return cell
     }
-    return cell
-  }
+    
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return sampleSections.count
   }
-
+    
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return sampleSections[section].name
   }

@@ -188,6 +188,7 @@
 		D10973A4336C45EE56319A9B /* boat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boat@2x.png"; sourceTree = "<group>"; };
 		D1A99C0C04795272C12DD9EF /* StructuredGeocoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuredGeocoderViewController.swift; sourceTree = "<group>"; };
 		D27175E880CA9EEC63374BD4 /* PanoramaServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaServiceController.swift; sourceTree = "<group>"; };
+		DAA0C6E62D754F070008A6B7 /* GoogleMapsSwiftDemos.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GoogleMapsSwiftDemos.xcconfig; sourceTree = "<group>"; };
 		DE91B8EA42AFFCEDA758CE06 /* SDKConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConstants.swift; sourceTree = "<group>"; };
 		DF1488DDE60393FF03CF8A87 /* step1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step1@2x.png"; sourceTree = "<group>"; };
 		E18764F42392A93B39C775AB /* SampleMapStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMapStyle.swift; sourceTree = "<group>"; };
@@ -311,6 +312,7 @@
 		D82B2453023AA1ECA43F9A8B = {
 			isa = PBXGroup;
 			children = (
+				DAA0C6E62D754F070008A6B7 /* GoogleMapsSwiftDemos.xcconfig */,
 				D0ED9A279E12177F7FDFA2FF /* Source */,
 				AC723F443153D968479E59F3 /* Frameworks */,
 				DD0B6FB690051F4443F4132B /* Products */,
@@ -415,6 +417,8 @@
 		5874A4B608088BA842B934C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 			};
 			buildConfigurationList = C0C7530177213989B18ED3FC /* Build configuration list for PBXProject "GoogleMapsSwiftDemos" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -556,7 +560,35 @@
 /* Begin XCBuildConfiguration section */
 		5BC265AFD5C3C8E67F030E30 /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA0C6E62D754F070008A6B7 /* GoogleMapsSwiftDemos.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
 				SDKROOT = iphoneos;
 				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";

@@ -16,7 +16,7 @@ import UIKit
 struct Sample {
   let viewControllerClass: UIViewController.Type
   let title: String
-  //TODO: Add a description property to this struct and populate with through the allSamples function.
+  let description: String
 }
 
 struct Section {
@@ -27,61 +27,61 @@ struct Section {
 enum Samples {
   static func allSamples() -> [Section] {
     let mapSamples = [
-      Sample(viewControllerClass: BasicMapViewController.self, title: "Basic Map"),
-      Sample(viewControllerClass: MapTypesViewController.self, title: "Map Types"),
-      Sample(viewControllerClass: StyledMapViewController.self, title: "Styled Map"),
-      Sample(viewControllerClass: TrafficMapViewController.self, title: "Traffic Layer"),
-      Sample(viewControllerClass: MyLocationViewController.self, title: "My Location"),
-      Sample(viewControllerClass: IndoorViewController.self, title: "Indoor"),
+      Sample(viewControllerClass: BasicMapViewController.self, title: "Basic Map", description: "Creates a map centered on Sydney, New South Wales, Australia"),
+      Sample(viewControllerClass: MapTypesViewController.self, title: "Map Types", description: "A segmented control is used to toggle between different map types"),
+      Sample(viewControllerClass: StyledMapViewController.self, title: "Styled Map", description: "Allows the user to choose between a variety of json-defined map styles"),
+      Sample(viewControllerClass: TrafficMapViewController.self, title: "Traffic Layer", description: "Displays local traffic superimposed on the map."),
+      Sample(viewControllerClass: MyLocationViewController.self, title: "My Location", description: "Panning to a users current location"),
+      Sample(viewControllerClass: IndoorViewController.self, title: "Indoor", description: "A map that displays the interior of a building"),
       Sample(
         viewControllerClass: CustomIndoorViewController.self,
-        title: "Indoor with Custom Level Select"),
+        title: "Indoor with Custom Level Select",  description: ""),
       Sample(
         viewControllerClass: IndoorMuseumNavigationViewController.self,
-        title: "Indoor Museum Navigator"),
-      Sample(viewControllerClass: GestureControlViewController.self, title: "Gesture Control"),
-      Sample(viewControllerClass: SnapshotReadyViewController.self, title: "Snapshot Ready"),
-      Sample(viewControllerClass: DoubleMapViewController.self, title: "Two Maps"),
-      Sample(viewControllerClass: VisibleRegionViewController.self, title: "Visible Regions"),
-      Sample(viewControllerClass: MapZoomViewController.self, title: "Min/Max Zoom"),
-      Sample(viewControllerClass: FrameRateViewController.self, title: "Frame Rate"),
-      Sample(viewControllerClass: PaddingBehaviorViewController.self, title: "Padding Behavior"),
+        title: "Indoor Museum Navigator", description: ""),
+      Sample(viewControllerClass: GestureControlViewController.self, title: "Gesture Control", description: ""),
+      Sample(viewControllerClass: SnapshotReadyViewController.self, title: "Snapshot Ready", description: ""),
+      Sample(viewControllerClass: DoubleMapViewController.self, title: "Two Maps", description: ""),
+      Sample(viewControllerClass: VisibleRegionViewController.self, title: "Visible Regions", description: ""),
+      Sample(viewControllerClass: MapZoomViewController.self, title: "Min/Max Zoom", description: ""),
+      Sample(viewControllerClass: FrameRateViewController.self, title: "Frame Rate", description: ""),
+      Sample(viewControllerClass: PaddingBehaviorViewController.self, title: "Padding Behavior", description: ""),
     ]
     let overlaySamples = [
-      Sample(viewControllerClass: MarkersViewController.self, title: "Markers"),
-      Sample(viewControllerClass: CustomMarkersViewController.self, title: "Custom Markers"),
-      Sample(viewControllerClass: AnimatedUIViewMarkerViewController.self, title: "UIView Markers"),
-      Sample(viewControllerClass: MarkerEventsViewController.self, title: "Marker Events"),
-      Sample(viewControllerClass: MarkerLayerViewController.self, title: "Marker Layer"),
+      Sample(viewControllerClass: MarkersViewController.self, title: "Markers", description: ""),
+      Sample(viewControllerClass: CustomMarkersViewController.self, title: "Custom Markers", description: ""),
+      Sample(viewControllerClass: AnimatedUIViewMarkerViewController.self, title: "UIView Markers", description: ""),
+      Sample(viewControllerClass: MarkerEventsViewController.self, title: "Marker Events", description: ""),
+      Sample(viewControllerClass: MarkerLayerViewController.self, title: "Marker Layer", description: ""),
       Sample(
-        viewControllerClass: MarkerInfoWindowViewController.self, title: "Custom Info Windows"),
-      Sample(viewControllerClass: PolygonsViewController.self, title: "Polygons"),
-      Sample(viewControllerClass: PolylinesViewController.self, title: "Polylines"),
-      Sample(viewControllerClass: GroundOverlayViewController.self, title: "Ground Overlays"),
-      Sample(viewControllerClass: TileLayerViewController.self, title: "Tile Layers"),
+        viewControllerClass: MarkerInfoWindowViewController.self, title: "Custom Info Windows", description: ""),
+      Sample(viewControllerClass: PolygonsViewController.self, title: "Polygons", description: ""),
+      Sample(viewControllerClass: PolylinesViewController.self, title: "Polylines", description: ""),
+      Sample(viewControllerClass: GroundOverlayViewController.self, title: "Ground Overlays", description: ""),
+      Sample(viewControllerClass: TileLayerViewController.self, title: "Tile Layers", description: ""),
       Sample(
         viewControllerClass: AnimatedCurrentLocationViewController.self,
-        title: "Animated Current Location"),
+        title: "Animated Current Location", description: ""),
       Sample(
-        viewControllerClass: GradientPolylinesViewController.self, title: "Gradient Polylines"),
+        viewControllerClass: GradientPolylinesViewController.self, title: "Gradient Polylines", description: ""),
     ]
     let panoramaSamples = [
-      Sample(viewControllerClass: PanoramaServiceController.self, title: "Panorama Service"),
-      Sample(viewControllerClass: PanoramaViewController.self, title: "Street View"),
-      Sample(viewControllerClass: FixedPanoramaViewController.self, title: "Fixed Street View"),
+      Sample(viewControllerClass: PanoramaServiceController.self, title: "Panorama Service", description: ""),
+      Sample(viewControllerClass: PanoramaViewController.self, title: "Street View", description: ""),
+      Sample(viewControllerClass: FixedPanoramaViewController.self, title: "Fixed Street View", description: ""),
     ]
     let cameraSamples = [
-      Sample(viewControllerClass: FitBoundsViewController.self, title: "Fit Bounds"),
-      Sample(viewControllerClass: CameraViewController.self, title: "Camera Animation"),
-      Sample(viewControllerClass: MapLayerViewController.self, title: "Map Layer"),
+      Sample(viewControllerClass: FitBoundsViewController.self, title: "Fit Bounds", description: ""),
+      Sample(viewControllerClass: CameraViewController.self, title: "Camera Animation", description: ""),
+      Sample(viewControllerClass: MapLayerViewController.self, title: "Map Layer", description: ""),
     ]
     let serviceSamples = [
-      Sample(viewControllerClass: GeocoderViewController.self, title: "Geocoder"),
+      Sample(viewControllerClass: GeocoderViewController.self, title: "Geocoder", description: ""),
       Sample(
-        viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder"),
+        viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder", description: ""),
     ]
     return [
-      Section(name: "Map", samples: mapSamples),
+      Section(name: "Map Basics", samples: mapSamples),
       Section(name: "Panorama", samples: panoramaSamples),
       Section(name: "Overlays", samples: overlaySamples),
       Section(name: "Camera", samples: cameraSamples),

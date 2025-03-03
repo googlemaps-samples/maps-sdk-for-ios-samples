@@ -20,8 +20,8 @@ class BasicMapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Seattle coordinates
-    let camera = GMSCameraPosition(latitude: 47.6089945, longitude: -122.3410462, zoom: 14)
+    // Sydney coordinates
+    let camera = GMSCameraPosition(target: .sydney, zoom: 12)
 
     let options = GMSMapViewOptions()
     options.camera = camera

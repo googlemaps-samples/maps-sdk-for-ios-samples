@@ -22,6 +22,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MAPS_API_KEY</key>
+	<string>$(MAPS_API_KEY)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Show your location on the map</string>
 	<key>UILaunchStoryboardName</key>
