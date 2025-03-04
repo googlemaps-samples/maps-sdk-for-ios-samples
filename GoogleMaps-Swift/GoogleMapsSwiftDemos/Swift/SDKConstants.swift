@@ -13,11 +13,6 @@
 
 import CoreLocation
 
-//TODO: Do we want to adopt the new model for loading api-keys?
-enum SDKConstants {
-  static let apiKey = ""
-}
-
 extension CLLocationCoordinate2D {
   static let sydney = CLLocationCoordinate2D(latitude: -33.8683, longitude: 151.2086)
   // Victoria, Australia
