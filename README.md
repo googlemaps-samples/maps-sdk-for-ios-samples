@@ -22,13 +22,13 @@ For Swift (UIKit) samples:
 
 ```
 $ cd GoogleMaps-Swift
-$ pod install
 $ open GoogleMapsSwiftDemos.xcworkspace
 ```
 
-You will need to add an API Key to `GoogleMapsDemos/SDKDemoAPIKey.h`. Please see the
-[documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key)
-for details on how to get an API Key.
+You will need to add an API Key to your configuration. Please see the [documentation](https://developers.google.com/maps/documentation/ios-sdk/start#get-key) for details on how to get an API Key.
+
+This project uses Swift Package Manager and requires the [GoogleMaps package](https://github.com/googlemaps/ios-maps-sdk). The sample code demonstrates best practices for integrating Google Maps into Swift-based iOS applications.
+
 
 ## GoogleMaps-SwiftUI
 
