@@ -58,27 +58,27 @@ enum Samples {
       Sample(viewControllerClass: PolygonsViewController.self, title: "Polygons", description: "Shapes outline land and maritime borders of NY and NC"),
       Sample(viewControllerClass: PolylinesViewController.self, title: "Polylines", description: "Animated red/green polylines change position/size over South Pacific map"),
       Sample(viewControllerClass: GroundOverlayViewController.self, title: "Ground Overlays", description: "Custom image placed on ground layer; markers appear in front"),
-      Sample(viewControllerClass: TileLayerViewController.self, title: "Tile Layers", description: ""),
+      Sample(viewControllerClass: TileLayerViewController.self, title: "Tile Layers", description: "Map tiles are colored to highlight the indoor layout of the selected floor"),
       Sample(
         viewControllerClass: AnimatedCurrentLocationViewController.self,
-        title: "Animated Current Location", description: ""),
+        title: "Animated Current Location", description: "A marker with a walking animation moves with the user's current location"),
       Sample(
-        viewControllerClass: GradientPolylinesViewController.self, title: "Gradient Polylines", description: ""),
+        viewControllerClass: GradientPolylinesViewController.self, title: "Gradient Polylines", description: "Polyline traces hiking trail; warmer colors show higher elevations"),
     ]
     let panoramaSamples = [
-      Sample(viewControllerClass: PanoramaServiceController.self, title: "Panorama Service", description: ""),
-      Sample(viewControllerClass: PanoramaViewController.self, title: "Street View", description: ""),
-      Sample(viewControllerClass: FixedPanoramaViewController.self, title: "Fixed Street View", description: ""),
+      Sample(viewControllerClass: PanoramaServiceController.self, title: "Panorama Service", description: "This sample tests the panorama service and displays the response data"),
+      Sample(viewControllerClass: PanoramaViewController.self, title: "Street View", description: "This sample displays a full screen panoramic street view"),
+      Sample(viewControllerClass: FixedPanoramaViewController.self, title: "Fixed Street View", description: "This panoramic street view does not respond to gestures"),
     ]
     let cameraSamples = [
-      Sample(viewControllerClass: FitBoundsViewController.self, title: "Fit Bounds", description: ""),
-      Sample(viewControllerClass: CameraViewController.self, title: "Camera Animation", description: ""),
-      Sample(viewControllerClass: MapLayerViewController.self, title: "Map Layer", description: ""),
+      Sample(viewControllerClass: FitBoundsViewController.self, title: "Fit Bounds", description: "Fit Bounds button pans/zooms camera to fit all markers."),
+      Sample(viewControllerClass: CameraViewController.self, title: "Camera Animation", description: "Camera zooms out and rotates showing Melbourne's surrounding buildings"),
+      Sample(viewControllerClass: MapLayerViewController.self, title: "Map Layer", description: "Triggers animations zooming to user's location"),
     ]
     let serviceSamples = [
-      Sample(viewControllerClass: GeocoderViewController.self, title: "Geocoder", description: ""),
+      Sample(viewControllerClass: GeocoderViewController.self, title: "Geocoder", description: "Long-press sends coordinates for geocoding; displays marker with results"),
       Sample(
-        viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder", description: ""),
+        viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder", description: "Long-press sends coordinates for geocoding; displays address details in window"),
     ]
     return [
       Section(name: "Map Basics", samples: mapSamples),
