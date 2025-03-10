@@ -18,7 +18,12 @@ class FrameRateViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    return GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
   private lazy var statusTextView: UITextView = UITextView()
 

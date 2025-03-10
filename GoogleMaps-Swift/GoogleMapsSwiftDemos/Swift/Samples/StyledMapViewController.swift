@@ -15,11 +15,16 @@ import GoogleMaps
 import UIKit
 
 class StyledMapViewController: UIViewController {
-  lazy var mapView: GMSMapView = {
-    let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 12)
-    return GMSMapView(frame: .zero, camera: camera)
+   lazy var mapView: GMSMapView = {
+       let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 12)
+        
+       let options = GMSMapViewOptions()
+       options.camera = camera
+       options.frame = .zero
+        
+       return GMSMapView(options: options)
   }()
-
+    
   override func loadView() {
     view = mapView
 

@@ -19,8 +19,13 @@ class MapTypesViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .sydney, zoom: 12)
-    return GMSMapView(frame: .zero, camera: camera)
-  }()
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+     return GMSMapView(options: options)
+    }()
 
   private lazy var segmentedControl: UISegmentedControl = {
     return UISegmentedControl(items: types.map { "\($0)" })
@@ -42,7 +47,7 @@ class MapTypesViewController: UIViewController {
   }
 }
 
-extension GMSMapViewType: CustomStringConvertible {
+extension GMSMapViewType: @retroactive CustomStringConvertible { //adding protocol conformances to type from libraries we don't control.
   public var description: String {
     switch self {
     case .normal:

@@ -18,15 +18,23 @@ class DoubleMapViewController: UIViewController {
 
   private lazy var sanFranciscoCamera = GMSCameraPosition(
     latitude: 37.7847, longitude: -122.41, zoom: 5)
+    
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
-    return mapView
+    let options = GMSMapViewOptions()
+    options.camera = sanFranciscoCamera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
+    
   private lazy var boundMapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
-    return mapView
+    let options = GMSMapViewOptions()
+    options.camera = sanFranciscoCamera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
-
+    
   override func viewDidLoad() {
     super.viewDidLoad()
 

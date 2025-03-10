@@ -23,7 +23,12 @@ final class GroundOverlayViewController: UIViewController {
     // Choose the midpoint of the coordinate to focus the camera on.
     let newark = GMSGeometryInterpolate(southWest, northEast, 0.5)
     let cameraPosition = GMSCameraPosition(target: newark, zoom: 12, bearing: 0, viewingAngle: 45)
-    let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+
+    let options = GMSMapViewOptions()
+    options.camera = cameraPosition
+    options.frame = .zero
+
+    let mapView = GMSMapView(options: options)
     mapView.delegate = self
     view = mapView
 

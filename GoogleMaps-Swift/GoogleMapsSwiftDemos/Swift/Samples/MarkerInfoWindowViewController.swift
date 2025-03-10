@@ -29,9 +29,15 @@ final class MarkerInfoWindowViewController: UIViewController {
     return UIImageView(image: UIImage(named: "aeroplane"))
   }()
 
+    
   override func loadView() {
     let cameraPosition = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+
+    let options = GMSMapViewOptions()
+    options.camera = cameraPosition
+    options.frame = .zero
+
+    let mapView = GMSMapView(options: options)
     mapView.delegate = self
     view = mapView
 

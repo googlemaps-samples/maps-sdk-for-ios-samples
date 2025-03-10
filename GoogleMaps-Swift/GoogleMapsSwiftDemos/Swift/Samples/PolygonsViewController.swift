@@ -18,7 +18,12 @@ final class PolygonsViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let cameraPosition = GMSCameraPosition(latitude: 39.13006, longitude: -77.508545, zoom: 4)
-    return GMSMapView(frame: .zero, camera: cameraPosition)
+        
+    let options = GMSMapViewOptions()
+    options.camera = cameraPosition
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {

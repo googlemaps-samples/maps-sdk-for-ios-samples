@@ -21,8 +21,15 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   private let locationManager = CLLocationManager()
 
   private lazy var mapView: GMSMapView = {
-    let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
-    return GMSMapView(frame: .zero, camera: camera)
+        let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
+        
+        // Create options object with your desired configuration
+        let options = GMSMapViewOptions()
+        options.camera = camera
+        options.frame = .zero
+        
+        // Initialize map view with options
+        return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -34,31 +41,48 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Setup location services
+    // Setup location manager
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.distanceFilter = 5.0
+    
+    // Check authorization status
+    checkLocationAuthorization()
+  }
+  
+    private func checkLocationAuthorization() {
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            print("Please authorize location services")
+            // Consider showing an alert with instructions to enable location
+        case .authorizedWhenInUse, .authorizedAlways:
+            // Don't check locationServicesEnabled here, just start updates
+            locationManager.startUpdatingLocation()
+        @unknown default:
+            break
+        }
+    }
+
+    // Remove the separate startLocationUpdates method that contains the warning-triggering check
+  
+  private func startLocationUpdates() {
     guard CLLocationManager.locationServicesEnabled() else {
       print("Please enable location services")
       return
     }
-
-    if CLLocationManager.authorizationStatus() == .denied {
-      print("Please authorize location services")
-      return
-    }
-
-    locationManager.requestWhenInUseAuthorization()
-    locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.distanceFilter = 5.0
+    
     locationManager.startUpdatingLocation()
   }
 }
 
 extension AnimatedCurrentLocationViewController: CLLocationManagerDelegate {
+  func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    checkLocationAuthorization()
+  }
+  
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    if CLLocationManager.authorizationStatus() == .denied {
-      print("Please authorize location services")
-      return
-    }
     print("Unable to get current location. Error: \(error.localizedDescription)")
   }
 

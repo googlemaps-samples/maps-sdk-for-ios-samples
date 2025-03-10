@@ -20,8 +20,14 @@ class GestureControlViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -25.5605, longitude: 133.605097, zoom: 3)
-    return GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
+    
   private lazy var zoomSwitch: UISwitch = UISwitch(frame: .zero)
 
   override func viewDidLoad() {

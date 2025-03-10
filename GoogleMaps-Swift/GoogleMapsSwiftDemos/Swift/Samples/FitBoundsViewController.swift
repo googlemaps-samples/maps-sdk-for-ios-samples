@@ -23,9 +23,14 @@ class FitBoundsViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .victoria, zoom: 4)
-    return GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
-
+    
   // Creates a list of markers, adding the Sydney marker.
   private lazy var markers: [GMSMarker] = {
     // Adds default markers around Sydney.

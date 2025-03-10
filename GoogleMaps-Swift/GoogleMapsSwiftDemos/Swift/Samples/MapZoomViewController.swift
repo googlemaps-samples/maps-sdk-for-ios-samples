@@ -57,16 +57,20 @@ enum ModeEnum: String {
 class MapZoomViewController: UIViewController {
 
   private let backgroundColor = UIColor(white: 1, alpha: 0.8)
-
   private let zoomRangeViewHeight: CGFloat = 30
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    let mapView = GMSMapView(options: options)
     mapView.settings.scrollGestures = false
     return mapView
   }()
-
+    
   private lazy var zoomRangeView: UITextView = {
     let view = UITextView()
     view.text = ""

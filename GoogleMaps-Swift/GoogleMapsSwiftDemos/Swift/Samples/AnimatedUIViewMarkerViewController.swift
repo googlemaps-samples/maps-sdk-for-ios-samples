@@ -16,10 +16,17 @@ import UIKit
 
 // Sample code for customizing the marker.
 class AnimatedUIViewMarkerViewController: UIViewController {
-
+    
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.8683, longitude: 151.2086, zoom: 5)
-    return GMSMapView(frame: .zero, camera: camera)
+   
+    // Create options object with your desired configuration
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+   
+    // Initialize map view with options
+    return GMSMapView(options: options)
   }()
 
   private var infoView: UIImageView?

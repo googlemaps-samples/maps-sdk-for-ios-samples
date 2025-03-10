@@ -15,20 +15,27 @@ import GoogleMaps
 import UIKit
 
 final class PolylinesViewController: UIViewController {
+    
   private lazy var styles: [GMSStrokeStyle] = {
     let greenStyle = GMSStrokeStyle.gradient(from: .green, to: UIColor.green.withAlphaComponent(0))
     let redStyle = GMSStrokeStyle.gradient(from: UIColor.red.withAlphaComponent(0), to: .red)
     return [greenStyle, redStyle, GMSStrokeStyle.solidColor(UIColor(white: 0, alpha: 0))]
   }()
+    
   private var pathLength: Double = 0
   private var pos: Double = 0
   private var polylines: [GMSPolyline] = []
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -30, longitude: -175, zoom: 3)
-    return GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
-
+    
   override func loadView() {
     view = mapView
     mapView.accessibilityElementsHidden = true

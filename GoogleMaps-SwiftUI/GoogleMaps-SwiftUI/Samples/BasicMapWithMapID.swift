@@ -26,6 +26,7 @@ struct BasicMapWithMapID: View {
          
          2. Provide your mapID here
          let mapID = GMSMapID(identifier: "YOUR_MAP_ID")
+         options.mapID = mapID
          */
                 
         let mapID: GMSMapID = .demoMapID  //used for demostration only
@@ -38,6 +39,18 @@ struct BasicMapWithMapID: View {
         VStack {
             GoogleMapView(options: mapOptions)
                 .ignoresSafeAreaExceptTop()
+                .frame(maxWidth: .infinity, minHeight: 325)
+            
+            VStack(alignment: .leading) {
+                Text("Customize with Map ID's")
+                    .font(.headline)
+                
+                Text("Create your own map ID to represent Google Map styling and Advanced mnarker settings stored in Google Cloud.")
+                    .font(.body)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+            
         }
     }
 }

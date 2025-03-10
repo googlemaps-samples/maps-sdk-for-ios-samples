@@ -19,10 +19,15 @@ class BasicMapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Sydney coordinates
+    let camera = GMSCameraPosition(target: .sydney, zoom: 12)
 
-    // Seattle coordinates
-    let camera = GMSCameraPosition(latitude: 47.6089945, longitude: -122.3410462, zoom: 14)
-    let mapView = GMSMapView(frame: view.bounds, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = view.bounds
+
+    let mapView = GMSMapView(options: options)
     mapView.delegate = self
     view = mapView
     navigationController?.navigationBar.isTranslucent = false

@@ -36,7 +36,13 @@ struct Exhibit: Decodable {
 class IndoorMuseumNavigationViewController: UIViewController {
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+
+    let mapView = GMSMapView(options: options)
+      
     mapView.settings.myLocationButton = false
     mapView.settings.indoorPicker = false
     return mapView
