@@ -3,7 +3,7 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '15.0'
 
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GoogleMaps', '9.2.0'
+  pod 'GoogleMaps', '9.4.0'
 end
 
 source 'https://cdn.cocoapods.org/'
@@ -11,5 +11,5 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '15.0'
 
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'GooglePlaces', '9.2.0'
+  pod 'GooglePlaces', '9.4.0'
 end
