@@ -18,6 +18,11 @@ class MapExamplesViewModel: ObservableObject {
     
     @Published var examples: [MapExample] = [
         MapExample(
+            title: "Basic panorama",
+            description: "A simple panorama. Shows how to initalize and present a panorama.",
+            destination: AnyView(BasicPanorama())
+        ),
+        MapExample(
             title: "Basic map",
             description: "A simple map. Shows how to initalize and update map options.",
             destination: AnyView(BasicMap())
