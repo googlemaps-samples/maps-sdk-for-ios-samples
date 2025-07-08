@@ -21,12 +21,17 @@ final class TileLayerViewController: UIViewController {
     }
   }
   private var tileLayer: GMSURLTileLayer?
-
+    
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
-    return GMSMapView(frame: .zero, camera: camera)
+        
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+        
+    return GMSMapView(options: options)
   }()
-
+    
   private lazy var segmentedControl: UISegmentedControl = {
     let floorNames = ["1", "2", "3"]
     return UISegmentedControl(items: floorNames)
