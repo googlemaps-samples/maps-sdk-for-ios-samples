@@ -39,8 +39,6 @@
   }
   [GMSServices provideAPIKey:kAPIKey];
 
-  // Metal is the preferred renderer.
-  [GMSServices setMetalRendererEnabled:YES];
   self.servicesHandle = [GMSServices sharedServices];
 
   // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for a
