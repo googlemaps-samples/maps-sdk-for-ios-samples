@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
   ) -> Bool {
 
     GMSServices.provideAPIKey(SDKConstants.apiKey)
-    // Metal is the preferred renderer.
-    GMSServices.setMetalRendererEnabled(true)
 
     return true
   }
