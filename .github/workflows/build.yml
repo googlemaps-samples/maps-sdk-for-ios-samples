@@ -100,7 +100,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace snippets/GoogleMapsDemos.xcworkspace \
-            -scheme PlacesSnippets \
+            -scheme GoogleMapsDemos \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
@@ -245,7 +245,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GoogleNavigation/GoogleNavXCFrameworkDemos.xcworkspace \
-            -scheme GoogleNavigationXCFrameworkDemos \
+            -scheme GoogleNavXCFrameworkDemos \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
@@ -274,7 +274,7 @@ jobs:
 
             echo "Building"
             xcodebuild -workspace GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos.xcworkspace \
-            -scheme GoogleNavigationSwiftXCFrameworkDemos \
+            -scheme GoogleNavSwiftXCFrameworkDemos \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
