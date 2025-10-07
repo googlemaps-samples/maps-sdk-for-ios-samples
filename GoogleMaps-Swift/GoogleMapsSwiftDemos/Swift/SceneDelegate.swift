@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let sampleListViewController = SampleListViewController()
     let navigationController = UINavigationController(rootViewController: sampleListViewController)
     let detailController = UIViewController()
-    let splitViewController = UISplitViewController()
+    // let splitViewController = UISplitViewController()
 
     splitViewController.delegate = sampleListViewController
     splitViewController.preferredDisplayMode = .oneBesideSecondary
