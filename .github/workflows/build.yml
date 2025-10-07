@@ -49,7 +49,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace snippets/MapsSnippets.xcworkspace \
             -scheme MapsSnippets \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-MapsUtilsSnippets:
         runs-on: macos-latest
@@ -74,7 +75,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace snippets/MapsUtilsSnippets.xcworkspace \
             -scheme MapsUtilsSnippets \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-PlacesSnippets:
         runs-on: macos-latest
@@ -99,7 +101,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace snippets/GoogleMapsDemos.xcworkspace \
             -scheme PlacesSnippets \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GoogleMaps:
         runs-on: macos-latest
@@ -127,7 +130,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GoogleMaps/GoogleMapsXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GoogleMaps-Swift:
         runs-on: macos-latest
@@ -155,7 +159,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsSwiftXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GooglePlaces:
         runs-on: macos-latest
@@ -183,7 +188,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GooglePlaces/GooglePlacesXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GooglePlaces-Swift:
         runs-on: macos-latest
@@ -211,7 +217,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesSwiftXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GoogleNavigation:
         runs-on: macos-latest
@@ -239,7 +246,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GoogleNavigation/GoogleNavXCFrameworkDemos.xcworkspace \
             -scheme GoogleNavigationXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-GoogleNavigation-Swift:
         runs-on: macos-latest
@@ -267,7 +275,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos.xcworkspace \
             -scheme GoogleNavigationSwiftXCFrameworkDemos \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-current-place-on-map:
         runs-on: macos-latest
@@ -292,7 +301,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace tutorials/current-place-on-map.xcworkspace \
             -scheme current-place-on-map \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-map-with-marker:
         runs-on: macos-latest
@@ -317,7 +327,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace tutorials/map-with-marker.xcworkspace \
             -scheme map-with-marker \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-places-address-form:
         runs-on: macos-latest
@@ -342,7 +353,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace tutorials/places-address-form.xcworkspace \
             -scheme places-address-form \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     build-MapsPlacesDemo-form:
         runs-on: macos-latest
@@ -370,7 +382,8 @@ jobs:
             echo "Building"
             xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
             -scheme MapsAndPlacesDemo \
-            -destination 'generic/platform=iOS' build | xcpretty
+            -destination 'generic/platform=iOS' build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
     test: # used as required status check
       runs-on: ubuntu-latest
