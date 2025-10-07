@@ -43,10 +43,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace snippets/MapsSnippets.xcworkspace \
             -scheme MapsSnippets \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-MapsUtilsSnippets:
         runs-on: macos-latest
@@ -65,10 +68,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace snippets/MapsUtilsSnippets.xcworkspace \
             -scheme MapsUtilsSnippets \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-PlacesSnippets:
         runs-on: macos-latest
@@ -87,10 +93,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace snippets/GoogleMapsDemos.xcworkspace \
             -scheme PlacesSnippets \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GoogleMaps:
         runs-on: macos-latest
@@ -109,13 +118,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GoogleMaps/GoogleMapsXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
             xcodebuild -workspace GoogleMaps/GoogleMapsXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GoogleMaps-Swift:
         runs-on: macos-latest
@@ -134,13 +146,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos/Swift/SDKConstants.swift
 
             echo "Building"
             xcodebuild -workspace GoogleMaps-Swift/GoogleMapsSwiftXCFrameworkDemos.xcworkspace \
             -scheme GoogleMapsSwiftXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GooglePlaces:
         runs-on: macos-latest
@@ -159,13 +174,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GooglePlaces/GooglePlacesXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
             xcodebuild -workspace GooglePlaces/GooglePlacesXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GooglePlaces-Swift:
         runs-on: macos-latest
@@ -184,13 +202,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
 
             echo "Building"
             xcodebuild -workspace GooglePlaces-Swift/GooglePlacesSwiftXCFrameworkDemos.xcworkspace \
             -scheme GooglePlacesSwiftXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GoogleNavigation:
         runs-on: macos-latest
@@ -209,13 +230,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GoogleNavigation/GoogleNavXCFrameworkDemos/SDKDemoAPIKey.h
 
             echo "Building"
             xcodebuild -workspace GoogleNavigation/GoogleNavXCFrameworkDemos.xcworkspace \
             -scheme GoogleNavigationXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-GoogleNavigation-Swift:
         runs-on: macos-latest
@@ -234,13 +258,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
 
             echo "Building"
             xcodebuild -workspace GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos.xcworkspace \
             -scheme GoogleNavigationSwiftXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-current-place-on-map:
         runs-on: macos-latest
@@ -259,10 +286,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace tutorials/current-place-on-map.xcworkspace \
             -scheme current-place-on-map \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-map-with-marker:
         runs-on: macos-latest
@@ -281,10 +311,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace tutorials/map-with-marker.xcworkspace \
             -scheme map-with-marker \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-places-address-form:
         runs-on: macos-latest
@@ -303,10 +336,13 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Building"
             xcodebuild -workspace tutorials/places-address-form.xcworkspace \
             -scheme places-address-form \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     build-MapsPlacesDemo-form:
         runs-on: macos-latest
@@ -325,13 +361,16 @@ jobs:
 
         - name: Build project
           run: |
+            # Exit immediately if a command in the pipeline fails
+            set -o pipefail
+
             echo "Replacing #error for API key"
             sed -i .prev '/#error/'d MapsAndPlacesDemo/MapsAndPlacesDemo/ApiKeys.swift
 
             echo "Building"
             xcodebuild -workspace MapsAndPlacesDemo/MapsAndPlacesDemo.xcworkspace \
             -scheme MapsAndPlacesDemo \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 11 build | xcpretty
+            -destination 'generic/platform=iOS' build | xcpretty
 
     test: # used as required status check
       runs-on: ubuntu-latest
