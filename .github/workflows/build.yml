@@ -47,7 +47,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace snippets/MapsSnippets.xcworkspace \
+            xcodebuild -workspace snippets/MapsSnippets/MapsSnippets.xcworkspace \
             -scheme MapsSnippets \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
@@ -73,7 +73,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace snippets/MapsUtilsSnippets.xcworkspace \
+            xcodebuild -workspace snippets/MapsUtilsSnippets/MapsUtilsSnippets.xcworkspace \
             -scheme MapsUtilsSnippets \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
@@ -99,7 +99,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace snippets/GoogleMapsDemos.xcworkspace \
+            xcodebuild -workspace snippets/PlacesSnippets/GoogleMapsDemos.xcworkspace \
             -scheme GoogleMapsDemos \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
@@ -299,7 +299,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace tutorials/current-place-on-map.xcworkspace \
+            xcodebuild -workspace tutorials/current-place-on-map/current-place-on-map.xcworkspace \
             -scheme current-place-on-map \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
@@ -325,7 +325,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace tutorials/map-with-marker.xcworkspace \
+            xcodebuild -workspace tutorials/map-with-marker/map-with-marker.xcworkspace \
             -scheme map-with-marker \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
@@ -351,7 +351,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace tutorials/places-address-form.xcworkspace \
+            xcodebuild -workspace tutorials/places-address-form/places-address-form.xcworkspace \
             -scheme places-address-form \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
