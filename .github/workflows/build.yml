@@ -99,7 +99,7 @@ jobs:
             set -o pipefail
 
             echo "Building"
-            xcodebuild -workspace snippets/PlacesSnippets/GoogleMapsDemos.xcworkspace \
+            xcodebuild -workspace snippets/PlacesSnippets/PlacesSnippets.xcworkspace \
             -scheme GoogleMapsDemos \
             -destination 'generic/platform=iOS' build \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
