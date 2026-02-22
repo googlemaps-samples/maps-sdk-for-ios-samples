@@ -19,7 +19,10 @@ class AnimatedUIViewMarkerViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.8683, longitude: 151.2086, zoom: 5)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private var infoView: UIImageView?

@@ -25,7 +25,10 @@ class MyLocationViewController: UIViewController {
   lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(
       latitude: cameraLatitude, longitude: cameraLongitude, zoom: cameraZoom)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   var observation: NSKeyValueObservation?

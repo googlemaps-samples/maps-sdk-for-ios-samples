@@ -71,8 +71,11 @@ class DataDrivenStylingEventsViewController: UIViewController {
 
   private lazy var mapView = {
     let camera = GMSCameraPosition(latitude: 47.61, longitude: -122.34, zoom: 10)
-    let view = GMSMapView(
-      frame: .zero, mapID: GMSMapID(identifier: mapID), camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    options.mapID = GMSMapID(identifier: mapID)
+    let view = GMSMapView(options: options)
     view.delegate = self
     return view
   }()

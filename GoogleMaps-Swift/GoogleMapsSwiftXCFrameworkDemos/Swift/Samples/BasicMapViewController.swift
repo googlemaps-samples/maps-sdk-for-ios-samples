@@ -22,7 +22,10 @@ class BasicMapViewController: UIViewController {
 
     // Seattle coordinates
     let camera = GMSCameraPosition(latitude: 47.6089945, longitude: -122.3410462, zoom: 14)
-    let mapView = GMSMapView(frame: view.bounds, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = view.bounds
+    let mapView = GMSMapView(options: options)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified

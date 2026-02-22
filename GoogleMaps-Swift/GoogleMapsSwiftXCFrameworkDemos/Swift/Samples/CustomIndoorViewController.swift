@@ -17,7 +17,10 @@ import UIKit
 class CustomIndoorViewController: UIViewController {
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     return mapView
   }()
   private lazy var levelPickerView: UIPickerView = UIPickerView()
@@ -38,7 +41,6 @@ class CustomIndoorViewController: UIViewController {
     // This UIPicker will be populated with the levels of the active building.
     levelPickerView.delegate = self
     levelPickerView.dataSource = self
-    levelPickerView.showsSelectionIndicator = true
     levelPickerView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(levelPickerView)
 

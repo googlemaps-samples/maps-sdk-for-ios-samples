@@ -108,7 +108,7 @@ enum Samples {
         viewControllerClass: StructuredGeocoderViewController.self, title: "Structured Geocoder"),
     ]
 
-    var sections = [
+    let sections = [
       Section(name: "Map", samples: mapSamples),
       Section(name: "Panorama", samples: panoramaSamples),
       Section(name: "Overlays", samples: overlaySamples),
