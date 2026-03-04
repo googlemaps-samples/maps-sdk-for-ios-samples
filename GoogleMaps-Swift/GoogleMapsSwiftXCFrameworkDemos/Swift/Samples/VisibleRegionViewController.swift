@@ -19,7 +19,10 @@ class VisibleRegionViewController: UIViewController {
   static let overlayHeight: CGFloat = 140
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.settings.myLocationButton = true
     mapView.isMyLocationEnabled = true
     mapView.padding = UIEdgeInsets(

@@ -633,6 +633,7 @@
 					.,
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GoogleMapsDemos;
 				PRODUCT_NAME = GoogleMapsSwiftXCFrameworkDemos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

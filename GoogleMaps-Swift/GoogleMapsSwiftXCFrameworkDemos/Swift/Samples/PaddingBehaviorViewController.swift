@@ -21,7 +21,10 @@ class PaddingBehaviorViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.padding = UIEdgeInsets(top: 0, left: 20, bottom: 40, right: 60)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
@@ -45,7 +48,12 @@ class PaddingBehaviorViewController: UIViewController {
     view.addSubview(mapView)
 
     // Add status label.
-    let statusBarHeight = UIApplication.shared.statusBarFrame.height
+    let statusBarHeight: CGFloat
+    if let windowScene = view.window?.windowScene {
+      statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height ?? 0
+    } else {
+      statusBarHeight = 0
+    }
     let navigationHeight = navigationController?.navigationBar.frame.height ?? 0
     let topYOffset = statusBarHeight + navigationHeight
     statusLabel.frame = CGRect(x: 30, y: topYOffset, width: 0, height: 30)

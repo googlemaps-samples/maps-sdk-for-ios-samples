@@ -22,7 +22,10 @@ final class AnimatedCurrentLocationViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -44,7 +47,7 @@ final class AnimatedCurrentLocationViewController: UIViewController {
       return
     }
 
-    if CLLocationManager.authorizationStatus() == .denied {
+    if locationManager.authorizationStatus == .denied {
       print("Please authorize location services")
       return
     }
@@ -59,7 +62,7 @@ final class AnimatedCurrentLocationViewController: UIViewController {
 
 extension AnimatedCurrentLocationViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    if CLLocationManager.authorizationStatus() == .denied {
+    if locationManager.authorizationStatus == .denied {
       print("Please authorize location services")
       return
     }

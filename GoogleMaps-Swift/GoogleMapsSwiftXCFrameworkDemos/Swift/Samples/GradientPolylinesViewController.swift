@@ -38,7 +38,10 @@ final class GradientPolylinesViewController: UIViewController {
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(
       latitude: 44.1314, longitude: 9.6921, zoom: 14.059, bearing: 328, viewingAngle: 40)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
