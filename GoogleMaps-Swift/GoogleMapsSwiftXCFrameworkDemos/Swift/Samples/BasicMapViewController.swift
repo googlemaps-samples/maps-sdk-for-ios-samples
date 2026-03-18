@@ -50,7 +50,7 @@ class BasicMapViewController: UIViewController {
   }
 }
 
-extension BasicMapViewController: GMSMapViewDelegate {
+extension BasicMapViewController: @MainActor GMSMapViewDelegate {
   func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
     statusLabel.alpha = 0.8
     statusLabel.text = "Rendering"

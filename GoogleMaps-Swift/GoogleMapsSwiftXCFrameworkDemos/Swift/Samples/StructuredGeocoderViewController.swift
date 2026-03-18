@@ -38,7 +38,7 @@ class StructuredGeocoderViewController: UIViewController {
 
 }
 
-extension StructuredGeocoderViewController: GMSMapViewDelegate {
+extension StructuredGeocoderViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
     // On a long press, reverse geocode this location.
     geocoder.reverseGeocodeCoordinate(coordinate) { response, error in

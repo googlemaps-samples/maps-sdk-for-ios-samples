@@ -116,7 +116,7 @@ class IndoorMuseumNavigationViewController: UIViewController {
 
 }
 
-extension IndoorMuseumNavigationViewController: GMSMapViewDelegate {
+extension IndoorMuseumNavigationViewController: @MainActor GMSMapViewDelegate {
 
   func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
     guard let selectedExhibit = selectedExhibit,
@@ -134,7 +134,7 @@ extension IndoorMuseumNavigationViewController: GMSMapViewDelegate {
 
 }
 
-extension IndoorMuseumNavigationViewController: GMSIndoorDisplayDelegate {
+extension IndoorMuseumNavigationViewController: @MainActor GMSIndoorDisplayDelegate {
 
   func didChangeActiveBuilding(_ building: GMSIndoorBuilding?) {
     guard let building = building else {

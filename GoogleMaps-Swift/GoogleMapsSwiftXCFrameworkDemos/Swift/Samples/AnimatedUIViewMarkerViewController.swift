@@ -88,7 +88,7 @@ class AnimatedUIViewMarkerViewController: UIViewController {
   }
 }
 
-extension AnimatedUIViewMarkerViewController: GMSMapViewDelegate {
+extension AnimatedUIViewMarkerViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
     marker.tracksInfoWindowChanges = true
     let infoView = UIImageView(image: UIImage(named: "arrow"))

@@ -120,7 +120,7 @@ final class MarkerLayerViewController: UIViewController {
   }
 }
 
-extension MarkerLayerViewController: GMSMapViewDelegate {
+extension MarkerLayerViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     fadedMarker = marker
     return true

@@ -272,7 +272,7 @@ extension GMSPath {
   }
 }
 
-extension PolygonsViewController: GMSMapViewDelegate {
+extension PolygonsViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
     // When a polygon is tapped, randomly change its fill color to a new hue.
     guard let polygon = overlay as? GMSPolygon else { return }

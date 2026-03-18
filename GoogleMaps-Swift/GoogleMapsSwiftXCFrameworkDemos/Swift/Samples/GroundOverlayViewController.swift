@@ -45,7 +45,7 @@ final class GroundOverlayViewController: UIViewController {
   }
 }
 
-extension GroundOverlayViewController: GMSMapViewDelegate {
+extension GroundOverlayViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
     guard let groundOverlay = overlay as? GMSGroundOverlay else { return }
     groundOverlay.opacity = Float.random(in: 0.5..<1)

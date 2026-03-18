@@ -41,7 +41,7 @@ final class MarkerEventsViewController: UIViewController {
   }
 }
 
-extension MarkerEventsViewController: GMSMapViewDelegate {
+extension MarkerEventsViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
     if marker == melbourneMarker {
       return UIImageView(image: UIImage(named: "Icon"))
