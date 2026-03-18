@@ -36,7 +36,7 @@ class GeocoderViewController: UIViewController {
   }
 }
 
-extension GeocoderViewController: GMSMapViewDelegate {
+extension GeocoderViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
     // On a long press, reverse geocode this location.
     geocoder.reverseGeocodeCoordinate(coordinate) { response, error in

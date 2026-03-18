@@ -63,7 +63,7 @@ class MyLocationViewController: UIViewController {
   }
 }
 
-extension MyLocationViewController: GMSMapViewDelegate {
+extension MyLocationViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
     let alert = UIAlertController(
       title: "Location Tapped",

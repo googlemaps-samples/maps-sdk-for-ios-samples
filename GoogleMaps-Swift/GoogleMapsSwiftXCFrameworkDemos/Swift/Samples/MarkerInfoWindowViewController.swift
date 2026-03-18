@@ -56,7 +56,7 @@ final class MarkerInfoWindowViewController: UIViewController {
   }
 }
 
-extension MarkerInfoWindowViewController: GMSMapViewDelegate {
+extension MarkerInfoWindowViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
     if marker == sydneyMarker {
       return contentView

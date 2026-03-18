@@ -103,7 +103,7 @@ class SnapshotReadyViewController: UIViewController {
 
 }
 
-extension SnapshotReadyViewController: GMSMapViewDelegate {
+extension SnapshotReadyViewController: @MainActor GMSMapViewDelegate {
 
   func mapViewSnapshotReady(_ mapView: GMSMapView) {
     if isAwaitingSnapshot {

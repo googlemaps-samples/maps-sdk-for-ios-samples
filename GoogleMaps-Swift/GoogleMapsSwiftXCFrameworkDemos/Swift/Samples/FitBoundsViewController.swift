@@ -73,7 +73,7 @@ class FitBoundsViewController: UIViewController {
   }
 }
 
-extension FitBoundsViewController: GMSMapViewDelegate {
+extension FitBoundsViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
     let marker = GMSMarker(position: coordinate)
     marker.title = "Marker at: \(coordinate.latitude), \(coordinate.longitude)"

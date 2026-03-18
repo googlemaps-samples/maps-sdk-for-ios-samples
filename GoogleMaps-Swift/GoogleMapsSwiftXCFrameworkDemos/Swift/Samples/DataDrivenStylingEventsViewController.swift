@@ -125,7 +125,7 @@ class DataDrivenStylingEventsViewController: UIViewController {
   }
 }
 
-extension DataDrivenStylingEventsViewController: GMSMapViewDelegate {
+extension DataDrivenStylingEventsViewController: @MainActor GMSMapViewDelegate {
   func mapView(
     _ mapView: GMSMapView, didTap features: [Feature],
     in featureLayer: FeatureLayer<Feature>, atLocation: CLLocationCoordinate2D

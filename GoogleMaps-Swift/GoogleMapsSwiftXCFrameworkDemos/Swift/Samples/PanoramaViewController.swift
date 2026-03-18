@@ -43,7 +43,7 @@ class PanoramaViewController: UIViewController {
   }
 }
 
-extension PanoramaViewController: GMSPanoramaViewDelegate {
+extension PanoramaViewController: @MainActor GMSPanoramaViewDelegate {
   func panoramaView(_ panoramaView: GMSPanoramaView, didMove camera: GMSPanoramaCamera) {
     print("Camera:\(camera.orientation.heading), \(camera.orientation.pitch), \(camera.zoom)")
   }

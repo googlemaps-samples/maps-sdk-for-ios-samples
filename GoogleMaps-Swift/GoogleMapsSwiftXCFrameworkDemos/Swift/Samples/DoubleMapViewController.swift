@@ -66,7 +66,7 @@ class DoubleMapViewController: UIViewController {
 
 }
 
-extension DoubleMapViewController: GMSMapViewDelegate {
+extension DoubleMapViewController: @MainActor GMSMapViewDelegate {
 
   func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
     let previousCamera = boundMapView.camera
