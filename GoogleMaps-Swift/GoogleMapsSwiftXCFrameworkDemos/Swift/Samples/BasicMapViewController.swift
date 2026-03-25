@@ -15,11 +15,15 @@ import GoogleMaps
 import UIKit
 
 class BasicMapViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
   var statusLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
     // Seattle coordinates
     let camera = GMSCameraPosition(latitude: 47.6089945, longitude: -122.3410462, zoom: 14)
     let options = GMSMapViewOptions()
