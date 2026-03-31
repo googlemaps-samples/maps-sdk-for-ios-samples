@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 class SnapshotReadyViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
     let options = GMSMapViewOptions()
@@ -67,6 +70,12 @@ class SnapshotReadyViewController: UIViewController {
       title: "Wait for snapshot", style: .plain, target: self, action: #selector(didTapWait))
     navigationItem.rightBarButtonItem = waitButton
 
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func didTapWait() {

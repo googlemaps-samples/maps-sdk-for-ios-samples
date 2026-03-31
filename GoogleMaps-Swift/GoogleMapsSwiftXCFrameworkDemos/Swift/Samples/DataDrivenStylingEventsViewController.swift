@@ -19,6 +19,8 @@ import UIKit
 private let mapIDWithMultipleLayers = ""
 
 class DataDrivenStylingEventsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
   private let sectionIdentifierForLayerToggles = "sectionIdentifierForLayerToggles"
   private let cellIdentifier = "cellIdentifier"
 
@@ -82,6 +84,9 @@ class DataDrivenStylingEventsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     if mapID.isEmpty {
       promptForMapID(description: "with all data-driven styling layers enabled") {

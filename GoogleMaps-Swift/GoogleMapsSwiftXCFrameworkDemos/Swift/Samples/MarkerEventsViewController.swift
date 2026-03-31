@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 final class MarkerEventsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
@@ -38,6 +40,12 @@ final class MarkerEventsViewController: UIViewController {
     mapView.overrideUserInterfaceStyle = .unspecified
 
     view = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 }
 

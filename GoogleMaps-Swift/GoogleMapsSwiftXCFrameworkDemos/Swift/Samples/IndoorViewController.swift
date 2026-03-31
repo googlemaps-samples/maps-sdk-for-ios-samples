@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class IndoorViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   let mapStyleOptions: [SampleMapStyle] = [.retro, .grayscale, .night, .normal]
   private lazy var mapView: GMSMapView = {
@@ -32,6 +34,12 @@ class IndoorViewController: UIViewController {
       title: "Style", style: .plain, target: self, action: #selector(changeMapStyle(_:)))
 
     view = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   func alertAction(_ sampleMapStyle: SampleMapStyle) -> UIAlertAction {

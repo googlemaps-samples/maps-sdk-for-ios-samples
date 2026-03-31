@@ -41,6 +41,9 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    registerAttribution()
+
     // Setup location services
     guard CLLocationManager.locationServicesEnabled() else {
       print("Please enable location services")
@@ -57,6 +60,13 @@ final class AnimatedCurrentLocationViewController: UIViewController {
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.distanceFilter = 5.0
     locationManager.startUpdatingLocation()
+  }
+
+  private func registerAttribution() {
+    // Use custom shorter ID due to long class name: AnimatedCurrentLocationViewController -> animatedlocation
+    let majorVersion = GMSServices.sdkVersion().components(separatedBy: ".").first ?? "10"
+    let attributionID = "gmp_git_iosmapssamples_v\(majorVersion)_animatedlocation"
+    GMSServices.addInternalUsageAttributionID(attributionID)
   }
 }
 

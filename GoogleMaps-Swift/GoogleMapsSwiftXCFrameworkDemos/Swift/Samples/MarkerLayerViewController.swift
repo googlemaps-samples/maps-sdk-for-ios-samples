@@ -30,6 +30,8 @@ class PathIterator: IteratorProtocol {
 }
 
 final class MarkerLayerViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private var fadedMarker: GMSMarker? {
     didSet {
@@ -58,6 +60,9 @@ final class MarkerLayerViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     // Creates a plane that flies to several airports around western Europe.
     var path = GMSMutablePath()

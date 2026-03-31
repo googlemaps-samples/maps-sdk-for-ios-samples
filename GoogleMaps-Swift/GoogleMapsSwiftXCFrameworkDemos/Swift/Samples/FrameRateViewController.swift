@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class FrameRateViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
@@ -53,6 +55,12 @@ class FrameRateViewController: UIViewController {
     NSLayoutConstraint.activate([
       statusTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
     ])
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func changeFrameRate() {

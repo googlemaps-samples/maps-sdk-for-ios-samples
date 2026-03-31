@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class FitBoundsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let markerImageName = "glow-marker"
 
@@ -57,6 +59,9 @@ class FitBoundsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     markers.forEach { marker in
       marker.map = mapView
