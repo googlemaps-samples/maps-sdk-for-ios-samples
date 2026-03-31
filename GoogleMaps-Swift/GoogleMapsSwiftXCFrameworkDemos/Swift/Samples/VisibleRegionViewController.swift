@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class VisibleRegionViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   static let overlayHeight: CGFloat = 140
   private lazy var mapView: GMSMapView = {
@@ -53,6 +55,12 @@ class VisibleRegionViewController: UIViewController {
     overlay.frame = overlayFrame
     overlay.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
     view.addSubview(overlay)
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func didTapToggleOverlay() {

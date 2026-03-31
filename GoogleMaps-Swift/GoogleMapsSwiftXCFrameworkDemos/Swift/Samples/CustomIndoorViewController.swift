@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 class CustomIndoorViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
     let options = GMSMapViewOptions()
@@ -28,6 +31,9 @@ class CustomIndoorViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     view.backgroundColor = .gray
 

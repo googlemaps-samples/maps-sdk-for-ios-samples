@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 final class PolygonsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let cameraPosition = GMSCameraPosition(latitude: 39.13006, longitude: -77.508545, zoom: 4)
@@ -31,6 +33,12 @@ final class PolygonsViewController: UIViewController {
     mapView.overrideUserInterfaceStyle = .unspecified
 
     view = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   override func viewDidAppear(_ animated: Bool) {

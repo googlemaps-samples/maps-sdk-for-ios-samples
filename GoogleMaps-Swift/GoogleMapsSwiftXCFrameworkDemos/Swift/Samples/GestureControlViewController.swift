@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 class GestureControlViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private let holderHeight: CGFloat = 60
   private let zoomLabelInset: CGFloat = 16
 
@@ -29,6 +32,9 @@ class GestureControlViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified

@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class DoubleMapViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var sanFranciscoCamera = GMSCameraPosition(
     latitude: 37.7847, longitude: -122.41, zoom: 5)
@@ -43,6 +45,9 @@ class DoubleMapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     mapView.delegate = self
     mapView.translatesAutoresizingMaskIntoConstraints = false

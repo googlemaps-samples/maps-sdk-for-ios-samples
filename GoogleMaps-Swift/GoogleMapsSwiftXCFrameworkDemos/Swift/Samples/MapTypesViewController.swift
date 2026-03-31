@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class MapTypesViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
   private let types: [GMSMapViewType] = [.normal, .satellite, .hybrid, .terrain]
 
   private lazy var mapView: GMSMapView = {
@@ -38,6 +40,9 @@ class MapTypesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     segmentedControl.selectedSegmentIndex = 0
     segmentedControl.addTarget(self, action: #selector(changeMapType), for: .valueChanged)

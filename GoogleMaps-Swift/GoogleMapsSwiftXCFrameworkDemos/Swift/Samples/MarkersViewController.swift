@@ -16,6 +16,9 @@ import UIKit
 
 // Sample code for adding a marker.
 class MarkersViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private lazy var sydneyMarker = GMSMarker(
     position: CLLocationCoordinate2D(latitude: -33.8683, longitude: 151.2086))
 
@@ -66,5 +69,11 @@ class MarkersViewController: UIViewController {
     melbourneMarker.title = "Melbourne"
     melbourneMarker.snippet = "Population: 4,169,103"
     melbourneMarker.map = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 }

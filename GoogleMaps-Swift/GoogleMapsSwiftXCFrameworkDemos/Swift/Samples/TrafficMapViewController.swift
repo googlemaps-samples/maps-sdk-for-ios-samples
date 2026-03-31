@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class TrafficMapViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 12)
@@ -32,6 +34,12 @@ class TrafficMapViewController: UIViewController {
 
   override func loadView() {
     view = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
 }

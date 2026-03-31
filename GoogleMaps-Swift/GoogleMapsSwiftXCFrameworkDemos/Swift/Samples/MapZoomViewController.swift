@@ -55,6 +55,8 @@ enum ModeEnum: String {
 }
 
 class MapZoomViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let backgroundColor = UIColor(white: 1, alpha: 0.8)
 
@@ -101,6 +103,12 @@ class MapZoomViewController: UIViewController {
     // Add a button toggling through modes.
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .play, target: self, action: #selector(didTapNext))
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func didTapNext() {

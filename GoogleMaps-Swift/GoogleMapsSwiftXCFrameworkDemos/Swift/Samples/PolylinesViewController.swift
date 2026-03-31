@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 final class PolylinesViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private lazy var styles: [GMSStrokeStyle] = {
     let greenStyle = GMSStrokeStyle.gradient(from: .green, to: UIColor.green.withAlphaComponent(0))
     let redStyle = GMSStrokeStyle.gradient(from: UIColor.red.withAlphaComponent(0), to: .red)
@@ -43,6 +46,9 @@ final class PolylinesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     var path = GMSMutablePath()
     path.addLatitude(-33.866901, longitude: 151.195988)

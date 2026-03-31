@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 final class GroundOverlayViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   override func loadView() {
     let southWest = CLLocationCoordinate2D(latitude: 40.712216, longitude: -74.22655)
     let northEast = CLLocationCoordinate2D(latitude: 40.773941, longitude: -74.12544)
@@ -42,6 +45,12 @@ final class GroundOverlayViewController: UIViewController {
     groundOverlay.position = newark
     groundOverlay.bounds = overlayBounds
     groundOverlay.map = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 }
 

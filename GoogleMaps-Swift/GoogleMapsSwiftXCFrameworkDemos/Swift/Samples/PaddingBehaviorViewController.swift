@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class PaddingBehaviorViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private static let panoramaCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(
     latitude: 40.761388, longitude: -73.978133)
@@ -43,6 +45,9 @@ class PaddingBehaviorViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     mapView.frame = view.bounds
     view.addSubview(mapView)
