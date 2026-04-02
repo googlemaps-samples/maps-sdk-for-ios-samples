@@ -2,5 +2,5 @@ source 'https://cdn.cocoapods.org/'
 
 target 'MapsSnippets' do
     platform :ios, '15.0'
-    pod 'GoogleMaps', '9.2.0'
+    pod 'GoogleMaps', '10.0.0'
 end
