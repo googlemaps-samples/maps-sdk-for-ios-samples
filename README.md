@@ -42,6 +42,15 @@ $ open GoogleMaps-SwiftUI.xcodeproj
 
 This project uses Swift Package Manager and requires the [GoogleMaps package](https://github.com/googlemaps/ios-maps-sdk). The sample code demonstrates best practices for integrating Google Maps into SwiftUI-based iOS applications.
 
+Add an API key as follows:
+
+1. Create a .xcconfig file at the project root level
+2. Add this line: 
+```
+MAPS_API_KEY = your_api_key_here
+```
+3. Replace `your_api_key_here` with your API key 
+
 ## GoogleMaps-Swift
 
 The `GoogleMaps-Swift` and `GoogleMaps` sub-directories contain the sample code that is downloaded
@@ -54,6 +63,8 @@ $ cd GoogleMaps-Swift
 $ pod install
 $ open GoogleMapsSwiftDemos.xcworkspace
 ```
+
+Add your API key to `GoogleMapsSwiftDemos/Swift/SDKConstants.swift`.
 
 For Objective-C samples:
 
@@ -77,8 +88,8 @@ and more. Follow the tutorials for a quick guide to using the SDK.
 The `snippets` sub-directory contains code snippets that can be found in the developer documentation site.
 
 ## Deprecated Samples
-
-The `GoogleNavigation`, `GoogleNavigation-Swift`, `GooglePlaces`, `GooglePlaces-Swift` and `MapsAndPlacesDemo` folders contain deprecated code samples and will be removed in the near future. For Navigation SDK and Places SDK please see the separate sample app repos listed above.
+> [!WARNING]  
+> The `GoogleNavigation`, `GoogleNavigation-Swift`, `GooglePlaces`, `GooglePlaces-Swift` and `MapsAndPlacesDemo` folders contain deprecated code samples and will be removed in the near future. For Navigation SDK and Places SDK please see the separate sample app repos listed above.
 
 ## Contributing
 
@@ -100,7 +111,7 @@ This sample is offered via an open source [license]. It is not governed by the G
 
 If you find a bug, or have a feature request, please [file an issue] on GitHub. If you would like to get answers to technical questions from other Google Maps Platform developers, ask through one of our [developer community channels]. If you'd like to contribute, please check the [contributing guide].
 
-If you find a bug or have a feature request related to one of the SDK, you can file an issue at the Maps SDK for iOS Issue Tracker page:
+If you find a bug or have a feature request related to the SDK, you can file an issue at the Maps SDK for iOS Issue Tracker page:
 
 - [Maps SDK for iOS Issue Tracker](https://developers.google.com/maps/documentation/ios-sdk/support#issue-tracker)
 
