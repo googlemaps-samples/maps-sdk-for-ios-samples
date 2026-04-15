@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class PanoramaViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let markerLocation = CLLocationCoordinate2D(latitude: 40.761455, longitude: -73.977814)
   private var panoramaView = GMSPanoramaView(frame: .zero)
@@ -41,9 +43,15 @@ class PanoramaViewController: UIViewController {
       statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
     ])
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 }
 
-extension PanoramaViewController: GMSPanoramaViewDelegate {
+extension PanoramaViewController: @MainActor GMSPanoramaViewDelegate {
   func panoramaView(_ panoramaView: GMSPanoramaView, didMove camera: GMSPanoramaCamera) {
     print("Camera:\(camera.orientation.heading), \(camera.orientation.pitch), \(camera.zoom)")
   }

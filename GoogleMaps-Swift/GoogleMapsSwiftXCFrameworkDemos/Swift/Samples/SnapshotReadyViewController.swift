@@ -15,9 +15,15 @@ import GoogleMaps
 import UIKit
 
 class SnapshotReadyViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
   private lazy var statusLabel: UILabel = UILabel()
   private lazy var waitButton: UIBarButtonItem = UIBarButtonItem()
@@ -66,6 +72,12 @@ class SnapshotReadyViewController: UIViewController {
 
   }
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
+
   @objc func didTapWait() {
     isAwaitingSnapshot = true
   }
@@ -100,7 +112,7 @@ class SnapshotReadyViewController: UIViewController {
 
 }
 
-extension SnapshotReadyViewController: GMSMapViewDelegate {
+extension SnapshotReadyViewController: @MainActor GMSMapViewDelegate {
 
   func mapViewSnapshotReady(_ mapView: GMSMapView) {
     if isAwaitingSnapshot {

@@ -30,6 +30,8 @@ class PathIterator: IteratorProtocol {
 }
 
 final class MarkerLayerViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private var fadedMarker: GMSMarker? {
     didSet {
@@ -40,7 +42,10 @@ final class MarkerLayerViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 50.6042, longitude: 3.9599, zoom: 5)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -55,6 +60,9 @@ final class MarkerLayerViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     // Creates a plane that flies to several airports around western Europe.
     var path = GMSMutablePath()
@@ -117,7 +125,7 @@ final class MarkerLayerViewController: UIViewController {
   }
 }
 
-extension MarkerLayerViewController: GMSMapViewDelegate {
+extension MarkerLayerViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     fadedMarker = marker
     return true

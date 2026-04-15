@@ -55,6 +55,8 @@ enum ModeEnum: String {
 }
 
 class MapZoomViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let backgroundColor = UIColor(white: 1, alpha: 0.8)
 
@@ -62,7 +64,10 @@ class MapZoomViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.settings.scrollGestures = false
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -98,6 +103,12 @@ class MapZoomViewController: UIViewController {
     // Add a button toggling through modes.
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .play, target: self, action: #selector(didTapNext))
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func didTapNext() {

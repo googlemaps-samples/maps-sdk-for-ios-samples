@@ -15,11 +15,16 @@ import GoogleMaps
 import UIKit
 
 class MapTypesViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
   private let types: [GMSMapViewType] = [.normal, .satellite, .hybrid, .terrain]
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .sydney, zoom: 12)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private lazy var segmentedControl: UISegmentedControl = {
@@ -36,6 +41,9 @@ class MapTypesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+
     segmentedControl.selectedSegmentIndex = 0
     segmentedControl.addTarget(self, action: #selector(changeMapType), for: .valueChanged)
     navigationItem.titleView = segmentedControl
@@ -46,7 +54,7 @@ class MapTypesViewController: UIViewController {
   }
 }
 
-extension GMSMapViewType: CustomStringConvertible {
+extension GMSMapViewType: @retroactive CustomStringConvertible {
   public var description: String {
     switch self {
     case .normal:

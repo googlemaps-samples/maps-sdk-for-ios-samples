@@ -19,6 +19,8 @@ import UIKit
 private let mapIDWithMultipleLayers = ""
 
 class DataDrivenStylingEventsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
   private let sectionIdentifierForLayerToggles = "sectionIdentifierForLayerToggles"
   private let cellIdentifier = "cellIdentifier"
 
@@ -71,14 +73,20 @@ class DataDrivenStylingEventsViewController: UIViewController {
 
   private lazy var mapView = {
     let camera = GMSCameraPosition(latitude: 47.61, longitude: -122.34, zoom: 10)
-    let view = GMSMapView(
-      frame: .zero, mapID: GMSMapID(identifier: mapID), camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    options.mapID = GMSMapID(identifier: mapID)
+    let view = GMSMapView(options: options)
     view.delegate = self
     return view
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     if mapID.isEmpty {
       promptForMapID(description: "with all data-driven styling layers enabled") {
@@ -122,7 +130,7 @@ class DataDrivenStylingEventsViewController: UIViewController {
   }
 }
 
-extension DataDrivenStylingEventsViewController: GMSMapViewDelegate {
+extension DataDrivenStylingEventsViewController: @MainActor GMSMapViewDelegate {
   func mapView(
     _ mapView: GMSMapView, didTap features: [Feature],
     in featureLayer: FeatureLayer<Feature>, atLocation: CLLocationCoordinate2D

@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 final class TileLayerViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private var selectedIndex = 0 {
     didSet {
       updateTileLayer()
@@ -24,7 +27,10 @@ final class TileLayerViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private lazy var segmentedControl: UISegmentedControl = {
@@ -49,6 +55,12 @@ final class TileLayerViewController: UIViewController {
     // Listen to touch events on the UISegmentedControl, force initial update.
     segmentedControl.addTarget(self, action: #selector(changeFloor), for: .valueChanged)
     changeFloor()
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func changeFloor() {

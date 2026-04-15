@@ -34,9 +34,15 @@ struct Exhibit: Decodable {
 }
 
 class IndoorMuseumNavigationViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.settings.myLocationButton = false
     mapView.settings.indoorPicker = false
     return mapView
@@ -56,6 +62,9 @@ class IndoorMuseumNavigationViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     mapView.delegate = self
     mapView.indoorDisplay.delegate = self
@@ -113,7 +122,7 @@ class IndoorMuseumNavigationViewController: UIViewController {
 
 }
 
-extension IndoorMuseumNavigationViewController: GMSMapViewDelegate {
+extension IndoorMuseumNavigationViewController: @MainActor GMSMapViewDelegate {
 
   func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
     guard let selectedExhibit = selectedExhibit,
@@ -131,7 +140,7 @@ extension IndoorMuseumNavigationViewController: GMSMapViewDelegate {
 
 }
 
-extension IndoorMuseumNavigationViewController: GMSIndoorDisplayDelegate {
+extension IndoorMuseumNavigationViewController: @MainActor GMSIndoorDisplayDelegate {
 
   func didChangeActiveBuilding(_ building: GMSIndoorBuilding?) {
     guard let building = building else {

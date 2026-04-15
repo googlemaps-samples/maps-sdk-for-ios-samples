@@ -15,6 +15,9 @@ import GoogleMaps
 import UIKit
 
 final class GroundOverlayViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   override func loadView() {
     let southWest = CLLocationCoordinate2D(latitude: 40.712216, longitude: -74.22655)
     let northEast = CLLocationCoordinate2D(latitude: 40.773941, longitude: -74.12544)
@@ -23,7 +26,10 @@ final class GroundOverlayViewController: UIViewController {
     // Choose the midpoint of the coordinate to focus the camera on.
     let newark = GMSGeometryInterpolate(southWest, northEast, 0.5)
     let cameraPosition = GMSCameraPosition(target: newark, zoom: 12, bearing: 0, viewingAngle: 45)
-    let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+    let options = GMSMapViewOptions()
+    options.camera = cameraPosition
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -40,9 +46,15 @@ final class GroundOverlayViewController: UIViewController {
     groundOverlay.bounds = overlayBounds
     groundOverlay.map = mapView
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 }
 
-extension GroundOverlayViewController: GMSMapViewDelegate {
+extension GroundOverlayViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
     guard let groundOverlay = overlay as? GMSGroundOverlay else { return }
     groundOverlay.opacity = Float.random(in: 0.5..<1)

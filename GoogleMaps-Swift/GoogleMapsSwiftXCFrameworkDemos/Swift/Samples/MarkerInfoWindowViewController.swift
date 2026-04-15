@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 final class MarkerInfoWindowViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let sydneyMarker = GMSMarker(
     position: CLLocationCoordinate2D(latitude: -33.8683, longitude: 151.2086))
@@ -31,7 +33,10 @@ final class MarkerInfoWindowViewController: UIViewController {
 
   override func loadView() {
     let cameraPosition = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    let mapView = GMSMapView(frame: .zero, camera: cameraPosition)
+    let options = GMSMapViewOptions()
+    options.camera = cameraPosition
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -51,9 +56,15 @@ final class MarkerInfoWindowViewController: UIViewController {
     brisbaneMarker.snippet = "Population: 2,189,878"
     brisbaneMarker.map = mapView
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 }
 
-extension MarkerInfoWindowViewController: GMSMapViewDelegate {
+extension MarkerInfoWindowViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
     if marker == sydneyMarker {
       return contentView

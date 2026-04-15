@@ -34,11 +34,16 @@ struct Coordinate: Decodable {
 }
 
 final class GradientPolylinesViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(
       latitude: 44.1314, longitude: 9.6921, zoom: 14.059, bearing: 328, viewingAngle: 40)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -50,6 +55,8 @@ final class GradientPolylinesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
     addTrackToMap()
   }
 

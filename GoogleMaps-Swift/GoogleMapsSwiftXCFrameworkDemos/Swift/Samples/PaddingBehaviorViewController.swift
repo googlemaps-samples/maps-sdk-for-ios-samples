@@ -15,13 +15,18 @@ import GoogleMaps
 import UIKit
 
 class PaddingBehaviorViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private static let panoramaCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(
     latitude: 40.761388, longitude: -73.978133)
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.868, longitude: 151.2086, zoom: 6)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.padding = UIEdgeInsets(top: 0, left: 20, bottom: 40, right: 60)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
@@ -41,11 +46,19 @@ class PaddingBehaviorViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+
     mapView.frame = view.bounds
     view.addSubview(mapView)
 
     // Add status label.
-    let statusBarHeight = UIApplication.shared.statusBarFrame.height
+    let statusBarHeight: CGFloat
+    if let windowScene = view.window?.windowScene {
+      statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height ?? 0
+    } else {
+      statusBarHeight = 0
+    }
     let navigationHeight = navigationController?.navigationBar.frame.height ?? 0
     let topYOffset = statusBarHeight + navigationHeight
     statusLabel.frame = CGRect(x: 30, y: topYOffset, width: 0, height: 30)

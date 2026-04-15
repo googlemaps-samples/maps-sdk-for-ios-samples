@@ -15,11 +15,17 @@ import GoogleMaps
 import UIKit
 
 class MapLayerViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private let duration: TimeInterval = 2
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .victoria, zoom: 4)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -32,6 +38,12 @@ class MapLayerViewController: UIViewController {
 
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Fly to My Location", style: .plain, target: self, action: #selector(tapMyLocation))
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func tapMyLocation() {

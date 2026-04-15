@@ -16,12 +16,24 @@ import UIKit
 
 // Sample code for customizing the marker.
 class CustomMarkersViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private var markerCount = 0
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 
   override func loadView() {
     // Opt the MapView into automatic dark mode switching.

@@ -22,7 +22,10 @@ final class AnimatedCurrentLocationViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 38.8879, longitude: -77.0200, zoom: 17)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   override func loadView() {
@@ -38,13 +41,16 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    registerAttribution()
+
     // Setup location services
     guard CLLocationManager.locationServicesEnabled() else {
       print("Please enable location services")
       return
     }
 
-    if CLLocationManager.authorizationStatus() == .denied {
+    if locationManager.authorizationStatus == .denied {
       print("Please authorize location services")
       return
     }
@@ -55,11 +61,18 @@ final class AnimatedCurrentLocationViewController: UIViewController {
     locationManager.distanceFilter = 5.0
     locationManager.startUpdatingLocation()
   }
+
+  private func registerAttribution() {
+    // Use custom shorter ID due to long class name: AnimatedCurrentLocationViewController -> animatedlocation
+    let majorVersion = GMSServices.sdkVersion().components(separatedBy: ".").first ?? "10"
+    let attributionID = "gmp_git_iosmapssamples_v\(majorVersion)_animatedlocation"
+    GMSServices.addInternalUsageAttributionID(attributionID)
+  }
 }
 
 extension AnimatedCurrentLocationViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    if CLLocationManager.authorizationStatus() == .denied {
+    if locationManager.authorizationStatus == .denied {
       print("Please authorize location services")
       return
     }

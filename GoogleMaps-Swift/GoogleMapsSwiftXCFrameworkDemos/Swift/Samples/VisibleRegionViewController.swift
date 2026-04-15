@@ -15,11 +15,16 @@ import GoogleMaps
 import UIKit
 
 class VisibleRegionViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   static let overlayHeight: CGFloat = 140
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.settings.myLocationButton = true
     mapView.isMyLocationEnabled = true
     mapView.padding = UIEdgeInsets(
@@ -50,6 +55,12 @@ class VisibleRegionViewController: UIViewController {
     overlay.frame = overlayFrame
     overlay.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
     view.addSubview(overlay)
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   @objc func didTapToggleOverlay() {

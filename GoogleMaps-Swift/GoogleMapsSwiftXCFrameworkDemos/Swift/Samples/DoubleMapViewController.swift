@@ -15,11 +15,16 @@ import GoogleMaps
 import UIKit
 
 class DoubleMapViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var sanFranciscoCamera = GMSCameraPosition(
     latitude: 37.7847, longitude: -122.41, zoom: 5)
   private lazy var mapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
+    let options = GMSMapViewOptions()
+    options.camera = sanFranciscoCamera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -27,7 +32,10 @@ class DoubleMapViewController: UIViewController {
     return mapView
   }()
   private lazy var boundMapView: GMSMapView = {
-    let mapView = GMSMapView(frame: .zero, camera: sanFranciscoCamera)
+    let options = GMSMapViewOptions()
+    options.camera = sanFranciscoCamera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -37,6 +45,9 @@ class DoubleMapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     mapView.delegate = self
     mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +71,7 @@ class DoubleMapViewController: UIViewController {
 
 }
 
-extension DoubleMapViewController: GMSMapViewDelegate {
+extension DoubleMapViewController: @MainActor GMSMapViewDelegate {
 
   func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
     let previousCamera = boundMapView.camera

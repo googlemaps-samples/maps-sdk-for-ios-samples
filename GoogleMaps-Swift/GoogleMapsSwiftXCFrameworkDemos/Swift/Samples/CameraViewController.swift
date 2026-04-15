@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class CameraViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let interval: TimeInterval = 1 / 30
 
@@ -24,10 +26,19 @@ class CameraViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .victoria, zoom: 20, bearing: 0, viewingAngle: 0)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private var timer: Timer?
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 
   override func loadView() {
     // Opt the MapView into automatic dark mode switching.

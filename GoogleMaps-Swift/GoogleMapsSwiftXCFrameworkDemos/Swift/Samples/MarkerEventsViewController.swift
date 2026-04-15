@@ -15,10 +15,15 @@ import GoogleMaps
 import UIKit
 
 final class MarkerEventsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -37.81969, longitude: 144.966085, zoom: 4)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private var melbourneMarker = GMSMarker(
@@ -36,9 +41,15 @@ final class MarkerEventsViewController: UIViewController {
 
     view = mapView
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+  }
 }
 
-extension MarkerEventsViewController: GMSMapViewDelegate {
+extension MarkerEventsViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
     if marker == melbourneMarker {
       return UIImageView(image: UIImage(named: "Icon"))

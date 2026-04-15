@@ -16,10 +16,15 @@ import UIKit
 
 // Sample code for customizing the marker.
 class AnimatedUIViewMarkerViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: -33.8683, longitude: 151.2086, zoom: 5)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   private var infoView: UIImageView?
@@ -40,6 +45,9 @@ class AnimatedUIViewMarkerViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     NotificationCenter.default.addObserver(
       self, selector: #selector(applicationWillEnterForeground),
@@ -85,7 +93,7 @@ class AnimatedUIViewMarkerViewController: UIViewController {
   }
 }
 
-extension AnimatedUIViewMarkerViewController: GMSMapViewDelegate {
+extension AnimatedUIViewMarkerViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
     marker.tracksInfoWindowChanges = true
     let infoView = UIImageView(image: UIImage(named: "arrow"))

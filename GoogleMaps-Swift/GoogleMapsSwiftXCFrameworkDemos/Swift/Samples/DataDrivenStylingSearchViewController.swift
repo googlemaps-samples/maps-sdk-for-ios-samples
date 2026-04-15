@@ -69,14 +69,14 @@ private class PlaceLookupController: NSObject {
         }
         do {
           guard let data else {
-            preconditionFailure("Response \(response) is empty")
+            preconditionFailure("Response \(String(describing: response)) is empty")
           }
           let decoder = JSONDecoder()
           let decodedResponse = try decoder.decode(PlaceTextSearchResponse.self, from: data)
           if let extractedID = decodedResponse.places.first?.id {
             self.placeID = extractedID
           } else {
-            preconditionFailure("Place ID not found from \(response)")
+            preconditionFailure("Place ID not found from \(String(describing: response))")
           }
         } catch {
           self.textSearchFailed(with: error)
@@ -144,12 +144,12 @@ private class PlaceLookupController: NSObject {
 
   private func textSearchFailed(with error: Error) {
     colorSelectionButton.setTitle("❗", for: .normal)
-    NSLog("Feature \(name) not found: \(error)")
+    NSLog("Feature \(String(describing: name)) not found: \(error)")
   }
 
   @objc func selectionButtonTapped() {
     let selector = UIColorPickerViewController()
-    selector.selectedColor = color ?? .white
+    selector.selectedColor = color
     selector.supportsAlpha = false
     selector.delegate = self
     controller.present(selector, animated: true)
@@ -198,6 +198,9 @@ class NotCapturingTouchesTableView: UITableView {
 }
 
 class DataDrivenStylingSearchViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
+
   private let cellIdentifier = "cellIdentifier"
 
   fileprivate let urlSession = URLSession(
@@ -240,14 +243,20 @@ class DataDrivenStylingSearchViewController: UIViewController {
 
   private lazy var mapView = {
     let camera = GMSCameraPosition(latitude: 40, longitude: -117.5, zoom: 5.5)
-    let view = GMSMapView(
-      frame: .zero, mapID: GMSMapID(identifier: mapID), camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    options.mapID = GMSMapID(identifier: mapID)
+    let view = GMSMapView(options: options)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
     if mapID.isEmpty {
       promptForMapID(description: "with all data-driven styling layers enabled") {
         self.mapID = $0
@@ -355,7 +364,7 @@ class DataDrivenStylingSearchViewController: UIViewController {
   }
 
   fileprivate func reloadStyle() {
-    var colorMapping: [String: UIColor] = Dictionary(
+    let colorMapping: [String: UIColor] = Dictionary(
       places.compactMap { (_, config) in
         config.placeID.map { ($0, config.color) }
       },

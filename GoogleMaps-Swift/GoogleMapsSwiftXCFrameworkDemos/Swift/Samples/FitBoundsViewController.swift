@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class FitBoundsViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let markerImageName = "glow-marker"
 
@@ -23,7 +25,10 @@ class FitBoundsViewController: UIViewController {
 
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(target: .victoria, zoom: 4)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   // Creates a list of markers, adding the Sydney marker.
@@ -55,6 +60,9 @@ class FitBoundsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+
     markers.forEach { marker in
       marker.map = mapView
     }
@@ -70,7 +78,7 @@ class FitBoundsViewController: UIViewController {
   }
 }
 
-extension FitBoundsViewController: GMSMapViewDelegate {
+extension FitBoundsViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
     let marker = GMSMarker(position: coordinate)
     marker.title = "Marker at: \(coordinate.latitude), \(coordinate.longitude)"

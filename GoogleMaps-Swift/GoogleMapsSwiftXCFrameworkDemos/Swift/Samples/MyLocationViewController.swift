@@ -15,6 +15,8 @@ import GoogleMaps
 import UIKit
 
 class MyLocationViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private let cameraLatitude: CLLocationDegrees = -33.868
 
@@ -25,7 +27,10 @@ class MyLocationViewController: UIViewController {
   lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(
       latitude: cameraLatitude, longitude: cameraLongitude, zoom: cameraZoom)
-    return GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    return GMSMapView(options: options)
   }()
 
   var observation: NSKeyValueObservation?
@@ -38,6 +43,9 @@ class MyLocationViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
 
     // Opt the MapView into automatic dark mode switching.
     mapView.overrideUserInterfaceStyle = .unspecified
@@ -60,7 +68,7 @@ class MyLocationViewController: UIViewController {
   }
 }
 
-extension MyLocationViewController: GMSMapViewDelegate {
+extension MyLocationViewController: @MainActor GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
     let alert = UIAlertController(
       title: "Location Tapped",

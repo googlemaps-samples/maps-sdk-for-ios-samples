@@ -15,11 +15,16 @@ import GoogleMaps
 import UIKit
 
 class IndoorViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   let mapStyleOptions: [SampleMapStyle] = [.retro, .grayscale, .night, .normal]
   private lazy var mapView: GMSMapView = {
     let camera = GMSCameraPosition(latitude: 37.78318, longitude: -122.403874, zoom: 18)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    let mapView = GMSMapView(options: options)
     mapView.settings.myLocationButton = true
     return mapView
   }()
@@ -29,6 +34,12 @@ class IndoorViewController: UIViewController {
       title: "Style", style: .plain, target: self, action: #selector(changeMapStyle(_:)))
 
     view = mapView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
   }
 
   func alertAction(_ sampleMapStyle: SampleMapStyle) -> UIAlertAction {

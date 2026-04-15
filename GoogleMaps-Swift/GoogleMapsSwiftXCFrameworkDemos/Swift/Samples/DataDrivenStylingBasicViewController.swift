@@ -100,6 +100,8 @@ private class SliderControls {
 }
 
 class DataDrivenStylingBasicViewController: UIViewController {
+  /// Manages Google Maps SDK usage attribution for this sample.
+  private let attributionManager: GoogleMapsAttributionManaging = GoogleMapsAttributionManager()
 
   private lazy var config = [
     FeatureLayerConfig(
@@ -165,6 +167,9 @@ class DataDrivenStylingBasicViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Register this sample with Google Maps for usage tracking
+    attributionManager.addAttribution(for: self)
+
     mainView = featureTypeSelectionLabel
 
     segmentedControl.addTarget(
@@ -203,7 +208,7 @@ class DataDrivenStylingBasicViewController: UIViewController {
     }
     let configIndex = segmentedControl.selectedSegmentIndex
 
-    var mapID = activeConfig.mapID
+    let mapID = activeConfig.mapID
     if mapID.isEmpty {
       promptForMapID(description: "with \(activeConfig.title) layer enabled") {
         self.config[configIndex].mapID = $0
@@ -230,8 +235,11 @@ class DataDrivenStylingBasicViewController: UIViewController {
     }
 
     let camera = GMSCameraPosition(latitude: 38.590240, longitude: -95.712891, zoom: 4)
-    mainView = GMSMapView(
-      frame: .zero, mapID: GMSMapID(identifier: activeConfig.mapID), camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = .zero
+    options.mapID = GMSMapID(identifier: activeConfig.mapID)
+    mainView = GMSMapView(options: options)
     toggle.setOn(false, animated: false)
 
     highlightStyleSliderControls.label.text = activeConfig.highlightPlaceName
