@@ -1,3 +1,24 @@
+[{
+  "lang": "EN",
+  "slug": "project-proposal",
+  "title": "UNDP Climate Action Project",
+  "sub": "Building Resilient Communities",
+  "secs": [{
+    "h": "Executive Summary",
+    "p": ["This project aims to strengthen community resilience through sustainable practices."],
+    "b": ["Reduce carbon emissions by 30%", "Train 500 local leaders", "Establish 10 green zones"]
+  }, {
+    "h": "Budget Overview",
+    "t": {
+      "h": ["Category", "Amount (USD)", "Timeline"],
+      "r": [
+        ["Training", "50,000", "Q1-Q2"],
+        ["Infrastructure", "120,000", "Q2-Q4"],
+        ["Monitoring", "30,000", "Ongoing"]
+      ]
+    }
+  }]
+}]
 # This is the official list of Samples for the Google Maps SDK for iOS authors
 # for copyright purposes. This file is distinct from the CONTRIBUTORS files.
 # See the latter for an explanation.
