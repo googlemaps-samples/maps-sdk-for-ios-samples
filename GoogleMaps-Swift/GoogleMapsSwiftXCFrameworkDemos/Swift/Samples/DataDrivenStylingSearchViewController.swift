@@ -50,6 +50,7 @@ private struct PlaceTextSearchResponse: Codable {
   let places: [Place]
 }
 
+@MainActor
 private class PlaceLookupController: NSObject {
   let serial: Int
   let controller: DataDrivenStylingSearchViewController
