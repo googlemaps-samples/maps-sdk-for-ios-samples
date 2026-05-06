@@ -64,7 +64,7 @@ class CustomIndoorViewController: UIViewController {
 
 }
 
-extension CustomIndoorViewController: GMSIndoorDisplayDelegate {
+extension CustomIndoorViewController: @MainActor GMSIndoorDisplayDelegate {
 
   func didChangeActiveBuilding(_ building: GMSIndoorBuilding?) {
     guard let building = building else {

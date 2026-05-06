@@ -32,6 +32,7 @@ private struct FeatureLayerConfig {
   let highlightPlaceID: String
 }
 
+@MainActor
 private class SliderControls {
   let view: UIStackView
   let fillColor: UISlider
@@ -39,6 +40,7 @@ private class SliderControls {
   let strokeWidth: UISlider
   let label: UILabel
 
+  @MainActor
   private static func addSliderAndLabel(to parent: UIStackView, text: String, initialValue: Float)
     -> UISlider
   {
