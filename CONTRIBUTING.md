@@ -1,8 +1,6 @@
 # Not accepting contributions
 
-Since this repository is a one-way mirror of the code from `pod try sync` we are
-not currently accepting external contributions. Pull requests are accepted from
-a limited set of repository members.
+We are not currently accepting external contributions. Pull requests are accepted from a limited set of repository members.
 
 ## If you are contributing
 
