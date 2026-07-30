@@ -1,7 +1,0 @@
-source 'https://cdn.cocoapods.org/'
-
-target 'PlacesSnippets' do
-    platform :ios, '15.0'
-    pod 'GooglePlaces', '9.2.0'
-    pod 'GoogleMaps', '9.2.0'
-end
