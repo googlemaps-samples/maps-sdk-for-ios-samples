@@ -53,15 +53,13 @@ MAPS_API_KEY = your_api_key_here
 
 ## GoogleMaps-Swift
 
-The `GoogleMaps-Swift` and `GoogleMaps` sub-directories contain the sample code that is downloaded
-when you run `pod try GoogleMaps`. To use this project:
+The `GoogleMaps-Swift` and `GoogleMaps` sub-directories contain the sample code in Swift and Objective-C. To use this project:
 
 For Swift (UIKit) samples:
 
 ```
 $ cd GoogleMaps-Swift
-$ pod install
-$ open GoogleMapsSwiftDemos.xcworkspace
+$ open GoogleMapsSwiftDemos.xcodeproj
 ```
 
 Add your API key to `GoogleMapsSwiftDemos/Swift/SDKConstants.swift`.
@@ -70,8 +68,7 @@ For Objective-C samples:
 
 ```
 $ cd GoogleMaps
-$ pod install
-$ open GoogleMapsDemos.xcworkspace
+$ GoogleMapsDemos.xcodeproj
 ```
 
 Add your API Key to `GoogleMapsDemos/SDKDemoAPIKey.h`.
