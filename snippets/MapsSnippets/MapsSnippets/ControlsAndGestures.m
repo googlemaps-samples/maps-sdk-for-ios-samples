@@ -27,7 +27,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
                                                           longitude:103.848
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.settings.scrollGestures = NO;
   mapView.settings.zoomGestures = NO;
   self.view = mapView;
@@ -41,7 +43,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:37.757815
                                                           longitude:-122.50764
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.settings.compassButton = YES;
   // [END maps_ios_controls_and_gestures_compass]
 

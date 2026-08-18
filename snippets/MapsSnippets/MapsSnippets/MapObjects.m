@@ -23,7 +23,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
                                                           longitude:103.848
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   self.view = mapView;
 }
 
@@ -41,7 +43,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.8683
                                                           longitude:151.2086
                                                                zoom:6];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.mapType = kGMSTypeSatellite;
   // [END maps_ios_map_objects_map_type]
 

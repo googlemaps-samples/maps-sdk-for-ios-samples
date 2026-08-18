@@ -22,7 +22,7 @@
 
 @implementation CameraAndView
 
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -30,11 +30,16 @@ GMSMapView *mapView;
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.8683
                                                           longitude:151.2086
                                                                zoom:16];
-  mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  options.frame = self.view.bounds;
+  mapView = [[GMSMapView alloc] initWithOptions:options];
   // [END maps_ios_camera_and_view_position_1]
 
   // [START maps_ios_camera_and_view_position_2]
-  mapView = [[GMSMapView alloc] initWithFrame:self.view.bounds];
+  GMSMapViewOptions *options2 = [[GMSMapViewOptions alloc] init];
+  options2.frame = self.view.bounds;
+  mapView = [[GMSMapView alloc] initWithOptions:options2];
   // [END maps_ios_camera_and_view_position_2]
 
   // [START maps_ios_camera_and_view_move_1]
@@ -93,8 +98,9 @@ GMSMapView *mapView;
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:41.887
                                                          longitude:-87.622
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero
-                                          camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   [mapView setMinZoom:10 maxZoom:15];
   // [END maps_ios_camera_and_view_min_max_zoom]
 
@@ -107,8 +113,9 @@ GMSMapView *mapView;
   GMSCameraPosition *camera2 = [GMSCameraPosition cameraWithLatitude:41.887
                                                            longitude:-87.622
                                                                 zoom:4];
-  GMSMapView *mapView2 = [GMSMapView mapWithFrame:CGRectZero
-                                           camera:camera];
+  GMSMapViewOptions *options2 = [[GMSMapViewOptions alloc] init];
+  options2.camera = camera2;
+  GMSMapView *mapView2 = [[GMSMapView alloc] initWithOptions:options2];
   // The current zoom, 4, is outside of the range. The zoom will change to 10.
   [mapView setMinZoom:10 maxZoom:15];
   // [END maps_ios_camera_and_view_min_max_zoom_3]

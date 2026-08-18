@@ -29,7 +29,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
                                                           longitude:103.848
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.delegate = self;
   self.view = mapView;
 }
@@ -41,7 +43,7 @@
 }
 // [END maps_ios_events_map_view_did_tap_coordinate]
 // [START maps_ios_events_map_view_geocoder]
-GMSGeocoder *geocoder;
+static GMSGeocoder *geocoder;
 
 - (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
   [mapView clear];

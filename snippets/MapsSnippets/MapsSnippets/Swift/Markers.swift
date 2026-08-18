@@ -30,7 +30,9 @@ class MarkerViewController: UIViewController, GMSMapViewDelegate {
       longitude: -0.127,
       zoom: 14
     )
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     view = mapView
 
     mapView.delegate = self
@@ -78,7 +80,9 @@ func removeMarker() {
     longitude: 151.2086,
     zoom: 6
   )
-  let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+  let options = GMSMapViewOptions()
+  options.camera = camera
+  let mapView = GMSMapView(options: options)
   // ...
   mapView.clear()
   // [END maps_ios_markers_remove_marker]

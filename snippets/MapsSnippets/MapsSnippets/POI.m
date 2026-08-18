@@ -26,7 +26,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:47.603
                                                             longitude:-122.331
                                                                  zoom:14];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.delegate = self;
   self.view = mapView;
 }
@@ -51,7 +53,7 @@
 
 // [START maps_ios_poi_info_window_details]
 // Declare a GMSMarker instance at the class level.
-GMSMarker *infoMarker;
+static GMSMarker *infoMarker;
 
 // Attach an info window to the POI using the GMSMarker.
 - (void)mapView:(GMSMapView *)mapView
