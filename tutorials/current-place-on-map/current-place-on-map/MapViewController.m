@@ -62,7 +62,10 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:defaultLocation.latitude
                                                           longitude:defaultLocation.longitude
                                                                zoom:zoomLevel];
-  mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  options.frame = self.view.bounds;
+  mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.settings.myLocationButton = YES;
   mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   mapView.myLocationEnabled = YES;
