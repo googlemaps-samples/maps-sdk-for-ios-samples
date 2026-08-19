@@ -18,7 +18,7 @@
 
 @implementation GroundOverlays
 
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)addOverlay {
   // [START maps_ios_ground_overlays_add]

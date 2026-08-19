@@ -24,7 +24,9 @@ class ControlsAndGestures : UIViewController {
       zoom: 12
     )
 
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.settings.scrollGestures = false
     mapView.settings.zoomGestures = false
     self.view = mapView
@@ -35,7 +37,9 @@ class ControlsAndGestures : UIViewController {
     super.viewDidLoad()
     // [START maps_ios_controls_and_gestures_compass]
     let camera = GMSCameraPosition(latitude: 37.757815, longitude: -122.50764, zoom: 12)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.settings.compassButton = true
     // [END maps_ios_controls_and_gestures_compass]
 

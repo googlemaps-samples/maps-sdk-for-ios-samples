@@ -39,7 +39,7 @@
 @implementation StreetViewExt
 
 GMSPanoramaView *panoView;
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)extras {
   // [START maps_ios_streetview_gestures]

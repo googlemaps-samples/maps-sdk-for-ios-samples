@@ -19,7 +19,7 @@
 
 @implementation Shapes
 
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)polylines {
   // [START maps_ios_shapes_polylines]
@@ -139,7 +139,9 @@ GMSMapView *mapView;
   CLLocationCoordinate2D hydeParkLocation = CLLocationCoordinate2DMake(-33.87344, 151.21135);
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:hydeParkLocation
                                                              zoom:16];
-  mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  mapView = [[GMSMapView alloc] initWithOptions:options];
 
   NSString *hydePark = @"tpwmEkd|y[QVe@Pk@BsHe@mGc@iNaAKMaBIYIq@qAMo@Eo@@[Fe@DoALu@HUb@c@XUZS^ELGxOhAd@@ZB`@J^BhFRlBN\\BZ@`AFrATAJAR?rAE\\C~BIpD";
   NSString *archibaldFountain = @"tlvmEqq|y[NNCXSJQOB[TI";
@@ -176,15 +178,15 @@ GMSMapView *mapView;
   GMSMutablePath *path = [GMSMutablePath path];
   [path addLatitude:-37.81319 longitude:144.96298];
   [path addLatitude:-31.95285 longitude:115.85734];
-  polyline.strokeWidth = 20;
   GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+  polyline.strokeWidth = 20;
 
   UIImage *image = [UIImage imageNamed:@"imageFromBundleOrAsset"];
   GMSStrokeStyle *transparentStampStroke = [GMSStrokeStyle transparentStrokeWithStampStyle:[GMSSpriteStyle spriteStyleWithImage:image]];
 
   GMSStyleSpan *span = [GMSStyleSpan spanWithStyle:transparentStampStroke];
   polyline.spans = @[span];
-  polyline.map = _mapView;
+  polyline.map = mapView;
   // [END maps_ios_polyline_sprite]
 }
 
@@ -202,7 +204,7 @@ GMSMapView *mapView;
 
   GMSStyleSpan *span = [GMSStyleSpan spanWithStyle:redWithStamp];
   polyline.spans = @[span];
-  polyline.map = _mapView;
+  polyline.map = mapView;
   // [END maps_ios_polyline_texture]
 }
 
@@ -215,7 +217,7 @@ GMSMapView *mapView;
   UIImage *_Nonnull image = [UIImage imageNamed:@"imageFromBundleOrAsset"]; // Image could be from anywhere
 
   NSArray<GMSStyleSpan *> * spans;
-  if (_mapView.mapCapabilities & GMSMapCapabilityFlagsSpritePolylines) {
+  if (mapView.mapCapabilities & GMSMapCapabilityFlagsSpritePolylines) {
     GMSSpriteStyle *spriteStyle = [GMSSpriteStyle spriteStyleWithImage:image];
     GMSStrokeStyle *stroke = [GMSStrokeStyle transparentStrokeWithStampStyle:spriteStyle];
     spans = @[ [GMSStyleSpan spanWithStyle:stroke] ];
@@ -228,7 +230,7 @@ GMSMapView *mapView;
   GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
   polyline.strokeWidth = 20;
   polyline.spans = spans;
-  polyline.map = _mapView;
+  polyline.map = mapView;
   // [END maps_ios_map_capabilities]
 }
 

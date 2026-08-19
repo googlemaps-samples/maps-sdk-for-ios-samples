@@ -26,7 +26,9 @@ class Events: UIViewController, GMSMapViewDelegate {
       longitude: 103.848,
       zoom: 12
     )
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.delegate = self
     self.view = mapView
   }

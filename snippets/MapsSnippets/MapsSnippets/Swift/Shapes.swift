@@ -148,7 +148,9 @@ class Shapes {
     // [START maps_ios_shapes_polygon_hollow]
     let hydeParkLocation = CLLocationCoordinate2D(latitude: -33.87344, longitude: 151.21135)
     let camera = GMSCameraPosition.camera(withTarget: hydeParkLocation, zoom: 16)
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.animate(to: camera)
 
     let hydePark = "tpwmEkd|y[QVe@Pk@BsHe@mGc@iNaAKMaBIYIq@qAMo@Eo@@[Fe@DoALu@HUb@c@XUZS^ELGxOhAd@@ZB`@J^BhFRlBN\\BZ@`AFrATAJAR?rAE\\C~BIpD"

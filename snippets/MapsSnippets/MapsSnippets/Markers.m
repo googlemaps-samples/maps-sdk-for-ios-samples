@@ -33,7 +33,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:51.5
                                                           longitude:-0.127
                                                                zoom:14];
-  _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  _mapView = [[GMSMapView alloc] initWithOptions:options];
   self.view = _mapView;
 
   _mapView.delegate = self;
@@ -67,7 +69,7 @@
 
 @implementation Markers
 
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)addMarker {
   // [START maps_ios_markers_add_marker]
@@ -83,7 +85,9 @@ GMSMapView *mapView;
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.8683
                                                           longitude:151.2086
                                                                zoom:6];
-  mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  mapView = [[GMSMapView alloc] initWithOptions:options];
   // ...
   [mapView clear];
   // [END maps_ios_markers_remove_marker]

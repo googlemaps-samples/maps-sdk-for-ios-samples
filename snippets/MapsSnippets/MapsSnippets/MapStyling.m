@@ -32,7 +32,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
                                                           longitude:151.20
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.myLocationEnabled = YES;
 
   NSBundle *mainBundle = [NSBundle mainBundle];
@@ -72,7 +74,9 @@ static NSString *const kMapStyle = @"JSON_STYLE_GOES_HERE";
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
                                                           longitude:151.20
                                                                zoom:12];
-  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   mapView.myLocationEnabled = YES;
 
   NSError *error;

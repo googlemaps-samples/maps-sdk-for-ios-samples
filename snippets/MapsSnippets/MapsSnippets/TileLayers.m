@@ -36,7 +36,7 @@
 
 @implementation TileLayers
 
-GMSMapView *mapView;
+static GMSMapView *mapView;
 
 - (void)tileLayers {
   // [START maps_ios_tile_layers_add]

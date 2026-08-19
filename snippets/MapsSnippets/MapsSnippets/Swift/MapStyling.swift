@@ -24,7 +24,9 @@ class MapStyling: UIViewController {
 
   override func loadView() {
     let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 14.0)
-    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
 
     do {
       // Set the map style by passing the URL of the local file.
@@ -54,7 +56,9 @@ class MapStylingStringResource: UIViewController {
 
   override func loadView() {
     let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 14.0)
-    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
 
     do {
       // Set the map style by passing a valid JSON string.

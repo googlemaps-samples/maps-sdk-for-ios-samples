@@ -23,7 +23,9 @@
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
                                                           longitude:151.20
                                                                zoom:6.0];
-  GMSMapView *mapView = [[GMSMapView alloc] initWithFrame: CGRectZero camera:camera];
+  GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+  options.camera = camera;
+  GMSMapView *mapView = [[GMSMapView alloc] initWithOptions:options];
   self.view = mapView;
   // [END maps_ios_map_with_marker_create_map]
 

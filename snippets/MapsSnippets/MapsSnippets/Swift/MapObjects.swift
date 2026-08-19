@@ -19,7 +19,9 @@ class MapObjects : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let camera = GMSCameraPosition(latitude: 1.285, longitude: 103.848, zoom: 12)
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     self.view = mapView
   }
 }
@@ -29,7 +31,9 @@ extension MapObjects {
   private func mapType() {
     // [START maps_ios_map_objects_map_type]
     let camera = GMSCameraPosition.camera(withLatitude: -33.8683, longitude: 151.2086, zoom: 6)
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.mapType = .satellite
     // [END maps_ios_map_objects_map_type]
 

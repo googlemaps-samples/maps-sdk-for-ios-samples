@@ -17,7 +17,9 @@ class MapWithMarkerViewController: UIViewController {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        let options = GMSMapViewOptions()
+        options.camera = camera
+        let mapView = GMSMapView(options: options)
         view = mapView
         // [END maps_ios_map_with_marker_create_map]
 

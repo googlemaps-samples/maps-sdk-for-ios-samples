@@ -23,7 +23,9 @@ class POI: UIViewController, GMSMapViewDelegate {
       longitude:-122.331,
       zoom:14
     )
-    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.delegate = self
     self.view = mapView
   }

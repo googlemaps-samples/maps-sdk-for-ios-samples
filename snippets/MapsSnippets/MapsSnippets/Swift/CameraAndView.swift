@@ -20,11 +20,16 @@ class CmaeraAndView: UIViewController {
       longitude: 151.2086,
       zoom: 16
     )
-    mapView = GMSMapView(frame: self.view.bounds, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    options.frame = self.view.bounds
+    mapView = GMSMapView(options: options)
     // [END maps_ios_camera_and_view_position_1]
 
     // [START maps_ios_camera_and_view_position_2]
-    mapView = GMSMapView(frame: self.view.bounds)
+    let options2 = GMSMapViewOptions()
+    options2.frame = self.view.bounds
+    mapView = GMSMapView(options: options2)
     // [END maps_ios_camera_and_view_position_2]
 
     // [START maps_ios_camera_and_view_move_1]
@@ -87,7 +92,9 @@ class CmaeraAndView: UIViewController {
       longitude: -87.622,
       zoom: 12
     )
-    let mapView = GMSMapView(frame: .zero, camera: camera)
+    let options = GMSMapViewOptions()
+    options.camera = camera
+    let mapView = GMSMapView(options: options)
     mapView.setMinZoom(10, maxZoom: 15)
     // [END maps_ios_camera_and_view_min_max_zoom]
 
@@ -102,10 +109,12 @@ class CmaeraAndView: UIViewController {
       longitude: -87.622,
       zoom: 4
     )
-    let mapView2 = GMSMapView(frame: .zero, camera: camera)
+    let options2 = GMSMapViewOptions()
+    options2.camera = camera2
+    let mapView2 = GMSMapView(options: options2)
 
     // The current zoom, 4, is outside of the range. The zoom will change to 10.
-    mapView.setMinZoom(10, maxZoom: 15)
+    mapView2.setMinZoom(10, maxZoom: 15)
     // [END maps_ios_camera_and_view_min_max_zoom_3]
 
     // [START maps_ios_camera_and_view_bearing]
