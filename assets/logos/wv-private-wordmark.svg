@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" role="img" aria-label="WV Private wordmark">
-  <rect width="360" height="90" fill="none"/>
-  <text x="180" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="34" letter-spacing="6" fill="#0b2142">WV</text>
-  <text x="180" y="66" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="5" fill="#f3c86b">PRIVATE</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" role="img" aria-label="WV Private wordmark"><text x="10" y="58" fill="#1c140e" font-family="Georgia, serif" font-size="44" letter-spacing="5">WV PRIVATE</text><line x1="12" y1="72" x2="406" y2="72" stroke="#b8945a" stroke-width="3"/></svg>

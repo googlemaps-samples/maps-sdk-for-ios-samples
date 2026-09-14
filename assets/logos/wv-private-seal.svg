@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="WV Private seal">
-  <circle cx="60" cy="60" r="54" fill="#0b2142" stroke="#f3c86b" stroke-width="3"/>
-  <circle cx="60" cy="60" r="42" fill="none" stroke="#72d4ff" stroke-width="1" opacity=".55"/>
-  <text x="60" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="28" letter-spacing="3" fill="#ffffff">WV</text>
-  <text x="60" y="76" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" letter-spacing="2" fill="#f3c86b">PRIVATE</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="WV Private seal"><circle cx="60" cy="60" r="52" fill="none" stroke="#b8945a" stroke-width="5"/><circle cx="60" cy="60" r="40" fill="none" stroke="#1c140e" stroke-width="2"/><text x="60" y="70" text-anchor="middle" fill="#1c140e" font-family="Georgia, serif" font-size="30">WV</text></svg>

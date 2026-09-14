@@ -1,74 +1,52 @@
 @import url("./tokens/colors.css");
-@import url("./tokens/typography.css");
 
 :root {
-  --wv-space-1: 4px;
-  --wv-space-2: 8px;
-  --wv-space-3: 12px;
-  --wv-space-4: 16px;
-  --wv-space-6: 24px;
-  --wv-space-8: 32px;
-  --wv-radius-sm: 6px;
-  --wv-radius-md: 12px;
-  --wv-radius-lg: 20px;
-  --wv-radius-pill: 999px;
-  --wv-shadow-soft: 0 10px 30px rgba(2, 12, 27, 0.12);
-  --wv-shadow-deep: 0 22px 60px rgba(2, 12, 27, 0.24);
-  --wv-focus-ring: 0 0 0 3px rgba(47, 125, 246, 0.28);
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 10px 30px rgb(28 20 14 / 14%);
+  --shadow-card: 0 18px 48px rgb(14 14 14 / 18%);
+  --effect-ring: 0 0 0 1px rgb(184 148 90 / 38%);
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
   min-height: 100vh;
-  background: #f6f1e6;
-  color: var(--wv-ink);
-  font-family: var(--wv-font-sans);
+  padding: 22px;
+  color: var(--color-primary-walnut);
+  background: var(--color-primary-parchment);
+  font-family: var(--font-body);
 }
 .ds-card {
-  width: 100%;
-  min-height: 100vh;
-  padding: 24px;
+  height: calc(100vh - 44px);
+  min-height: 136px;
   display: grid;
+  gap: 14px;
   align-content: center;
-  gap: 18px;
-  background: linear-gradient(135deg, #f8f5f0 0%, #edf3fb 100%);
+  border: 1px solid rgb(184 148 90 / 32%);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  background: rgb(255 252 245 / 82%);
+  box-shadow: var(--shadow-soft);
 }
-.ds-card__header { display: grid; gap: 4px; }
-.ds-eyebrow {
-  margin: 0;
-  color: var(--wv-blue-700);
-  font-size: 11px;
-  font-weight: var(--wv-weight-bold);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.ds-title { margin: 0; font: var(--wv-weight-bold) 24px/1 var(--wv-font-serif); }
-.ds-subtitle { margin: 0; color: var(--wv-slate-600); font-size: 13px; }
-.swatches, .spec-grid, .logo-row { display: grid; gap: 12px; }
-.swatches { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); }
-.swatch, .spec, .logo-tile {
-  padding: 12px;
-  border: 1px solid rgba(11, 33, 66, 0.12);
-  border-radius: var(--wv-radius-md);
-  background: rgba(255,255,255,0.72);
-  box-shadow: var(--wv-shadow-soft);
-}
-.swatch__chip { height: 42px; border-radius: 10px; border: 1px solid rgba(2,12,27,.12); margin-bottom: 8px; }
-.ds-name { display: block; font-size: 12px; font-weight: var(--wv-weight-semibold); }
-.ds-value { display: block; color: var(--wv-slate-600); font: 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; }
-.spec-grid { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
-.spec { min-height: 72px; }
-.texture-panel {
-  min-height: 120px;
-  border-radius: var(--wv-radius-lg);
-  border: 1px solid rgba(61, 35, 20, 0.22);
-  background-color: #f4ecdc;
-  background-image: url("./assets/imagery/parchment-texture.svg");
-  background-size: cover;
-  box-shadow: var(--wv-shadow-deep);
-}
-.logo-row { grid-template-columns: 1fr 1fr; }
-.logo-tile { display: grid; place-items: center; min-height: 96px; }
-.logo-tile--navy { background: var(--wv-navy-900); }
-.logo-tile img { max-height: 64px; max-width: 220px; }
+.ds-kicker { margin: 0; font: 700 11px/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--color-primary-brass); }
+.ds-title { margin: 0; font: 500 30px/1.05 var(--font-display); }
+.ds-note { margin: 0; max-width: 62ch; color: var(--color-neutral-600); font-size: 13px; line-height: 1.45; }
+.swatches, .scale, .logo-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.swatch { min-width: 96px; padding: 34px 10px 10px; border-radius: var(--radius-md); color: white; box-shadow: var(--effect-ring); font: 700 11px/1.2 var(--font-mono); }
+.swatch.light { color: var(--color-primary-walnut); }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 0 12px; border: 1px solid rgb(28 20 14 / 14%); background: white; border-radius: var(--radius-pill); font: 700 12px/1 var(--font-mono); }
+.logo-box { display: grid; place-items: center; min-width: 150px; min-height: 70px; padding: 14px; border-radius: var(--radius-md); background: white; box-shadow: var(--effect-ring); }
+.logo-box img { max-width: 190px; max-height: 58px; }
+.texture { background-image: url("../assets/imagery/parchment-texture.svg"); background-size: cover; }
