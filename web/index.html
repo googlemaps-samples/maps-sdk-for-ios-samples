@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Banyan Tree Residences Creston Hill — Luxury mountain residences set among towering pines in northern Thailand.">
+  <title>Banyan Tree Residences — Creston Hill</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FIXED HEADER
+  ═══════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <a href="#hero" class="site-logo">
+      Banyan Tree Residences
+      <span>Creston Hill</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#presentation">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+        <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="7"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero__bg" role="img" aria-label="Banyan Tree Residences Creston Hill main clubhouse with fountains"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Banyan Tree Residences</p>
+        <h1 class="hero__title">Creston Hill</h1>
+        <p class="hero__tagline">
+          Where the mountains breathe and luxury is woven into
+          every pine-scented horizon.
+        </p>
+        <a href="#about" class="btn btn--gold">Discover the Estate</a>
+      </div>
+
+      <a href="#about" class="hero__scroll-cue" aria-label="Scroll to content">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════════════════ -->
+    <section id="about">
+      <div class="about__inner container">
+
+        <div class="about__text reveal">
+          <span class="section-eyebrow">The Residence</span>
+          <h2>A sanctuary above<br>the valley floor</h2>
+          <p>
+            Set against a backdrop of towering pines and cool mountain air,
+            Banyan Tree Residences Creston Hill offers an unrivalled living
+            experience — where world-class hospitality meets the calm of nature.
+          </p>
+          <p>
+            Each residence is crafted with warm timber, natural stone, and
+            floor-to-ceiling glass that frames the surrounding landscape like
+            a living painting. A place to slow down, breathe deeply, and
+            arrive home.
+          </p>
+          <a href="#contact" class="btn btn--outline">Request Information</a>
+        </div>
+
+        <div class="about__image reveal">
+          <div class="about__img-frame"
+               role="img"
+               aria-label="Street view of the Creston Hill entrance boulevard">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PRESENTATION — SLIDE DECK
+    ═══════════════════════════════════════════════════════ -->
+    <section id="presentation">
+
+      <div class="deck__header container">
+        <span class="section-eyebrow">Gallery</span>
+        <h2>The Estate, Captured</h2>
+      </div>
+
+      <div class="deck__stage">
+
+        <div class="deck-slide">
+          <div class="slide__img slide__img--1"
+               role="img"
+               aria-label="Grand clubhouse with fountain forecourt"></div>
+          <div class="slide__caption">
+            <h3>The Clubhouse</h3>
+            <p>A grand pavilion surrounded by reflective fountains and curated gardens, announcing arrival in quiet style.</p>
+          </div>
+        </div>
+
+        <div class="deck-slide">
+          <div class="slide__img slide__img--2"
+               role="img"
+               aria-label="Street-level view of the estate entrance from the main road"></div>
+          <div class="slide__caption">
+            <h3>The Approach</h3>
+            <p>A sweeping boulevard entry that frames the mountain backdrop and sets the tone for life within.</p>
+          </div>
+        </div>
+
+        <div class="deck-slide">
+          <div class="slide__img slide__img--3"
+               role="img"
+               aria-label="Close-up of the timber-and-stone entry gatehouse structure"></div>
+          <div class="slide__caption">
+            <h3>The Gatehouse</h3>
+            <p>Crafted stone and timber mark the threshold — a quiet signal that you have arrived somewhere exceptional.</p>
+          </div>
+        </div>
+
+        <div class="deck-slide">
+          <div class="slide__img slide__img--4"
+               role="img"
+               aria-label="Wide view of the dual-lane estate entrance with tall pine trees"></div>
+          <div class="slide__caption">
+            <h3>The Gate</h3>
+            <p>Dual-lane entry with landscape lighting and a sense of protected exclusivity beneath towering pines.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide controls -->
+      <div class="deck__controls">
+        <button id="prevSlide" aria-label="Previous slide">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="10 13 5 8 10 3"/>
+          </svg>
+        </button>
+
+        <nav id="slideNav" aria-label="Slide navigation">
+          <!-- Dot buttons injected by main.js -->
+        </nav>
+
+        <button id="nextSlide" aria-label="Next slide">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 3 11 8 6 13"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Progress track — JS sets width on #slideProgress (the fill bar) -->
+      <div class="progress__track">
+        <div id="slideProgress"></div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         LOCATION
+    ═══════════════════════════════════════════════════════ -->
+    <section id="location">
+      <div class="container">
+
+        <div class="location__intro reveal">
+          <span class="section-eyebrow">Location</span>
+          <h2>Thailand's northern crown jewel</h2>
+          <p>
+            Creston Hill sits within a private mountain enclave — moments from
+            international schools, world-class golf, and the cultural richness
+            of Chiang Mai, yet completely apart from it all.
+          </p>
+        </div>
+
+        <ul class="location__features">
+
+          <li class="location__feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17l4-8 4 5 3-3 4 6"/>
+              </svg>
+            </span>
+            <h3>Mountain Setting</h3>
+            <p>Elevations above 800 m bring cool breezes and panoramic pine-forest views year-round.</p>
+          </li>
+
+          <li class="location__feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <h3>Seamless Connectivity</h3>
+            <p>30 minutes to Chiang Mai International Airport via a dedicated mountain road.</p>
+          </li>
+
+          <li class="location__feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </span>
+            <h3>Private Estate Roads</h3>
+            <p>Gated community with 24-hour security and resort-grade landscaping throughout.</p>
+          </li>
+
+          <li class="location__feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </span>
+            <h3>Banyan Tree Services</h3>
+            <p>Full concierge, spa, dining, and property management available to all residents.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════ -->
+    <section id="contact">
+      <div class="contact__inner container reveal">
+
+        <span class="section-eyebrow">Enquire</span>
+        <h2>Begin your residency journey</h2>
+        <p class="contact__sub">
+          Our sales team is available to provide bespoke information packages,
+          private site tours, and investment guidance tailored to your needs.
+        </p>
+
+        <div class="contact__details">
+
+          <div class="contact__item">
+            <span class="contact__label">Thailand Sales Office</span>
+            <a href="tel:+6653000000" class="contact__value">+66 53 000 000</a>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__label">Email</span>
+            <a href="mailto:residences@banyantree-crestonhill.com" class="contact__value">
+              residences@banyantree-crestonhill.com
+            </a>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__label">Sales Hours</span>
+            <span class="contact__value">Daily 09:00 – 18:00 ICT</span>
+          </div>
+
+        </div>
+
+        <a href="mailto:residences@banyantree-crestonhill.com" class="btn btn--gold btn--lg">
+          Request a Private Tour
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Banyan Tree Residences Creston Hill. All rights reserved.</p>
+    <p class="footer__legal">Artist's impressions are indicative only. Information subject to change without notice.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

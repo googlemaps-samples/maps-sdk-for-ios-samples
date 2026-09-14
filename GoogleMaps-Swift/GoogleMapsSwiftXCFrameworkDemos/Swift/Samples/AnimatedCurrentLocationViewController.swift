@@ -70,7 +70,7 @@ final class AnimatedCurrentLocationViewController: UIViewController {
   }
 }
 
-extension AnimatedCurrentLocationViewController: CLLocationManagerDelegate {
+extension AnimatedCurrentLocationViewController: @MainActor CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     if locationManager.authorizationStatus == .denied {
       print("Please authorize location services")
