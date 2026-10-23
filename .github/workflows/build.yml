@@ -25,13 +25,16 @@ on:
         - cron: '0 22 * * *'
     workflow_dispatch:
 
+permissions:
+    contents: read
+
 jobs:
     build-MapsSnippets:
         runs-on: macos-latest
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -53,7 +56,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -75,7 +78,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -97,7 +100,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -122,7 +125,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -147,7 +150,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -172,7 +175,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -192,62 +195,12 @@ jobs:
             -scheme GooglePlacesSwiftXCFrameworkDemos \
             -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
 
-    build-GoogleNavigation:
-        runs-on: macos-latest
-
-        steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-
-        - name: Install CocoaPods
-          run: |
-              sudo gem install cocoapods
-
-        - name: Run pod install
-          run: |
-              pod install --project-directory=GoogleNavigation/
-
-        - name: Build project
-          run: |
-            echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleNavigation/GoogleNavXCFrameworkDemos/SDKDemoAPIKey.h
-
-            echo "Building"
-            xcodebuild -workspace GoogleNavigation/GoogleNavXCFrameworkDemos.xcworkspace \
-            -scheme GoogleNavigationXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
-
-    build-GoogleNavigation-Swift:
-        runs-on: macos-latest
-
-        steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-
-        - name: Install CocoaPods
-          run: |
-              sudo gem install cocoapods
-
-        - name: Run pod install
-          run: |
-              pod install --project-directory=GoogleNavigation-Swift/
-
-        - name: Build project
-          run: |
-            echo "Replacing #error for API key"
-            sed -i .prev '/#error/'d GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos/Swift/SDKDemoAPIKey.swift
-
-            echo "Building"
-            xcodebuild -workspace GoogleNavigation-Swift/GoogleNavSwiftXCFrameworkDemos.xcworkspace \
-            -scheme GoogleNavigationSwiftXCFrameworkDemos \
-            -destination platform\=iOS\ Simulator,OS\=13.3,name\=iPhone\ 8 build | xcpretty
-
     build-current-place-on-map:
         runs-on: macos-latest
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -269,7 +222,7 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
         - name: Install CocoaPods
           run: |
@@ -296,8 +249,6 @@ jobs:
         - build-GoogleMaps-Swift
         - build-GooglePlaces
         - build-GooglePlaces-Swift
-        - build-GoogleNavigation
-        - build-GoogleNavigation-Swift
         - build-current-place-on-map
         - build-map-with-marker
       steps:
