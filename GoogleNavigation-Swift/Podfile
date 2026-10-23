@@ -1,8 +1,0 @@
-source 'https://cdn.cocoapods.org/'
-
-platform :ios, '15.0'
-
-target 'GoogleNavSwiftXCFrameworkDemos' do
-    project 'GoogleNavSwiftXCFrameworkDemos'
-    pod 'GoogleNavigation', '= 9.2.0'
-end
